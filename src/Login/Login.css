@@ -1,0 +1,26 @@
+/*The button's classes*/
+.btn-primary {
+    color: #fff;
+    background-color: #890dfd;
+    border-color: #890dfd;
+  }
+  .btn {
+    padding: 0.375rem 7.5rem;
+  }
+  /*The background's class and id.*/
+  .mb-2 {
+    margin-bottom: 0rem!important;
+  }
+  #green {
+    padding: 4rem!important;
+  }
+  /*The gray form id.*/
+  #grayform {
+    z-index: 1;
+    position: relative;
+    margin-top: -7%;
+  }
+  /*The Class for the Register box.*/
+  .p-3 {
+    padding: 0.55rem!important;
+  }
