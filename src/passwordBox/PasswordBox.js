@@ -1,10 +1,13 @@
 import {useRef} from 'react';
 
-function PasswordBox({setPassword}) {
+function PasswordBox({setCredentials}) {
     const givenPasswordBox = useRef(null);
 
     const updatePassword = function() {
-        setPassword(givenPasswordBox.current.value);
+        setCredentials((prev) => ({
+            userName: prev.userName,
+            password: givenPasswordBox.current.value
+        }));
     };
 
     return (

@@ -1,7 +1,28 @@
-function LoginRegisterBox() {
+import users from "../users/users";
+
+function LoginRegisterBox({credentials}) {
+    // can be put to see all users
+    const userList = users.map((user, key) => {
+        return <div key={key}> {user.username}:{user.password}  </div>;
+    });
+
 
     const tryLogin = function() {
-        console.log("tried to login");
+        var foundUser = false;
+        for (var index in users) {
+            if (users[index].username == credentials.userName) {
+                foundUser = true;
+                if (users[index].password == credentials.password) {
+                    console.log("Logged in!");
+                } else {
+                    console.log("Bad password!");
+                    break;
+                }
+            }
+        }
+        if (!foundUser) {
+            console.log("Didn't find the user!");
+        }
     }
 
     return (
