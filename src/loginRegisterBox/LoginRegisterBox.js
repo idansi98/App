@@ -1,8 +1,13 @@
 function LoginRegisterBox() {
+
+    const tryLogin = function() {
+        console.log("tried to login");
+    }
+
     return (
         <div className="row pt-2">
           <div className="col">
-            <button type="button" id="Login" className="btn btn-primary mb-3">
+            <button onClick={tryLogin} type="button" id="Login" className="btn btn-primary mb-3">
               Login
             </button>
           </div>
