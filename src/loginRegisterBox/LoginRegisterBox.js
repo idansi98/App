@@ -1,4 +1,5 @@
 import users from "../users/users";
+import {Link} from 'react-router-dom'
 
 function LoginRegisterBox({credentials}) {
     // can be put to see all users
@@ -34,7 +35,7 @@ function LoginRegisterBox({credentials}) {
           </div>
           <div className="p-3 col">
             {/*After clicking the registering successfully, go to the sign up page.*/}
-            Not registered? Click <a href="Signing.html">here</a> to register.
+            Not registered? Click <Link to='/signup'>here</Link> to register.
           </div>
         </div>
     );
