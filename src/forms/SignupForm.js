@@ -5,7 +5,6 @@ import PasswordBox from '../PasswordBox/PasswordBox';
 import PasswordValidatorBox from '../PasswordValidatorBox/PasswordValidatorBox';
 import LoginRegisterBox from '../loginRegisterBox/LoginRegisterBox';
 import { useState } from "react";
-import DisplayNameBox from '../DisplayNameBox/DisplayNameBox';
 
 function SignUpForm() {
 
