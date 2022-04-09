@@ -6,7 +6,7 @@ function PasswordValidatorBox({setCredentials}) {
     const updatePassWordValidator = function() {
         setCredentials((prev) => ({
             userName: prev.userName,
-            displayName: prev.DisplayNameBox,
+            displayName: prev.displayName,
             password: prev.password,
             passwordValidator: givenPasswordValidatorBox.current.value,
         }));
@@ -18,11 +18,11 @@ function PasswordValidatorBox({setCredentials}) {
           Password again:
         </label>
         <div className="col-sm-10">
-          <input ref={givenPasswordValidatorBox} onKeyUp={updatePassWordValidator} type="text" className="form-control" id="Displayname" />
+          <input ref={givenPasswordValidatorBox} onKeyUp={updatePassWordValidator} type="password" className="form-control" id="Displayname" />
         </div>
       </div>
       
     );
 }
 
-export default DisplayNameBox;
+export default PasswordValidatorBox;

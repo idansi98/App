@@ -1,9 +1,9 @@
 
-import UserNameBox from '../UserNameBox/UserNameBox';
-import DisplayNameBox from '../DisplayNameBox/DisplayNameBox';
-import PasswordBox from '../PasswordBox/PasswordBox';
-import PasswordValidatorBox from '../PasswordValidatorBox/PasswordValidatorBox';
-import LoginRegisterBox from '../loginRegisterBox/LoginRegisterBox';
+import UserNameBox from '../typeBoxes/UserNameBox';
+import DisplayNameBox from '../typeBoxes/DisplayNameBox';
+import PasswordBox from '../typeBoxes/PasswordBox';
+import PasswordValidatorBox from '../typeBoxes/PasswordValidatorBox';
+import SignUpRegisterBox from '../typeBoxes/SignupRegisterBox';
 import { useState } from "react";
 
 function SignUpForm() {
@@ -19,9 +19,10 @@ function SignUpForm() {
           <DisplayNameBox setCredentials={setCredentials}/>
           <PasswordBox setCredentials={setCredentials}/>
           <PasswordValidatorBox setCredentials={setCredentials}/>  
-          <LoginRegisterBox credentials={credentials}/>
+          <SignUpRegisterBox credentials={credentials}/>
         </form>
       </span>
     
     );
 }
+export default SignUpForm;

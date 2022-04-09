@@ -5,8 +5,10 @@ function UserNameBox({setCredentials}) {
 
     const updateUser = function() {
         setCredentials((prev) => ({
-            userName:givenUserNameBox.current.value,
-            password:prev.password
+            userName: givenUserNameBox.current.value,
+            displayName: prev.displayName,
+            password: prev.password,
+            passwordValidator: prev.passwordValidator
         }));
     }
     return (

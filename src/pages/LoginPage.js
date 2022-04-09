@@ -7,7 +7,7 @@ function LoginPage() {
     return ( 
         <>
         <GreenBackground />
-        <LoginForm />
+        <LoginForm/>
       </>  
     );
 }

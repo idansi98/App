@@ -6,7 +6,9 @@ function PasswordBox({setCredentials}) {
     const updatePassword = function() {
         setCredentials((prev) => ({
             userName: prev.userName,
-            password: givenPasswordBox.current.value
+            displayName: prev.displayName,
+            password: givenPasswordBox.current.value,
+            passwordValidator: prev.passwordValidator
         }));
     };
 

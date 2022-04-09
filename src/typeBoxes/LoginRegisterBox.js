@@ -1,11 +1,16 @@
 import users from "../users/users";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+import {useState} from 'react';
 
 function LoginRegisterBox({credentials}) {
     // can be put to see all users
+    const [token, setToken] = useState(0);
+
     const userList = users.map((user, key) => {
         return <div key={key}> {user.username}:{user.password}  </div>;
     });
+    const navigate = useNavigate();
 
 
     const tryLogin = function() {
@@ -15,6 +20,10 @@ function LoginRegisterBox({credentials}) {
                 foundUser = true;
                 if (users[index].password == credentials.password) {
                     console.log("Logged in!");
+                    global.token = 1;
+                    setToken(1);
+                    navigate('/chats');
+                    break;
                 } else {
                     console.log("Bad password!");
                     break;

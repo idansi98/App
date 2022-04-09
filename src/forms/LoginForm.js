@@ -1,13 +1,13 @@
 
-import UserNameBox from '../UserNameBox/UserNameBox';
-import PasswordBox from '../PasswordBox/PasswordBox';
-import LoginRegisterBox from '../loginRegisterBox/LoginRegisterBox';
+import UserNameBox from '../typeBoxes/UserNameBox';
+import PasswordBox from '../typeBoxes/PasswordBox';
+import LoginRegisterBox from '../typeBoxes/LoginRegisterBox';
 import { useState } from "react";
 
 function LoginForm() {
 
     // useState hook
-    const [credentials, setCredentials] = useState({userName:"", password:""});
+    const [credentials, setCredentials] = useState({userName:"",displayName:"", password:"", passwordValidator:""});
 
     return ( 
         <span className="d-flex justify-content-center" id="grayform">

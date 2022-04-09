@@ -1,35 +1,33 @@
 import {Link} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom';
 
-function LoginRegisterBox({credentials}) {
-    
-    const tryLogin = function() {
-        var foundUser = false;
-        for (var index in users) {
-            if (users[index].username == credentials.userName) {
-                foundUser = true;
-                if (users[index].password == credentials.password) {
-                    console.log("Logged in!");
-                } else {
-                    console.log("Bad password!");
-                    break;
-                }
-            }
+function SignUpRegisterBox({credentials}) {
+
+    const navigate = useNavigate();
+
+function validate() {
+    if (isSamePassword(credentials.password, credentials.passwordValidator) &&
+        isPasswordValidLength(credentials.password) &&
+        isPasswordValid(credentials.password) &&
+        isFileImage("hello.jpg")) {
+            console.log("Logged in successfuly");
+            alert("Signed up successfully!");
+            navigate("/login");
         }
-        if (!foundUser) {
-            console.log("Didn't find the user!");
-        }
-    }
+}
+
+//userName:"",displayName:"", password:"", passwordValidator:""});
 
     return (
         <div className="row pt-2">
           <div className="col">
-            <button onClick={tryLogin} type="button" id="Login" className="btn btn-primary mb-3">
+            <button onClick={validate} type="button" id="Login" className="btn btn-primary mb-3">
               Login
             </button>
           </div>
           <div className="p-3 col">
             {/*After clicking the registering successfully, go to the sign up page.*/}
-            Not registered? Click <Link to='/signup'>here</Link> to register.
+            Already registered? Click <Link to='/login'>here</Link> to sign in.
           </div>
         </div>
     );
@@ -87,4 +85,4 @@ function isFileImage(file) {
     return false;
     }
 
-export default LoginRegisterBox;
+export default SignUpRegisterBox;
