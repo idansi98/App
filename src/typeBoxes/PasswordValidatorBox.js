@@ -9,6 +9,7 @@ function PasswordValidatorBox({setCredentials}) {
             displayName: prev.displayName,
             password: prev.password,
             passwordValidator: givenPasswordValidatorBox.current.value,
+            photo: prev.photo
         }));
     };
 
@@ -18,7 +19,8 @@ function PasswordValidatorBox({setCredentials}) {
           Password again:
         </label>
         <div className="col-sm-10">
-          <input ref={givenPasswordValidatorBox} onKeyUp={updatePassWordValidator} type="password" className="form-control" id="Displayname" />
+          <input ref={givenPasswordValidatorBox} onKeyUp={updatePassWordValidator}
+          type="password" className="form-control" id="Displayname" />
         </div>
       </div>
       

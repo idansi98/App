@@ -7,9 +7,9 @@ function SignUpRegisterBox({credentials}) {
 
 function validate() {
     if (isSamePassword(credentials.password, credentials.passwordValidator) &&
-        isPasswordValidLength(credentials.password) &&
-        isPasswordValid(credentials.password) &&
-        isFileImage("hello.jpg")) {
+        isPasswordValidLength(credentials.password) && isUserNameValid(credentials.userName)
+        && isDisplayNameValid(credentials.displayName) && isPasswordValid(credentials.password)
+        &&  isFileImage(credentials.photo)) {
             console.log("Logged in successfuly");
             alert("Signed up successfully!");
             navigate("/login");
@@ -33,13 +33,31 @@ function validate() {
     );
 }
 
+//Function to check whether a Username's length is valid or not.
+function isUserNameValid(userName) {
+    if(userName.length < 1) {
+        alert("Username must be at least 1 charcater! please try again.");
+        return false;
+    }
+    return true;
+}
+
+//Function to check whether a Displayname's length is valid or not.
+function isDisplayNameValid(displayName) {
+    if(displayName.length < 1) {
+        alert("Displayname must be at least 1 charcater! please try again.");
+        return false;
+    }
+    return true;
+}
+
+ //Function to check whether the entered passwords are equal or not.
 function isSamePassword(password1, password2) {
     if(!(password1 == password2)) {
         alert("You entered different passwords! please try again.");
         return false;
     }
     return true;
-
 }
 
  //Function to check whether a password's length is valid or not.
@@ -78,6 +96,7 @@ function isSamePassword(password1, password2) {
 function isFileImage(file) {
     let index = file.lastIndexOf(".") + 1;
     let fileType = file.substring(index, file.length).toUpperCase();
+    console.log("fileType");
     if(fileType == "JPEG" || fileType == "JPG" || fileType == "PNG") {
         return true;
     }
