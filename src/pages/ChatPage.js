@@ -1,4 +1,5 @@
 import {useNavigate} from 'react-router-dom';
+import ChatWindow from '../chatStuff/ChatWindow';
 import LoginPage from './LoginPage';
 
 
@@ -14,7 +15,7 @@ function ChatPage() {
         );
     } else {
         return (
-            <div> We are in !</div>
+            <ChatWindow />
         )
     }
 
