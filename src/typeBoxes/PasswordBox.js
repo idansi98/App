@@ -14,7 +14,7 @@ function PasswordBox({setCredentials}) {
     };
 
     return (
-        <div className="mt-3 mb-3 row">
+        <div className="mt-1 mb-1 row">
           <label htmlFor="inputPassword" className="col-sm-2 col-form-label">
             Password:
           </label>

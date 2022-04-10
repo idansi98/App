@@ -20,6 +20,9 @@ function DisplayNameBox({setCredentials}) {
         </label>
         <div className="col-sm-10">
           <input ref={givenDisplayNameBox} onKeyUp={updateDisplayName} type="text" className="form-control" id="Displayname" />
+          <span id="passwordHelpInline" class="form-text">
+          Must be at least 1 character long.
+      </span>
         </div>
       </div>
       
