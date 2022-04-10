@@ -8,7 +8,8 @@ function DisplayNameBox({setCredentials}) {
             userName: prev.userName,
             displayName: givenDisplayNameBox.current.value,
             password: prev.password,
-            passwordValidator: prev.passwordValidator
+            passwordValidator: prev.passwordValidator,
+            photo: prev.photo
         }));
     };
 

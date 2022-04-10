@@ -9,6 +9,7 @@ function PasswordValidatorBox({setCredentials}) {
             displayName: prev.displayName,
             password: prev.password,
             passwordValidator: givenPasswordValidatorBox.current.value,
+            photo: prev.photo
         }));
     };
 
