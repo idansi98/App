@@ -1,4 +1,5 @@
 import {useNavigate} from 'react-router-dom';
+import ChatWindow from '../chatStuff/ChatWindow';
 import LoginPage from './LoginPage';
 import './ChatPage.css'
 
@@ -290,7 +291,6 @@ function ChatPage() {
     </div>
   </div>
 </>
-
         )
     }
 
