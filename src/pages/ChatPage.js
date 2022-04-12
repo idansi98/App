@@ -47,8 +47,8 @@ function ChatPage() {
                   {/*The left button*/}
                   <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width={16}
-                  height={16}
+                  width={22}
+                        height={22}
                   fill="currentColor"
                   className="bi bi-person-plus-fill"
                   viewBox="0 0 16 16"
@@ -75,8 +75,8 @@ function ChatPage() {
                   <span className="float-right mt-2">
                     {/*The right button*/}
                     <svg
-                    width="7%"
-                    height="7%"
+                    width={22}
+                        height={22}
                       viewBox="0 0 16 16"
                       className="bi bi-three-dots-vertical mx-3"
                       fill="currentColor"
@@ -100,8 +100,8 @@ function ChatPage() {
                     <div className="col-sm-2 mt-2">
                     {/*The left emoji*/}
                       <svg
-                        width="1em"
-                        height="1em"
+                        width={30}
+                        height={40}
                         viewBox="0 0 16 16"
                         className="bi bi-paperclip mx-2"
                         fill="currentColor"
@@ -128,8 +128,8 @@ function ChatPage() {
                     <div className="col-sm-2 mt-1">
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width={16}
-                    height={16}
+                    width={22}
+                        height={22}
                     fill="currentColor"
                     className="bi bi-send"
                     viewBox="0 0 16 16"
