@@ -14,19 +14,9 @@ class Chat {
     get contactHTML() {
         return (
             <tr>
-            <td>
-              <img 
-                src={this.picture}
-                alt=""
-                className="profile-image rounded-circle"
-              />
-            </td>
-            <td>
-              {this.name} 
-            </td>
-            <td>
-              <small>{this.lastMessage.shortForm}</small>
-            </td>
+            <img src={this.picture} alt="" className="profile-image rounded-circle" />
+  {this.name} <br /> <small>{this.lastMessage.shortForm}</small>
+  <small>11:55 PM</small>
           </tr>);
     }
     // gets the full HTML of all the convo

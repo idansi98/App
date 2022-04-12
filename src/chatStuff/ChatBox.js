@@ -55,11 +55,7 @@ function ChatBox () {
                         <tr>
                           <td>
                             <p className="bg-success rounded p-2 mt-2 mr-5 shadow-sm text-white float-right">
-                              Haan Lockdown ki wajah se company me kuch problem ho rahi
-                              thi so kuch logo ko resign dene ko kaha gaya tha.. meri
-                              condition thodi thik hai to maine socha koi aur majbur ho
-                              kar nikle usse acha main hi nikl jata hu kisi jarurt wale ki
-                              job bach jayegi
+                              Good
                             </p>
                           </td>
                           <td>
