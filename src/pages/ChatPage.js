@@ -17,279 +17,541 @@ function ChatPage() {
     } else {
         return (
             <>
-  <link
-    href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
-    rel="stylesheet"
-    id="bootstrap-css"
-  />
-  {/*---- Include the above in your HEAD tag --------*/}
-  <link
-    href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
-    rel="stylesheet"
-  />
-  <div className="container">
-    <div className="row">
-      <div className="col-lg-3">
-        <div className="btn-panel btn-panel-conversation">
-          <a href="" className="btn  col-lg-6 send-message-btn " role="button">
-            <i className="fa fa-search" /> Search
-          </a>
-          <a
-            href=""
-            className="btn  col-lg-6  send-message-btn pull-right"
-            role="button"
-          >
-            <i className="fa fa-plus" /> Add ew Contact
-          </a>
-        </div>
-      </div>
-      <div className="col-lg-offset-1 col-lg-7">
-        <div className="btn-panel btn-panel-msg">
-          <a
-            href=""
-            className="btn  col-lg-3  send-message-btn pull-right"
-            role="button"
-          >
-            <i className="fa fa-gears" /> Settings
-          </a>
-        </div>
-      </div>
-    </div>
-    <div className="row">
-      <div className="conversation-wrap col-lg-3">
-        <div className="media conversation">
-          <a className="pull-left" href="#">
-            <img
-              className="media-object"
-              data-src="holder.js/64x64"
-              alt="64x64"
-              style={{ width: 50, height: 50 }}
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACqUlEQVR4Xu2Y60tiURTFl48STFJMwkQjUTDtixq+Av93P6iBJFTgg1JL8QWBGT4QfDX7gDIyNE3nEBO6D0Rh9+5z9rprr19dTa/XW2KHl4YFYAfwCHAG7HAGgkOQKcAUYAowBZgCO6wAY5AxyBhkDDIGdxgC/M8QY5AxyBhkDDIGGYM7rIAyBgeDAYrFIkajEYxGIwKBAA4PDzckpd+322243W54PJ5P5f6Omh9tqiTAfD5HNpuFVqvFyckJms0m9vf3EY/H1/u9vb0hn89jsVj8kwDfUfNviisJ8PLygru7O4TDYVgsFtDh9Xo9NBrNes9cLgeTybThgKenJ1SrVXGf1WoVDup2u4jFYhiPx1I1P7XVBxcoCVCr1UBfTqcTrVYLe3t7OD8/x/HxsdiOPqNGo9Eo0un02gHkBhJmuVzC7/fj5uYGXq8XZ2dnop5Mzf8iwMPDAxqNBmw2GxwOBx4fHzGdTpFMJkVzNB7UGAmSSqU2RoDmnETQ6XQiOyKRiHCOSk0ZEZQcUKlU8Pz8LA5vNptRr9eFCJQBFHq//szG5eWlGA1ywOnpqQhBapoWPfl+vw+fzweXyyU+U635VRGUBOh0OigUCggGg8IFK/teXV3h/v4ew+Hwj/OQU4gUq/w4ODgQrkkkEmKEVGp+tXm6XkkAOngmk4HBYBAjQA6gEKRmyOL05GnR99vbW9jtdjEGdP319bUIR8oA+pnG5OLiQoghU5OElFlKAtCGr6+vKJfLmEwm64aosd/XbDbbyIBSqSSeNKU+HXzlnFAohKOjI6maMs0rO0B20590n7IDflIzMmdhAfiNEL8R4jdC/EZIJj235R6mAFOAKcAUYApsS6LL9MEUYAowBZgCTAGZ9NyWe5gCTAGmAFOAKbAtiS7TB1Ng1ynwDkxRe58vH3FfAAAAAElFTkSuQmCC"
-            />
-          </a>
-          <div className="media-body">
-            <h5 className="media-heading">Naimish Sakhpara</h5>
-            <small>Hello</small>
-          </div>
-        </div>
-        <div className="media conversation">
-          <a className="pull-left" href="#">
-            <img
-              className="media-object"
-              data-src="holder.js/64x64"
-              alt="64x64"
-              style={{ width: 50, height: 50 }}
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACqUlEQVR4Xu2Y60tiURTFl48STFJMwkQjUTDtixq+Av93P6iBJFTgg1JL8QWBGT4QfDX7gDIyNE3nEBO6D0Rh9+5z9rprr19dTa/XW2KHl4YFYAfwCHAG7HAGgkOQKcAUYAowBZgCO6wAY5AxyBhkDDIGdxgC/M8QY5AxyBhkDDIGGYM7rIAyBgeDAYrFIkajEYxGIwKBAA4PDzckpd+322243W54PJ5P5f6Omh9tqiTAfD5HNpuFVqvFyckJms0m9vf3EY/H1/u9vb0hn89jsVj8kwDfUfNviisJ8PLygru7O4TDYVgsFtDh9Xo9NBrNes9cLgeTybThgKenJ1SrVXGf1WoVDup2u4jFYhiPx1I1P7XVBxcoCVCr1UBfTqcTrVYLe3t7OD8/x/HxsdiOPqNGo9Eo0un02gHkBhJmuVzC7/fj5uYGXq8XZ2dnop5Mzf8iwMPDAxqNBmw2GxwOBx4fHzGdTpFMJkVzNB7UGAmSSqU2RoDmnETQ6XQiOyKRiHCOSk0ZEZQcUKlU8Pz8LA5vNptRr9eFCJQBFHq//szG5eWlGA1ywOnpqQhBapoWPfl+vw+fzweXyyU+U635VRGUBOh0OigUCggGg8IFK/teXV3h/v4ew+Hwj/OQU4gUq/w4ODgQrkkkEmKEVGp+tXm6XkkAOngmk4HBYBAjQA6gEKRmyOL05GnR99vbW9jtdjEGdP319bUIR8oA+pnG5OLiQoghU5OElFlKAtCGr6+vKJfLmEwm64aosd/XbDbbyIBSqSSeNKU+HXzlnFAohKOjI6maMs0rO0B20590n7IDflIzMmdhAfiNEL8R4jdC/EZIJj235R6mAFOAKcAUYApsS6LL9MEUYAowBZgCTAGZ9NyWe5gCTAGmAFOAKbAtiS7TB1Ng1ynwDkxRe58vH3FfAAAAAElFTkSuQmCC"
-            />
-          </a>
-          <div className="media-body">
-            <h5 className="media-heading">Naimish Sakhpara</h5>
-            <small>Hello</small>
-          </div>
-        </div>
-        <div className="media conversation">
-          <a className="pull-left" href="#">
-            <img
-              className="media-object"
-              data-src="holder.js/64x64"
-              alt="64x64"
-              style={{ width: 50, height: 50 }}
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACqUlEQVR4Xu2Y60tiURTFl48STFJMwkQjUTDtixq+Av93P6iBJFTgg1JL8QWBGT4QfDX7gDIyNE3nEBO6D0Rh9+5z9rprr19dTa/XW2KHl4YFYAfwCHAG7HAGgkOQKcAUYAowBZgCO6wAY5AxyBhkDDIGdxgC/M8QY5AxyBhkDDIGGYM7rIAyBgeDAYrFIkajEYxGIwKBAA4PDzckpd+322243W54PJ5P5f6Omh9tqiTAfD5HNpuFVqvFyckJms0m9vf3EY/H1/u9vb0hn89jsVj8kwDfUfNviisJ8PLygru7O4TDYVgsFtDh9Xo9NBrNes9cLgeTybThgKenJ1SrVXGf1WoVDup2u4jFYhiPx1I1P7XVBxcoCVCr1UBfTqcTrVYLe3t7OD8/x/HxsdiOPqNGo9Eo0un02gHkBhJmuVzC7/fj5uYGXq8XZ2dnop5Mzf8iwMPDAxqNBmw2GxwOBx4fHzGdTpFMJkVzNB7UGAmSSqU2RoDmnETQ6XQiOyKRiHCOSk0ZEZQcUKlU8Pz8LA5vNptRr9eFCJQBFHq//szG5eWlGA1ywOnpqQhBapoWPfl+vw+fzweXyyU+U635VRGUBOh0OigUCggGg8IFK/teXV3h/v4ew+Hwj/OQU4gUq/w4ODgQrkkkEmKEVGp+tXm6XkkAOngmk4HBYBAjQA6gEKRmyOL05GnR99vbW9jtdjEGdP319bUIR8oA+pnG5OLiQoghU5OElFlKAtCGr6+vKJfLmEwm64aosd/XbDbbyIBSqSSeNKU+HXzlnFAohKOjI6maMs0rO0B20590n7IDflIzMmdhAfiNEL8R4jdC/EZIJj235R6mAFOAKcAUYApsS6LL9MEUYAowBZgCTAGZ9NyWe5gCTAGmAFOAKbAtiS7TB1Ng1ynwDkxRe58vH3FfAAAAAElFTkSuQmCC"
-            />
-          </a>
-          <div className="media-body">
-            <h5 className="media-heading">Naimish Sakhpara</h5>
-            <small>Hello</small>
-          </div>
-        </div>
-        <div className="media conversation">
-          <a className="pull-left" href="#">
-            <img
-              className="media-object"
-              data-src="holder.js/64x64"
-              alt="64x64"
-              style={{ width: 50, height: 50 }}
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACqUlEQVR4Xu2Y60tiURTFl48STFJMwkQjUTDtixq+Av93P6iBJFTgg1JL8QWBGT4QfDX7gDIyNE3nEBO6D0Rh9+5z9rprr19dTa/XW2KHl4YFYAfwCHAG7HAGgkOQKcAUYAowBZgCO6wAY5AxyBhkDDIGdxgC/M8QY5AxyBhkDDIGGYM7rIAyBgeDAYrFIkajEYxGIwKBAA4PDzckpd+322243W54PJ5P5f6Omh9tqiTAfD5HNpuFVqvFyckJms0m9vf3EY/H1/u9vb0hn89jsVj8kwDfUfNviisJ8PLygru7O4TDYVgsFtDh9Xo9NBrNes9cLgeTybThgKenJ1SrVXGf1WoVDup2u4jFYhiPx1I1P7XVBxcoCVCr1UBfTqcTrVYLe3t7OD8/x/HxsdiOPqNGo9Eo0un02gHkBhJmuVzC7/fj5uYGXq8XZ2dnop5Mzf8iwMPDAxqNBmw2GxwOBx4fHzGdTpFMJkVzNB7UGAmSSqU2RoDmnETQ6XQiOyKRiHCOSk0ZEZQcUKlU8Pz8LA5vNptRr9eFCJQBFHq//szG5eWlGA1ywOnpqQhBapoWPfl+vw+fzweXyyU+U635VRGUBOh0OigUCggGg8IFK/teXV3h/v4ew+Hwj/OQU4gUq/w4ODgQrkkkEmKEVGp+tXm6XkkAOngmk4HBYBAjQA6gEKRmyOL05GnR99vbW9jtdjEGdP319bUIR8oA+pnG5OLiQoghU5OElFlKAtCGr6+vKJfLmEwm64aosd/XbDbbyIBSqSSeNKU+HXzlnFAohKOjI6maMs0rO0B20590n7IDflIzMmdhAfiNEL8R4jdC/EZIJj235R6mAFOAKcAUYApsS6LL9MEUYAowBZgCTAGZ9NyWe5gCTAGmAFOAKbAtiS7TB1Ng1ynwDkxRe58vH3FfAAAAAElFTkSuQmCC"
-            />
-          </a>
-          <div className="media-body">
-            <h5 className="media-heading">Naimish Sakhpara</h5>
-            <small>Hello</small>
-          </div>
-        </div>
-        <div className="media conversation">
-          <a className="pull-left" href="#">
-            <img
-              className="media-object"
-              data-src="holder.js/64x64"
-              alt="64x64"
-              style={{ width: 50, height: 50 }}
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACqUlEQVR4Xu2Y60tiURTFl48STFJMwkQjUTDtixq+Av93P6iBJFTgg1JL8QWBGT4QfDX7gDIyNE3nEBO6D0Rh9+5z9rprr19dTa/XW2KHl4YFYAfwCHAG7HAGgkOQKcAUYAowBZgCO6wAY5AxyBhkDDIGdxgC/M8QY5AxyBhkDDIGGYM7rIAyBgeDAYrFIkajEYxGIwKBAA4PDzckpd+322243W54PJ5P5f6Omh9tqiTAfD5HNpuFVqvFyckJms0m9vf3EY/H1/u9vb0hn89jsVj8kwDfUfNviisJ8PLygru7O4TDYVgsFtDh9Xo9NBrNes9cLgeTybThgKenJ1SrVXGf1WoVDup2u4jFYhiPx1I1P7XVBxcoCVCr1UBfTqcTrVYLe3t7OD8/x/HxsdiOPqNGo9Eo0un02gHkBhJmuVzC7/fj5uYGXq8XZ2dnop5Mzf8iwMPDAxqNBmw2GxwOBx4fHzGdTpFMJkVzNB7UGAmSSqU2RoDmnETQ6XQiOyKRiHCOSk0ZEZQcUKlU8Pz8LA5vNptRr9eFCJQBFHq//szG5eWlGA1ywOnpqQhBapoWPfl+vw+fzweXyyU+U635VRGUBOh0OigUCggGg8IFK/teXV3h/v4ew+Hwj/OQU4gUq/w4ODgQrkkkEmKEVGp+tXm6XkkAOngmk4HBYBAjQA6gEKRmyOL05GnR99vbW9jtdjEGdP319bUIR8oA+pnG5OLiQoghU5OElFlKAtCGr6+vKJfLmEwm64aosd/XbDbbyIBSqSSeNKU+HXzlnFAohKOjI6maMs0rO0B20590n7IDflIzMmdhAfiNEL8R4jdC/EZIJj235R6mAFOAKcAUYApsS6LL9MEUYAowBZgCTAGZ9NyWe5gCTAGmAFOAKbAtiS7TB1Ng1ynwDkxRe58vH3FfAAAAAElFTkSuQmCC"
-            />
-          </a>
-          <div className="media-body">
-            <h5 className="media-heading">Naimish Sakhpara</h5>
-            <small>Hello</small>
-          </div>
-        </div>
-        <div className="media conversation">
-          <a className="pull-left" href="#">
-            <img
-              className="media-object"
-              data-src="holder.js/64x64"
-              alt="64x64"
-              style={{ width: 50, height: 50 }}
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACqUlEQVR4Xu2Y60tiURTFl48STFJMwkQjUTDtixq+Av93P6iBJFTgg1JL8QWBGT4QfDX7gDIyNE3nEBO6D0Rh9+5z9rprr19dTa/XW2KHl4YFYAfwCHAG7HAGgkOQKcAUYAowBZgCO6wAY5AxyBhkDDIGdxgC/M8QY5AxyBhkDDIGGYM7rIAyBgeDAYrFIkajEYxGIwKBAA4PDzckpd+322243W54PJ5P5f6Omh9tqiTAfD5HNpuFVqvFyckJms0m9vf3EY/H1/u9vb0hn89jsVj8kwDfUfNviisJ8PLygru7O4TDYVgsFtDh9Xo9NBrNes9cLgeTybThgKenJ1SrVXGf1WoVDup2u4jFYhiPx1I1P7XVBxcoCVCr1UBfTqcTrVYLe3t7OD8/x/HxsdiOPqNGo9Eo0un02gHkBhJmuVzC7/fj5uYGXq8XZ2dnop5Mzf8iwMPDAxqNBmw2GxwOBx4fHzGdTpFMJkVzNB7UGAmSSqU2RoDmnETQ6XQiOyKRiHCOSk0ZEZQcUKlU8Pz8LA5vNptRr9eFCJQBFHq//szG5eWlGA1ywOnpqQhBapoWPfl+vw+fzweXyyU+U635VRGUBOh0OigUCggGg8IFK/teXV3h/v4ew+Hwj/OQU4gUq/w4ODgQrkkkEmKEVGp+tXm6XkkAOngmk4HBYBAjQA6gEKRmyOL05GnR99vbW9jtdjEGdP319bUIR8oA+pnG5OLiQoghU5OElFlKAtCGr6+vKJfLmEwm64aosd/XbDbbyIBSqSSeNKU+HXzlnFAohKOjI6maMs0rO0B20590n7IDflIzMmdhAfiNEL8R4jdC/EZIJj235R6mAFOAKcAUYApsS6LL9MEUYAowBZgCTAGZ9NyWe5gCTAGmAFOAKbAtiS7TB1Ng1ynwDkxRe58vH3FfAAAAAElFTkSuQmCC"
-            />
-          </a>
-          <div className="media-body">
-            <h5 className="media-heading">Naimish Sakhpara</h5>
-            <small>Hello</small>
-          </div>
-        </div>
-        <div className="media conversation">
-          <a className="pull-left" href="#">
-            <img
-              className="media-object"
-              data-src="holder.js/64x64"
-              alt="64x64"
-              style={{ width: 50, height: 50 }}
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACqUlEQVR4Xu2Y60tiURTFl48STFJMwkQjUTDtixq+Av93P6iBJFTgg1JL8QWBGT4QfDX7gDIyNE3nEBO6D0Rh9+5z9rprr19dTa/XW2KHl4YFYAfwCHAG7HAGgkOQKcAUYAowBZgCO6wAY5AxyBhkDDIGdxgC/M8QY5AxyBhkDDIGGYM7rIAyBgeDAYrFIkajEYxGIwKBAA4PDzckpd+322243W54PJ5P5f6Omh9tqiTAfD5HNpuFVqvFyckJms0m9vf3EY/H1/u9vb0hn89jsVj8kwDfUfNviisJ8PLygru7O4TDYVgsFtDh9Xo9NBrNes9cLgeTybThgKenJ1SrVXGf1WoVDup2u4jFYhiPx1I1P7XVBxcoCVCr1UBfTqcTrVYLe3t7OD8/x/HxsdiOPqNGo9Eo0un02gHkBhJmuVzC7/fj5uYGXq8XZ2dnop5Mzf8iwMPDAxqNBmw2GxwOBx4fHzGdTpFMJkVzNB7UGAmSSqU2RoDmnETQ6XQiOyKRiHCOSk0ZEZQcUKlU8Pz8LA5vNptRr9eFCJQBFHq//szG5eWlGA1ywOnpqQhBapoWPfl+vw+fzweXyyU+U635VRGUBOh0OigUCggGg8IFK/teXV3h/v4ew+Hwj/OQU4gUq/w4ODgQrkkkEmKEVGp+tXm6XkkAOngmk4HBYBAjQA6gEKRmyOL05GnR99vbW9jtdjEGdP319bUIR8oA+pnG5OLiQoghU5OElFlKAtCGr6+vKJfLmEwm64aosd/XbDbbyIBSqSSeNKU+HXzlnFAohKOjI6maMs0rO0B20590n7IDflIzMmdhAfiNEL8R4jdC/EZIJj235R6mAFOAKcAUYApsS6LL9MEUYAowBZgCTAGZ9NyWe5gCTAGmAFOAKbAtiS7TB1Ng1ynwDkxRe58vH3FfAAAAAElFTkSuQmCC"
-            />
-          </a>
-          <div className="media-body">
-            <h5 className="media-heading">Naimish Sakhpara</h5>
-            <small>Hello</small>
-          </div>
-        </div>
-      </div>
-      <div className="message-wrap col-lg-8">
-        <div className="msg-wrap">
-          <div className="media msg ">
-            <a className="pull-left" href="#">
-              <img
-                className="media-object"
-                data-src="holder.js/64x64"
-                alt="64x64"
-                style={{ width: 32, height: 32 }}
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACqUlEQVR4Xu2Y60tiURTFl48STFJMwkQjUTDtixq+Av93P6iBJFTgg1JL8QWBGT4QfDX7gDIyNE3nEBO6D0Rh9+5z9rprr19dTa/XW2KHl4YFYAfwCHAG7HAGgkOQKcAUYAowBZgCO6wAY5AxyBhkDDIGdxgC/M8QY5AxyBhkDDIGGYM7rIAyBgeDAYrFIkajEYxGIwKBAA4PDzckpd+322243W54PJ5P5f6Omh9tqiTAfD5HNpuFVqvFyckJms0m9vf3EY/H1/u9vb0hn89jsVj8kwDfUfNviisJ8PLygru7O4TDYVgsFtDh9Xo9NBrNes9cLgeTybThgKenJ1SrVXGf1WoVDup2u4jFYhiPx1I1P7XVBxcoCVCr1UBfTqcTrVYLe3t7OD8/x/HxsdiOPqNGo9Eo0un02gHkBhJmuVzC7/fj5uYGXq8XZ2dnop5Mzf8iwMPDAxqNBmw2GxwOBx4fHzGdTpFMJkVzNB7UGAmSSqU2RoDmnETQ6XQiOyKRiHCOSk0ZEZQcUKlU8Pz8LA5vNptRr9eFCJQBFHq//szG5eWlGA1ywOnpqQhBapoWPfl+vw+fzweXyyU+U635VRGUBOh0OigUCggGg8IFK/teXV3h/v4ew+Hwj/OQU4gUq/w4ODgQrkkkEmKEVGp+tXm6XkkAOngmk4HBYBAjQA6gEKRmyOL05GnR99vbW9jtdjEGdP319bUIR8oA+pnG5OLiQoghU5OElFlKAtCGr6+vKJfLmEwm64aosd/XbDbbyIBSqSSeNKU+HXzlnFAohKOjI6maMs0rO0B20590n7IDflIzMmdhAfiNEL8R4jdC/EZIJj235R6mAFOAKcAUYApsS6LL9MEUYAowBZgCTAGZ9NyWe5gCTAGmAFOAKbAtiS7TB1Ng1ynwDkxRe58vH3FfAAAAAElFTkSuQmCC"
-              />
-            </a>
-            <div className="media-body">
-              <small className="pull-right time">
-                <i className="fa fa-clock-o" /> 12:10am
-              </small>
-              <h5 className="media-heading">Naimish Sakhpara</h5>
-              <small className="col-lg-10">
-                Location H-2, Ayojan Nagar, Near Gate-3, Near Shreyas Crossing
-                Dharnidhar Derasar, Paldi, Ahmedabad 380007, Ahmedabad, India
-                Phone 091 37 669307 Email aapamdavad.district@gmail.com
-              </small>
+            <div className="back-container">
+            <div className="container-fluid front-container">
+              <div className="back-top" />
+              <div className="back-main" />
+            </div>
+            <div className="container front-container1">
+              <div className="row chat-top">
+                <div className="col-sm-4 border-right border-secondary">
+                  <img
+                    src="/IMG-8479.PNG"
+                    alt=""
+                    className="profile-image rounded-circle"
+                  />
+                  <span className="float-right mt-2">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      className="bi bi-circle"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                      />
+                    </svg>
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      className="bi bi-chat-left-fill mx-3"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                      />
+                    </svg>
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      className="bi bi-three-dots-vertical mr-2"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div className="col-sm-8">
+                  <img
+                    src="images/p2.jpg"
+                    alt=""
+                    className="profile-image rounded-circle"
+                  />
+                  <span className="ml-2">Rahul Kumar</span>
+                  <span className="float-right mt-2">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      className="bi bi-search"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"
+                      />
+                      <path
+                        fillRule="evenodd"
+                        d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"
+                      />
+                    </svg>
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      className="bi bi-three-dots-vertical mx-3"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-sm-4 contacts">
+                  <div className="contact-table-scroll">
+                    <table className="table table-hover">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <img
+                              src="images/p2.jpg"
+                              alt=""
+                              className="profile-image rounded-circle"
+                            />
+                          </td>
+                          <td>
+                            Rahul Kumar <br /> <small>achi chal rahi</small>
+                          </td>
+                          <td>
+                            <small>11:55 PM</small>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img
+                              src="/IMG-8479.PNG"
+                              alt=""
+                              className="profile-image rounded-circle"
+                            />
+                          </td>
+                          <td>
+                            Jack <br /> <small>Bye tata</small>
+                          </td>
+                          <td>
+                            <small>10:09 PM</small>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img
+                              src="images/p4.jpg"
+                              alt=""
+                              className="profile-image rounded-circle"
+                            />
+                          </td>
+                          <td>
+                            Bullywood Mafia <br /> <small>Drg Drg Drg</small>
+                          </td>
+                          <td>
+                            <small>Monday</small>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img
+                              src="C:\Users\idans\Downloads/IMG-8479.PNG"
+                              alt=""
+                              className="profile-image rounded-circle"
+                            />
+                          </td>
+                          <td>
+                            Sumit Jha
+                            <br /> <small>Corona ho gaya kya</small>
+                          </td>
+                          <td>
+                            <small>9/22/20</small>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img
+                              src="C:\Users\idans\Downloads/IMG-8479.PNG"
+                              alt=""
+                              className="profile-image rounded-circle"
+                            />
+                          </td>
+                          <td>
+                            News Channel <br /> <small>Bekar news only</small>
+                          </td>
+                          <td>
+                            <small>Sunday</small>
+                          </td>
+                        </tr>
+                        {/* start */}
+                        <tr>
+                          <td>
+                            <img
+                              src="C:\Users\idans\Downloads/IMG-8479.PNG"
+                              alt=""
+                              className="profile-image rounded-circle"
+                            />
+                          </td>
+                          <td>
+                            Ali <br /> <small>Hello</small>
+                          </td>
+                          <td>
+                            <small>Sunday</small>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img
+                              src="C:\Users\idans\Downloads/IMG-8479.PNG"
+                              alt=""
+                              className="profile-image rounded-circle"
+                            />
+                          </td>
+                          <td>
+                            Afreen <br /> <small>Nahi main nahi janti</small>
+                          </td>
+                          <td>
+                            <small>Sunday</small>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img
+                              src="images/p1.jpg"
+                              alt=""
+                              className="profile-image rounded-circle"
+                            />
+                          </td>
+                          <td>
+                            Geeky Shows <br /> <small>PPT nahi mila</small>
+                          </td>
+                          <td>
+                            <small>Sunday</small>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img
+                              src="images/p1.jpg"
+                              alt=""
+                              className="profile-image rounded-circle"
+                            />
+                          </td>
+                          <td>
+                            Sofia <br /> <small>God Bless You</small>
+                          </td>
+                          <td>
+                            <small>Sunday</small>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img
+                              src="images/p1.jpg"
+                              alt=""
+                              className="profile-image rounded-circle"
+                            />
+                          </td>
+                          <td>
+                            Kunal <br /> <small>Nikl lo</small>
+                          </td>
+                          <td>
+                            <small>Sunday</small>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img
+                              src="images/p1.jpg"
+                              alt=""
+                              className="profile-image rounded-circle"
+                            />
+                          </td>
+                          <td>
+                            Kunal <br /> <small>Nikl lo</small>
+                          </td>
+                          <td>
+                            <small>Sunday</small>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img
+                              src="images/p1.jpg"
+                              alt=""
+                              className="profile-image rounded-circle"
+                            />
+                          </td>
+                          <td>
+                            Kunal <br /> <small>Nikl lo</small>
+                          </td>
+                          <td>
+                            <small>Sunday</small>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img
+                              src="images/p1.jpg"
+                              alt=""
+                              className="profile-image rounded-circle"
+                            />
+                          </td>
+                          <td>
+                            Kunal <br /> <small>Nikl lo</small>
+                          </td>
+                          <td>
+                            <small>Sunday</small>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img
+                              src="images/p1.jpg"
+                              alt=""
+                              className="profile-image rounded-circle"
+                            />
+                          </td>
+                          <td>
+                            Kunal <br /> <small>Nikl lo</small>
+                          </td>
+                          <td>
+                            <small>Sunday</small>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img
+                              src="images/p1.jpg"
+                              alt=""
+                              className="profile-image rounded-circle"
+                            />
+                          </td>
+                          <td>
+                            Kunal <br /> <small>Nikl lo</small>
+                          </td>
+                          <td>
+                            <small>Sunday</small>
+                          </td>
+                        </tr>
+                        {/* end */}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="col-sm-8 message-area">
+                  <div className="message-table-scroll">
+                    <table className="table">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <p className="bg-primary p-2 mt-2 mr-5 shadow-sm text-white float-left rounded">
+                              Hello Rahul
+                            </p>
+                          </td>
+                          <td>
+                            <p className="p-1 mt-2 mr-3 shadow-sm">
+                              <small>11:20 PM</small>
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p className="bg-success p-2 mt-2 mr-5 shadow-sm text-white float-right rounded">
+                              Hello Sonam How are You
+                            </p>
+                          </td>
+                          <td>
+                            <p className="p-1 mt-2 mr-3 shadow-sm">
+                              <small>11:21 PM</small>
+                            </p>
+                          </td>
+                        </tr>
+                        {/* start */}
+                        <tr>
+                          <td>
+                            <p className="bg-primary rounded p-2 mt-2 mr-5 shadow-sm text-white float-left">
+                              Main achi hu tum kaise ho
+                            </p>
+                          </td>
+                          <td>
+                            <p className="p-1 mt-2 mr-3 shadow-sm">
+                              <small>11:21 PM</small>
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p className="bg-primary rounded p-2 mt-2 mr-5 shadow-sm text-white float-left">
+                              Suna hai tumhari Job chali gayi ya chhod di tumne
+                            </p>
+                          </td>
+                          <td>
+                            <p className="p-1 mt-2 mr-3 shadow-sm">
+                              <small>11:22 PM</small>
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p className="bg-success rounded p-2 mt-2 mr-5 shadow-sm text-white float-right">
+                              Haan Lockdown ki wajah se company me kuch problem ho rahi
+                              thi so kuch logo ko resign dene ko kaha gaya tha.. meri
+                              condition thodi thik hai to maine socha koi aur majbur ho
+                              kar nikle usse acha main hi nikl jata hu kisi jarurt wale ki
+                              job bach jayegi
+                            </p>
+                          </td>
+                          <td>
+                            <p className="p-1 mt-2 mr-3 shadow-sm">
+                              <small>11:24 PM</small>
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p className="bg-primary rounded p-2 mt-2 mr-5 shadow-sm text-white float-left">
+                              acha
+                            </p>
+                          </td>
+                          <td>
+                            <p className="p-1 mt-2 mr-3 shadow-sm">
+                              <small>11:24 PM</small>
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p className="bg-success rounded p-2 mt-2 mr-5 shadow-sm text-white float-right">
+                              Haan
+                            </p>
+                          </td>
+                          <td>
+                            <p className="p-1 mt-2 mr-3 shadow-sm">
+                              <small>11:25 PM</small>
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p className="bg-success rounded p-2 mt-2 mr-5 shadow-sm text-white float-right">
+                              aur tumhari job kaisi chali rahi
+                            </p>
+                          </td>
+                          <td>
+                            <p className="p-1 mt-2 mr-3 shadow-sm">
+                              <small>11:26 PM</small>
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p className="bg-primary rounded p-2 mt-2 mr-5 shadow-sm text-white float-left">
+                              achi chal rahi
+                            </p>
+                          </td>
+                          <td>
+                            <p className="p-1 mt-2 mr-5 shadow-sm">
+                              <small>11:26 PM</small>
+                            </p>
+                          </td>
+                        </tr>
+                        {/* end */}
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="row message-box p-3">
+                    <div className="col-sm-2 mt-2">
+                      <svg
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 16 16"
+                        className="bi bi-emoji-smile"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                        />
+                        <path
+                          fillRule="evenodd"
+                          d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683z"
+                        />
+                        <path d="M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z" />
+                      </svg>
+                      <svg
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 16 16"
+                        className="bi bi-paperclip mx-2"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z"
+                        />
+                      </svg>
+                      <svg
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 16 16"
+                        className="bi bi-cash"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M15 4H1v8h14V4zM1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H1z"
+                        />
+                        <path d="M13 4a2 2 0 0 0 2 2V4h-2zM3 4a2 2 0 0 1-2 2V4h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 12a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+                      </svg>
+                    </div>
+                    <div className="col-sm-8">
+                      <form action="">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Write message..."
+                        />
+                      </form>
+                    </div>
+                    <div className="col-sm-2 mt-1">
+                      <svg
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 16 16"
+                        className="bi bi-chevron-double-up"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"
+                        />
+                        <path
+                          fillRule="evenodd"
+                          d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="alert alert-info msg-date">
-            <strong>Today</strong>
-          </div>
-          <div className="media msg">
-            <a className="pull-left" href="#">
-              <img
-                className="media-object"
-                data-src="holder.js/64x64"
-                alt="64x64"
-                style={{ width: 32, height: 32 }}
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACqUlEQVR4Xu2Y60tiURTFl48STFJMwkQjUTDtixq+Av93P6iBJFTgg1JL8QWBGT4QfDX7gDIyNE3nEBO6D0Rh9+5z9rprr19dTa/XW2KHl4YFYAfwCHAG7HAGgkOQKcAUYAowBZgCO6wAY5AxyBhkDDIGdxgC/M8QY5AxyBhkDDIGGYM7rIAyBgeDAYrFIkajEYxGIwKBAA4PDzckpd+322243W54PJ5P5f6Omh9tqiTAfD5HNpuFVqvFyckJms0m9vf3EY/H1/u9vb0hn89jsVj8kwDfUfNviisJ8PLygru7O4TDYVgsFtDh9Xo9NBrNes9cLgeTybThgKenJ1SrVXGf1WoVDup2u4jFYhiPx1I1P7XVBxcoCVCr1UBfTqcTrVYLe3t7OD8/x/HxsdiOPqNGo9Eo0un02gHkBhJmuVzC7/fj5uYGXq8XZ2dnop5Mzf8iwMPDAxqNBmw2GxwOBx4fHzGdTpFMJkVzNB7UGAmSSqU2RoDmnETQ6XQiOyKRiHCOSk0ZEZQcUKlU8Pz8LA5vNptRr9eFCJQBFHq//szG5eWlGA1ywOnpqQhBapoWPfl+vw+fzweXyyU+U635VRGUBOh0OigUCggGg8IFK/teXV3h/v4ew+Hwj/OQU4gUq/w4ODgQrkkkEmKEVGp+tXm6XkkAOngmk4HBYBAjQA6gEKRmyOL05GnR99vbW9jtdjEGdP319bUIR8oA+pnG5OLiQoghU5OElFlKAtCGr6+vKJfLmEwm64aosd/XbDbbyIBSqSSeNKU+HXzlnFAohKOjI6maMs0rO0B20590n7IDflIzMmdhAfiNEL8R4jdC/EZIJj235R6mAFOAKcAUYApsS6LL9MEUYAowBZgCTAGZ9NyWe5gCTAGmAFOAKbAtiS7TB1Ng1ynwDkxRe58vH3FfAAAAAElFTkSuQmCC"
-              />
-            </a>
-            <div className="media-body">
-              <small className="pull-right time">
-                <i className="fa fa-clock-o" /> 12:10am
-              </small>
-              <h5 className="media-heading">Naimish Sakhpara</h5>
-              <small className="col-lg-10">
-                Arnab Goswami: "Some people close to Congress Party and close to
-                the government had a #secret #meeting in a farmhouse in
-                Maharashtra in which Anna Hazare send some representatives and
-                they had a meeting in the discussed how to go about this all
-                fast and how eventually this will end."
-              </small>
-            </div>
-          </div>
-          <div className="media msg">
-            <a className="pull-left" href="#">
-              <img
-                className="media-object"
-                data-src="holder.js/64x64"
-                alt="64x64"
-                style={{ width: 32, height: 32 }}
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACqUlEQVR4Xu2Y60tiURTFl48STFJMwkQjUTDtixq+Av93P6iBJFTgg1JL8QWBGT4QfDX7gDIyNE3nEBO6D0Rh9+5z9rprr19dTa/XW2KHl4YFYAfwCHAG7HAGgkOQKcAUYAowBZgCO6wAY5AxyBhkDDIGdxgC/M8QY5AxyBhkDDIGGYM7rIAyBgeDAYrFIkajEYxGIwKBAA4PDzckpd+322243W54PJ5P5f6Omh9tqiTAfD5HNpuFVqvFyckJms0m9vf3EY/H1/u9vb0hn89jsVj8kwDfUfNviisJ8PLygru7O4TDYVgsFtDh9Xo9NBrNes9cLgeTybThgKenJ1SrVXGf1WoVDup2u4jFYhiPx1I1P7XVBxcoCVCr1UBfTqcTrVYLe3t7OD8/x/HxsdiOPqNGo9Eo0un02gHkBhJmuVzC7/fj5uYGXq8XZ2dnop5Mzf8iwMPDAxqNBmw2GxwOBx4fHzGdTpFMJkVzNB7UGAmSSqU2RoDmnETQ6XQiOyKRiHCOSk0ZEZQcUKlU8Pz8LA5vNptRr9eFCJQBFHq//szG5eWlGA1ywOnpqQhBapoWPfl+vw+fzweXyyU+U635VRGUBOh0OigUCggGg8IFK/teXV3h/v4ew+Hwj/OQU4gUq/w4ODgQrkkkEmKEVGp+tXm6XkkAOngmk4HBYBAjQA6gEKRmyOL05GnR99vbW9jtdjEGdP319bUIR8oA+pnG5OLiQoghU5OElFlKAtCGr6+vKJfLmEwm64aosd/XbDbbyIBSqSSeNKU+HXzlnFAohKOjI6maMs0rO0B20590n7IDflIzMmdhAfiNEL8R4jdC/EZIJj235R6mAFOAKcAUYApsS6LL9MEUYAowBZgCTAGZ9NyWe5gCTAGmAFOAKbAtiS7TB1Ng1ynwDkxRe58vH3FfAAAAAElFTkSuQmCC"
-              />
-            </a>
-            <div className="media-body">
-              <small className="pull-right time">
-                <i className="fa fa-clock-o" /> 12:10am
-              </small>
-              <h5 className="media-heading">Naimish Sakhpara</h5>
-              <small className="col-lg-10">
-                Arnab Goswami: "Some people close to Congress Party and close to
-                the government had a #secret #meeting in a farmhouse in
-                Maharashtra in which Anna Hazare send some representatives and
-                they had a meeting in the discussed how to go about this all
-                fast and how eventually this will end."
-              </small>
-            </div>
-          </div>
-          <div className="media msg">
-            <a className="pull-left" href="#">
-              <img
-                className="media-object"
-                data-src="holder.js/64x64"
-                alt="64x64"
-                style={{ width: 32, height: 32 }}
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACqUlEQVR4Xu2Y60tiURTFl48STFJMwkQjUTDtixq+Av93P6iBJFTgg1JL8QWBGT4QfDX7gDIyNE3nEBO6D0Rh9+5z9rprr19dTa/XW2KHl4YFYAfwCHAG7HAGgkOQKcAUYAowBZgCO6wAY5AxyBhkDDIGdxgC/M8QY5AxyBhkDDIGGYM7rIAyBgeDAYrFIkajEYxGIwKBAA4PDzckpd+322243W54PJ5P5f6Omh9tqiTAfD5HNpuFVqvFyckJms0m9vf3EY/H1/u9vb0hn89jsVj8kwDfUfNviisJ8PLygru7O4TDYVgsFtDh9Xo9NBrNes9cLgeTybThgKenJ1SrVXGf1WoVDup2u4jFYhiPx1I1P7XVBxcoCVCr1UBfTqcTrVYLe3t7OD8/x/HxsdiOPqNGo9Eo0un02gHkBhJmuVzC7/fj5uYGXq8XZ2dnop5Mzf8iwMPDAxqNBmw2GxwOBx4fHzGdTpFMJkVzNB7UGAmSSqU2RoDmnETQ6XQiOyKRiHCOSk0ZEZQcUKlU8Pz8LA5vNptRr9eFCJQBFHq//szG5eWlGA1ywOnpqQhBapoWPfl+vw+fzweXyyU+U635VRGUBOh0OigUCggGg8IFK/teXV3h/v4ew+Hwj/OQU4gUq/w4ODgQrkkkEmKEVGp+tXm6XkkAOngmk4HBYBAjQA6gEKRmyOL05GnR99vbW9jtdjEGdP319bUIR8oA+pnG5OLiQoghU5OElFlKAtCGr6+vKJfLmEwm64aosd/XbDbbyIBSqSSeNKU+HXzlnFAohKOjI6maMs0rO0B20590n7IDflIzMmdhAfiNEL8R4jdC/EZIJj235R6mAFOAKcAUYApsS6LL9MEUYAowBZgCTAGZ9NyWe5gCTAGmAFOAKbAtiS7TB1Ng1ynwDkxRe58vH3FfAAAAAElFTkSuQmCC"
-              />
-            </a>
-            <div className="media-body">
-              <small className="pull-right time">
-                <i className="fa fa-clock-o" /> 12:10am
-              </small>
-              <h5 className="media-heading">Naimish Sakhpara</h5>
-              <small className="col-lg-10">
-                Arnab Goswami: "Some people close to Congress Party and close to
-                the government had a #secret #meeting in a farmhouse in
-                Maharashtra in which Anna Hazare send some representatives and
-                they had a meeting in the discussed how to go about this all
-                fast and how eventually this will end."
-              </small>
-            </div>
-          </div>
-        </div>
-        <div className="send-wrap ">
-          <textarea
-            className="form-control send-message"
-            rows={3}
-            placeholder="Write a reply..."
-            defaultValue={""}
-          />
-        </div>
-        <div className="btn-panel">
-          <a
-            href=""
-            className=" col-lg-3 btn   send-message-btn "
-            role="button"
-          >
-            <i className="fa fa-cloud-upload" /> Add Files
-          </a>
-          <a
-            href=""
-            className=" col-lg-4 text-right btn   send-message-btn pull-right"
-            role="button"
-          >
-            <i className="fa fa-plus" /> Send Message
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
 </>
         )
     }
