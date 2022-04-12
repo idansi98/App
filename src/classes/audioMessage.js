@@ -6,4 +6,7 @@ class AudioMessage {
     get html() {
         return;
     }
+    get shortForm() {
+        return ("Audio");
+    }
 }

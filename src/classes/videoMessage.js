@@ -7,4 +7,7 @@ class VideoMessage {
     get html() {
         return;
     }
+    get shortForm() {
+        return ("Video");
+    }
 }

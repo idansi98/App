@@ -6,4 +6,7 @@ class ImageMessage {
     get html() {
         return;
     }
+    get shortForm() {
+        return ("Image");
+    }
 }

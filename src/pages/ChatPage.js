@@ -1,11 +1,15 @@
 import {useNavigate} from 'react-router-dom';
 import ChatWindow from '../chatStuff/ChatWindow';
 import LoginPage from './LoginPage';
+import ContactBox from '../chatStuff/ContactBox';
+import Chat from '../classes/chat';
+import TextMessage from '../classes/textMessage';
 import './ChatPage.css'
+import ChatBox from '../chatStuff/ChatBox';
 
 
 function ChatPage() {
-    if (global.token === 0) {
+    if (global.token === 555) {
         alert("Please sign in first, you can't fool me! :)")
         const nextURL = '/login';
         const nextTitle = 'Don\'t try to be sneaky!';
@@ -15,6 +19,13 @@ function ChatPage() {
             <LoginPage/>
         );
     } else {
+      var chats = [];
+      var chat1 =  new Chat("Ido Tziony","/IMG-8479.PNG");
+      var chat2 =  new Chat("Idan Simai", "/IMG-8479.PNG");
+      chat1.addMessage( new TextMessage("Blabla",true));
+      chat2.addMessage( new TextMessage("Blabla2",true));
+      chats.push(chat1);
+      chats.push(chat2);
         return (
             <>
             <div className="back-container">
@@ -114,363 +125,9 @@ function ChatPage() {
                 </div>
               </div>
               <div className="row">
-                <div className="col-sm-4 contacts">
-                  <div className="contact-table-scroll">
-                    <table className="table table-hover">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <img
-                              src="images/p2.jpg"
-                              alt=""
-                              className="profile-image rounded-circle"
-                            />
-                          </td>
-                          <td>
-                            Rahul Kumar <br /> <small>achi chal rahi</small>
-                          </td>
-                          <td>
-                            <small>11:55 PM</small>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img
-                              src="/IMG-8479.PNG"
-                              alt=""
-                              className="profile-image rounded-circle"
-                            />
-                          </td>
-                          <td>
-                            Jack <br /> <small>Bye tata</small>
-                          </td>
-                          <td>
-                            <small>10:09 PM</small>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img
-                              src="images/p4.jpg"
-                              alt=""
-                              className="profile-image rounded-circle"
-                            />
-                          </td>
-                          <td>
-                            Bullywood Mafia <br /> <small>Drg Drg Drg</small>
-                          </td>
-                          <td>
-                            <small>Monday</small>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img
-                              src="C:\Users\idans\Downloads/IMG-8479.PNG"
-                              alt=""
-                              className="profile-image rounded-circle"
-                            />
-                          </td>
-                          <td>
-                            Sumit Jha
-                            <br /> <small>Corona ho gaya kya</small>
-                          </td>
-                          <td>
-                            <small>9/22/20</small>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img
-                              src="C:\Users\idans\Downloads/IMG-8479.PNG"
-                              alt=""
-                              className="profile-image rounded-circle"
-                            />
-                          </td>
-                          <td>
-                            News Channel <br /> <small>Bekar news only</small>
-                          </td>
-                          <td>
-                            <small>Sunday</small>
-                          </td>
-                        </tr>
-                        {/* start */}
-                        <tr>
-                          <td>
-                            <img
-                              src="C:\Users\idans\Downloads/IMG-8479.PNG"
-                              alt=""
-                              className="profile-image rounded-circle"
-                            />
-                          </td>
-                          <td>
-                            Ali <br /> <small>Hello</small>
-                          </td>
-                          <td>
-                            <small>Sunday</small>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img
-                              src="C:\Users\idans\Downloads/IMG-8479.PNG"
-                              alt=""
-                              className="profile-image rounded-circle"
-                            />
-                          </td>
-                          <td>
-                            Afreen <br /> <small>Nahi main nahi janti</small>
-                          </td>
-                          <td>
-                            <small>Sunday</small>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img
-                              src="images/p1.jpg"
-                              alt=""
-                              className="profile-image rounded-circle"
-                            />
-                          </td>
-                          <td>
-                            Geeky Shows <br /> <small>PPT nahi mila</small>
-                          </td>
-                          <td>
-                            <small>Sunday</small>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img
-                              src="images/p1.jpg"
-                              alt=""
-                              className="profile-image rounded-circle"
-                            />
-                          </td>
-                          <td>
-                            Sofia <br /> <small>God Bless You</small>
-                          </td>
-                          <td>
-                            <small>Sunday</small>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img
-                              src="images/p1.jpg"
-                              alt=""
-                              className="profile-image rounded-circle"
-                            />
-                          </td>
-                          <td>
-                            Kunal <br /> <small>Nikl lo</small>
-                          </td>
-                          <td>
-                            <small>Sunday</small>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img
-                              src="images/p1.jpg"
-                              alt=""
-                              className="profile-image rounded-circle"
-                            />
-                          </td>
-                          <td>
-                            Kunal <br /> <small>Nikl lo</small>
-                          </td>
-                          <td>
-                            <small>Sunday</small>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img
-                              src="images/p1.jpg"
-                              alt=""
-                              className="profile-image rounded-circle"
-                            />
-                          </td>
-                          <td>
-                            Kunal <br /> <small>Nikl lo</small>
-                          </td>
-                          <td>
-                            <small>Sunday</small>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img
-                              src="images/p1.jpg"
-                              alt=""
-                              className="profile-image rounded-circle"
-                            />
-                          </td>
-                          <td>
-                            Kunal <br /> <small>Nikl lo</small>
-                          </td>
-                          <td>
-                            <small>Sunday</small>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img
-                              src="images/p1.jpg"
-                              alt=""
-                              className="profile-image rounded-circle"
-                            />
-                          </td>
-                          <td>
-                            Kunal <br /> <small>Nikl lo</small>
-                          </td>
-                          <td>
-                            <small>Sunday</small>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img
-                              src="images/p1.jpg"
-                              alt=""
-                              className="profile-image rounded-circle"
-                            />
-                          </td>
-                          <td>
-                            Kunal <br /> <small>Nikl lo</small>
-                          </td>
-                          <td>
-                            <small>Sunday</small>
-                          </td>
-                        </tr>
-                        {/* end */}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+              <ContactBox chats={chats}/>
                 <div className="col-sm-8 message-area">
-                  <div className="message-table-scroll">
-                    <table className="table">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <p className="bg-primary p-2 mt-2 mr-5 shadow-sm text-white float-left rounded">
-                              Hello Rahul
-                            </p>
-                          </td>
-                          <td>
-                            <p className="p-1 mt-2 mr-3 shadow-sm">
-                              <small>11:20 PM</small>
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <p className="bg-success p-2 mt-2 mr-5 shadow-sm text-white float-right rounded">
-                              Hello Sonam How are You
-                            </p>
-                          </td>
-                          <td>
-                            <p className="p-1 mt-2 mr-3 shadow-sm">
-                              <small>11:21 PM</small>
-                            </p>
-                          </td>
-                        </tr>
-                        {/* start */}
-                        <tr>
-                          <td>
-                            <p className="bg-primary rounded p-2 mt-2 mr-5 shadow-sm text-white float-left">
-                              Main achi hu tum kaise ho
-                            </p>
-                          </td>
-                          <td>
-                            <p className="p-1 mt-2 mr-3 shadow-sm">
-                              <small>11:21 PM</small>
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <p className="bg-primary rounded p-2 mt-2 mr-5 shadow-sm text-white float-left">
-                              Suna hai tumhari Job chali gayi ya chhod di tumne
-                            </p>
-                          </td>
-                          <td>
-                            <p className="p-1 mt-2 mr-3 shadow-sm">
-                              <small>11:22 PM</small>
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <p className="bg-success rounded p-2 mt-2 mr-5 shadow-sm text-white float-right">
-                              Haan Lockdown ki wajah se company me kuch problem ho rahi
-                              thi so kuch logo ko resign dene ko kaha gaya tha.. meri
-                              condition thodi thik hai to maine socha koi aur majbur ho
-                              kar nikle usse acha main hi nikl jata hu kisi jarurt wale ki
-                              job bach jayegi
-                            </p>
-                          </td>
-                          <td>
-                            <p className="p-1 mt-2 mr-3 shadow-sm">
-                              <small>11:24 PM</small>
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <p className="bg-primary rounded p-2 mt-2 mr-5 shadow-sm text-white float-left">
-                              acha
-                            </p>
-                          </td>
-                          <td>
-                            <p className="p-1 mt-2 mr-3 shadow-sm">
-                              <small>11:24 PM</small>
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <p className="bg-success rounded p-2 mt-2 mr-5 shadow-sm text-white float-right">
-                              Haan
-                            </p>
-                          </td>
-                          <td>
-                            <p className="p-1 mt-2 mr-3 shadow-sm">
-                              <small>11:25 PM</small>
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <p className="bg-success rounded p-2 mt-2 mr-5 shadow-sm text-white float-right">
-                              aur tumhari job kaisi chali rahi
-                            </p>
-                          </td>
-                          <td>
-                            <p className="p-1 mt-2 mr-3 shadow-sm">
-                              <small>11:26 PM</small>
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <p className="bg-primary rounded p-2 mt-2 mr-5 shadow-sm text-white float-left">
-                              achi chal rahi
-                            </p>
-                          </td>
-                          <td>
-                            <p className="p-1 mt-2 mr-5 shadow-sm">
-                              <small>11:26 PM</small>
-                            </p>
-                          </td>
-                        </tr>
-                        {/* end */}
-                      </tbody>
-                    </table>
-                  </div>
+                  <ChatBox />
                   <div className="row message-box p-3">
                     <div className="col-sm-2 mt-2">
                       <svg
