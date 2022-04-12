@@ -9,7 +9,7 @@ function App() {
 
   global.token = 0;
   return (
-    <>
+    
     <BrowserRouter>
       <Routes>
         <Route path="/chats" element ={<ChatPage />}></Route>
@@ -19,7 +19,7 @@ function App() {
       </Routes>
     </BrowserRouter>
     
-    </>
+    
   );
 }
 

@@ -1,0 +1,10 @@
+ /*The gray form id.*/
+ #grayform {
+    z-index: 1;
+    position: relative;
+    margin-top: -7%;
+  }
+  /*The Class for the Register box.*/
+  .p-3 {
+    padding: 0.55rem!important;
+  }

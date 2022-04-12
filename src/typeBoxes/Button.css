@@ -1,0 +1,9 @@
+/*The button's classes*/
+.btn-primary {
+    color: #fff;
+    background-color: #890dfd;
+    border-color: #890dfd;
+  }
+  #Login {
+    padding: 0.375rem 7.5rem;
+  }

@@ -1,4 +1,4 @@
-
+import './Forms.css';
 import UserNameBox from '../typeBoxes/UserNameBox';
 import DisplayNameBox from '../typeBoxes/DisplayNameBox';
 import PasswordBox from '../typeBoxes/PasswordBox';
