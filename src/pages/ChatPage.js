@@ -129,7 +129,7 @@ function ChatPage() {
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={22}
-                        height={22}
+                        height={32}
                     fill="currentColor"
                     className="bi bi-send"
                     viewBox="0 0 16 16"
