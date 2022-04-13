@@ -29,6 +29,7 @@ function ChatPage() {
     return (
       <>
         <div className="back-container">
+        
           <div className="container-fluid front-container">
             <div className="back-top" />
             <div className="back-main" />
@@ -160,7 +161,7 @@ function ChatPage() {
 
                   {/*The sent button*/}
                   <div className="col-sm-2 mt-1" >
-                  <button type="button" class="btn btn-info" id = "Send">
+                  <button type="button" className="btn btn-info" id = "Send">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={22}
