@@ -12,10 +12,7 @@ function ChatWindow() {
         <h4 id="scrollspyHeading4">Fourth heading</h4>
         <GreenBackground />
         <h4 id="scrollspyHeading5">Fifth heading</h4>
-        <GreenBackground />
-        <GreenBackground />
-        <GreenBackground />
-        <GreenBackground />
+        
         <GreenBackground />
         <GreenBackground />
       </div>

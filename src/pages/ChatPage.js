@@ -34,7 +34,7 @@ function ChatPage() {
           </div>
           <div className="container front-container1">
             {/*The top row of the chat*/}
-            <div className="row chat-top">
+            <div className="row chat-top" id = "Upper">
               <div className="col-sm-4 border-right border-secondary">
                 <img
                   src="/IMG-8479.PNG"
@@ -96,7 +96,7 @@ function ChatPage() {
               <ContactBox chats={global.currentUser.chats} />
               <div className="col-sm-8 message-area">
                 <ChatBox />
-                <div className="row message-box p-3">
+                <div className="row message-box p-3" id = "Lower">
                   {/*The lower row*/}
                   <div className="col-sm-2 mt-2">
                     {/*The left emoji*/}
@@ -106,12 +106,13 @@ function ChatPage() {
                       </svg>
                     </button>
 
-                    <ul className="dropdown-menu" aria-labelledby="dropdownAttach">
+                    <ul className="dropdown-menu" aria-labelledby="dropdownAttach" id = "UL">
+                    <div id = "WRAP">
                       <li><a className="dropdown-item" href="#">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width={18}
-                          height={16}
+                          height={20}
                           fill="currentColor"
                           className="bi bi-camera"
                           viewBox="0 0 16 16" >
@@ -144,9 +145,9 @@ function ChatPage() {
 
                         </a>
                       </li>
-
+                      </div>
                     </ul>
-
+                    
                   </div>
                   {/*The message form*/}
                   <div className="col-sm-8">

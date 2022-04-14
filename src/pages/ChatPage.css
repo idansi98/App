@@ -72,19 +72,15 @@
    }   
    #dropdownAttach {
        margin-left: 80%;
-       margin-top: -6%;
+       margin-top: -8%;
        margin-bottom: 5%;
        padding-left: 5%;
        padding-right: 5%;
        padding-bottom: 4%;
    }
-   #Menu {
-       display: flex !important;
-       flex-direction: column !important;
-   }
    #Send {
-    margin-left: -5%;
-    margin-top: -3%;
+    margin-left: -8%;
+    margin-top: -5%;
     margin-bottom: -5%;
     padding-left: 15%;
     padding-right: 15%;
@@ -98,6 +94,23 @@
     padding-left: 15%;
     padding-right: 15%;
     padding-bottom: 5%;
-    background-color: #EDEDED;
-    border-color: #EDEDED;
+    background-color: #0dcaf0;
+    border-color: #0dcaf0;
+   }
+   #WRAP {
+    display:flex !important;
+    float: flex !important;
+   }
+   #UL {
+       padding: 0 !important;
+       border: 0 !important;
+       min-width: 1rem !important;
+       margin-bottom: 0.2% !important;
+       
+   }
+   #Lower {
+       background-color: #0dcaf0;
+   }
+   #Upper {
+       background-color: #0dcaf0;
    }
