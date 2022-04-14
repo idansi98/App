@@ -6,26 +6,25 @@ import Chat from '../classes/chat';
 import TextMessage from '../classes/textMessage';
 import './ChatPage.css'
 import ChatBox from '../chatStuff/ChatBox';
+import UserCollection from '../classes/userCollection';
+import User from '../classes/user';
 
 
 function ChatPage() {
+  const navigate = useNavigate();
   if (global.token === 0) {
-    alert("Please sign in first, you can't fool me! :)")
-    const nextURL = '/login';
-    const nextTitle = 'Don\'t try to be sneaky!';
-    const nextState = { additionalInformation: "Woohoo" };
-    window.history.pushState(nextState, nextTitle, nextURL);
+    navigate('/login');
     return (
       <LoginPage />
     );
   } else {
-    var chats = [];
-    var chat1 = new Chat("Ido Tziony", "/IMG-8479.PNG");
-    var chat2 = new Chat("Idan Simai", "/IMG-8479.PNG");
-    chat1.addMessage(new TextMessage("Blabla", true));
-    chat2.addMessage(new TextMessage("Blabla2", true));
-    chats.push(chat1);
-    chats.push(chat2);
+    console.log(global.currentUser);
+
+
+
+
+
+
     return (
       <>
         <div className="back-container">        
@@ -94,7 +93,7 @@ function ChatPage() {
             </div>
 
             <div className="row">
-              <ContactBox chats={chats} />
+              <ContactBox chats={global.currentUser.chats} />
               <div className="col-sm-8 message-area">
                 <ChatBox />
                 <div className="row message-box p-3">

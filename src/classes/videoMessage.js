@@ -1,7 +1,8 @@
 class VideoMessage {
-    constructor(filePath, isMyMessage) {
+    constructor(filePath, sender) {
         this.filePath = filePath;
-        this.isMyMessage = isMyMessage;
+        this.sender = sender;
+        this.dateTime = new Date().getTime();
     }
 
     get html() {
@@ -11,3 +12,5 @@ class VideoMessage {
         return ("Video");
     }
 }
+
+export default VideoMessage;

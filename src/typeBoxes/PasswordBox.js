@@ -20,7 +20,7 @@ function PasswordBox({setCredentials}) {
           </label>
           <div className="col-sm-10">
             <input ref={givenPasswordBox} onKeyUp={updatePassword} type="password" className="form-control" id="Password" />
-            <span id="passwordHelpInline" class="form-text">
+            <span id="passwordHelpInline" className="form-text">
                 Must be 8-20 characters long, and contain at least 1 number and 1 letter.
             </span>
           </div>

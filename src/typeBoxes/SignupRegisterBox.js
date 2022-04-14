@@ -1,6 +1,7 @@
 import './Button.css'
 import {Link} from 'react-router-dom'
 import {useNavigate} from 'react-router-dom';
+import chatHandler from '../functions/chatFunctions';
 
 function SignUpRegisterBox({credentials}) {
 
@@ -10,9 +11,10 @@ function validate() {
     if (isSamePassword(credentials.password, credentials.passwordValidator) &&
         isPasswordValidLength(credentials.password) && isUserNameValid(credentials.userName)
         && isDisplayNameValid(credentials.displayName) && isPasswordValid(credentials.password)
-        &&  isFileImage(credentials.photo)) {
-            console.log("Logged in successfuly");
+        &&  isFileImage(credentials.photo)
+        && !doesUserExist(credentials.userName)) {
             alert("Signed up successfully!");
+            chatHandler.addUser(credentials.userName,credentials.displayName,credentials.photo,credentials.password);
             navigate("/login");
         }
 }
@@ -32,6 +34,26 @@ function validate() {
           </div>
         </div>
     );
+}
+
+function doesUserExist(userName) {
+    var trollName = userName + "_" + randomLetters();
+    if (chatHandler.findUser(userName)===false) {
+        return false;
+    }
+    alert("Username already exists, please try " + trollName +" instead.");
+    return true;
+}
+
+function randomLetters() {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < 20; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * 
+ charactersLength));
+   }
+   return result;
 }
 
 //Function to check whether a Username's length is valid or not.

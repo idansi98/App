@@ -8,31 +8,23 @@ function LoginRegisterBox({credentials}) {
     // can be put to see all users
     const [token, setToken] = useState(0);
 
+    /*
     const userList = users.map((user, key) => {
         return <div key={key}> {user.username}:{user.password}  </div>;
-    });
+    });*/
     const navigate = useNavigate();
 
-
+    // updates global.currentUser
     const tryLogin = function() {
-        var foundUser = false;
-        for (var index in users) {
-            if (users[index].username == credentials.userName) {
-                foundUser = true;
-                if (users[index].password == credentials.password) {
-                    console.log("Logged in!");
-                    global.token = 1;
-                    setToken(1);
-                    navigate('/chats');
-                    break;
-                } else {
-                    console.log("Bad password!");
-                    break;
-                }
-            }
-        }
-        if (!foundUser) {
-            console.log("Didn't find the user!");
+        var user = global.userDB.login(credentials.userName, credentials.password);
+        if (user === false) {
+            alert("Try again!");
+        } else {
+            console.log("Logged in!");
+            global.token = 1;
+            global.currentUser = user;
+            setToken(1);
+            navigate('/chats');
         }
     }
 

@@ -1,7 +1,8 @@
 class ImageMessage {
-    constructor(filePath, isMyMessage) {
+    constructor(filePath, sender) {
         this.filePath = filePath;
-        this.isMyMessage = isMyMessage;
+        this.sender = sender;
+        this.dateTime = new Date().getTime();
     }
     get html() {
         return;
@@ -10,3 +11,5 @@ class ImageMessage {
         return ("Image");
     }
 }
+
+export default ImageMessage;

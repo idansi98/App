@@ -1,7 +1,8 @@
 class TextMessage {
-    constructor(text, isMyMessage) {
+    constructor(text, sender) {
         this.text = text;
-        this.isMyMessage = isMyMessage;
+        this.sender = sender;
+        this.dateTime = new Date().getTime();
     }
     get html() {
         return;

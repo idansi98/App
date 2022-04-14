@@ -1,8 +1,10 @@
 class AudioMessage {
-    constructor(filePath, isMyMessage) {
+    constructor(filePath, sender) {
         this.filePath = filePath;
-        this.isMyMessage = isMyMessage;
+        this.sender = sender;
+        this.dateTime = new Date().getTime();
     }
+
     get html() {
         return;
     }
@@ -10,3 +12,5 @@ class AudioMessage {
         return ("Audio");
     }
 }
+
+export default AudioMessage;
