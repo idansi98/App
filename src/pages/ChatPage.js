@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import ChatWindow from '../chatStuff/ChatWindow';
 import LoginPage from './LoginPage';
-import ContactBox from '../chatStuff/ContactBox';
+import ContactBox from '../typeBoxes/ContactBox';
 import Chat from '../classes/chat';
 import TextMessage from '../classes/textMessage';
 import './ChatPage.css'
-import ChatBox from '../chatStuff/ChatBox';
+import ChatBox from '../typeBoxes/ChatBox';
 import UserCollection from '../classes/userCollection';
 import User from '../classes/user';
 
@@ -19,14 +19,9 @@ function ChatPage() {
     );
   } else {
     console.log(global.currentUser);
-
-
-
-
-
-
     return (
       <>
+      
         <div className="back-container">        
           <div className="container-fluid front-container">
             <div className="back-top" />

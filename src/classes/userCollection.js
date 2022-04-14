@@ -10,10 +10,12 @@ class UserCollection {
     constructor() {
         this.users = []
     }
+    //Adds new user to the users array.
     addUser(userName, displayName, picture, password) {
         this.users.push(new User(userName, displayName, picture,password));
     }
 
+    //Finds a user by his username.
     findUserByUserName(userName) {
         for (this.index in this.users) {
             if (this.users[this.index].userName === userName) {
@@ -23,6 +25,7 @@ class UserCollection {
         return false;
     }
 
+    //Sends a new message between the sender to the reciever.
     sendMessage(sender, reciever, message) {
         var chatOfSender = sender.searchChat(reciever);
         var chatOfReciever = reciever.searchChat(sender);
@@ -33,12 +36,12 @@ class UserCollection {
             reciever.addChat(new Chat(sender));
             chatOfSender = sender.searchChat(reciever);
             chatOfReciever = reciever.searchChat(sender);
-            
         }
             chatOfSender.addMessage(message);
             chatOfReciever.addMessage(message);
-
     }
+
+    //Specific messages.
     sendTextMessage(sender, reciever, text) {
         this.sendMessage(sender, reciever, new TextMessage(text,sender));
     }
@@ -60,7 +63,7 @@ class UserCollection {
             return foundChat;
         }
     }
-    // returns user
+    //Returns user.
     login(userName, password) {
         for (var index in this.users) {
             var user = this.users[index];

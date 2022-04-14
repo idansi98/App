@@ -1,7 +1,7 @@
 function ContactBox ({chats}) {
     var contactsHTML = [];
     for (var index in chats) {
-        contactsHTML.push(chats[index].contactHTML) ;
+        contactsHTML.push(chats[index].contactHTML);
       }
 
     return (

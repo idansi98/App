@@ -9,8 +9,9 @@ import chatHandler from './functions/chatFunctions';
 init();
 const container = document.getElementById('root');
 const root = createRoot(container);
-root.render(<App tab="home" />);
+root.render(<App tab="home"/>);
 
+//We intillize the data base and adding the users.
 function init() {
     global.currentlyViewedUser = null;
     chatHandler.initDB();

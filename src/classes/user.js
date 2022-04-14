@@ -57,10 +57,3 @@ class User {
 }
 
 export default User;
-
-/*  create messages -> create chats -> create user
-*   leftBar: scan all chats and display
-    rightBar: scan all chats and display
-    userTypesMessage -> user.selectedChat.addMessage(TextMessage("Hello",true))
-*
-*/

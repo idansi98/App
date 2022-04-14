@@ -9,7 +9,8 @@ class Chat {
   get lastMessage() {
     return this.messages[this.messages.length - 1];
   }
-  // the ID of each element is the position in the array 
+  
+  //The ID of each element is it's position in the array. 
   get contactHTML() {
     var dateThen = this.lastMessage.dateTime
     var dateNow = new Date().getTime();
