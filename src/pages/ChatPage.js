@@ -28,8 +28,7 @@ function ChatPage() {
     chats.push(chat2);
     return (
       <>
-        <div className="back-container">
-        
+        <div className="back-container">        
           <div className="container-fluid front-container">
             <div className="back-top" />
             <div className="back-main" />
@@ -129,6 +128,7 @@ function ChatPage() {
                             <path d="M9 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM7 3a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
                           </svg>
                         </a>
+                        
 
                         <a className="dropdown-item" href="#">
                           <svg
