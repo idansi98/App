@@ -9,7 +9,7 @@ class Chat {
   get lastMessage() {
     return this.messages[this.messages.length - 1];
   }
-  
+
   //The ID of each element is it's position in the array. 
   get contactHTML() {
     var dateThen = this.lastMessage.dateTime
@@ -39,7 +39,7 @@ class Chat {
       <tr>
         <img src={this.user.picture} alt="" className="profile-image rounded-circle" />
         {this.user.displayName} <br /> <small>{this.lastMessage.shortForm}</small>
-        <small>{timeIndicator}</small>
+       <div> <small>{timeIndicator}</small></div>
       </tr>);
   }
   // gets the full HTML of all the convo

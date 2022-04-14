@@ -10,6 +10,7 @@ class UserCollection {
     constructor() {
         this.users = []
     }
+
     //Adds new user to the users array.
     addUser(userName, displayName, picture, password) {
         this.users.push(new User(userName, displayName, picture,password));
@@ -55,6 +56,7 @@ class UserCollection {
         this.sendMessage(sender, reciever, new ImageMessage(filePath,sender));
     }
 
+    //Returns a chat between two users.
     getChatBetween(sender, reciever) {
         var foundChat = sender.searchChat(reciever);
         if (foundChat === false) {
@@ -63,6 +65,7 @@ class UserCollection {
             return foundChat;
         }
     }
+
     //Returns user.
     login(userName, password) {
         for (var index in this.users) {
@@ -73,7 +76,8 @@ class UserCollection {
         }
         return false;
     }
-    // returns a message array
+
+    //Returns an array of messages.
     getMessagesBetween(sender, reciever) {
         var chat = this.getChatBetween(sender, reciever);
         if (chat !== false) {
@@ -81,7 +85,7 @@ class UserCollection {
         }
     }
 
-    // returns a String
+    //Returns the last message in a chat.
     getLastMessageBetween(sender, reciever) {
         var chat = this.getChatBetween(sender,reciever);
         if (chat !== false) {

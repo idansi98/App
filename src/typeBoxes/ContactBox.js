@@ -12,8 +12,9 @@ function ContactBox ({chats}) {
                       {contactsHTML}
                       </tbody>
                     </table>
+                    </div>
                   </div>
-                </div>
+                
     );
 }
 export default ContactBox;

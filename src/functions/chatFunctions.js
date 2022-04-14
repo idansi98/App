@@ -1,5 +1,6 @@
 import UserCollection from "../classes/userCollection";
 
+//Initiallize the all users global array.
 function initDB() {
     global.userDB = new UserCollection();
 }
