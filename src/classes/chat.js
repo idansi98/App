@@ -19,6 +19,9 @@ class Chat {
     var minsPassedSince =parseInt(secondsPassedSince/60) ;
     var hoursPassedSince =parseInt(minsPassedSince/60) ;
     var daysPassedSince =parseInt(hoursPassedSince/24) ;
+    secondsPassedSince = secondsPassedSince%60;
+    minsPassedSince = minsPassedSince%60;
+    hoursPassedSince = hoursPassedSince%24;
     
     
     if (daysPassedSince > 0) {
