@@ -7,13 +7,6 @@ function MainChatBox ({isSmall}) {
 
   const [currentChat, setCurrentChat] = useState(null);
 
-
-
-  
-
-
-
-
     if (isSmall==false) {
         return (
             <div className="row">

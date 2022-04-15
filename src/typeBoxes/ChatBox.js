@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-function ChatBox (r) {
-=======
 import chatHandler from '../functions/chatFunctions';
 
 
@@ -15,17 +12,11 @@ function ChatBox ({currentChat}) {
       console.log(allMessagesJSX)
     }
   }
->>>>>>> 6cf328c4c240da48311044aa7a8f3088faa8b954
     return (
         <div className="message-table-scroll">
                     <table className="table">
                       <tbody>
-<<<<<<< HEAD
-                        
-                        {/* end */}
-=======
                       {allMessagesJSX}
->>>>>>> 6cf328c4c240da48311044aa7a8f3088faa8b954
                       </tbody>
                     </table>
                   </div>

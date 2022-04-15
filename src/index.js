@@ -36,4 +36,3 @@ function init() {
     chatHandler.sendTextMessage(idan,bob,"AGSKLKGLASPKG:LASKG:LASKGL:KAS:LGKAL:SGK:ASKG:LASKG:LKASL:GK:LASKG:LAKSGL:")
 
 }
-
