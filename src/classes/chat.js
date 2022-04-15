@@ -1,3 +1,5 @@
+import chatHandler from '../functions/chatFunctions';
+import { useNavigate } from 'react-router-dom';
 class Chat {
   constructor(user) {
     this.user = user;
@@ -11,7 +13,7 @@ class Chat {
   }
 
   //The ID of each element is it's position in the array. 
-  get contactHTML() {
+  contactHTML({setCurrentChat}) {
     var dateThen = this.lastMessage.dateTime
     var dateNow = new Date().getTime();
     var timeIndicator = "";
@@ -35,11 +37,23 @@ class Chat {
       timeIndicator = secondsPassedSince + " secs ago ";
     }
 
+
+    var userNameForClick = this.user.userName;
     return ( 
-      <tr>
-        <img src={this.user.picture} alt="" className="profile-image rounded-circle" />
-        {this.user.displayName} <br /> <small>{this.lastMessage.shortForm}</small>
-       <div> <small>{timeIndicator}</small></div>
+      <tr key= {this.user.userName}
+      onClick={function () {
+        console.log(userNameForClick);
+        var user = chatHandler.findUser(userNameForClick);
+        var chat = global.currentUser.searchChat(user);
+        global.currentChat = chat;
+        setCurrentChat(chat);
+      }}>
+      <td>
+      <img src={this.user.picture} alt="" className="profile-image rounded-circle" />
+      {this.user.displayName} <br /> <small>{this.lastMessage.shortForm}</small>
+     <div> <small>{timeIndicator}</small></div>
+       </td>
+
       </tr>);
   }
   // gets the full HTML of all the convo

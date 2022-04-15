@@ -14,6 +14,7 @@ root.render(<App tab="home"/>);
 //We intillize the data base and adding the users.
 function init() {
     global.currentlyViewedUser = null;
+    global.currentChat = null;
     chatHandler.initDB();
     chatHandler.addUser("Idan","Idan Simai","/IMG-8479.PNG","Simai");
     chatHandler.addUser("Ido","Ido Tziony","/IMG-8479.PNG","Tziony");
@@ -31,7 +32,8 @@ function init() {
     chatHandler.sendTextMessage(idan,ido,"how are you?");
     chatHandler.sendTextMessage(ido,idan,"I am fine, thanks!");
     chatHandler.sendTextMessage(alice,idan,"HI IDAN!")
-    chatHandler.sendTextMessage(bob,idan,"YO I AM BOB LMAO")
+    chatHandler.sendTextMessage(bob,idan,"YO I AM BOB LMAO LONG MESSSAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
+    chatHandler.sendTextMessage(idan,bob,"AGSKLKGLASPKG:LASKG:LASKGL:KAS:LGKAL:SGK:ASKG:LASKG:LKASL:GK:LASKG:LAKSGL:")
 
 }
 
