@@ -34,9 +34,9 @@ class Chat {
     } else {
       timeIndicator = secondsPassedSince + " secs ago ";
     }
-
+//onClick={this.user.selectChat(getChatBetween(this.user, findUserByUserName(userName)))
     return ( 
-      <tr>
+      <tr >
         <img src={this.user.picture} alt="" className="profile-image rounded-circle" />
         {this.user.displayName} <br /> <small>{this.lastMessage.shortForm}</small>
        <div> <small>{timeIndicator}</small></div>
@@ -48,5 +48,4 @@ class Chat {
   }
 }
 export default Chat;
-
 
