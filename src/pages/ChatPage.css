@@ -114,3 +114,12 @@
    #Upper {
        background-color: #0dcaf0;
    }
+
+   .messageTime {
+       width: 40%;
+       margin-left: 55%;
+   }
+
+   .rightMessage {
+       margin-right: 100%;
+   }

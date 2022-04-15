@@ -1,7 +1,8 @@
-function ContactBox ({chats}) {
+function ContactBox ({setCurrentChat}) {
+  var chats = global.currentUser.chats
     var contactsHTML = [];
     for (var index in chats) {
-        contactsHTML.push(chats[index].contactHTML);
+        contactsHTML.push(chats[index].contactHTML({setCurrentChat}));
       }
 
     return (

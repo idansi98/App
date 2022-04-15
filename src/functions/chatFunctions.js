@@ -13,6 +13,7 @@ function findUser(userName) {
     return global.userDB.findUserByUserName(userName);
 }
 
+
 function sendTextMessage(sender, reciever, text) {
     global.userDB.sendTextMessage(sender, reciever, text);
 }
