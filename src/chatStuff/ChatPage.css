@@ -80,7 +80,7 @@
        
    }
    #Send {
-    margin-left: -%;
+    margin-left: -5%;
     margin-top: -5%;
     margin-bottom: -5%;
     padding-left: 15%;
@@ -128,10 +128,26 @@
        margin-right: -30% !important;
        position:relative;
    }
-  #Text {
+  p {
     white-space: pre-wrap !important;
     word-break: break-word !important;
-    max-width: 60% !important;
+    max-width: 100% !important;
     overflow-wrap: break-word;
   }
+  .Type {
+    position: absolute;
+    font-size: 50px;
+    opacity: 0;
+    right: 0;
+    top: 0;
+  }
+  .Check {
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: black;
+    width: 100% !important;
+  }
+ 
   
