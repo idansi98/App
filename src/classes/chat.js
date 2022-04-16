@@ -79,9 +79,6 @@ class Chat {
     }
     
   }
-  // gets the full HTML of all the convo
-  get convoHTML() {
-    return;
-  }
+
 }
 export default Chat;

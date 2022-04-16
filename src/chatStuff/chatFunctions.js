@@ -41,4 +41,12 @@ function printAllUsers() {
         console.log(users[index]);
     }
 }
-export default {initDB,addUser,findUser,sendTextMessage, sendImageMessage, sendVideoMessage, sendAudioMessage, makeBlankChat, printAllUsers} ;
+
+function getChatBetween(sender, reciever) {
+    return global.userDB.getChatBetween(sender, reciever)
+}
+
+function login(userName, password) {
+    return global.userDB.login(userName, password);
+}
+export default {initDB,addUser,findUser,sendTextMessage, sendImageMessage, sendVideoMessage, sendAudioMessage, makeBlankChat, printAllUsers, getChatBetween, login} ;

@@ -60,7 +60,7 @@ class UserCollection {
     getChatBetween(sender, reciever) {
         var foundChat = sender.searchChat(reciever);
         if (foundChat === null) {
-            return false;
+            return null;
         } else {
             return foundChat;
         }
@@ -74,13 +74,13 @@ class UserCollection {
                 return user;
             }
         }
-        return false;
+        return null;
     }
 
     //Returns an array of messages.
     getMessagesBetween(sender, reciever) {
         var chat = this.getChatBetween(sender, reciever);
-        if (chat !== false) {
+        if (chat !== null) {
             return chat.messages;
         }
     }
@@ -88,7 +88,7 @@ class UserCollection {
     //Returns the last message in a chat.
     getLastMessageBetween(sender, reciever) {
         var chat = this.getChatBetween(sender,reciever);
-        if (chat !== false) {
+        if (chat !== null) {
             return chat.lastMessage.shortForm();
         }
         return "";

@@ -4,7 +4,6 @@ class User {
         this.displayName = displayName;
         this.picture = picture;
         this.chats = [];
-        this.currentChat = null;
         this.password = password;
     }
     addChat(chat) {
@@ -50,9 +49,6 @@ class User {
             return;
         }
         global.userDB.sendImageMessage(this,reciever,filePath);
-    }
-    selectChat(chat) {
-        this.currentChat = chat;
     }
 }
 

@@ -1,6 +1,7 @@
 import './Button.css'
 import {Link} from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
+import chatHandler from '../chatStuff/chatFunctions';
 
 function LoginRegisterBox({credentials}) {
 
@@ -12,8 +13,8 @@ function LoginRegisterBox({credentials}) {
 
     // updates global.currentUser
     const tryLogin = function() {
-        var user = global.userDB.login(credentials.userName, credentials.password);
-        if (user === false) {
+        var user = chatHandler.login(credentials.userName, credentials.password);
+        if (user === null) {
             alert("Try again!");
         } else {
             global.currentUser = user;
