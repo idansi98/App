@@ -1,5 +1,3 @@
-import chatHandler from '../functions/chatFunctions';
-
 
 function ChatBox ({currentChat, messageJustSent}) {
   var allMessagesJSX =[];
@@ -8,19 +6,15 @@ function ChatBox ({currentChat, messageJustSent}) {
     for (var index in messages) {
       allMessagesJSX.push(messages[index].html);
     }
-
-
-
   }
-
     return (
         <div className="message-table-scroll">
-                    <table className="table">
-                      <tbody>
-                      {allMessagesJSX}
-                      </tbody>
-                    </table>
-                  </div>
+            <table className="table">
+              <tbody>
+                {allMessagesJSX}
+              </tbody>
+            </table>
+        </div>
     ) ;
 
 }

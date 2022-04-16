@@ -15,15 +15,15 @@ function InputMessageBox ({setInputText, messageJustSent}) {
   }
   
   return (
-                  <div className="col-sm-8">
-                  <input onKeyUp={textChanged}
-                  ref = {givenText}
-                  type="text"
-                  className="form-control"
-                  placeholder="Write message..."
-                  id = "Form"
-                />
-                  </div>
+         <div className="col-sm-8">
+            <input onKeyUp={textChanged}
+            ref = {givenText}
+            type="text"
+            className="form-control"
+            placeholder="Write message..."
+            id = "Form"
+            />
+        </div>
   )
 }
 export default InputMessageBox;

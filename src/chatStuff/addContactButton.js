@@ -1,4 +1,4 @@
-import chatHandler from "../functions/chatFunctions";
+import chatHandler from "./chatFunctions";
 
 function AddContactButton ({setCurrentChat}) { 
 

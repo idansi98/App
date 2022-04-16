@@ -12,7 +12,6 @@ function AboveChatRow({currentChat}) {
                 alt=""
                 className="profile-image rounded-circle"
               />
-              
               <span className="ml-2">{contactName}</span>
               {/*The two right buttons*/}
               <span className="float-right mt-2">

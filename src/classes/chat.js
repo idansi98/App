@@ -1,4 +1,4 @@
-import chatHandler from '../functions/chatFunctions';
+import chatHandler from '../chatStuff/chatFunctions';
 import { useNavigate } from 'react-router-dom';
 class Chat {
   constructor(user) {

@@ -1,9 +1,8 @@
 import './App.css';
-import LoginPage from './pages/LoginPage';
+import LoginPage from './registerAndLoginStuff/LoginPage';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import SignUpPage from './pages/SignUpPage';
-import {useState} from 'react';
-import ChatPage from './pages/ChatPage';
+import SignUpPage from './registerAndLoginStuff/SignUpPage';
+import ChatPage from './chatStuff/ChatPage';
 
 function App() {
 

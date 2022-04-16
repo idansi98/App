@@ -2,8 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
-import UserCollection from './classes/userCollection';
-import chatHandler from './functions/chatFunctions';
+import chatHandler from './chatStuff/chatFunctions';
 
 
 init();

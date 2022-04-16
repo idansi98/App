@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import chatHandler from "../functions/chatFunctions";
+import chatHandler from "./chatFunctions";
 function AttachAudio({setMessageJustSent}) {
     const givenAudioBox = useRef(null);
 

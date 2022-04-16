@@ -1,7 +1,7 @@
 import './Button.css'
 import {Link} from 'react-router-dom'
 import {useNavigate} from 'react-router-dom';
-import chatHandler from '../functions/chatFunctions';
+import chatHandler from '../chatStuff/chatFunctions';
 
 function SignUpRegisterBox({credentials}) {
 

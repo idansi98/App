@@ -1,8 +1,6 @@
 import './Button.css'
-import users from "../users/users";
 import {Link} from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
-import {useState} from 'react';
 
 function LoginRegisterBox({credentials}) {
 
@@ -24,7 +22,6 @@ function LoginRegisterBox({credentials}) {
             navigate('/chats');
         }
     }
-
     return (
         <div className="row pt-2">
           <div className="col">

@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
-import LoginPage from './LoginPage';
+import LoginPage from '../registerAndLoginStuff/LoginPage';
 import './ChatPage.css'
 import React, { useState } from 'react';
-import AboveRow from '../chatStuff/aboveRow';
-import MainChatBox from '../chatStuff/mainChatBox';
+import AboveRow from './aboveRow';
+import MainChatBox from './mainChatBox';
 
 
 function ChatPage() {

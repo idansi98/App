@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import chatHandler from "../functions/chatFunctions";
+import chatHandler from "./chatFunctions";
 function AttachVideo({setMessageJustSent}) {
     var file = null;
     const reader = new FileReader();

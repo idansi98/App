@@ -1,5 +1,5 @@
 import AttachmentButton from "./attachmentButton";
-import InputMessageBox from "../typeBoxes/inputMessageBox";
+import InputMessageBox from "./inputMessageBox";
 import SendButton from "./sendButton";
 import { useState } from "react";
 

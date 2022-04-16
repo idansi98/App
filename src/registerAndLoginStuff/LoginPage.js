@@ -1,6 +1,6 @@
 
-import GreenBackground from "../greenBackground/GreenBackGround";
-import LoginForm from "../forms/LoginForm";
+import GreenBackground from "./GreenBackGround";
+import LoginForm from "./LoginForm";
 
 
 function LoginPage() {

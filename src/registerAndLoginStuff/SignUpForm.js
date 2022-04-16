@@ -1,10 +1,10 @@
 import './Forms.css';
-import UserNameBox from '../typeBoxes/UserNameBox';
-import DisplayNameBox from '../typeBoxes/DisplayNameBox';
-import PasswordBox from '../typeBoxes/PasswordBox';
-import PasswordValidatorBox from '../typeBoxes/PasswordValidatorBox';
-import SignUpRegisterBox from '../typeBoxes/SignupRegisterBox';
-import PhotoUploaderBox from '../typeBoxes/PhotoUploaderBox';
+import UserNameBox from './UserNameBox';
+import DisplayNameBox from './DisplayNameBox';
+import PasswordBox from './PasswordBox';
+import PasswordValidatorBox from './PasswordValidatorBox';
+import SignUpRegisterBox from './SignupRegisterBox';
+import PhotoUploaderBox from './PhotoUploaderBox';
 import { useState } from "react";
 
 function SignUpForm() {

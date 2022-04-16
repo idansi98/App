@@ -1,4 +1,4 @@
-function ContactBox ({setCurrentChat, searchedUser}) {
+function ContactBox ({setCurrentChat, isSmall}) {
     var chats = global.currentUser.chats
     var contactsHTML = [];
 
@@ -10,8 +10,8 @@ function ContactBox ({setCurrentChat, searchedUser}) {
   }
     calcContactsHTML(contactsHTML,chats)
 
-
-    return (
+    if (isSmall != true) {
+      return (
         <div className="col-sm-4 contacts">
                   <div className="contact-table-scroll">
                     <table className="table table-hover">
@@ -23,5 +23,9 @@ function ContactBox ({setCurrentChat, searchedUser}) {
                   </div>
                 
     );
+    } else {
+      return (<></>)
+    }
+
 }
 export default ContactBox;

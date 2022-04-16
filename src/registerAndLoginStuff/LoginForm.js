@@ -1,7 +1,7 @@
 import './Forms.css';
-import UserNameBox from '../typeBoxes/UserNameBox';
-import PasswordBox from '../typeBoxes/PasswordBox';
-import LoginRegisterBox from '../typeBoxes/LoginRegisterBox';
+import UserNameBox from './UserNameBox';
+import PasswordBox from './PasswordBox';
+import LoginRegisterBox from './LoginRegisterBox';
 import { useState } from "react";
 
 function LoginForm() {

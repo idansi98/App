@@ -1,4 +1,4 @@
-import {useRef, useState} from 'react';
+import {useRef} from 'react';
 
 function PhotoBox({setCredentials}) {
     const givenPhotoBox = useRef(null);
