@@ -11,7 +11,6 @@ function validate() {
     if (isSamePassword(credentials.password, credentials.passwordValidator) &&
         isPasswordValidLength(credentials.password) && isUserNameValid(credentials.userName)
         && isDisplayNameValid(credentials.displayName) && isPasswordValid(credentials.password)
-        &&  isFileImage(credentials.photo)
         && !doesUserExist(credentials.userName)) {
             console.log("Signed up successfully!");
             chatHandler.addUser(credentials.userName,credentials.displayName,credentials.photo,credentials.password);
@@ -117,16 +116,5 @@ function isSamePassword(password1, password2) {
     return false;    
 }
 
-//Function to check whether a file is an image or not.
-function isFileImage(file) {
-    console.log(file)
-    let index = file.lastIndexOf(".") + 1;
-    let fileType = file.substring(index, file.length).toUpperCase();
-    if(fileType == "JPEG" || fileType == "JPG" || fileType == "PNG") {
-        return true;
-    }
-    alert("You have just inserted a file which is not an image! please try again.");
-    return false;
-    }
 
 export default SignUpRegisterBox;

@@ -8,12 +8,12 @@ function BottomRow({isSmall, setMessageJustSent, messageJustSent, currentChat}) 
 
   if (currentChat == null) {
     return  (
-      <> </>
+      <div></div>
     )
   }
     return (
         <div className="row message-box p-3" id = "Lower">
-        <AttachmentButton isSmall={isSmall} />
+        <AttachmentButton isSmall={isSmall} setMessageJustSent={setMessageJustSent} />
         <InputMessageBox setInputText={setInputText}  messageJustSent={messageJustSent}/>
         <SendButton isSmall={isSmall} inputText={inputText} setMessageJustSent={setMessageJustSent}/>
       </div>

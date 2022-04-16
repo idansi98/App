@@ -1,12 +1,11 @@
 
 class TextMessage {
-    static id = 0;
     constructor(text, sender) {
         this.text = text;
         this.sender = sender;
         this.dateTime = new Date().getTime();
-        this.ID = TextMessage.id;
-        TextMessage.id += 1;
+        global.lastMessageID +=1;
+        this.ID = global.lastMessageID;
     }
     #formatAMPM(backThen) {
       var rightNow = new Date()

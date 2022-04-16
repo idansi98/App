@@ -19,6 +19,17 @@ function sendTextMessage(sender, reciever, text) {
     global.userDB.sendTextMessage(sender, reciever, text);
 }
 
+function sendImageMessage(sender, reciever, path) {
+    global.userDB.sendImageMessage(sender, reciever, path);
+}
+function sendVideoMessage(sender, reciever, path) {
+    global.userDB.sendVideoMessage(sender, reciever, path);
+}
+
+function sendAudioMessage(sender, reciever, path) {
+    global.userDB.sendAudioMessage(sender, reciever, path);
+}
+
 function makeBlankChat(sender, reciever) {
     console.log(sender)
     console.log(reciever)
@@ -32,4 +43,4 @@ function printAllUsers() {
         console.log(users[index]);
     }
 }
-export default {initDB,addUser,findUser,sendTextMessage, makeBlankChat, printAllUsers} ;
+export default {initDB,addUser,findUser,sendTextMessage, sendImageMessage, sendVideoMessage, sendAudioMessage, makeBlankChat, printAllUsers} ;

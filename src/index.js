@@ -40,6 +40,7 @@ function fillMessages() {
 
 //We intillize the data base and adding the users.
 function init() {
+    global.lastMessageID=-1;
     global.token = 0;
     global.currentlyViewedUser = null;
     global.currentChat = null;
