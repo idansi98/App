@@ -15,7 +15,7 @@ class TextMessage {
         return (
           <tr id = {this.ID} key={this.ID}>
           <td>
-            <p className={style}>
+            <p className={style} id ="Text">
               {this.text}
             </p>
           </td>

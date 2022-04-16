@@ -90,11 +90,12 @@
    }
    #AddContact {
     margin-left: -5%;
-    margin-top: -3%;
-    margin-bottom: -5%;
-    padding-left: 15%;
-    padding-right: 15%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    padding-left: 5%;
+    padding-right: 5%;
     padding-bottom: 5%;
+    padding-top: 2%;
     background-color: #0dcaf0;
     border-color: #0dcaf0;
    }
@@ -127,10 +128,10 @@
        margin-right: -30% !important;
        position:relative;
    }
-  p {
+  #Text {
     white-space: pre-wrap !important;
     word-break: break-word !important;
-    max-width: 50% !important;
+    max-width: 60% !important;
     overflow-wrap: break-word;
   }
   
