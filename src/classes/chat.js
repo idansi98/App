@@ -69,8 +69,6 @@ class Chat {
           var chat = global.currentUser.searchChat(user);
           global.currentChat = chat;
           setCurrentChat(chat);
-          chatHandler.printAllUsers()
-
         }}>
         <td>
         <img src={this.user.picture} alt="" className="profile-image rounded-circle" />

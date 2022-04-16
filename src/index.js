@@ -25,10 +25,6 @@ function fillMessages() {
     var leo = chatHandler.findUser("2");
     var james = chatHandler.findUser("3");
     var hemi = chatHandler.findUser("4");
-    console.log(idan);
-    console.log(ido);
-    console.log(alice)
-    console.log(bob)
     chatHandler.sendTextMessage(idan,ido,"hi");
     chatHandler.sendTextMessage(idan,ido,"how are you?");
     chatHandler.sendTextMessage(ido,idan,"I am fine, thanks!");
@@ -39,10 +35,9 @@ function fillMessages() {
 
 //We intillize the data base and adding the users.
 function init() {
-    global.lastMessageID=-1;
-    global.token = 0;
-    global.currentlyViewedUser = null;
+    global.currentUser = null;
     global.currentChat = null;
+    global.lastMessageID=-1;
     chatHandler.initDB();
     fillMessages()
 }

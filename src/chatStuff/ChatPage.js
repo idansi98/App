@@ -31,7 +31,7 @@ function ChatPage() {
   const [currentChat, setCurrentChat] = useState(null)
 
   const navigate = useNavigate();
-  if (global.token === 0) {
+  if (global.currentUser == null) {
     navigate('/login');
     return (
       <LoginPage />

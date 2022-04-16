@@ -8,7 +8,6 @@ function AttachVideo({setMessageJustSent}) {
 
     const attachVideo = function () {
         file = givenVideoBox.current.files[0]
-        console.log(file)
         if (file) {
             reader.readAsDataURL(file)
         }

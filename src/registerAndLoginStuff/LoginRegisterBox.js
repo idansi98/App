@@ -16,8 +16,6 @@ function LoginRegisterBox({credentials}) {
         if (user === false) {
             alert("Try again!");
         } else {
-            console.log("Logged in!");
-            global.token = 1;
             global.currentUser = user;
             navigate('/chats');
         }

@@ -31,8 +31,6 @@ function sendAudioMessage(sender, reciever, path) {
 }
 
 function makeBlankChat(sender, reciever) {
-    console.log(sender)
-    console.log(reciever)
     sender.addChat(new Chat(reciever));
     reciever.addChat(new Chat(sender));
 }

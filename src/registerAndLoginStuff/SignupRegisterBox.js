@@ -12,9 +12,7 @@ function validate() {
         isPasswordValidLength(credentials.password) && isUserNameValid(credentials.userName)
         && isDisplayNameValid(credentials.displayName) && isPasswordValid(credentials.password)
         && !doesUserExist(credentials.userName)) {
-            console.log("Signed up successfully!");
             chatHandler.addUser(credentials.userName,credentials.displayName,credentials.photo,credentials.password);
-            global.token = 1;
             global.currentUser = chatHandler.findUser(credentials.userName);
             navigate('/chats');
         }
