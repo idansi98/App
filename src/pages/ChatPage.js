@@ -29,7 +29,6 @@ function ChatPage() {
   })
   
   const [currentChat, setCurrentChat] = useState(null)
-  const [searchedUser, setSearchedUser] = useState("");
 
   const navigate = useNavigate();
   if (global.token === 0) {
@@ -46,7 +45,7 @@ function ChatPage() {
           </div>
           <div className="container front-container1">
             {/*The top row of the chat*/}
-            <AboveRow isSmall={tooSmall} setCurrentChat={setCurrentChat} currentChat={currentChat} setSearchedUser={setSearchedUser}/>
+            <AboveRow isSmall={tooSmall} setCurrentChat={setCurrentChat} currentChat={currentChat} />
             <MainChatBox isSmall={tooSmall} currentChat={currentChat} setCurrentChat={setCurrentChat}/>
           </div>
         </div>

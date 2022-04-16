@@ -5,7 +5,8 @@ function SendButton({isSmall, inputText, setMessageJustSent}) {
     const buttonPressed = function () {
       var reciever = global.currentChat.user
       chatHandler.sendTextMessage(global.currentUser, reciever, inputText)
-      setMessageJustSent(global.currentUser.searchChat(reciever).lastMessage.ID)
+      var lastMessageID = global.currentUser.searchChat(reciever).lastMessage.ID
+      setMessageJustSent(lastMessageID)
     }
     var padding;
     if (isSmall==true) {

@@ -8,7 +8,11 @@ function ChatBox ({currentChat, messageJustSent}) {
     for (var index in messages) {
       allMessagesJSX.push(messages[index].html);
     }
+
+
+
   }
+
     return (
         <div className="message-table-scroll">
                     <table className="table">

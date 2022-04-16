@@ -1,6 +1,6 @@
 import AddContactButton from "./addContactButton";
 
-function AboveContactsRow({setCurrentChat, setSearchedUser}) {
+function AboveContactsRow({setCurrentChat}) {
 
     return (
         <div className="col-sm-4 border-right border-secondary">

@@ -38,7 +38,7 @@ class TextMessage {
         
         if (this.sender === global.currentUser) {
             return (
-                <tr key={this.ID}>
+                <tr id = {this.ID} key={this.ID}>
                 <td>
                   <p className="bg-primary p-2 mt-2 mr-5 shadow-sm text-white float-left rounded">
                     {this.text}
@@ -53,7 +53,7 @@ class TextMessage {
             )
         } else {
             return (
-                <tr key={this.ID}>
+                <tr id = {this.ID} key={this.ID}>
                 <td>
                   <p className="bg-success p-2 mt-2 mr-5 shadow-sm text-white float-right rounded rightMessage">
                   {this.text}
