@@ -125,6 +125,19 @@
    }
 
    .rightMessage {
-       margin-right: -12% !important;
-       position: relative;
+       margin-right: -30% !important;
+       position:relative;
    }
+   .rightMessage {
+    margin-right: -30% !important;
+    position:relative;
+   }
+
+  
+  p {
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    max-width: 50% !important;
+    overflow-wrap: break-word;
+  }
+  

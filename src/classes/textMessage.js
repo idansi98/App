@@ -10,9 +10,7 @@ class TextMessage {
         this.ID = global.lastMessageID;
     }
 
-    
     get html() {
-  
         var style = messageStyler.getMessageStyleByUser(this.sender)
         return (
           <tr id = {this.ID} key={this.ID}>
