@@ -17,7 +17,7 @@ class VideoMessage {
           <tr id = {this.ID} key={this.ID}>
           <td>
             <p className={style}>
-              <video max-width="400" height="100%" controls>
+              <video width="400" height="240" controls>
                   <source src = {this.filePath}/>
               </video>
             </p>
