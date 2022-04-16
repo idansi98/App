@@ -5,8 +5,6 @@ import {useNavigate} from 'react-router-dom';
 import {useState} from 'react';
 
 function LoginRegisterBox({credentials}) {
-    // can be put to see all users
-    const [token, setToken] = useState(0);
 
     /*
     const userList = users.map((user, key) => {
@@ -23,7 +21,6 @@ function LoginRegisterBox({credentials}) {
             console.log("Logged in!");
             global.token = 1;
             global.currentUser = user;
-            setToken(1);
             navigate('/chats');
         }
     }

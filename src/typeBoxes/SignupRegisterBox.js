@@ -13,9 +13,11 @@ function validate() {
         && isDisplayNameValid(credentials.displayName) && isPasswordValid(credentials.password)
         &&  isFileImage(credentials.photo)
         && !doesUserExist(credentials.userName)) {
-            alert("Signed up successfully!");
+            console.log("Signed up successfully!");
             chatHandler.addUser(credentials.userName,credentials.displayName,credentials.photo,credentials.password);
-            navigate("/login");
+            global.token = 1;
+            global.currentUser = chatHandler.findUser(credentials.userName);
+            navigate('/chats');
         }
 }
 
@@ -25,12 +27,12 @@ function validate() {
         <div className="row pt-2">
           <div className="col">
             <button onClick={validate} type="button" id="Login" className="btn btn-primary mb-3">
-              Login
+              Sign up
             </button>
           </div>
           <div className="p-3 col">
             {/*After clicking the registering successfully, go to the sign up page.*/}
-            Already registered? Click <Link to='/login'>here</Link> to sign in.
+            Already signed up? Click <Link to='/login'>here</Link> to sign in.
           </div>
         </div>
     );
@@ -38,7 +40,7 @@ function validate() {
 
 function doesUserExist(userName) {
     var trollName = userName + "_" + randomLetters();
-    if (chatHandler.findUser(userName)===false) {
+    if (chatHandler.findUser(userName)===null) {
         return false;
     }
     alert("Username already exists, please try " + trollName +" instead.");
@@ -117,9 +119,9 @@ function isSamePassword(password1, password2) {
 
 //Function to check whether a file is an image or not.
 function isFileImage(file) {
+    console.log(file)
     let index = file.lastIndexOf(".") + 1;
     let fileType = file.substring(index, file.length).toUpperCase();
-    console.log("fileType");
     if(fileType == "JPEG" || fileType == "JPG" || fileType == "PNG") {
         return true;
     }

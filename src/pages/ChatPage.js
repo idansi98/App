@@ -1,21 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import ChatWindow from '../chatStuff/ChatWindow';
 import LoginPage from './LoginPage';
-import ContactBox from '../typeBoxes/ContactBox';
-import Chat from '../classes/chat';
-import TextMessage from '../classes/textMessage';
 import './ChatPage.css'
-import ChatBox from '../typeBoxes/ChatBox';
-import UserCollection from '../classes/userCollection';
-import User from '../classes/user';
-import React from 'react';
-import InputMessageBox from '../typeBoxes/inputMessageBox';
-import SendButton from '../chatStuff/sendButton';
-import AboveChatRow from '../chatStuff/aboveChatRow';
-import AboveContactsRow from '../chatStuff/aboveContactsRow';
+import React, { useState } from 'react';
 import AboveRow from '../chatStuff/aboveRow';
-import AttachmentButton from '../chatStuff/attachmentButton';
-import BottomRow from '../chatStuff/bottomRow';
 import MainChatBox from '../chatStuff/mainChatBox';
 
 
@@ -41,6 +28,8 @@ function ChatPage() {
     window.addEventListener('resize', checkForTooSmall)
   })
   
+  const [currentChat, setCurrentChat] = useState(null)
+  const [searchedUser, setSearchedUser] = useState("");
 
   const navigate = useNavigate();
   if (global.token === 0) {
@@ -49,7 +38,6 @@ function ChatPage() {
       <LoginPage />
     );
   } else {
-    console.log(tooSmall)
     return (
         <div className="back-container">        
           <div className="container-fluid front-container">
@@ -58,8 +46,8 @@ function ChatPage() {
           </div>
           <div className="container front-container1">
             {/*The top row of the chat*/}
-            <AboveRow isSmall={tooSmall}/>
-            <MainChatBox isSmall={tooSmall}/>
+            <AboveRow isSmall={tooSmall} setCurrentChat={setCurrentChat} currentChat={currentChat} setSearchedUser={setSearchedUser}/>
+            <MainChatBox isSmall={tooSmall} currentChat={currentChat} setCurrentChat={setCurrentChat}/>
           </div>
         </div>
     );

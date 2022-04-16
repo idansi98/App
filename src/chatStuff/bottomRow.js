@@ -1,12 +1,21 @@
 import AttachmentButton from "./attachmentButton";
 import InputMessageBox from "../typeBoxes/inputMessageBox";
 import SendButton from "./sendButton";
-function BottomRow({isSmall}) {
+import { useState } from "react";
+
+function BottomRow({isSmall, setMessageJustSent, messageJustSent, currentChat}) {
+  const [inputText, setInputText] = useState("");
+
+  if (currentChat == null) {
+    return  (
+      <> </>
+    )
+  }
     return (
         <div className="row message-box p-3" id = "Lower">
         <AttachmentButton isSmall={isSmall} />
-        <InputMessageBox />
-        <SendButton isSmall={isSmall}/>
+        <InputMessageBox setInputText={setInputText}  messageJustSent={messageJustSent}/>
+        <SendButton isSmall={isSmall} inputText={inputText} setMessageJustSent={setMessageJustSent}/>
       </div>
     )
 }

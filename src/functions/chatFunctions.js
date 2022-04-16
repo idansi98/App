@@ -1,4 +1,5 @@
 import UserCollection from "../classes/userCollection";
+import Chat from "../classes/chat";
 
 //Initiallize the all users global array.
 function initDB() {
@@ -18,4 +19,17 @@ function sendTextMessage(sender, reciever, text) {
     global.userDB.sendTextMessage(sender, reciever, text);
 }
 
-export default {initDB,addUser,findUser,sendTextMessage};
+function makeBlankChat(sender, reciever) {
+    console.log(sender)
+    console.log(reciever)
+    sender.addChat(new Chat(reciever));
+    reciever.addChat(new Chat(sender));
+}
+
+function printAllUsers() {
+    var users = global.userDB.users;
+    for (var index in users ) {
+        console.log(users[index]);
+    }
+}
+export default {initDB,addUser,findUser,sendTextMessage, makeBlankChat, printAllUsers} ;

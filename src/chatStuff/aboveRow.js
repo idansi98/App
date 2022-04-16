@@ -1,12 +1,12 @@
 import AboveChatRow from "./aboveChatRow"
 import AboveContactsRow from "./aboveContactsRow"
 
-function AboveRow({isSmall}) {
+function AboveRow({isSmall,setCurrentChat, currentChat, setSearchedUser}) {
     if (isSmall==false) {
         return (
             <div className="row chat-top" id = "Upper">
-            <AboveContactsRow />
-            <AboveChatRow/>
+            <AboveContactsRow setCurrentChat={setCurrentChat} setSearchedUser={setSearchedUser}/>
+            <AboveChatRow currentChat={currentChat}/>
           </div> 
         )
     } else {

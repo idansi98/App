@@ -7,7 +7,6 @@ import ChatPage from './pages/ChatPage';
 
 function App() {
 
-  global.token = 0;
   return (
     
     <BrowserRouter>

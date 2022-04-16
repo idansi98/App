@@ -1,15 +1,12 @@
 import chatHandler from '../functions/chatFunctions';
 
 
-function ChatBox ({currentChat}) {
+function ChatBox ({currentChat, messageJustSent}) {
   var allMessagesJSX =[];
-  console.log(currentChat)
   if (currentChat != null) {
     var messages = currentChat.messages;
-    console.log(messages)
     for (var index in messages) {
       allMessagesJSX.push(messages[index].html);
-      console.log(allMessagesJSX)
     }
   }
     return (

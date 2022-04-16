@@ -23,7 +23,7 @@ class UserCollection {
                 return this.users[this.index];
             }
         }
-        return false;
+        return null;
     }
 
     //Sends a new message between the sender to the reciever.
@@ -32,7 +32,7 @@ class UserCollection {
         var chatOfReciever = reciever.searchChat(sender);
 
 
-        if (chatOfSender === false) {
+        if (chatOfSender === null) {
             sender.addChat(new Chat(reciever));
             reciever.addChat(new Chat(sender));
             chatOfSender = sender.searchChat(reciever);
@@ -59,7 +59,7 @@ class UserCollection {
     //Returns a chat between two users.
     getChatBetween(sender, reciever) {
         var foundChat = sender.searchChat(reciever);
-        if (foundChat === false) {
+        if (foundChat === null) {
             return false;
         } else {
             return foundChat;

@@ -16,12 +16,12 @@ class User {
                 return this.chats[index]
             }
         }
-        return false
+        return null
     }
 
     sendTextMessage(recieverUserName, text) {
         var reciever = global.userDB.findUserByUserName(recieverUserName);
-        if (reciever === false) {
+        if (reciever === null) {
             console.log("Reciever not found while sending a message to " + recieverUserName);
             return;
         }
@@ -29,7 +29,7 @@ class User {
     }
     sendVideoMessage(recieverUserName, filePath) {
         var reciever = global.userDB.findUserByUserName(recieverUserName);
-        if (reciever === false) {
+        if (reciever === null) {
             console.log("Reciever not found while sending a message to " + recieverUserName);
             return;
         }
@@ -37,7 +37,7 @@ class User {
     }
     sendAudioMessage(recieverUserName, filePath) {
         var reciever = global.userDB.findUserByUserName(recieverUserName);
-        if (reciever === false) {
+        if (reciever === null) {
             console.log("Reciever not found while sending a message to " + recieverUserName);
             return;
         }
@@ -45,7 +45,7 @@ class User {
     }
     sendImageMessage(recieverUserName, filePath) {
         var reciever = global.userDB.findUserByUserName(recieverUserName);
-        if (reciever === false) {
+        if (reciever === null) {
             console.log("Reciever not found while sending a message to " + recieverUserName);
             return;
         }

@@ -3,17 +3,22 @@ import ChatBox from "../typeBoxes/ChatBox";
 import BottomRow from "./bottomRow";
 import React from "react";
 import { useState } from "react";
-function MainChatBox ({isSmall}) {
+function MainChatBox ({isSmall, searchedUser, currentChat, setCurrentChat}) {
 
-  const [currentChat, setCurrentChat] = useState(null);
+
+
+  //var intervalID = setInterval(updateContactBox, 1000000);
+
+
+    const [messageJustSent, setMessageJustSent] = useState(-1);
 
     if (isSmall==false) {
         return (
             <div className="row">
-            <ContactBox setCurrentChat={setCurrentChat}/>
+            <ContactBox setCurrentChat={setCurrentChat} searchedUser={searchedUser}/>
             <div className="col-sm-8 message-area">
-              <ChatBox currentChat={currentChat}/>
-              <BottomRow isSmall={isSmall}/>
+              <ChatBox currentChat={currentChat} messageJustSent={messageJustSent}/>
+              <BottomRow isSmall={isSmall} setMessageJustSent={setMessageJustSent} messageJustSent={messageJustSent} currentChat={currentChat}/>
             </div>
           </div>
         )
@@ -21,8 +26,8 @@ function MainChatBox ({isSmall}) {
         return (
             <div className="row">
             <div className="col-sm-8 message-area">
-              <ChatBox currentChat={currentChat}/>
-              <BottomRow isSmall={isSmall}/>
+              <ChatBox currentChat={currentChat} messageJustSent={messageJustSent}/>
+              <BottomRow isSmall={isSmall} setMessageJustSent={setMessageJustSent} messageJustSent={messageJustSent} currentChat={currentChat}/>
             </div>
           </div>
         )

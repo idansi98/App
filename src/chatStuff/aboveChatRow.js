@@ -1,9 +1,9 @@
-function AboveChatRow() {
+function AboveChatRow({currentChat}) {
   var contactName = null;
   var contactPic = null;
-  if (global.currentChat != null) {
-    contactName = global.currentChat.user.displayName;
-    contactPic = global.currentChat.user.picture;
+  if (currentChat != null) {
+    contactName = currentChat.user.displayName;
+    contactPic = currentChat.user.picture;
     return ( 
       <div className="col-sm-8">
               {/*The contact's profile picture*/}
@@ -12,6 +12,7 @@ function AboveChatRow() {
                 alt=""
                 className="profile-image rounded-circle"
               />
+              
               <span className="ml-2">{contactName}</span>
               {/*The two right buttons*/}
               <span className="float-right mt-2">
