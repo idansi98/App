@@ -58,8 +58,9 @@ class AudioMessage {
                   <tr key={this.ID}>
                   <td>
                     <p className="bg-success p-2 mt-2 mr-5 shadow-sm text-white float-right rounded rightMessage">
-                    {this.text}
-                    </p>
+                    <audio controls>
+                    <source src={this.filePath}/>
+                    </audio>                    </p>
                   </td>
                   <td className="messageTime">
                     <p className="p-1 mt-2 mr-3 shadow-sm messageTime">
