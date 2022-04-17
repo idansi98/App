@@ -12,7 +12,9 @@ function ChatPage() {
   
   // update when resizing
   
-  const [tooSmall, setTooSmall] = React.useState(false);
+  const [tooSmall, setTooSmall] = useState(false)
+  const [currentChat, setCurrentChat] = useState(null)
+
   React.useEffect(() => {
     function checkForTooSmall() {
       if (window.innerWidth > 575) {
@@ -28,7 +30,6 @@ function ChatPage() {
     window.addEventListener('resize', checkForTooSmall)
   })
   
-  const [currentChat, setCurrentChat] = useState(null)
 
   const navigate = useNavigate();
   if (global.currentUser == null) {

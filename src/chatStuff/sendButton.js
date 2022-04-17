@@ -2,10 +2,13 @@ import chatHandler from "./chatFunctions";
 
 function SendButton({isSmall, inputText, setMessageJustSent}) {
 
+
+    
     const buttonPressed = function () {
       var reciever = global.currentChat.user
-      chatHandler.sendTextMessage(global.currentUser, reciever, inputText)
-      var lastMessageID = global.currentUser.searchChat(reciever).lastMessage.ID
+      var sender = global.currentUser 
+      chatHandler.sendTextMessage(sender, reciever, inputText)
+      var lastMessageID = sender.searchChat(reciever).lastMessage.ID
       setMessageJustSent(lastMessageID)
     }
     var padding;
@@ -15,7 +18,7 @@ function SendButton({isSmall, inputText, setMessageJustSent}) {
     return (
                 <div className="col-sm-2 mt-1" >
                 {padding}
-                  <button onClick={buttonPressed} type="button" className="btn btn-info" id = "Send">
+                  <button id = "sendButton" onClick={buttonPressed} type="button" className="btn btn-info" id = "Send">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={22}

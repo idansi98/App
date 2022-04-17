@@ -8,6 +8,7 @@ function InputMessageBox ({setInputText, messageJustSent}) {
     global.lastMessageSent = messageJustSent;
     if (givenText.current !== null) {
       givenText.current.value = ""
+      setInputText("")
     }
   }
   const textChanged = function() {
