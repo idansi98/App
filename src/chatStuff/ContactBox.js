@@ -37,7 +37,6 @@ function ContactBox ({setCurrentChat, isSmall}) {
                     </table>
                     </div>
                   </div>
-                
     );
     } else {
       return (<></>)
