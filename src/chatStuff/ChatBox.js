@@ -1,12 +1,20 @@
-import { useRef } from "react";
+import { useEffect } from "react";
 
 
-function ChatBox ({currentChat, messageJustSent}) {
+function ChatBox ({currentChat}) {
 
+  /*
+  const scrollDown = function () {
+    var elem = document.getElementById('chatBox');
+    elem.scrollTop = elem.scrollHeight;
+  }*/
 
+  useEffect(() => {
+    var elem = document.getElementById('chatBox');
+    elem.scrollTop = elem.scrollHeight;
+  });
 
   var allMessagesJSX =[];
-
   if (currentChat != null) {
     var messages = currentChat.messages;
     for (var index in messages) {
@@ -16,7 +24,7 @@ function ChatBox ({currentChat, messageJustSent}) {
 
 
     return (
-        <div className="message-table-scroll">
+        <div  id = "chatBox" className="message-table-scroll">
             <table className="table">
               <tbody >
                 {allMessagesJSX}

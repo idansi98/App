@@ -8,6 +8,7 @@ function SendButton({isSmall, inputText, setMessageJustSent}) {
       if (inputText === "") {
         return;
       }
+
       var reciever = global.currentChat.user
       var sender = global.currentUser 
       chatHandler.sendTextMessage(sender, reciever, inputText)
