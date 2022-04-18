@@ -2,6 +2,7 @@ import { useRef } from "react";
 
 
 function InputMessageBox ({setInputText, messageJustSent}) {
+
   const givenText = useRef(null);
 
   if (global.lastMessageSent != messageJustSent) {
@@ -11,10 +12,24 @@ function InputMessageBox ({setInputText, messageJustSent}) {
       setInputText("")
     }
   }
-  const textChanged = function() {
-    setInputText(givenText.current.value)
+
+  var input = document.getElementById("inputMessageBox");
+  var sendButton = document.getElementById("Send")
+  const textChanged = function(event) {
+    if (event.key === 'Enter') {
+      if (givenText.current.value !== "" && sendButton !== null) {
+        sendButton.click();
+
+      }
+    } else {
+      setInputText(givenText.current.value)
+    }
   }
-  
+
+
+
+
+
   return (
          <div className="col-sm-8">
             <input onKeyUp={textChanged}
@@ -22,9 +37,13 @@ function InputMessageBox ({setInputText, messageJustSent}) {
             type="text"
             className="form-control"
             placeholder="Write message..."
-            id = "Form"
+            id = "inputMessageBox"
             />
         </div>
   )
 }
+
+
+
+
 export default InputMessageBox;

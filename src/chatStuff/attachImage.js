@@ -23,7 +23,7 @@ function AttachImage({setMessageJustSent}) {
       }
     return ( 
         <a className="dropdown-item" href="#">
-        <div class="file btn btn-lg btn-light Check">
+        <div className="file btn btn-lg btn-light Check">
         <input ref={givenImageBox} onChange={attachImage} type="file" accept = "image/*" className = "Type" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
