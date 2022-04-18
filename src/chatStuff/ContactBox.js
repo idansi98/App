@@ -18,7 +18,10 @@ function ContactBox ({setCurrentChat, isSmall}) {
       if (a.lastMessage.dateTime > b.lastMessage.dateTime) {
         return -1;
       }
-       return 1;
+      if (a.lastMessage.dateTime < b.lastMessage.dateTime) {
+        return 1;
+      }
+       return 0;
     })
     for (var index in chats) {
       contactsHTML.push(chats[index].contactHTML({setCurrentChat}));
