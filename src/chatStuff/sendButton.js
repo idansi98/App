@@ -5,6 +5,9 @@ function SendButton({isSmall, inputText, setMessageJustSent}) {
   var inputBox = document.getElementById("inputMessageBox");
     
     const buttonPressed = function () {
+      if (inputText === "") {
+        return;
+      }
       var reciever = global.currentChat.user
       var sender = global.currentUser 
       chatHandler.sendTextMessage(sender, reciever, inputText)
