@@ -60,11 +60,11 @@ class Chat {
         <tr key= {this.user.userName}
             data-username = {userNameForClick}
         onClick={function () {
-
           var user = chatHandler.findUser(userNameForClick);
           var chat = global.currentUser.searchChat(user);
           global.currentChat = chat;
           setCurrentChat(chat);
+
         }}>
         <td>
         <img src={this.user.picture} alt="" className="profile-image rounded-circle" />

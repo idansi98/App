@@ -3,7 +3,11 @@ import { useRef } from "react";
 
 function ChatBox ({currentChat, messageJustSent}) {
 
-
+  /*
+  const scrollDown = function () {
+    var elem = document.getElementById('chatBox');
+    elem.scrollTop = elem.scrollHeight;
+  }*/
 
   var allMessagesJSX =[];
 
@@ -16,7 +20,7 @@ function ChatBox ({currentChat, messageJustSent}) {
 
 
     return (
-        <div className="message-table-scroll">
+        <div  id = "chatBox" className="message-table-scroll">
             <table className="table">
               <tbody >
                 {allMessagesJSX}
