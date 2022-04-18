@@ -67,7 +67,7 @@
        padding-left: 1% ;
        margin-right: 50%;
        margin-top: 0%;
-       width: 102%;
+       width: 100%;
        
    }   
    #dropdownAttach {
@@ -140,6 +140,7 @@
     opacity: 0;
     right: 0;
     top: 0;
+    width: 20%;
   }
   .Check {
     position: relative;
