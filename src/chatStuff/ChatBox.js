@@ -15,7 +15,6 @@ function ChatBox ({currentChat}) {
   });
 
   var allMessagesJSX =[];
-// test
   if (currentChat != null) {
     var messages = currentChat.messages;
     for (var index in messages) {
