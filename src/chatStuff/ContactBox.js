@@ -3,8 +3,24 @@ function ContactBox ({setCurrentChat, isSmall}) {
     var contactsHTML = [];
 
   const calcContactsHTML = function (contactsHTML, chats) {
+
+    // sorts according to last message send time
+    chats.sort((a,b) =>  {
+      if (a.lastMessage === null && b.lastMessage===null) {
+        return 0;
+      }
+      if (b.lastMessage === null) {
+        return -1;
+      }
+      if (a.lastMessage === null) {
+        return 1;
+      }
+      if (a.lastMessage.dateTime > b.lastMessage.dateTime) {
+        return -1;
+      }
+       return 1;
+    })
     for (var index in chats) {
-      //if (chats[index].user.userName.includes(searchedUser))
       contactsHTML.push(chats[index].contactHTML({setCurrentChat}));
     }
   }
