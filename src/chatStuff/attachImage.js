@@ -17,7 +17,6 @@ function AttachImage({setMessageJustSent}) {
           var lastMessageID = global.currentUser.searchChat(reciever).lastMessage.ID
           setMessageJustSent(lastMessageID)
           global.lastMessageID = lastMessageID;
-
          
         }
         reader.onerror = function () {
@@ -25,7 +24,7 @@ function AttachImage({setMessageJustSent}) {
         }
       }
     return ( 
-        <a className="dropdown-item" href="#">
+        <a className="dropdown-item down" href="#">
         <div className="file btn btn-lg btn-light Check">
         <input ref={givenImageBox} onChange={attachImage} type="file" accept = "image/*" className = "Type" />
           <svg

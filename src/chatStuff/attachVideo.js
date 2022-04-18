@@ -25,7 +25,7 @@ function AttachVideo({setMessageJustSent}) {
         }
       }
     return ( 
-        <a className="dropdown-item" href="#">
+        <a className="dropdown-item down" href="#">
         <div className="file btn btn-lg btn-light Check">
         <input ref={givenVideoBox} onChange={attachVideo} type="file" accept = "video/*"  className = "Type"/>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-camera-reels" viewBox="0 0 16 16">

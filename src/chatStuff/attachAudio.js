@@ -44,12 +44,12 @@ function AttachAudio({setMessageJustSent}) {
             .then(handleSuccess);
     }
     return ( 
-        <a className="dropdown-item" href="#">
+        <a className="dropdown-item down" href="#">
         <button id ="record" ref={givenAudioBox} onMouseDown={attachAudio}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width={16}
-            height={16}
+            width={18}
+            height={28}
             fill="currentColor"
             className="bi bi-mic"
             viewBox="0 0 16 16"
