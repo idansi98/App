@@ -15,7 +15,9 @@ function AttachVideo({setMessageJustSent}) {
           var reciever = global.currentChat.user;
           chatHandler.sendVideoMessage(global.currentUser,reciever,reader.result);
           givenVideoBox.current.value = ""
-          setMessageJustSent(global.lastMessageID)
+          var lastMessageID = global.currentUser.searchChat(reciever).lastMessage.ID
+          setMessageJustSent(lastMessageID)
+          global.lastMessageID = lastMessageID;
         }
         reader.onerror = function () {
             console.log(reader.error);
@@ -23,7 +25,7 @@ function AttachVideo({setMessageJustSent}) {
       }
     return ( 
         <a className="dropdown-item" href="#">
-        <div class="file btn btn-lg btn-light Check">
+        <div className="file btn btn-lg btn-light Check">
         <input ref={givenVideoBox} onChange={attachVideo} type="file" accept = "video/*"  className = "Type"/>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-camera-reels" viewBox="0 0 16 16">
             <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM1 3a2 2 0 1 0 4 0 2 2 0 0 0-4 0z" />

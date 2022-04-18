@@ -14,7 +14,9 @@ function AttachImage({setMessageJustSent}) {
           var reciever = global.currentChat.user;
           chatHandler.sendImageMessage(global.currentUser,reciever,reader.result);
           givenImageBox.current.value = ""
-          setMessageJustSent(global.lastMessageID)
+          var lastMessageID = global.currentUser.searchChat(reciever).lastMessage.ID
+          setMessageJustSent(lastMessageID)
+          global.lastMessageID = lastMessageID;
          
         }
         reader.onerror = function () {

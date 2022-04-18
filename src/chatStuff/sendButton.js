@@ -2,7 +2,7 @@ import chatHandler from "./chatFunctions";
 
 function SendButton({isSmall, inputText, setMessageJustSent}) {
 
-
+  var inputBox = document.getElementById("inputMessageBox");
     
     const buttonPressed = function () {
       var reciever = global.currentChat.user
@@ -10,6 +10,8 @@ function SendButton({isSmall, inputText, setMessageJustSent}) {
       chatHandler.sendTextMessage(sender, reciever, inputText)
       var lastMessageID = sender.searchChat(reciever).lastMessage.ID
       setMessageJustSent(lastMessageID)
+      global.lastMessageID = lastMessageID;
+      inputBox.value = ""
     }
     var padding;
     if (isSmall==true) {
