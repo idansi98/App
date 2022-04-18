@@ -1,12 +1,12 @@
 
-import GreenBackground from "./GreenBackGround";
+import BlueBackground from "./BlueBackGround";
 import SignUpForm from "./SignUpForm";
 
 
 function SignUpPage() {
     return ( 
         <>
-        <GreenBackground />
+        <BlueBackground/>
         <SignUpForm />
       </>  
     );

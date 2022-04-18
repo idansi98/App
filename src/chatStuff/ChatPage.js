@@ -41,7 +41,7 @@ function ChatPage() {
     return (
         <div className="back-container">        
           <div className="container-fluid front-container">
-            <div className="back-top" />
+            <div className="back-top" id = "ChatBackground"/>
             <div className="back-main" />
           </div>
           <div className="container front-container1">

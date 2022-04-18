@@ -1,12 +1,12 @@
 
-import GreenBackground from "./GreenBackGround";
+import BlueBackground from "./BlueBackGround";
 import LoginForm from "./LoginForm";
 
 
 function LoginPage() {
     return ( 
         <>
-        <GreenBackground />
+        <BlueBackground/>
         <LoginForm/>
       </>  
     );

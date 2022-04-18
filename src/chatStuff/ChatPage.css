@@ -1,94 +1,108 @@
-.back-top{
-    background-color:  #009688;
+.back-top {
+    background-color: #009688;
     height: 15vh;
-   }
-   
-   .back-main{
-    background-color:  #D9DBD5;
+}
+
+.back-main {
+    background-color: #D9DBD5;
     height: 85vh;
-   }
-   
-   .back-container{
+}
+
+.back-container {
     position: relative;
-   }
-   
-   .front-container{
+}
+
+.front-container {
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     right: 0;
-   }
-   .front-container1{
+}
+
+.front-container1 {
     position: absolute;
-    top:20px;
-    left:0;
+    top: 20px;
+    left: 0;
     right: 0;
-   }
-   
-   .chat-top{
+}
+
+.chat-top {
     background-color: #EDEDED;
     min-height: 50px;
-   }
-   
-   .profile-image{
+}
+
+.profile-image {
     margin-top: 7px;
     height: 30px;
     width: 30px;
-   }
-   
-   .contacts{
+}
+
+.contacts {
     background-color: #ffffff;
     min-height: 600px;
-   }
-   
-   .contact-table-scroll{
+}
+
+.contact-table-scroll {
     overflow-y: scroll;
     height: 600px;
-   }
-   
-   .message-area{
-    background-color:  #e4e1de;
+}
+
+.message-area {
+    background-color: #e4e1de;
     min-height: 600px;
-   }
-   
-   .message-table-scroll{
+}
+
+.message-table-scroll {
     overflow-y: scroll;
     height: 550px;
-   }
-   
-   .message-box{
+}
+
+.message-box {
     background-color: #F0F0F0;
-   }
-   .mx-2 {
-   margin-left:  90% !important;
-   margin-top: -8% !important;
-   } 
-   #Form {
-       padding-left: 1% ;
-       margin-right: 50%;
-       margin-top: 0%;
-       width: 100%;
-       
-   }   
-   #dropdownAttach {
-       margin-left: 75%;
-       margin-top: -8%;
-       margin-bottom: 5%;
-       padding-left: 5%;
-       padding-right: 5%;
-       padding-bottom: 4%;
-       
-   }
-   #Send {
+}
+
+.mx-2 {
+    margin-left: 90% !important;
+    margin-top: -8% !important;
+}
+
+#Form {
+    padding-left: 1%;
+    margin-right: 50%;
+    margin-top: 0%;
+    width: 100%;
+
+}
+
+#ChatBackground {
+    background-color: #0dcaf0 !important;
+}
+
+#dropdownAttach {
+    margin-left: 75%;
+    margin-top: -8%;
+    margin-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 4%;
+    background-color: #0df0af;
+    border-color: #0df0af;
+
+}
+
+#Send {
     margin-left: -5%;
     margin-top: -5%;
     margin-bottom: -5%;
     padding-left: 15%;
     padding-right: 15%;
     padding-bottom: 5%;
+    background-color: #0df0af;
+    border-color: #0df0af;
     border: none !important;
-   }
-   #AddContact {
+}
+
+#AddContact {
     margin-left: -5%;
     margin-top: 0%;
     margin-bottom: 0%;
@@ -96,58 +110,70 @@
     padding-right: 5%;
     padding-bottom: 5%;
     padding-top: 2%;
-    background-color: #0dcaf0;
-    border-color: #0dcaf0;
-   }
-   #WRAP {
-    display:flex !important;
-    float: flex !important;
-   }
-   #UL {
-       padding: 0 !important;
-       border: 0 !important;
-       min-width: 1rem !important;
-       margin-bottom: 0.2% !important;
-       padding-right: -4% !important;
-   }
-   #Lower {
-       background-color: #0dcaf0;
-   }
-   #Upper {
-       background-color: #0dcaf0;
-   }
+    background-color: #0df0af;
+    border-color: #0df0af;
+}
 
-   .messageTime {
-       width: 40%;
-       margin-left: 55%;
-       
-       text-align: center;
-       max-width: 200px;
-   }
-   .rightMessage {
-       margin-right: -30% !important;
-       position:relative;
-   }
-  p {
+#WRAP {
+    display: flex !important;
+    float: flex !important;
+}
+
+#UL {
+    padding: 0 !important;
+    border: 0 !important;
+    min-width: 1rem !important;
+    margin-bottom: 0.2% !important;
+    padding-right: -4% !important;
+}
+
+#Lower {
+    background-color: #0df0af;
+}
+
+#Upper {
+    background-color: #0df0af;
+}
+
+.messageTime {
+    width: 40%;
+    margin-left: 55%;
+
+    text-align: center;
+    max-width: 200px;
+}
+
+.rightMessage {
+    margin-right: -30% !important;
+    position: relative;
+}
+
+p {
     white-space: pre-wrap !important;
     word-break: break-word !important;
     max-width: 100% !important;
     overflow-wrap: break-word;
-  }
-  .Type {
+}
+
+.Type {
     position: absolute;
     font-size: 50px;
     opacity: 0;
     right: 0;
     top: 0;
-  }
-  .Check {
+}
+
+.Check {
     position: relative;
     overflow: hidden;
     background-color: #ffffff;
     border-color: #ffffff;
     color: black;
     width: 100% !important;
-  }
- 
-  
+}
+#record {
+    width: 100% !important;
+    background-color: #ffffff !important;
+    border: none;
+    
+}
