@@ -26,13 +26,15 @@ function AttachAudio({setMessageJustSent}) {
             var reciever = global.currentChat.user;
             chatHandler.sendAudioMessage(global.currentUser,reciever,blob);
             givenAudioBox.current.value = ""
-            setMessageJustSent(global.lastMessageID)
+            var lastMessageID = global.currentUser.searchChat(reciever).lastMessage.ID
+            setMessageJustSent(lastMessageID)
+            global.lastMessageID = lastMessageID;
           });
 
 
           recordButton.addEventListener('mouseup', function() {
             mediaRecorder.stop();
-          });
+          }, {once:true});
       
           mediaRecorder.start();
         };

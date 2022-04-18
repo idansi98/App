@@ -3,8 +3,15 @@ import InputMessageBox from "./inputMessageBox";
 import SendButton from "./sendButton";
 import { useState } from "react";
 
+
+
+
+
 function BottomRow({isSmall, setMessageJustSent, messageJustSent, currentChat}) {
   const [inputText, setInputText] = useState("");
+  
+
+
 
   if (currentChat == null) {
     return  (

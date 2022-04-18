@@ -14,6 +14,7 @@ function ChatBox ({currentChat, messageJustSent}) {
     }
   }
 
+
     return (
         <div className="message-table-scroll">
             <table className="table">
