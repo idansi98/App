@@ -1,13 +1,18 @@
-import { useRef } from "react";
+import { useEffect } from "react";
 
 
-function ChatBox ({currentChat, messageJustSent}) {
+function ChatBox ({currentChat}) {
 
   /*
   const scrollDown = function () {
     var elem = document.getElementById('chatBox');
     elem.scrollTop = elem.scrollHeight;
   }*/
+
+  useEffect(() => {
+    var elem = document.getElementById('chatBox');
+    elem.scrollTop = elem.scrollHeight;
+  });
 
   var allMessagesJSX =[];
 
