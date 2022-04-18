@@ -14,8 +14,50 @@ function validate() {
         && !doesUserExist(credentials.userName)) {
             chatHandler.addUser(credentials.userName,credentials.displayName,credentials.photo,credentials.password);
             global.currentUser = chatHandler.findUser(credentials.userName);
+            tempAddExampleChats()
             navigate('/chats');
         }
+}
+
+function tempAddExampleChats() {
+    var currentUser = global.currentUser;
+    var idan = chatHandler.findUser("Idan");
+    var ido = chatHandler.findUser("Ido");
+    var alice = chatHandler.findUser("Alice")
+    var bob = chatHandler.findUser("1")
+    var leo = chatHandler.findUser("2");
+    var james = chatHandler.findUser("3");
+    var hemi = chatHandler.findUser("4");
+
+    chatHandler.sendTextMessage(currentUser,ido,"hi");
+    chatHandler.sendTextMessage(ido,currentUser,"how are you?");
+    chatHandler.sendImageMessage(currentUser, ido,"suspicious.png")
+    chatHandler.sendTextMessage(ido,currentUser,"Stop sending me propoganda please :C");
+
+    chatHandler.sendTextMessage(idan,currentUser,"Did you watch the last batman movie?");
+    chatHandler.sendTextMessage(currentUser,idan,"I sure didn't!")
+    chatHandler.sendAudioMessage(idan, currentUser, "sound.mp3");
+    chatHandler.sendTextMessage(currentUser,idan,"Nice try")
+
+    chatHandler.sendTextMessage(currentUser,alice,"Hi...");
+    chatHandler.sendTextMessage(currentUser,alice,"Whats up alice?");
+    chatHandler.sendTextMessage(currentUser,alice,"ALICE IS EVERYTHING OKAY?");
+    chatHandler.sendTextMessage(currentUser,alice,"ALICE ANSWER ME");
+    chatHandler.sendTextMessage(currentUser,alice,"THATS IT");
+    chatHandler.sendVideoMessage(currentUser, alice,"earth.mp4")
+    chatHandler.sendTextMessage(alice,currentUser,"Please delete my number...");
+
+
+    chatHandler.sendTextMessage(bob,currentUser,"YO I AM BOB HELLO LONG MESSSAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
+    chatHandler.sendTextMessage(bob,currentUser,"YO I AM BOB HELLO LONG MESSSAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
+    chatHandler.sendTextMessage(bob,currentUser,"YO I AM BOB HELLO LONG MESSSAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
+    chatHandler.sendTextMessage(bob,currentUser,"YO I AM BOB HELLO LONG MESSSAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
+
+    chatHandler.sendTextMessage(leo,currentUser,"Good video!")
+    chatHandler.sendTextMessage(currentUser,leo,"?")
+    chatHandler.sendTextMessage(james,currentUser,"I am James!")
+    chatHandler.sendTextMessage(hemi,currentUser,"I am going to make the next homework more interesting!")
+
 }
 
 //userName:"",displayName:"", password:"", passwordValidator:""});

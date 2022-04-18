@@ -11,7 +11,7 @@ const root = createRoot(container);
 root.render(<App tab="home"/>);
 
 function fillMessages() {
-    chatHandler.addUser("Idan","Idan Simai","/IMG-8479.PNG","Simai");
+    chatHandler.addUser("Idan","Idan Simai","/suspicious.png","Simai");
     chatHandler.addUser("Ido","Ido Tziony","/defaultPFP.png","Tziony");
     chatHandler.addUser("1","Bob Habanai","/defaultPFP.png","2");
     chatHandler.addUser("2","Leo","/defaultPFP.png","3");

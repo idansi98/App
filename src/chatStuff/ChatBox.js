@@ -14,7 +14,6 @@ function ChatBox ({currentChat, messageJustSent}) {
     }
   }
 
-  window.scrollTo(0,document.body.scrollHeight);
 
     return (
         <div className="message-table-scroll">
