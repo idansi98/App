@@ -10,14 +10,20 @@ function AddContactButton({ setCurrentChat }) {
     var userToStartChatWith = document.getElementById("usernameSearch").value;
     if (userToStartChatWith === global.currentUser.userName) {
       alert("You can't start messaging yourself!");
+      var audio = new Audio('donkey.ogg');
+      audio.play();
       return;
     }
     var foundUser = chatHandler.findUser(userToStartChatWith);
     if (foundUser == null) {
       alert("User not found");
+      var audio = new Audio('donkey.ogg');
+      audio.play();
       return
     } else if (global.currentUser.searchChat(foundUser) != null) {
       alert("User already added!");
+      var audio = new Audio('donkey.ogg');
+      audio.play();
       return
     } else {
       chatHandler.makeBlankChat(global.currentUser, foundUser);

@@ -15,6 +15,8 @@ function LoginRegisterBox({credentials}) {
     const tryLogin = function() {
         var user = chatHandler.login(credentials.userName, credentials.password);
         if (user === null) {
+          var audio = new Audio('donkey.ogg');
+          audio.play();
             alert("Try again!");
         } else {
             global.currentUser = user;

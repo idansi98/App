@@ -16,6 +16,9 @@ function validate() {
             global.currentUser = chatHandler.findUser(credentials.userName);
             tempAddExampleChats()
             navigate('/chats');
+        } else {
+            var audio = new Audio('donkey.ogg');
+            audio.play();
         }
 }
 
