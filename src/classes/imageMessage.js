@@ -17,7 +17,9 @@ class ImageMessage {
           <tr id = {this.ID} key={this.ID}>
           <td>
             <p className={style}>
-              <img src = {this.filePath} object-fit = "cover" height = "400" max-width="100%"/>
+              <img src = {this.filePath} object-fit = "cover" width = "400" max-height="800" onClick={function() {
+                // TODO: enlarge the image
+              }}/>
             </p>
           </td>
           <MessageTime dateTime={this.dateTime} />

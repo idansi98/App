@@ -29,7 +29,6 @@ function AttachAudio({setMessageJustSent}) {
             var lastMessageID = global.currentUser.searchChat(reciever).lastMessage.ID
             setMessageJustSent(lastMessageID)
             global.lastMessageID = lastMessageID;
-
           });
 
 
@@ -45,7 +44,7 @@ function AttachAudio({setMessageJustSent}) {
     }
     return ( 
         <a className="dropdown-item down" href="#">
-        <button id ="record" ref={givenAudioBox} onMouseDown={attachAudio}>
+        <button id ="record" ref={givenAudioBox} onMouseDown={attachAudio} title="Hold the recording button to record">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width={18}
