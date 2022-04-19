@@ -1,4 +1,5 @@
 import AddContactButton from "./addContactButton";
+import Example from "./example";
 
 function AboveContactsRow({setCurrentChat, isSmall}) {
   if(isSmall!=true) {
@@ -9,10 +10,10 @@ function AboveContactsRow({setCurrentChat, isSmall}) {
         alt=""
         className="profile-image rounded-circle"
       />
+      <Example />
       <span className="float-right mt-2">
         <span className="input-group mb-3">
           <span className="input-group-text" id="basic-addon1">@</span>
-          <input id = "usernameSearch" type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/> 
           <AddContactButton setCurrentChat={setCurrentChat} />
         </span>
       </span>

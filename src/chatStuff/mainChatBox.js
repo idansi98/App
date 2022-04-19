@@ -12,6 +12,7 @@ function MainChatBox ({isSmall, currentChat, setCurrentChat}) {
     // contains the ID of the last message sent by the current user (not recieved)
     const [messageJustSent, setMessageJustSent] = useState(-1);
     return (
+      
       <div className="row">
       <ContactBox setCurrentChat={setCurrentChat} isSmall={isSmall}/>
       <div className="col-sm-8 message-area">
