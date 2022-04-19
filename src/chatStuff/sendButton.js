@@ -16,6 +16,8 @@ function SendButton({isSmall, inputText, setMessageJustSent}) {
       setMessageJustSent(lastMessageID)
       global.lastMessageID = lastMessageID;
       inputBox.value = ""
+      var audio = new Audio('newMessage.wav');
+      audio.play();
     }
     var padding;
     if (isSmall==true) {

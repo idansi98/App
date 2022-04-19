@@ -17,6 +17,8 @@ function AttachImage({setMessageJustSent}) {
           var lastMessageID = global.currentUser.searchChat(reciever).lastMessage.ID
           setMessageJustSent(lastMessageID)
           global.lastMessageID = lastMessageID;
+          var audio = new Audio('newImage.wav');
+          audio.play();
          
         }
         reader.onerror = function () {
