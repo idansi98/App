@@ -13,7 +13,6 @@ function AboveContactsRow({setCurrentChat, isSmall}) {
       <Example />
       <span className="float-right mt-2">
         <span className="input-group mb-3">
-          <span className="input-group-text" id="basic-addon1">@</span>
           <AddContactButton setCurrentChat={setCurrentChat} />
         </span>
       </span>
