@@ -67,7 +67,7 @@ class Chat {
         }}>
         <td>
         <img src={this.user.picture} alt="" className="profile-image rounded-circle" />
-        {this.user.displayName} 
+        {" "+this.user.displayName} 
         <br /> 
         {arrow}<small>{this.lastMessage.shortForm}</small>
        <div> <small>{timeIndicator}</small></div>

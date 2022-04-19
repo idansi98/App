@@ -33,11 +33,14 @@ function tempAddExampleChats() {
     chatHandler.sendTextMessage(ido,currentUser,"how are you?");
     chatHandler.sendImageMessage(currentUser, ido,"suspicious.png")
     chatHandler.sendTextMessage(ido,currentUser,"Stop sending me propoganda please :C");
+    chatHandler.sendImageMessage(currentUser, ido,"suspicious.png")
+    chatHandler.sendTextMessage(ido,currentUser,"Hmmm");
 
     chatHandler.sendTextMessage(idan,currentUser,"Did you watch the last batman movie?");
     chatHandler.sendTextMessage(currentUser,idan,"I sure didn't!")
     chatHandler.sendAudioMessage(idan, currentUser, "sound.mp3");
-    chatHandler.sendTextMessage(currentUser,idan,"Nice try")
+    chatHandler.sendTextMessage(currentUser,idan,"Nice trt")
+    chatHandler.sendTextMessage(currentUser,idan,"Nice try*")
 
     chatHandler.sendTextMessage(currentUser,alice,"Hi...");
     chatHandler.sendTextMessage(currentUser,alice,"Whats up alice?");
@@ -49,13 +52,29 @@ function tempAddExampleChats() {
 
 
     chatHandler.sendTextMessage(bob,currentUser,"YO I AM BOB HELLO LONG MESSSAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
+    chatHandler.sendImageMessage(currentUser, bob,"suspicious.png")
     chatHandler.sendTextMessage(bob,currentUser,"YO I AM BOB HELLO LONG MESSSAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
+    chatHandler.sendAudioMessage(bob, currentUser, "sound.mp3");
     chatHandler.sendTextMessage(bob,currentUser,"YO I AM BOB HELLO LONG MESSSAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
+    chatHandler.sendVideoMessage(currentUser, bob,"earth.mp4")
     chatHandler.sendTextMessage(bob,currentUser,"YO I AM BOB HELLO LONG MESSSAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
 
     chatHandler.sendTextMessage(leo,currentUser,"Good video!")
     chatHandler.sendTextMessage(currentUser,leo,"?")
+
     chatHandler.sendTextMessage(james,currentUser,"I am James!")
+    chatHandler.sendTextMessage(currentUser,james,"I am James!")
+    chatHandler.sendTextMessage(james,currentUser,"I am James!")
+    chatHandler.sendTextMessage(currentUser,james,"I am James!")
+    chatHandler.sendTextMessage(james,currentUser,"I am James!")
+    chatHandler.sendTextMessage(currentUser,james,"I am James!")
+    chatHandler.sendTextMessage(james,currentUser,"I am James!")
+    chatHandler.sendTextMessage(currentUser,james,"I am James!")
+    chatHandler.sendTextMessage(james,currentUser,"I am James!")
+    chatHandler.sendTextMessage(currentUser,james,"I am James!")
+    chatHandler.sendTextMessage(james,currentUser,"I am James!")
+    chatHandler.sendTextMessage(currentUser,james,"I am James!")
+    
     chatHandler.sendTextMessage(hemi,currentUser,"I am going to make the next homework more interesting!")
 
 }
