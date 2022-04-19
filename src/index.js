@@ -13,11 +13,11 @@ root.render(<App tab="home"/>);
 function fillMessages() {
     chatHandler.addUser("Idan","Idan Simai","/suspicious.png","Simai");
     chatHandler.addUser("Ido","Ido Tziony","/defaultPFP.png","Tziony");
-    chatHandler.addUser("1","Bob Habanai","/defaultPFP.png","2");
+    chatHandler.addUser("1","Bob Habanai","/bob.webp","2");
     chatHandler.addUser("2","Leo","/defaultPFP.png","3");
     chatHandler.addUser("3","James","/defaultPFP.png","4");
     chatHandler.addUser("4","Hemi.Hemi","/defaultPFP.png","5");
-    chatHandler.addUser("Alice","Alis","/defaultPFP.png","Alice");
+    chatHandler.addUser("Alice","Alis","/alice.webp","Alice");
     var idan = chatHandler.findUser("Idan");
     var ido = chatHandler.findUser("Ido");
     var alice = chatHandler.findUser("Alice")
