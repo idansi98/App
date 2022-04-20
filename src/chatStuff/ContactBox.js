@@ -1,4 +1,4 @@
-function ContactBox ({setCurrentChat, isSmall}) {
+function ContactBox ({setCurrentChat, isSmall, searchedDN}) {
     var chats = global.currentUser.chats
     var contactsHTML = [];
 
@@ -24,7 +24,10 @@ function ContactBox ({setCurrentChat, isSmall}) {
        return 0;
     })
     for (var index in chats) {
-      contactsHTML.push(chats[index].contactHTML({setCurrentChat}));
+      var chat = chats[index]
+      if (chat.user.displayName.includes(searchedDN)) {
+        contactsHTML.push(chat.contactHTML({setCurrentChat}));
+      }
     }
   }
     calcContactsHTML(contactsHTML,chats)

@@ -14,6 +14,7 @@ function ChatPage() {
   
   const [tooSmall, setTooSmall] = useState(false)
   const [currentChat, setCurrentChat] = useState(null)
+  const [searchedDN, setSearchedDN] = useState("")
 
   React.useEffect(() => {
     function checkForTooSmall() {
@@ -46,8 +47,8 @@ function ChatPage() {
           </div>
           <div className="container front-container1">
             {/*The top row of the chat*/}
-            <AboveRow isSmall={tooSmall} setCurrentChat={setCurrentChat} currentChat={currentChat} />
-            <MainChatBox isSmall={tooSmall} currentChat={currentChat} setCurrentChat={setCurrentChat}/>
+            <AboveRow isSmall={tooSmall} setCurrentChat={setCurrentChat} currentChat={currentChat} setSearchedDN={setSearchedDN}/>
+            <MainChatBox isSmall={tooSmall} currentChat={currentChat} setCurrentChat={setCurrentChat} searchedDN={searchedDN}/>
           </div>
         </div>
     );

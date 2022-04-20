@@ -1,25 +1,17 @@
-import chatHandler from "./chatFunctions";
-function DisplayNameInputBox() {
-    var dispalyNameToSearch = document.getElementById("DisplayNameInput");
-    var foundDisplayName = chatHandler.findUserDisp(dispalyNameToSearch);
-    if (dispalyNameToSearch === global.currentUser.displayname) {
-        alert("You can't start messaging yourself!");
-        var audio = new Audio('donkey.ogg');
-        audio.play();
-        return;
-      }
-    if (foundDisplayName == null) {
-        alert("User not found");
-        var audio = new Audio('donkey.ogg');
-        audio.play();
-        return;
+//import chatHandler from "./chatFunctions";
+import { useRef } from "react";
+function DisplayNameInputBox({ setSearchedDN }) {
+    const displayText = useRef(null);
+    const textUpdated = function () {
+        setSearchedDN(displayText.current.value)
     }
-   
+
 
     return (
-        <span id ="Hey">
-        <input type="text" className="form-control" placeholder="Displayname"
-         aria-label="Username" aria-describedby="basic-addon1" id="DisplayNameInput"/>
-         </span>
-    )}
-    export default DisplayNameInputBox;
+        <span id="Hey">
+            <input type="text" ref={displayText} onKeyUp={textUpdated} className="form-control" placeholder=""
+                aria-label="Username" aria-describedby="basic-addon1" id="DisplayNameInput" />
+        </span>
+    )
+}
+export default DisplayNameInputBox;

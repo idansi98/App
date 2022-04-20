@@ -3,7 +3,7 @@ import ChatBox from "./ChatBox";
 import BottomRow from "./bottomRow";
 import React from "react";
 import { useState } from "react";
-function MainChatBox ({isSmall, currentChat, setCurrentChat}) {
+function MainChatBox ({isSmall, currentChat, setCurrentChat, searchedDN}) {
 
 
 
@@ -14,7 +14,7 @@ function MainChatBox ({isSmall, currentChat, setCurrentChat}) {
     return (
       
       <div className="row">
-      <ContactBox setCurrentChat={setCurrentChat} isSmall={isSmall}/>
+      <ContactBox setCurrentChat={setCurrentChat} isSmall={isSmall} searchedDN={searchedDN}/>
       <div className="col-sm-8 message-area">
         <ChatBox currentChat={currentChat} messageJustSent={messageJustSent}/>
         <BottomRow isSmall={isSmall} setMessageJustSent={setMessageJustSent} messageJustSent={messageJustSent} currentChat={currentChat}/>
