@@ -5,7 +5,11 @@
 
 .back-main {
     background-color: #D9DBD5;
-    height: 85vh;
+    height: 100vh;
+}
+
+.no-padding {
+    padding: 0!important;
 }
 
 .back-container {
@@ -28,7 +32,7 @@
 
 .chat-top {
     background-color: #EDEDED;
-    min-height: 50px;
+    height: 7vh
 }
 
 .profile-image {
@@ -39,26 +43,30 @@
 
 .contacts {
     background-color: #ffffff;
-    min-height: 600px;
+    height: 82vh;
 }
 
 .contact-table-scroll {
     overflow-y: scroll;
-    height: 600px;
+   height: 82vh;
 }
 
 .message-area {
     background-color: #e4e1de;
-    min-height: 600px;
+    height: 82vh;
 }
 
 .message-table-scroll {
     overflow-y: scroll;
-    height: 550px;
+    height: 75vh;
+    
 }
 
 .message-box {
     background-color: #F0F0F0;
+    height: 7vh;
+    padding: 1vh !important;
+    padding-bottom: 1vh !important;
 }
 
 .mx-2 {
@@ -148,6 +156,7 @@
     position: relative;
 }
 
+
 p {
     white-space: pre-wrap !important;
     word-break: break-word !important;
@@ -184,10 +193,30 @@ p {
 
 }
 #DisplayNameInput {
+    position: relative
     
 }
 #Hey {
    
     margin-left: -40% !important;
 } 
+
+.blueGradientBackground {
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+
+.topBarHeight {
+    height: 10vh !important;
+}
+
+.smallChatButton {
+    height: 5vh !important;
+    min-height: 0vh !important;
+}
+
+#inputMessageBox {
+    height: 5vh !important;
+    min-height: 0;
+}
 
