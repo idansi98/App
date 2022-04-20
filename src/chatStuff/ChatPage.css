@@ -220,3 +220,7 @@ p {
     min-height: 0;
 }
 
+.messageRestrictWidth {
+    max-width: 70vh !important;
+}
+
