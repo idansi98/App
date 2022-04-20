@@ -12,6 +12,7 @@ function InputMessageBox ({setInputText, messageJustSent}) {
     if (event.key === 'Enter') {
       if (givenText.current.value !== "" && sendButton !== null) {
         sendButton.click();
+        setInputText("")
       }
     } else {
       setInputText(givenText.current.value)
