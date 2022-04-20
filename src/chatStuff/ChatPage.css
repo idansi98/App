@@ -239,7 +239,7 @@ p {
 }
 
 .messageRestrictWidth {
-    max-width: 70vh !important;
+    max-width: 50ch !important;
 }
 
 .noBorder {
