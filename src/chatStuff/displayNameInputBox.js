@@ -1,6 +1,6 @@
 import chatHandler from "./chatFunctions";
 function DisplayNameInputBox() {
-    var dispalyNameToSearch = document.getElementById("DisplayNameInput");
+    /*var dispalyNameToSearch = document.getElementById("DisplayNameInput");
     var foundDisplayName = chatHandler.findUserDisp(dispalyNameToSearch);
     if (dispalyNameToSearch === global.currentUser.displayname) {
         alert("You can't start messaging yourself!");
@@ -13,7 +13,7 @@ function DisplayNameInputBox() {
         var audio = new Audio('donkey.ogg');
         audio.play();
         return;
-    }
+    }*/
    
 
     return (
