@@ -178,11 +178,16 @@ p {
 }
 
 .nextButton {
-    padding-left: 5% !important;
-    padding-right: 5% !important;
-    margin-left: 70%;
+    padding-left: 25% !important;
+    padding-right: 25% !important;
+    margin-left: 250%;
 
 }
-#AboveSpan {
-    width: 70%!important; 
+#DisplayNameInput {
+    
 }
+#Hey {
+   
+    margin-left: -40% !important;
+} 
+
