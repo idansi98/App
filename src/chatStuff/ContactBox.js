@@ -1,6 +1,18 @@
+import { useState, useEffect } from "react";
+
+
 function ContactBox ({setCurrentChat, isSmall, searchedDN}) {
     var chats = global.currentUser.chats
     var contactsHTML = [];
+      // update the time on contactBox
+
+  const [time, setTime] = useState(Date.now());
+  useEffect(() => {
+    const interval = setInterval(() => setTime(Date.now()), 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   const calcContactsHTML = function (contactsHTML, chats) {
 

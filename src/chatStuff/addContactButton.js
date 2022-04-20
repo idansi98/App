@@ -30,8 +30,6 @@ function AddContactButton({ setCurrentChat }) {
       var currentChat = global.currentUser.searchChat(chatHandler.findUser(userToStartChatWith))
       global.currentChat = currentChat
       setCurrentChat(currentChat)
-      var audio = new Audio('newChat.wav');
-      audio.play();
     }
     handleClose()
   }

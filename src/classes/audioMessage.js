@@ -13,7 +13,7 @@ class AudioMessage {
       get html() {
           var style = messageStyler.getMessageStyleByUser(this.sender)
           return (
-            <tr id = {this.ID} key={this.ID} className="text-wrap">
+            <tr id = {this.ID} key={this.ID} className="text-wrap noBorder">
             <td className="text-wrap">
               <p className={style}>
                 <audio controls>

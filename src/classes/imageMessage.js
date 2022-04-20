@@ -14,7 +14,7 @@ class ImageMessage {
     get html() {
         var style = messageStyler.getMessageStyleByUser(this.sender)
         return (
-          <tr id = {this.ID} key={this.ID}>
+          <tr id = {this.ID} key={this.ID} className="noBorder">
           <td>
             <p className={style}>
               <img src = {this.filePath} object-fit = "cover" width = "400" max-height="800" onClick={function() {

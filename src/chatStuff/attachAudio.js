@@ -7,8 +7,7 @@ function AttachAudio({setMessageJustSent}) {
     
 
     const attachAudio = function () {
-      var audio = new Audio('record.wav');
-      audio.play();
+
 
         const handleSuccess = function(stream) {
           const downloadLink = [];
