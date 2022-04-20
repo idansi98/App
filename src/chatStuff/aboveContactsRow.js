@@ -1,4 +1,5 @@
 import AddContactButton from "./addContactButton";
+import DisplayNameInputBox from "./displayNameInputBox";
 import Example from "./example";
 
 function AboveContactsRow({ setCurrentChat, isSmall }) {
@@ -13,10 +14,7 @@ function AboveContactsRow({ setCurrentChat, isSmall }) {
         <Example />
         <span className="float-right mt-2" >
           <span className="input-group mb-3">
-          <span id ="Hey">
-              <input type="text" className="form-control" placeholder="Displayname"
-               aria-label="Username" aria-describedby="basic-addon1" id="DisplayNameInput"/>
-               </span>
+          <DisplayNameInputBox/>
                <span>
             <AddContactButton setCurrentChat={setCurrentChat} />
             </span>

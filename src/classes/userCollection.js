@@ -26,6 +26,16 @@ class UserCollection {
         return null;
     }
 
+     //Finds a user by his displayname.
+     findUserByDisplayName(displayName) {
+        for (this.index in this.users) {
+            if (this.users[this.index].displayName === displayName) {
+                return this.users[this.index];
+            }
+        }
+        return null;
+    }
+
     //Sends a new message between the sender to the reciever.
     sendMessage(sender, reciever, message) {
         var chatOfSender = sender.searchChat(reciever);
