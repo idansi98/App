@@ -177,3 +177,12 @@ p {
     border: none;
 }
 
+.nextButton {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+    margin-left: 70%;
+
+}
+#AboveSpan {
+    width: 70%!important; 
+}

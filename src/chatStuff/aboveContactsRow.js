@@ -11,7 +11,7 @@ function AboveContactsRow({setCurrentChat, isSmall}) {
         className="profile-image rounded-circle"
       />
       <Example />
-      <span className="float-right mt-2">
+      <span className="float-right mt-2" id = "AboveSpan">
         <span className="input-group mb-3">
           <AddContactButton setCurrentChat={setCurrentChat} />
         </span>
