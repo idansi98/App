@@ -25,7 +25,7 @@ class UserCollection {
         }
         return null;
     }
-
+    /*
      //Finds a user by his displayname.
      findUserByDisplayName(displayName) {
         for (this.index in this.users) {
@@ -35,6 +35,7 @@ class UserCollection {
         }
         return null;
     }
+    */
 
     //Sends a new message between the sender to the reciever.
     sendMessage(sender, reciever, message) {

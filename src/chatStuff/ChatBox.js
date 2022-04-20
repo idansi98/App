@@ -1,13 +1,10 @@
 import { useEffect } from "react";
 
 
+
 function ChatBox ({currentChat}) {
 
-  /*
-  const scrollDown = function () {
-    var elem = document.getElementById('chatBox');
-    elem.scrollTop = elem.scrollHeight;
-  }*/
+
 
   useEffect(() => {
     var elem = document.getElementById('chatBox');

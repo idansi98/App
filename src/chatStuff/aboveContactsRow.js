@@ -1,6 +1,5 @@
 import AddContactButton from "./addContactButton";
 import DisplayNameInputBox from "./displayNameInputBox";
-import Example from "./example";
 
 function AboveContactsRow({ setCurrentChat, isSmall, setSearchedDN}) {
   if (isSmall != true) {
@@ -11,7 +10,6 @@ function AboveContactsRow({ setCurrentChat, isSmall, setSearchedDN}) {
           alt=""
           className="profile-image rounded-circle"
         />
-        <Example />
         <span className="float-right mt-2" >
           <span className="input-group mb-3">
           <DisplayNameInputBox setSearchedDN={setSearchedDN}/>

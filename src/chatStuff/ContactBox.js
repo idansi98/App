@@ -25,7 +25,7 @@ function ContactBox ({setCurrentChat, isSmall, searchedDN}) {
     })
     for (var index in chats) {
       var chat = chats[index]
-      if (chat.user.displayName.includes(searchedDN)) {
+      if (chat.user.displayName.toLowerCase().includes(searchedDN.toLowerCase())) {
         contactsHTML.push(chat.contactHTML({setCurrentChat}));
       }
     }
