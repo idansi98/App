@@ -18,7 +18,7 @@ function InputMessageBox ({setInputText, messageJustSent}) {
     }
   }
   return (
-         <div className="col-sm-8">
+    <div className="col-sm-8">
             <input onKeyUp={textChanged}
             ref = {givenText}
             type="text"
@@ -26,7 +26,7 @@ function InputMessageBox ({setInputText, messageJustSent}) {
             placeholder="Write message..."
             id = "inputMessageBox"
             />
-        </div>
+            </div>
   )
 }
 
