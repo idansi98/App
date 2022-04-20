@@ -22,7 +22,7 @@ function BottomRow({isSmall, setMessageJustSent, messageJustSent, currentChat}) 
         <div className="row message-box p-3" id = "Lower">
         <AttachmentButton isSmall={isSmall} setMessageJustSent={setMessageJustSent} />
         <InputMessageBox setInputText={setInputText}  messageJustSent={messageJustSent}/>
-        <SendButton isSmall={isSmall} inputText={inputText} setMessageJustSent={setMessageJustSent}/>
+        <SendButton isSmall={isSmall} inputText={inputText} setMessageJustSent={setMessageJustSent} setInputText={setInputText}/>
       </div>
     )
 }
