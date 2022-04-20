@@ -6,7 +6,7 @@ import LoginForm from "./LoginForm";
 function LoginPage() {
     return ( 
         <>
-        <BlueBackground/>
+        <BlueBackground />
         <LoginForm/>
       </>  
     );

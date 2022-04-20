@@ -13,7 +13,7 @@ class TextMessage {
     get html() {
         var style = messageStyler.getMessageStyleByUser(this.sender)
         return (
-          <tr id = {this.ID} key={this.ID}>
+          <tr id = {this.ID} key={this.ID} className="noBorder">
           <td>
             <p className={style} id ="Text">
               {this.text}

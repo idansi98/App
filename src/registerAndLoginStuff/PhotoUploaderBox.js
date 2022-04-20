@@ -9,7 +9,6 @@ function PhotoBox({setCredentials}) {
     const updatePhotoUploader = function() {
 
         file = givenPhotoBox.current.files[0]
-        console.log(file)
         if (file) {
             reader.readAsDataURL(file)
         }

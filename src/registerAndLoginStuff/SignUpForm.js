@@ -10,7 +10,7 @@ import { useState } from "react";
 function SignUpForm() {
 
     // useState hook
-    const [credentials, setCredentials] = useState({userName:"",displayName:"", password:"", passwordValidator:"", photo:""});
+    const [credentials, setCredentials] = useState({userName:"",displayName:"", password:"", passwordValidator:"", photo:"defaultPFP.png"});
 
     return ( 
         <span className="d-flex justify-content-center" id="grayform">
