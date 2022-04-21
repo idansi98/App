@@ -1,7 +1,7 @@
 
-import BlueBackground from "./BlueBackGround";
 import LoginForm from "./LoginForm";
 import { useEffect } from "react";
+import SmallBlueBackground from "./smallBlueBackground";
 
 
 function LoginPage() {
@@ -9,14 +9,12 @@ function LoginPage() {
     document.title = "Login"
   }, [])
     return ( 
-      <div className="back-container">        
-      <div className=" container-fluid front-container no-padding ">
-      <BlueBackground />
-      </div>
-      <div className=" container front-container1">
-        <LoginForm />
-      </div>
-    </div>
+      <>
+      <SmallBlueBackground />
+      <LoginForm />
+      </>
+
+
     );
 }
 

@@ -2,9 +2,11 @@
  #grayformLogin {
     z-index: 1;
     position: relative;
-    width: 70vw;
+    width: 80vw;
     height: 50vh !important;
     top: 5vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
   }
 
   #grayformLoginInside {
@@ -16,16 +18,16 @@
   #grayformRegister {
     z-index: 1;
     position: relative;
-    left: 17vw;
-    width: 50vw;
+    width: 80vw;
     height: 90vh !important;
     top: 5vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
   }
 
   #grayformRegisterInside {
     position: relative;
     width: 100%;
-
   }
   /*The Class for the Register box.*/
   .p-3 {
