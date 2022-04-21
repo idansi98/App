@@ -19,15 +19,15 @@ function InputMessageBox ({setInputText, messageJustSent}) {
     }
   }
   return (
-    <div className="col-sm-8 EditedDiv">
-            <input onKeyUp={textChanged}
-            ref = {givenText}
-            type="text"
-            className="form-control"
-            placeholder="Write message..."
-            id = "inputMessageBox"
-            />
-            </div>
+    <>
+    <input onKeyUp={textChanged}
+    ref = {givenText}
+    type="text"
+    className="form-control"
+    placeholder="Write message..."
+    id = "inputMessageBox"
+    />
+    </>
   )
 }
 

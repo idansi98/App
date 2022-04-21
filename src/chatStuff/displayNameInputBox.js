@@ -8,10 +8,8 @@ function DisplayNameInputBox({ setSearchedDN }) {
 
 
     return (
-        <span id="Hey">
-            <input type="text" ref={displayText} onKeyUp={textUpdated} className="form-control" placeholder=""
-                aria-label="Username" aria-describedby="basic-addon1" id="DisplayNameInput" />
-        </span>
+        <input type="text" ref={displayText} onKeyUp={textUpdated} className="form-control" placeholder=""
+        aria-label="Username" aria-describedby="basic-addon1" id="DisplayNameInput" />
     )
 }
 export default DisplayNameInputBox;

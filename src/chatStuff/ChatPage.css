@@ -31,8 +31,9 @@
 }
 
 .chat-top {
-    background-color: #EDEDED;
-    height: 7vh
+    background-color: #6666FF !important;
+    height: 60px;
+    opacity: 100% !important;
 }
 
 .profile-image {
@@ -43,7 +44,7 @@
 
 .contacts {
     background-color: #ffffff;
-    height: 82vh;
+    height: calc(92vh - 60px);
     padding: 0vh;
 }
 
@@ -53,7 +54,7 @@
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
-    height: 82vh;
+    height: calc(92vh - 60px);
 }
 
 .contact-table-scroll::-webkit-scrollbar {
@@ -63,20 +64,20 @@
 
 .message-area {
     background-color: #e4e1de;
-    height: 82vh;
+    height: calc(92vh - 60px);
     padding: 0vh;
 }
 
 .message-table-scroll {
     background-color: #D9AFD9;
     background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
-
+    
     overflow-y: scroll;
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
-    height: 75vh;
+    height: calc(92vh - 60px);
 }
 
 .message-table-scroll::-webkit-scrollbar {
@@ -86,10 +87,12 @@
 }
 
 .message-box {
-    background-color: #F0F0F0;
-    height: 7vh;
-    padding: 1vh !important;
-    padding-bottom: 1vh !important;
+    background-color: #77777777 !important;
+    position: relative;
+    bottom: 60px;
+    height: 60px;
+    width: 100%!important;
+    padding: 0vh !important;
     margin: 0vh;
 }
 
@@ -106,9 +109,6 @@
 
 }
 
-#ChatBackground {
-    background-color: #0dcaf0 !important;
-}
 
 #AddContact {
     margin-left: -5%;
@@ -135,13 +135,7 @@
     padding-right: -4% !important;
 }
 
-#Lower {
-    background-color: #0df0af;
-}
 
-#Upper {
-    background-color: #0df0af;
-}
 
 .messageTime {
     width: 40%;
@@ -196,7 +190,39 @@ p {
 }
 
 #DisplayNameInput {
-    position: relative
+    position: relative !important;
+    height: 40px;
+    top:10px;
+    left: 10px;
+    width: calc(100% - 100px);
+    display: inline;
+
+}
+.userPic {
+    position: relative !important;
+    top:5px;
+    height: 40px;
+    width: 40px;
+
+}
+
+#addContactButton {
+    left:20px;
+    top:8px;
+    position: relative !important;
+    display: inline;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 0px !important;
+    padding: 10px;
+    border-color: transparent;
+    background-color: transparent !important;
+
+}
+
+#addContactButtonSVG {
+    position: relative;
+    bottom: 5px;
 }
 
 #Hey {
@@ -209,7 +235,7 @@ p {
 }
 
 .messageRestrictWidth {
-    max-width: 50vw !important;
+    max-width: 80% !important;
 }
 
 .noBorder {
@@ -223,24 +249,65 @@ p {
     
 }
 #Send {
-    height: 5vh !important;
-    padding-left: 0.5vw !important;
-    padding-right: 0.5vw !important;
-    background-color: #0df0af;
-    border-color: #0df0af;
-    position: fixed;
-    border: none !important;
-}
-#dropdownAttach {
-    height: 5vh !important;
-    padding-left: 0.5vw !important;
-    padding-right: 0.5vw !important;
-    background-color: #0df0af;
-    border-color: #0df0af;
-    position: fixed;
-}
-#inputMessageBox {
-    height: 5vh !important;
-    min-height: 0;
+    top: 10px;
+    height: 40px !important;
+    width: 40px !important;
+    left: 25px;
+    padding: 0px;
+    background-color: transparent;
+    border-color: transparent;
     position: relative;
 }
+#dropdownAttach {
+    top: 10px;
+    height: 40px !important;
+    width: 40px !important;
+    left: 5px;
+    padding-left: 0px !important;
+    padding-right: 0 !important;
+    background-color: transparent;
+    border-color: transparent;
+    position: relative;
+}
+#inputMessageBox {
+    top: 10px;
+    position: relative;
+    left: 10px;
+    height: 40px !important;
+    width: calc(100% - 120px);
+    min-height: 0;
+}
+
+.fullScreenWidth {
+    width: 100vw !important;
+}
+
+#currentChatPFP {
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    left: 10px;
+}
+
+#currentChatContactName{ 
+    top: 10px;
+    height: 40px;
+    position: relative;
+    left: 10px;
+}
+
+
+audio {
+    width: 200px
+  }
+
+
+.blueMessage{
+    background-color: #446644 !important;
+}
+
+.greenMessage{
+    background-color: #444466 !important;
+}
+

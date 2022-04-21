@@ -16,7 +16,7 @@ class AudioMessage {
             <tr id = {this.ID} key={this.ID} className="text-wrap noBorder">
             <td className="text-wrap">
               <p className={style}>
-                <audio controls>
+                <audio controls className="">
                 <source src={this.filePath}/>
                 </audio>
               </p>
