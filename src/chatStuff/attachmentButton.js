@@ -4,7 +4,7 @@ import AttachVideo from "./attachVideo";
 
 function AttachmentButton({isSmall, setMessageJustSent}) {
     return (
-        <div className="col-sm-2 mt-2">
+        <div className="col-sm-2 EditedDiv1">
                     {/*The attachment button*/}
                     <button className="btn btn-info dropdown-toggle" type="button" id="dropdownAttach" data-bs-toggle="dropdown" aria-expanded="false">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-paperclip" viewBox="0 0 16 16">

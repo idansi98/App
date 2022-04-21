@@ -19,7 +19,7 @@ function InputMessageBox ({setInputText, messageJustSent}) {
     }
   }
   return (
-    <div className="col-sm-8">
+    <div className="col-sm-8 EditedDiv">
             <input onKeyUp={textChanged}
             ref = {givenText}
             type="text"

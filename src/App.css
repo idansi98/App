@@ -11,14 +11,20 @@
 .mb-2 {
   margin-bottom: 0rem!important;
 }
-#blue {
-  padding: 4rem!important;
+.blueGradientBackground {
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  padding: 4rem!important
 }
 /*The gray form id.*/
 #grayform {
   z-index: 1;
-  position: relative;
+  position: fixed;
+  max-width: 100vw;
+  max-height: 90vh;
   margin-top: -7%;
+
+  
 }
 /*The Class for the Register box.*/
 .p-3 {

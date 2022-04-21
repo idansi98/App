@@ -24,7 +24,7 @@ function SendButton({isSmall, inputText, setMessageJustSent, setInputText}) {
     }
     return (
               
-      <div className="smallChatButton col-sm-2 mt-1" >
+      <div className="EditedDiv col-sm-2 " >
       {padding}                  <button id = "Send" onClick={buttonPressed} type="button" className="smallChatButton btn btn-info">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

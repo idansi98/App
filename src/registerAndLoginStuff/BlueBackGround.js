@@ -1,7 +1,7 @@
 
 function BlueBackground() {
     return (
-        <div className="back-main blueGradientBackground"/>
+        <div className="back-main mb-2 blueGradientBackground"/>
     )
 }
 
