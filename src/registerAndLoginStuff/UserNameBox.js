@@ -13,7 +13,7 @@ function UserNameBox({setCredentials}) {
         }));
     }
     return (
-        <div className="mt-1 mb-1 row ">
+        <div className="mt-1 mb-1 row fixeddiv">
           <label htmlFor="Username" className="col-sm-2 col-form-label fixedlabel">
             Username:
           </label>

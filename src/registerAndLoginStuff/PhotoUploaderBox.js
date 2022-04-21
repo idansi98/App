@@ -27,8 +27,8 @@ function PhotoBox({setCredentials}) {
     };
 
     return (
-        <div className="mt-1 mb-1 row">
-        <label htmlFor="formFile" className="form-label">Choose a profile picture:</label>
+        <div className="mt-1 mb-1 row fixeddiv">
+        <label htmlFor="formFile" className="form-label fixedlabel">Choose a profile picture:</label>
         <input ref={givenPhotoBox} onInput={updatePhotoUploader}
          type="file" className="form-control col-sm-2 col-form-label" id="Photo" aria-label="file example" required=""
          accept = "image/*"  />
