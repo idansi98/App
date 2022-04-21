@@ -17,7 +17,7 @@ class ImageMessage {
           <tr id = {this.ID} key={this.ID} className="noBorder">
           <td>
             <p className={style}>
-              <img src = {this.filePath} object-fit = "cover" width = "400" max-height="800" onClick={function() {
+              <img src = {this.filePath} className="" object-fit = "cover" width = "100%" max-height="100%" onClick={function() {
                 // TODO: enlarge the image
               }}/>
             </p>
