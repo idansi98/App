@@ -16,7 +16,7 @@ function PasswordValidatorBox({setCredentials}) {
     return (
         <div className="mt-3 mb-3 row fixeddiv">
         <label htmlFor="Displayname" className="col-sm-2 col-form-label fixedlabel">
-          Password again:
+          Confirm password:
         </label>
         <div className="col-sm-10">
           <input ref={givenPasswordValidatorBox} onKeyUp={updatePassWordValidator}

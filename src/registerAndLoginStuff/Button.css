@@ -5,7 +5,8 @@
     border-color: #890dfd;
   }
   #Login {
-    padding: 0.375rem 7.5rem;
+    max-width: 30vw;
+    max-height: 10vh;
   }
   #Contact {
     color:  #ffff;

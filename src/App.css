@@ -32,11 +32,12 @@
 }
 .fixeddiv {
   max-width: 60vw;
-  max-height: 45vh;
+  max-height: 15vh;
   position: relative;
 }
+
 .fixedlabel {
-  font-size: 2.25vh;
+  font-size: 2.1vh;
 }
 #passwordHelpInline {
   font-size: 2.25vh !important;
@@ -44,4 +45,9 @@
 /*The Class for the Register box.*/
 .p-3 {
   padding: 0.55rem!important;
+}
+#Username, #Password {
+  max-width: 60vw;
+  max-height: 10vh;
+  position: relative;
 }
