@@ -126,6 +126,10 @@
 #WRAP {
     display: flex !important;
     float: flex !important;
+    width: 60px;
+    margin: 0px;
+    border: 0px;
+    background-color: transparent;
 }
 
 #UL {
@@ -177,11 +181,7 @@ p {
     width: 100% !important;
 }
 
-#record {
-    width: 100% !important;
-    background-color: #ffffff !important;
-    border: none;
-}
+
 
 .nextButton {
     padding-left: 25% !important;
@@ -313,4 +313,34 @@ audio {
     background-color: #444466 !important;
 }
 
+.transparentBG{
+    background-color: transparent;
+}
+
+.dropDownButton {
+    height: 50px;
+    width: 100% !important;
+    border-radius: 5px;
+    background-color: #FFFFFF !important;
+}
+
+.dropDownSVG {
+    background-color: transparent;
+}
+
+.dropDownButtonOfRecord {
+    height: 50px;
+    width: 100% !important;
+    border-radius: 5px;
+    background-color: #FFFFFF !important;
+    padding: 0px;
+}
+
+#record {
+    border:none;
+    width: 100% !important;
+}
+
+.noBiggerHover {
+}
 

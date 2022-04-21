@@ -11,7 +11,7 @@ function AttachmentButton({isSmall, setMessageJustSent}) {
       </svg>
     </button>
 
-    <ul className="dropdown-menu" aria-labelledby="dropdownAttach" id = "UL">
+    <ul className="dropdown-menu transparentBG" aria-labelledby="dropdownAttach" id = "UL">
     <div id = "WRAP">
       <li>
         <AttachImage setMessageJustSent={setMessageJustSent}/>
