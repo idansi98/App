@@ -85,8 +85,8 @@ function tempAddExampleChats() {
 //userName:"",displayName:"", password:"", passwordValidator:""});
 
     return (
-        <div className="row pt-2">
-          <div className="col">
+        <div className="row pt-2 fixeddiv">
+          <div className="col fixeddiv">
             <button onClick={validate} type="button" id="Login" className="btn btn-primary mb-3">
               Sign up
             </button>

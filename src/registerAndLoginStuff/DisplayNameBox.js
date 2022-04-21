@@ -14,11 +14,11 @@ function DisplayNameBox({setCredentials}) {
     };
 
     return (
-        <div className="mt-3 mb-3 row">
-        <label htmlFor="Displayname" className="col-sm-2 col-form-label">
+        <div className="mt-3 mb-3 row fixeddiv">
+        <label htmlFor="Displayname" className="col-sm-2 col-form-label fixedlabel">
           Display name:
         </label>
-        <div className="col-sm-10">
+        <div className="col-sm-10 fixeddiv">
           <input ref={givenDisplayNameBox} onKeyUp={updateDisplayName} type="text" className="form-control" id="Displayname" />
           <span id="passwordHelpInline" class="form-text">
           Must be at least 1 character long.

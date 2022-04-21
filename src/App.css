@@ -12,24 +12,34 @@
   margin-bottom: 0rem!important;
 }
 .blueGradientBackground {
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
   background-color: #000000;
   opacity: 1;
   background-image:  linear-gradient(135deg, #020319 25%, transparent 25%), linear-gradient(225deg, #020319 25%, transparent 25%), linear-gradient(45deg, #020319 25%, transparent 25%), linear-gradient(315deg, #020319 25%, #000000 25%);
   background-position:  8px 0, 8px 0, 0 0, 0 0;
   background-size: 16px 16px;
   background-repeat: repeat;  padding: 4rem!important
-
-  
 }
 /*The gray form id.*/
 #grayform {
+  left: 10vw;
+  top: -70vh;
+  max-width: 80vw;
+  max-height: 70vh;
   z-index: 1;
   position: fixed;
-  max-width: 100vw;
-  max-height: 90vh;
-  margin-top: -7%;
-
-  
+}
+.fixeddiv {
+  max-width: 60vw;
+  max-height: 45vh;
+  position: relative;
+}
+.fixedlabel {
+  font-size: 2.25vh;
+}
+#passwordHelpInline {
+  font-size: 2.25vh !important;
 }
 /*The Class for the Register box.*/
 .p-3 {
