@@ -30,7 +30,7 @@ function LoginRegisterBox({credentials}) {
               Login
             </button>
           </div>
-          <div className="p-3 col fixeddiv">
+          <div className="constantFontSize p-3 col fixeddiv">
             {/*After clicking the registering successfully, go to the sign up page.*/}
             Not registered? Click <Link to='/signup'>here</Link> to register.
           </div>

@@ -91,7 +91,7 @@ function tempAddExampleChats() {
               Sign up
             </button>
           </div>
-          <div className="p-3 col">
+          <div className="constantFontSize p-3 col">
             {/*After clicking the registering successfully, go to the sign up page.*/}
             Already signed up? Click <Link to='/login'>here</Link> to sign in.
           </div>

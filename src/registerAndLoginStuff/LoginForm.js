@@ -10,9 +10,9 @@ function LoginForm() {
     const [credentials, setCredentials] = useState({userName:"",displayName:"", password:"", passwordValidator:""});
 
     return ( 
-        <span className="d-flex justify-content-center" id="grayform">
+        <span className="d-flex justify-content-center" id="grayformLogin">
         {/*The 3 rows form to enter userName, password, loging in, and signing up*/}
-        <form className="row g-3 w-75 border border-0 bg-light mt-5 mb-3 rounded">
+        <form className="grayformLoginInside row g-3 border border-0 bg-light rounded">
           <UserNameBox setCredentials={setCredentials}/>
           <PasswordBox setCredentials={setCredentials}/>
           <LoginRegisterBox credentials={credentials}/>

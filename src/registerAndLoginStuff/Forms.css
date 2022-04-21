@@ -1,10 +1,75 @@
  /*The gray form id.*/
- #grayform {
+ #grayformLogin {
     z-index: 1;
     position: relative;
-    margin-top: -7%;
+    width: 70vw;
+    height: 50vh !important;
+    top: 5vh;
+  }
+
+  #grayformLoginInside {
+    position: relative;
+    width: 100%;
+
+  }
+
+  #grayformRegister {
+    z-index: 1;
+    position: relative;
+    left: 17vw;
+    width: 50vw;
+    height: 90vh !important;
+    top: 5vh;
+  }
+
+  #grayformRegisterInside {
+    position: relative;
+    width: 100%;
+
   }
   /*The Class for the Register box.*/
   .p-3 {
     padding: 0.55rem!important;
+  }
+
+  .shorterForm {
+    width: 60%;
+    height: 4vh !important;
+    min-height: 0px;
+  }
+
+  .formRowFixed {
+    position: relative;
+    height: 10vh;
+  }
+
+  .lengthierLables {
+    width: 100%;
+    position: relative;
+  }
+
+  .constantFontSize {
+    font-size: 4vh;
+  }
+
+  #Login {
+    position: relative;
+    top: 3vh;
+    width: 17vw;
+    height: 10vh;
+    padding-left: 2vw !important;
+    padding-right: 2vw  !important;
+    padding-top: 2vh !important;
+    padding-bottom: 2vh  !important;
+    margin:0px;
+    font-size: 4vh;
+  }
+
+  #signUpForm {
+  }
+
+
+  .fixedContainer {
+    width: 100% !important;
+    padding: 0px !important;
   }

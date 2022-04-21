@@ -9,10 +9,14 @@ function LoginPage() {
     document.title = "Login"
   }, [])
     return ( 
-        <>
-        <BlueBackground />
-        <LoginForm/>
-      </>  
+      <div className="back-container">        
+      <div className=" container-fluid front-container no-padding ">
+      <BlueBackground />
+      </div>
+      <div className=" container front-container1">
+        <LoginForm />
+      </div>
+    </div>
     );
 }
 

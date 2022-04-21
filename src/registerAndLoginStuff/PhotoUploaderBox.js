@@ -32,8 +32,6 @@ function PhotoBox({setCredentials}) {
         <input ref={givenPhotoBox} onInput={updatePhotoUploader}
          type="file" className="form-control col-sm-2 col-form-label" id="Photo" aria-label="file example" required=""
          accept = "image/*"  />
-        <div className="invalid-feedback col-sm-10"> Example invalid form file feedback
-        </div>
       </div>
     );
 }
