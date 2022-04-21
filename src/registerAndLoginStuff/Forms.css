@@ -3,7 +3,7 @@
     z-index: 1;
     position: relative;
     width: 80vw;
-    height: 80vh !important;
+    height: 100% !important;
     top: 5vh;
     padding-left: 10vw;
     padding-right: 10vw;
@@ -19,7 +19,7 @@
     z-index: 1;
     position: relative;
     width: 80vw;
-    height: 150vh !important;
+    height: 200vh !important;
     top: 5vh;
     padding-left: 10vw;
     padding-right: 10vw;
@@ -42,8 +42,9 @@
 
   .formRowFixed {
     position: relative;
-    height: 10vh;
-    padding-bottom: 20vh;
+    height: 15%;
+    padding-bottom: 0%;
+ 
   }
 
   .lengthierLables {
@@ -76,3 +77,4 @@
     width: 100% !important;
     padding: 0px !important;
   }
+

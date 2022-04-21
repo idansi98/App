@@ -88,7 +88,7 @@ function tempAddExampleChats() {
         <div className="row pt-2 fixeddiv">
           <div className="col fixeddiv">
             <button onClick={validate} type="button" id="Login" className="btn btn-primary mb-3">
-              Sign up
+              Register
             </button>
           </div>
           <div className="constantFontSize p-3 col">

@@ -297,6 +297,7 @@ p {
     height: 40px;
     position: relative;
     left: 10px;
+    font-size: 25px;
 }
 
 
@@ -306,11 +307,11 @@ audio {
 
 
 .blueMessage{
-    background-color: #446644 !important;
+    background-color: #336633 !important;
 }
 
 .greenMessage{
-    background-color: #444466 !important;
+    background-color: #333366 !important;
 }
 
 .transparentBG{

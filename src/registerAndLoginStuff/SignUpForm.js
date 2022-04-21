@@ -14,8 +14,6 @@ function SignUpForm() {
 
     return ( 
         <span className="d-flex justify-content-center" id="grayformRegister">
-        {/*The 6 rows form to enter userName, displayName, password, passwordValidator, picture, loging in and signing up*/}
-
         <form className="grayformRegisterInside row g-3 border border-0 bg-light rounded">
           <UserNameBox setCredentials={setCredentials}/>
           <DisplayNameBox setCredentials={setCredentials}/>
@@ -25,7 +23,6 @@ function SignUpForm() {
           <SignUpRegisterBox credentials={credentials}/>
         </form>
       </span>
-    
     );
 }
 export default SignUpForm;
