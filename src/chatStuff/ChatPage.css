@@ -66,18 +66,19 @@
     background-color: #e4e1de;
     height: calc(92vh - 60px);
     padding: 0vh;
+    background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
 }
 
 .message-table-scroll {
-    background-color: #D9AFD9;
-    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
-    
+
+    background-color: transparent;
     overflow-y: scroll;
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
-    height: calc(92vh - 60px);
+    height: calc(92vh - 120px);
 }
 
 .message-table-scroll::-webkit-scrollbar {
@@ -89,7 +90,7 @@
 .message-box {
     background-color: #77777777 !important;
     position: relative;
-    bottom: 60px;
+    bottom: 0px;
     height: 60px;
     width: 100%!important;
     padding: 0vh !important;
@@ -128,6 +129,7 @@
 }
 
 #UL {
+
     padding: 0 !important;
     border: 0 !important;
     min-width: 1rem !important;
@@ -310,4 +312,5 @@ audio {
 .greenMessage{
     background-color: #444466 !important;
 }
+
 

@@ -26,7 +26,6 @@ function ChatPage() {
       }
     document.title = "Chats"
     function checkForTooSmall() {
-      console.log(window.innerWidth)
       if (window.innerWidth > 800) {
         if (tooSmall === true) {
           setTooSmall(false);
