@@ -57,7 +57,7 @@ function AddContactButton({ setCurrentChat }) {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add user by username</Modal.Title>
+          <Modal.Title>Find Contact</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <input id="usernameSearch" type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
