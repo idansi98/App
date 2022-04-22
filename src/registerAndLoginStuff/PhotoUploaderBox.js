@@ -50,7 +50,7 @@ function PhotoBox({setCredentials, credentials}) {
     
     return (
         <div className="mt-1 mb-1 row fixeddiv">
-        <label htmlFor="formFile" className="constantFontSize form-label fixedlabel">Click to change picture</label>
+        <label htmlFor="formFile" className="constantFontSize lengthierLables col-sm-2 col-form-label fixedlabel">Click to change picture</label>
         
         <input ref={givenPhotoBox} onInput={updatePhotoUploader}
          type="file" className="Type" id="Photo" aria-label="file example" required=""

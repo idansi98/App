@@ -20,10 +20,8 @@ function PasswordValidatorBox({setCredentials}) {
         <label className="constantFontSize lengthierLables col-sm-2 col-form-label fixedlabel">
           Repeat password
         </label>
-        <div className="col-sm-10 fixeddiv">
-          <input ref={givenPasswordValidatorBox} onKeyUp={updatePassWordValidator}
-          type="password" className="form-control shorterForm" id="passwordAgain" />
-        </div>
+        <input ref={givenPasswordValidatorBox} onKeyUp={updatePassWordValidator}
+        type="password" className="form-control shorterForm" id="passwordAgain" />
       </div>
       
     );

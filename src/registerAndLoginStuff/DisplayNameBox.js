@@ -18,9 +18,7 @@ function DisplayNameBox({setCredentials}) {
         <label htmlFor="Displayname" className="constantFontSize lengthierLables col-sm-2 col-form-label fixedlabel">
           Display name
         </label>
-        <div className="col-sm-10 fixeddiv">
-          <input ref={givenDisplayNameBox} onKeyUp={updateDisplayName} type="text" className="form-control shorterForm" id="Displayname" />
-        </div>
+        <input ref={givenDisplayNameBox} onKeyUp={updateDisplayName} type="text" className="form-control shorterForm" id="Displayname" />
       </div>
       
     );

@@ -4,16 +4,17 @@
     position: relative;
     width: 80vw;
     height: 100% !important;
+    left: 10vw;
     top: 5vh;
-    padding-left: 10vw;
-    padding-right: 10vw;
+
+    background-color: #ffffff22;
   }
 
   #grayformLoginInside {
     display: table-row !important;
     position: relative;
-    width: 100%;
-
+    width: 70vw;
+    background-color: #ffffff22;
   }
 
   #grayformRegister {
@@ -22,14 +23,16 @@
     width: 80vw;
     height: 100% !important;
     top: 5vh;
-    padding-left: 10vw;
-    padding-right: 10vw;
+    left: 10vw;
+
+    background-color: #ffffff22;
   }
 
   #grayformRegisterInside {
     display: table-row !important;
     position: relative;
-    width: 100%;
+    width: 70vw;
+    background-color: #ffffff22;
   }
   /*The Class for the Register box.*/
   .p-3 {
@@ -38,7 +41,8 @@
 
   .shorterForm {
     position: relative;
-    width: 32vw;
+    left:0%;
+    width: 100%;
     height: 4vh !important;
     min-height: 0px;
   }
@@ -51,6 +55,7 @@
   }
 
   .lengthierLables {
+    text-align: center;
     width: 100%;
     position: relative;
     height: 8vh !important;
@@ -63,7 +68,8 @@
   #Login {
     position: relative;
     top: 3vh;
-    width: 20vw;
+    width: 30%;
+    left: 35%;
     height: 10vh;
     padding-left: 2vw !important;
     padding-right: 2vw  !important;
@@ -79,6 +85,7 @@
     position: relative;
     top: 3vh;
     width: 25vw;
+    left: 27.5vw;
     height: 10vh;
     padding-left: 2vw !important;
     padding-right: 2vw  !important;
@@ -100,6 +107,7 @@
 
   .fixeddiv {
     display: table-row;
+    width: 100%;
     height: 5vh !important;
   }
 
@@ -120,10 +128,26 @@
   }
 
   #currentPicture {
-    max-width: 50vmin;
-    max-height: 50vmin;
+    position: relative;
+    left: 35%;
+    width: 30%;
+    padding: 0px;
   }
 
   #Photo {
     visibility:hidden;
+  }
+
+  #logoPic{
+    position: relative;
+    width: 25%;
+    left: 37.5%;
+  }
+
+  #loginTitle {
+    position: fixed;
+    top:25%;
+    text-align:center;
+    font-size: 500%;
+    color: black;
   }

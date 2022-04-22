@@ -14,7 +14,7 @@ function SignUpPage() {
   }, [])
   return ( 
     <>
-    <SmallBlueBackground />
+    <img src="logo.png" id = "logoPic" />
     <SignUpForm />
     <Snackbar />
     </>

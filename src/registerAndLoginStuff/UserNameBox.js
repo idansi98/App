@@ -17,9 +17,7 @@ function UserNameBox({setCredentials}) {
           <label htmlFor="Username" className="constantFontSize lengthierLables col-sm-2 col-form-label fixedlabel">
             Username
           </label>
-          <div className="col-sm-10 fixeddiv">
-            <input ref={givenUserNameBox} onKeyUp={updateUser} type="text" className="form-control shorterForm" id="Username" />
-          </div>
+          <input ref={givenUserNameBox} onKeyUp={updateUser} type="text" className="form-control shorterForm" id="Username" />
         </div>
     );
 }

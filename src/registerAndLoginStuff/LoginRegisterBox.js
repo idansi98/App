@@ -24,11 +24,9 @@ function LoginRegisterBox({credentials}) {
     }
     return (
         <div className="row fixeddivBigger pt-2">
-          <div className="col fixeddiv">
-            <button onClick={tryLogin} type="button" id="Login" className="btn btn-primary mb-3">
-              Login
-            </button>
-          </div>
+        <button onClick={tryLogin} type="button" id="Login" className="btn btn-primary mb-3">
+        Login
+      </button>
           <div className="constantFontSize p-3 col fixeddiv" id = "messageNotRegistered">
             {/*After clicking the registering successfully, go to the sign up page.*/}
             Not registered? Click <Link to='/signup'>here</Link> to register.

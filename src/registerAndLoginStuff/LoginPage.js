@@ -13,7 +13,7 @@ function LoginPage() {
   }, [])
     return ( 
       <>
-      <SmallBlueBackground />
+      <img src="logo.png" id = "logoPic" />
       <LoginForm />
       <Snackbar />
       </>

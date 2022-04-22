@@ -11,7 +11,7 @@ function LoginForm() {
 
     return ( 
         <span className="d-flex justify-content-center" id="grayformLogin">
-        <form className="grayformLoginInside g-3 border border-0 bg-light rounded">
+        <form className="grayformLoginInside g-3 border border-0 rounded">
           <UserNameBox setCredentials={setCredentials}/>
           <PasswordBox setCredentials={setCredentials}/>
           <LoginRegisterBox credentials={credentials}/>

@@ -14,7 +14,7 @@ function SignUpForm() {
 
     return ( 
         <span className="d-flex justify-content-center" id="grayformRegister">
-        <form className="grayformRegisterInside g-3 border border-0 bg-light rounded">
+        <form className="grayformRegisterInside g-3 border border-0 rounded">
           <UserNameBox setCredentials={setCredentials}/>
           <DisplayNameBox setCredentials={setCredentials}/>
           <PasswordBox setCredentials={setCredentials}/>
