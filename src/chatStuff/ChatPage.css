@@ -326,23 +326,19 @@ audio {
 .noBiggerHover {
 }
 
-
 #findContactHeader {
   background-color: #72cad5;
-  border:none;
+  border: none;
 }
 
 #findContactBody {
   background-color: #72cad5;
   border: none;
-
 }
 
 #findContactFooter {
   background-color: #72cad5;
   border: none;
-
-
 }
 
 .themedModal .modal-content {
@@ -355,8 +351,6 @@ audio {
   border: none;
   padding: 10px;
 }
-
-
 
 /* The snackbar - position it at the bottom and in the middle of the screen */
 #snackbar {
@@ -384,26 +378,45 @@ audio {
 
 /* Animations to fade the snackbar in and out */
 @-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 @keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
-
-
-
-
-

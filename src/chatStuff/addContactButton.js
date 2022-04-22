@@ -10,15 +10,15 @@ function AddContactButton({ setCurrentChat }) {
   const addNewChat = function () {
     var userToStartChatWith = document.getElementById("usernameSearch").value;
     if (userToStartChatWith === global.currentUser.userName) {
-      snackbar.showMessage("You can't start messaging yourself!")
+      snackbar.showMessage("You can't start messaging yourself!");
       return;
     }
     var foundUser = chatHandler.findUser(userToStartChatWith);
     if (foundUser == null) {
-      snackbar.showMessage("User not found")
+      snackbar.showMessage("User not found");
       return;
     } else if (global.currentUser.searchChat(foundUser) != null) {
-      snackbar.showMessage("User already added")
+      snackbar.showMessage("User already added");
       return;
     } else {
       chatHandler.makeBlankChat(global.currentUser, foundUser);
@@ -51,10 +51,7 @@ function AddContactButton({ setCurrentChat }) {
         </svg>
       </Button>
 
-      <Modal  
-      show={show} 
-      onHide={handleClose}
-      className="themedModal">
+      <Modal show={show} onHide={handleClose} className="themedModal">
         <Modal.Header id="findContactHeader" closeButton>
           <Modal.Title>Add Contact</Modal.Title>
         </Modal.Header>
@@ -69,9 +66,11 @@ function AddContactButton({ setCurrentChat }) {
           />
         </Modal.Body>
         <Modal.Footer id="findContactFooter">
-          <Button variant="primary" 
-          onClick={addNewChat}
-          id= "addContactConfirmationButton">
+          <Button
+            variant="primary"
+            onClick={addNewChat}
+            id="addContactConfirmationButton"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"

@@ -1,31 +1,29 @@
-import {useRef} from 'react';
+import { useRef } from "react";
 
-function PhotoBox({setCredentials, credentials}) {
-    const givenPhotoBox = useRef(null);
-    var file = null;
-    const reader = new FileReader();
+function PhotoBox({ setCredentials, credentials }) {
+  const givenPhotoBox = useRef(null);
+  var file = null;
+  const reader = new FileReader();
 
-
-    const updatePhotoUploader = function() {
-
-        file = givenPhotoBox.current.files[0]
-        if (file) {
-            reader.readAsDataURL(file)
-        }
-        reader.onload = function () {
-            setCredentials((prev) => ({
-                userName: prev.userName,
-                displayName: prev.displayName,
-                password: prev.password,
-                passwordValidator: prev.passwordValidator,
-                photo: reader.result,
-            }));
-        }
-        reader.onerror = function () {
-            console.log(reader.error);
-        }
+  const updatePhotoUploader = function () {
+    file = givenPhotoBox.current.files[0];
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+    reader.onload = function () {
+      setCredentials((prev) => ({
+        userName: prev.userName,
+        displayName: prev.displayName,
+        password: prev.password,
+        passwordValidator: prev.passwordValidator,
+        photo: reader.result,
+      }));
     };
-/*
+    reader.onerror = function () {
+      console.log(reader.error);
+    };
+  };
+  /*
 
 <div className="file btn btn-lg btn-light Check dropDownButton">
         accept = "image/*" 
@@ -47,20 +45,35 @@ function PhotoBox({setCredentials, credentials}) {
 
 
 */
-    
-    return (
-        <div className="mt-1 mb-1 row fixeddiv">
-        <label htmlFor="formFile" className="constantFontSize lengthierLables col-sm-2 col-form-label fixedlabel">Click to change picture</label>
-        
-        <input ref={givenPhotoBox} onInput={updatePhotoUploader}
-         type="file" className="Type" id="Photo" aria-label="file example" required=""
-         accept = "image/*"  />
-         <img src= {credentials.photo} id = "currentPicture" onClick={function() {
-             document.getElementById("Photo").click()
-         }}/>
 
-      </div>
-    );
+  return (
+    <div className="mt-1 mb-1 row fixeddiv">
+      <label
+        htmlFor="formFile"
+        className="constantFontSize lengthierLables col-sm-2 col-form-label fixedlabel"
+      >
+        Click to change picture
+      </label>
+
+      <input
+        ref={givenPhotoBox}
+        onInput={updatePhotoUploader}
+        type="file"
+        className="Type"
+        id="Photo"
+        aria-label="file example"
+        required=""
+        accept="image/*"
+      />
+      <img
+        src={credentials.photo}
+        id="currentPicture"
+        onClick={function () {
+          document.getElementById("Photo").click();
+        }}
+      />
+    </div>
+  );
 }
 
 export default PhotoBox;
