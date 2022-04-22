@@ -1,4 +1,5 @@
 import chatHandler from "./chatFunctions";
+import messageStyler from "../classes/messageStyler";
 
 function SendButton({
   isSmall,
@@ -19,6 +20,7 @@ function SendButton({
     if (inputText === "") {
       return;
     }
+    
     var reciever = global.currentChat.user;
     var sender = global.currentUser;
     chatHandler.sendTextMessage(sender, reciever, inputText);

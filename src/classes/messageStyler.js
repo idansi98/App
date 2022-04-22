@@ -35,4 +35,7 @@ function formatAMPM(backThen) {
         return rightStyle;
       }
   }
+
+  // a function I found for adding url to messages with ease
+
   export default {formatAMPM, getMessageStyleByUser}

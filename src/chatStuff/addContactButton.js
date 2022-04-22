@@ -1,6 +1,7 @@
 import chatHandler from "./chatFunctions";
 import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
+import snackbar from "../classes/snackbarHelper";
 
 function AddContactButton({ setCurrentChat }) {
   const [show, setShow] = useState(false);
@@ -9,21 +10,15 @@ function AddContactButton({ setCurrentChat }) {
   const addNewChat = function () {
     var userToStartChatWith = document.getElementById("usernameSearch").value;
     if (userToStartChatWith === global.currentUser.userName) {
-      alert("You can't start messaging yourself!");
-      var audio = new Audio("donkey.ogg");
-      audio.play();
+      snackbar.showMessage("You can't start messaging yourself!")
       return;
     }
     var foundUser = chatHandler.findUser(userToStartChatWith);
     if (foundUser == null) {
-      alert("User not found");
-      var audio = new Audio("donkey.ogg");
-      audio.play();
+      snackbar.showMessage("User not found")
       return;
     } else if (global.currentUser.searchChat(foundUser) != null) {
-      alert("User already added!");
-      var audio = new Audio("donkey.ogg");
-      audio.play();
+      snackbar.showMessage("User already added")
       return;
     } else {
       chatHandler.makeBlankChat(global.currentUser, foundUser);
@@ -56,11 +51,14 @@ function AddContactButton({ setCurrentChat }) {
         </svg>
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Find Contact</Modal.Title>
+      <Modal  
+      show={show} 
+      onHide={handleClose}
+      className="themedModal">
+        <Modal.Header id="findContactHeader" closeButton>
+          <Modal.Title>Add Contact</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body id="findContactBody">
           <input
             id="usernameSearch"
             type="text"
@@ -70,12 +68,14 @@ function AddContactButton({ setCurrentChat }) {
             aria-describedby="basic-addon1"
           />
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary" onClick={addNewChat}>
+        <Modal.Footer id="findContactFooter">
+          <Button variant="primary" 
+          onClick={addNewChat}
+          id= "addContactConfirmationButton">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="30"
+              height="30"
               fill="currentColor"
               className="bi bi-journal-plus"
               viewBox="0 0 16 16"

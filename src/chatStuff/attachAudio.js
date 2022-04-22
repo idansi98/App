@@ -43,7 +43,7 @@ function AttachAudio({ setMessageJustSent, setRecorder }) {
           id="record"
           ref={givenAudioBox}
           onMouseDown={attachAudio}
-          title="Hold the recording button to record"
+          title="Click here to start recording"
           className="dropDownButton"
         >
           <svg

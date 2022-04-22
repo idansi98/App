@@ -2,6 +2,7 @@ import './Button.css'
 import {Link} from 'react-router-dom'
 import {useNavigate} from 'react-router-dom';
 import chatHandler from '../chatStuff/chatFunctions';
+import snackbarHelper from '../classes/snackbarHelper';
 
 function SignUpRegisterBox({credentials}) {
 
@@ -17,8 +18,7 @@ function validate() {
             tempAddExampleChats()
             navigate('/chats');
         } else {
-            var audio = new Audio('donkey.ogg');
-            audio.play();
+            //
         }
 }
 
@@ -104,7 +104,7 @@ function doesUserExist(userName) {
     if (chatHandler.findUser(userName)===null) {
         return false;
     }
-    alert("Username already exists, please try " + trollName +" instead.");
+    snackbarHelper.showMessage("Username already exists, please try " + trollName +" instead.");
     return true;
 }
 
@@ -122,7 +122,7 @@ function randomLetters() {
 //Function to check whether a Username's length is valid or not.
 function isUserNameValid(userName) {
     if(userName.length < 1) {
-        alert("Username must be at least 1 charcater! please try again.");
+        snackbarHelper.showMessage("Username must be at least 1 charcater! please try again.");
         return false;
     }
     return true;
@@ -131,7 +131,7 @@ function isUserNameValid(userName) {
 //Function to check whether a Displayname's length is valid or not.
 function isDisplayNameValid(displayName) {
     if(displayName.length < 1) {
-        alert("Displayname must be at least 1 charcater! please try again.");
+        snackbarHelper.showMessage("Displayname must be at least 1 charcater! please try again.");
         return false;
     }
     return true;
@@ -140,7 +140,7 @@ function isDisplayNameValid(displayName) {
  //Function to check whether the entered passwords are equal or not.
 function isSamePassword(password1, password2) {
     if(!(password1 == password2)) {
-        alert("You entered different passwords! please try again.");
+        snackbarHelper.showMessage("You entered different passwords! please try again.");
         return false;
     }
     return true;
@@ -149,11 +149,11 @@ function isSamePassword(password1, password2) {
  //Function to check whether a password's length is valid or not.
  function isPasswordValidLength(password) {
     if(password.length < 8) {
-        alert("Your password must be at least 8 characters! please try again.");
+        snackbarHelper.showMessage("Your password must be at least 8 characters! please try again.");
         return false;     
     }
     if(password.length > 20) {
-        alert("Your password must be maximum 20 characters! please try again.");
+        snackbarHelper.showMessage("Your password must be maximum 20 characters! please try again.");
         return false;  
     }
     return true;
@@ -174,7 +174,7 @@ function isSamePassword(password1, password2) {
     if(numChecker && letterChecker) {
         return true;
     }
-    alert("Your password must contain at least 1 number and 1 letter! please try again.")
+    snackbarHelper.showMessage("Your password must contain at least 1 number and 1 letter! please try again.")
     return false;    
 }
 

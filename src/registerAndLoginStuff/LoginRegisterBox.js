@@ -2,6 +2,7 @@ import './Button.css'
 import {Link} from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 import chatHandler from '../chatStuff/chatFunctions';
+import snackbarHelper from '../classes/snackbarHelper';
 
 function LoginRegisterBox({credentials}) {
 
@@ -15,9 +16,7 @@ function LoginRegisterBox({credentials}) {
     const tryLogin = function() {
         var user = chatHandler.login(credentials.userName, credentials.password);
         if (user === null) {
-          var audio = new Audio('donkey.ogg');
-          audio.play();
-            alert("Try again!");
+            snackbarHelper.showMessage("Try again!")
         } else {
             global.currentUser = user;
             navigate('/chats');

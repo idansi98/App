@@ -59,3 +59,16 @@
 .p-3 {
   padding: 0.55rem!important;
 }
+
+
+.snackbarChat {
+  background-color: #72cad5 !important;
+  z-index: 55550;
+  color:black !important;
+
+}
+
+.snackbarLoginRegister {
+  background-color: #6666ff !important;
+  z-index: 20;
+}

@@ -35,6 +35,7 @@ function fillMessages() {
 
 //We intillize the data base and adding the users.
 function init() {
+    global.snackBarTimeout = null
     global.currentUser = null;
     global.currentChat = null;
     global.lastMessageID=-1;

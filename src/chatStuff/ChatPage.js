@@ -5,6 +5,8 @@ import React, { useState, useEffect } from "react";
 import AboveRow from "./aboveRow";
 import MainChatBox from "./mainChatBox";
 import BlueBackground from "../registerAndLoginStuff/BlueBackGround";
+import Snackbar from "../registerAndLoginStuff/snackbar";
+import snackbarHelper from "../classes/snackbarHelper";
 
 function ChatPage() {
   // update when resizing
@@ -18,6 +20,7 @@ function ChatPage() {
     if (global.currentUser == null) {
       navigate("/login");
     }
+    snackbarHelper.setClass("snackbarChat");
     document.title = "Chats";
     function checkForTooSmall() {
       if (window.innerWidth > 800) {
@@ -57,6 +60,7 @@ function ChatPage() {
           searchedDN={searchedDN}
         />
       </div>
+      <Snackbar />
     </div>
   );
 }

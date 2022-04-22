@@ -19,7 +19,7 @@ function PasswordBox({setCredentials}) {
             Password
           </label>
           <div className="col-sm-10 fixeddiv">
-            <input ref={givenPasswordBox} onKeyUp={updatePassword} type="password" className="form-control shorterForm" id="Password" />
+            <input ref={givenPasswordBox} onKeyUp={updatePassword} type="password" className="form-control shorterForm" id="Password" name="password" autoComplete="on"/>
           </div>
         </div>
     );
