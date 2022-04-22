@@ -41,8 +41,8 @@
 
 .shorterForm {
   position: relative;
-  left: 0%;
-  width: 100%;
+  left: calc((100% - 30vw) / 2);
+  width: 30vw;
   height: 4vh !important;
   min-height: 0px;
 }
@@ -83,8 +83,8 @@
 #Register {
   position: relative;
   top: 3vh;
-  width: 25vw;
-  left: 27.5vw;
+  width: 30%;
+  left: 35%;
   height: 10vh;
   padding-left: 2vw !important;
   padding-right: 2vw !important;
@@ -126,6 +126,7 @@
   position: relative;
   left: 35%;
   width: 30%;
+  height: 30%;
   padding: 0px;
 }
 
