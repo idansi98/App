@@ -15,7 +15,7 @@ function PasswordBox({setCredentials}) {
 
     return (
         <div className="mt-1 mb-1 row fixeddiv formRowFixed">
-          <label htmlFor="inputPassword" className="constantFontSize lengthierLables col-sm-2 col-form-label fixedlabel">
+          <label className="constantFontSize lengthierLables col-sm-2 col-form-label fixedlabel">
             Password
           </label>
           <div className="col-sm-10 fixeddiv">

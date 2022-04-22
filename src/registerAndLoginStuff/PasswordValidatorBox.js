@@ -12,15 +12,17 @@ function PasswordValidatorBox({setCredentials}) {
             photo: prev.photo
         }));
     };
+    //          <input ref={givenPasswordValidatorBox} onKeyUp={updatePassWordValidator}
+
 
     return (
-        <div className="mt-3 mb-3 row fixeddiv formRowFixed">
-        <label htmlFor="Displayname" className="constantFontSize lengthierLables col-sm-2 col-form-label fixedlabel">
+        <div className="mt-1 mb-1 row fixeddiv formRowFixed">
+        <label className="constantFontSize lengthierLables col-sm-2 col-form-label fixedlabel">
           Repeat password
         </label>
-        <div className="col-sm-10">
+        <div className="col-sm-10 fixeddiv">
           <input ref={givenPasswordValidatorBox} onKeyUp={updatePassWordValidator}
-          type="password" className="form-control shorterForm" id="Displayname" />
+          type="password" className="form-control shorterForm" id="passwordAgain" />
         </div>
       </div>
       

@@ -1,6 +1,6 @@
 import {useRef} from 'react';
 
-function PhotoBox({setCredentials}) {
+function PhotoBox({setCredentials, credentials}) {
     const givenPhotoBox = useRef(null);
     var file = null;
     const reader = new FileReader();
@@ -47,13 +47,18 @@ function PhotoBox({setCredentials}) {
 
 
 */
+    
     return (
         <div className="mt-1 mb-1 row fixeddiv">
-        <label htmlFor="formFile" className="constantFontSize form-label fixedlabel">Choose a profile picture</label>
+        <label htmlFor="formFile" className="constantFontSize form-label fixedlabel">Click to change picture</label>
         
         <input ref={givenPhotoBox} onInput={updatePhotoUploader}
          type="file" className="Type" id="Photo" aria-label="file example" required=""
          accept = "image/*"  />
+         <img src= {credentials.photo} id = "currentPicture" onClick={function() {
+             document.getElementById("Photo").click()
+         }}/>
+
       </div>
     );
 }
