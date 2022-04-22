@@ -1,17 +1,12 @@
 import { useEffect } from "react";
 
-
-
-function ChatBox ({currentChat}) {
-
-
-
+function ChatBox({ currentChat }) {
   useEffect(() => {
-    var elem = document.getElementById('chatBox');
+    var elem = document.getElementById("chatBox");
     elem.scrollTop = elem.scrollHeight;
   });
 
-  var allMessagesJSX =[];
+  var allMessagesJSX = [];
   if (currentChat != null) {
     var messages = currentChat.messages;
     for (var index in messages) {
@@ -19,17 +14,13 @@ function ChatBox ({currentChat}) {
     }
   }
 
-
-    return (
-        <div  id = "chatBox" className="message-table-scroll">
-            <table className="table">
-              <tbody >
-                {allMessagesJSX}
-              </tbody>
-            </table>
-        </div>
-    ) ;
-
+  return (
+    <div id="chatBox" className="message-table-scroll">
+      <table className="table">
+        <tbody>{allMessagesJSX}</tbody>
+      </table>
+    </div>
+  );
 }
 
 export default ChatBox;

@@ -1,347 +1,327 @@
 .back-top {
-    background-color: #009688;
-    height: 15vh;
+  background-color: #009688;
+  height: 15vh;
 }
 
 .back-main {
-    background-color: #D9DBD5;
-    height: 100vh;
+  background-color: #d9dbd5;
+  height: 100vh;
 }
 
 .no-padding {
-    padding: 0 !important;
+  padding: 0 !important;
 }
 
 .back-container {
-    position: relative;
+  position: relative;
 }
 
 .front-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .front-container1 {
-    position: absolute;
-    top: 20px;
-    left: 0;
-    right: 0;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
 }
 
 .chat-top {
-    background-color: #6666FF !important;
-    height: 60px;
-    opacity: 100% !important;
+  background-color: #6666ff !important;
+  height: 60px;
+  opacity: 100% !important;
 }
 
 .profile-image {
-    margin-top: 7px;
-    height: 30px;
-    width: 30px;
+  margin-top: 7px;
+  height: 30px;
+  width: 30px;
 }
 
 .contacts {
-    background-color: #ffffff;
-    height: calc(92vh - 60px);
-    padding: 0vh;
+  background-color: #ffffff;
+  height: calc(92vh - 60px);
+  padding: 0vh;
 }
 
 .contact-table-scroll {
-    overflow-y: scroll;
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
-    height: calc(92vh - 60px);
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  height: calc(92vh - 60px);
 }
 
 .contact-table-scroll::-webkit-scrollbar {
-    display: none;
-    /* Hide scrollbar for Chrome, Safari and Opera */
+  display: none;
+  /* Hide scrollbar for Chrome, Safari and Opera */
 }
 
 .message-area {
-    background-color: #e4e1de;
-    height: calc(92vh - 60px);
-    padding: 0vh;
-    background-color: #D9AFD9;
-    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+  background-color: #e4e1de;
+  height: calc(92vh - 60px);
+  padding: 0vh;
+  background-color: #d9afd9;
+  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
 }
 
 .message-table-scroll {
-
-    background-color: transparent;
-    overflow-y: scroll;
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
-    height: calc(92vh - 120px);
+  background-color: transparent;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  height: calc(92vh - 120px);
 }
 
 .message-table-scroll::-webkit-scrollbar {
-    display: none;
-    /* Hide scrollbar for Chrome, Safari and Opera */
-
+  display: none;
+  /* Hide scrollbar for Chrome, Safari and Opera */
 }
 
 .message-box {
-    background-color: #77777777 !important;
-    position: relative;
-    bottom: 0px;
-    height: 60px;
-    width: 100%!important;
-    padding: 0vh !important;
-    margin: 0vh;
+  background-color: #77777777 !important;
+  position: relative;
+  bottom: 0px;
+  height: 60px;
+  width: 100% !important;
+  padding: 0vh !important;
+  margin: 0vh;
 }
 
 .mx-2 {
-    margin-left: 90% !important;
-    margin-top: -8% !important;
+  margin-left: 90% !important;
+  margin-top: -8% !important;
 }
 
 #Form {
-    padding-left: 1%;
-    margin-right: 50%;
-    margin-top: 0%;
-    width: 100%;
-
+  padding-left: 1%;
+  margin-right: 50%;
+  margin-top: 0%;
+  width: 100%;
 }
 
-
 #AddContact {
-    margin-left: -5%;
-    margin-top: 0%;
-    margin-bottom: 0%;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-bottom: 5%;
-    padding-top: 2%;
-    background-color: #0df0af;
-    border-color: #0df0af;
+  margin-left: -5%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+  padding-top: 2%;
+  background-color: #0df0af;
+  border-color: #0df0af;
 }
 
 #WRAP {
-    display: flex !important;
-    float: flex !important;
-    width: 60px;
-    margin: 0px;
-    border: 0px;
-    background-color: transparent;
+  display: flex !important;
+  float: flex !important;
+  width: 60px;
+  margin: 0px;
+  border: 0px;
+  background-color: transparent;
 }
 
 #UL {
-
-    padding: 0 !important;
-    border: 0 !important;
-    min-width: 1rem !important;
-    margin-bottom: 0.2% !important;
-    padding-right: -4% !important;
+  padding: 0 !important;
+  border: 0 !important;
+  min-width: 1rem !important;
+  margin-bottom: 0.2% !important;
+  padding-right: -4% !important;
 }
 
-
-
 .messageTime {
-    width: 40%;
-    margin-left: 55%;
+  width: 40%;
+  margin-left: 55%;
 
-    text-align: center;
-    max-width: 200px;
+  text-align: center;
+  max-width: 200px;
 }
 
 .rightMessage {
-    margin-right: -30% !important;
-    position: relative;
+  margin-right: -30% !important;
+  position: relative;
 }
 
-
 p {
-    white-space: pre-wrap !important;
-    word-break: break-word !important;
-    max-width: 100% !important;
-    overflow-wrap: break-word;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+  max-width: 100% !important;
+  overflow-wrap: break-word;
 }
 
 .Type {
-    position: absolute;
-    font-size: 50px;
-    opacity: 0;
-    right: 0;
-    top: 0;
+  position: absolute;
+  font-size: 50px;
+  opacity: 0;
+  right: 0;
+  top: 0;
 }
 
 .Check {
-    position: relative;
-    overflow: hidden;
-    background-color: #ffffff;
-    border-color: #ffffff;
-    color: black;
-    width: 100% !important;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: black;
+  width: 100% !important;
 }
 
-
-
 .nextButton {
-    padding-left: 25% !important;
-    padding-right: 25% !important;
-    margin-left: 250%;
-
-
+  padding-left: 25% !important;
+  padding-right: 25% !important;
+  margin-left: 250%;
 }
 
 #DisplayNameInput {
-    position: relative !important;
-    height: 40px;
-    top:10px;
-    left: 10px;
-    width: calc(100% - 100px);
-    display: inline;
-
+  position: relative !important;
+  height: 40px;
+  top: 10px;
+  left: 10px;
+  width: calc(100% - 100px);
+  display: inline;
 }
 .userPic {
-    position: relative !important;
-    top:5px;
-    height: 40px;
-    width: 40px;
-
+  position: relative !important;
+  top: 5px;
+  height: 40px;
+  width: 40px;
 }
 
 #addContactButton {
-    left:20px;
-    top:8px;
-    position: relative !important;
-    display: inline;
-    width: 40px !important;
-    height: 40px !important;
-    min-width: 0px !important;
-    padding: 10px;
-    border-color: transparent;
-    background-color: transparent !important;
-
+  left: 20px;
+  top: 8px;
+  position: relative !important;
+  display: inline;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 0px !important;
+  padding: 10px;
+  border-color: transparent;
+  background-color: transparent !important;
 }
 
 #addContactButtonSVG {
-    position: relative;
-    bottom: 5px;
+  position: relative;
+  bottom: 5px;
 }
 
 #Hey {
-
-    margin-left: -40% !important;
+  margin-left: -40% !important;
 }
 
 .topBarHeight {
-    height: 10vh !important;
+  height: 10vh !important;
 }
 
 .messageRestrictWidth {
-    max-width: 80% !important;
+  max-width: 80% !important;
 }
 
 .noBorder {
-    border-color: transparent;
+  border-color: transparent;
 }
 .EditedDiv1 {
-    max-width: 40vw !important;
-    max-height: 10vh !important;
-    height: 5vh !important;
-    min-height: 0vh !important;
-    
+  max-width: 40vw !important;
+  max-height: 10vh !important;
+  height: 5vh !important;
+  min-height: 0vh !important;
 }
 #Send {
-    top: 10px;
-    height: 40px !important;
-    width: 40px !important;
-    left: 25px;
-    padding: 0px;
-    background-color: transparent;
-    border-color: transparent;
-    position: relative;
+  top: 10px;
+  height: 40px !important;
+  width: 40px !important;
+  left: 25px;
+  padding: 0px;
+  background-color: transparent;
+  border-color: transparent;
+  position: relative;
 }
 #dropdownAttach {
-    top: 10px;
-    height: 40px !important;
-    width: 40px !important;
-    left: 5px;
-    padding-left: 0px !important;
-    padding-right: 0 !important;
-    background-color: transparent;
-    border-color: transparent;
-    position: relative;
+  top: 10px;
+  height: 40px !important;
+  width: 40px !important;
+  left: 5px;
+  padding-left: 0px !important;
+  padding-right: 0 !important;
+  background-color: transparent;
+  border-color: transparent;
+  position: relative;
 }
 #inputMessageBox {
-    top: 10px;
-    position: relative;
-    left: 10px;
-    height: 40px !important;
-    width: calc(100% - 120px);
-    min-height: 0;
+  top: 10px;
+  position: relative;
+  left: 10px;
+  height: 40px !important;
+  width: calc(100% - 120px);
+  min-height: 0;
 }
 
 .fullScreenWidth {
-    width: 100vw !important;
+  width: 100vw !important;
 }
 
 #currentChatPFP {
-    top: 5px;
-    width: 40px;
-    height: 40px;
-    position: relative;
-    left: 10px;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  left: 10px;
 }
 
-#currentChatContactName{ 
-    top: 10px;
-    height: 40px;
-    position: relative;
-    left: 10px;
-    font-size: 25px;
+#currentChatContactName {
+  top: 10px;
+  height: 40px;
+  position: relative;
+  left: 10px;
+  font-size: 25px;
 }
-
 
 audio {
-    width: 200px
-  }
-
-
-.blueMessage{
-    background-color: #336633 !important;
+  width: 200px;
 }
 
-.greenMessage{
-    background-color: #333366 !important;
+.blueMessage {
+  background-color: #336633 !important;
 }
 
-.transparentBG{
-    background-color: transparent;
+.greenMessage {
+  background-color: #333366 !important;
+}
+
+.transparentBG {
+  background-color: transparent;
 }
 
 .dropDownButton {
-    height: 50px;
-    width: 100% !important;
-    border-radius: 5px;
-    background-color: #FFFFFF !important;
+  height: 50px;
+  width: 100% !important;
+  border-radius: 5px;
+  background-color: #ffffff !important;
 }
 
 .dropDownSVG {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .dropDownButtonOfRecord {
-    height: 50px;
-    width: 100% !important;
-    border-radius: 5px;
-    background-color: #FFFFFF !important;
-    padding: 0px;
+  height: 50px;
+  width: 100% !important;
+  border-radius: 5px;
+  background-color: #ffffff !important;
+  padding: 0px;
 }
 
 #record {
-    border:none;
-    width: 100% !important;
+  border: none;
+  width: 100% !important;
 }
 
 .noBiggerHover {
 }
-
