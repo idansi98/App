@@ -2,7 +2,7 @@ import AttachAudio from "./attachAudio";
 import AttachImage from "./attachImage";
 import AttachVideo from "./attachVideo";
 
-function AttachmentButton({isSmall, setMessageJustSent}) {
+function AttachmentButton({isSmall, setMessageJustSent, setRecorder}) {
     return (
       <>
       <button className="btn btn-info dropdown-toggle" type="button" id="dropdownAttach" data-bs-toggle="dropdown" aria-expanded="false">
@@ -16,7 +16,7 @@ function AttachmentButton({isSmall, setMessageJustSent}) {
       <li>
         <AttachImage setMessageJustSent={setMessageJustSent}/>
         <AttachVideo setMessageJustSent={setMessageJustSent}/>
-        <AttachAudio setMessageJustSent={setMessageJustSent} />
+        <AttachAudio setMessageJustSent={setMessageJustSent} setRecorder={setRecorder} />
       </li>
       </div>
     </ul>

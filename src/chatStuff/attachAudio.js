@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import chatHandler from "./chatFunctions";
-function AttachAudio({setMessageJustSent}) {
+function AttachAudio({setMessageJustSent, setRecorder}) {
     const givenAudioBox = useRef(null);
 
   
@@ -11,10 +11,10 @@ function AttachAudio({setMessageJustSent}) {
 
         const handleSuccess = function(stream) {
           const downloadLink = [];
-          const recordButton = document.getElementById('record')
           const options = {mimeType: 'audio/webm'};
           const recordedChunks = [];
           const mediaRecorder = new MediaRecorder(stream, options);
+          setRecorder(mediaRecorder);
       
           mediaRecorder.addEventListener('dataavailable', function(e) {
             if (e.data.size > 0) recordedChunks.push(e.data);
@@ -30,12 +30,9 @@ function AttachAudio({setMessageJustSent}) {
             var lastMessageID = global.currentUser.searchChat(reciever).lastMessage.ID
             setMessageJustSent(lastMessageID)
             global.lastMessageID = lastMessageID;
+            setRecorder(null);
           });
 
-
-          recordButton.addEventListener('mouseup', function() {
-            mediaRecorder.stop();
-          }, {once:true});
       
           mediaRecorder.start();
         };

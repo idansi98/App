@@ -18,8 +18,8 @@ function AttachVideo({setMessageJustSent}) {
           var lastMessageID = global.currentUser.searchChat(reciever).lastMessage.ID
           setMessageJustSent(lastMessageID)
           global.lastMessageID = lastMessageID;
-
-
+          // to close menu - a workaround
+          document.getElementById("dropdownAttach").click();
         }
         reader.onerror = function () {
             console.log(reader.error);
