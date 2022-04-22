@@ -15,7 +15,7 @@ function LoginRegisterBox({ credentials }) {
   const tryLogin = function () {
     var user = chatHandler.login(credentials.userName, credentials.password);
     if (user === null) {
-      snackbarHelper.showMessage("Try again!");
+      snackbarHelper.showMessage("Incorrect username or password");
     } else {
       global.currentUser = user;
       navigate("/chats");
