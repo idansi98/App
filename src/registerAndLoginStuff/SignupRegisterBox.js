@@ -85,13 +85,13 @@ function tempAddExampleChats() {
 //userName:"",displayName:"", password:"", passwordValidator:""});
 
     return (
-        <div className="row pt-2 fixeddiv">
+        <div className="row pt-2 fixeddivBigger">
           <div className="col fixeddiv">
-            <button onClick={validate} type="button" id="Login" className="btn btn-primary mb-3">
+            <button onClick={validate} type="button" id="Register" className="btn btn-primary mb-3">
               Register
             </button>
           </div>
-          <div className="constantFontSize p-3 col">
+          <div className="constantFontSize p-3 col" id = "messageRegistered">
             {/*After clicking the registering successfully, go to the sign up page.*/}
             Already signed up? Click <Link to='/login'>here</Link> to sign in.
           </div>

@@ -10,6 +10,7 @@
   }
 
   #grayformLoginInside {
+    display: table-row !important;
     position: relative;
     width: 100%;
 
@@ -19,13 +20,14 @@
     z-index: 1;
     position: relative;
     width: 80vw;
-    height: 200vh !important;
+    height: 100% !important;
     top: 5vh;
     padding-left: 10vw;
     padding-right: 10vw;
   }
 
   #grayformRegisterInside {
+    display: table-row !important;
     position: relative;
     width: 100%;
   }
@@ -35,7 +37,8 @@
   }
 
   .shorterForm {
-    width: 60%;
+    position: relative;
+    width: 32vw;
     height: 4vh !important;
     min-height: 0px;
   }
@@ -50,6 +53,7 @@
   .lengthierLables {
     width: 100%;
     position: relative;
+    height: 8vh !important;
   }
 
   .constantFontSize {
@@ -59,7 +63,7 @@
   #Login {
     position: relative;
     top: 3vh;
-    width: 17vw;
+    width: 20vw;
     height: 10vh;
     padding-left: 2vw !important;
     padding-right: 2vw  !important;
@@ -67,10 +71,26 @@
     padding-bottom: 2vh  !important;
     margin:0px;
     font-size: 4vh;
+    background-color: #6666FF !important;
+    border-color: #00000011;
   }
 
-  #signUpForm {
+  #Register {
+    position: relative;
+    top: 3vh;
+    width: 25vw;
+    height: 10vh;
+    padding-left: 2vw !important;
+    padding-right: 2vw  !important;
+    padding-top: 2vh !important;
+    padding-bottom: 2vh  !important;
+    margin:0px;
+    font-size: 4vh;
+    background-color: #6666FF !important;
+    border-color: #00000011;
   }
+
+ 
 
 
   .fixedContainer {
@@ -78,3 +98,32 @@
     padding: 0px !important;
   }
 
+  .fixeddiv {
+    display: table-row;
+    height: 5vh !important;
+  }
+
+  #messageRegistered {
+    position: relative;
+    top: 3vh;
+  }
+
+  
+  #messageNotRegistered {
+    position: relative;
+    top: 3vh;
+  }
+
+  .fixeddivBigger {
+    display: table-row;
+    height: 28vh !important;
+  }
+
+  #currentPicture {
+    max-width: 50vmin;
+    max-height: 50vmin;
+  }
+
+  #Photo {
+    visibility:hidden;
+  }
