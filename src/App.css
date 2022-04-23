@@ -9,17 +9,36 @@
 }
 /*The background's class and id.*/
 .mb-2 {
-  margin-bottom: 0rem!important;
+  margin-bottom: 0rem !important;
 }
 .blueGradientBackground {
-  background-color: #0093E9;
-  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
   background-color: #000000;
   opacity: 1;
-  background-image:  linear-gradient(135deg, #020319 25%, transparent 25%), linear-gradient(225deg, #020319 25%, transparent 25%), linear-gradient(45deg, #020319 25%, transparent 25%), linear-gradient(315deg, #020319 25%, #000000 25%);
-  background-position:  8px 0, 8px 0, 0 0, 0 0;
+  background-image: linear-gradient(135deg, #020319 25%, transparent 25%),
+    linear-gradient(225deg, #020319 25%, transparent 25%),
+    linear-gradient(45deg, #020319 25%, transparent 25%),
+    linear-gradient(315deg, #020319 25%, #000000 25%);
+  background-position: 8px 0, 8px 0, 0 0, 0 0;
   background-size: 16px 16px;
-  background-repeat: repeat;  padding: 4rem!important
+  background-repeat: repeat;
+  padding: 4rem !important;
+}
+
+.SmallBlueGradientBackground {
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  background-color: #000000;
+  opacity: 1;
+  background-image: linear-gradient(135deg, #020319 25%, transparent 25%),
+    linear-gradient(225deg, #020319 25%, transparent 25%),
+    linear-gradient(45deg, #020319 25%, transparent 25%),
+    linear-gradient(315deg, #020319 25%, #000000 25%);
+  background-position: 8px 0, 8px 0, 0 0, 0 0;
+  background-size: 16px 16px;
+  background-repeat: repeat;
+  padding-top: 10vh;
 }
 /*The gray form id.*/
 #grayform {
@@ -32,22 +51,27 @@
 }
 .fixeddiv {
   max-width: 60vw;
-  max-height: 15vh;
+  max-height: 45vh;
   position: relative;
 }
-
 .fixedlabel {
-  font-size: 2.1vh;
+  font-size: 2.25vh;
 }
 #passwordHelpInline {
   font-size: 2.25vh !important;
 }
 /*The Class for the Register box.*/
 .p-3 {
-  padding: 0.55rem!important;
+  padding: 0.55rem !important;
 }
-#Username, #Password {
-  max-width: 60vw;
-  max-height: 10vh;
-  position: relative;
+
+.snackbarChat {
+  background-color: #72cad5 !important;
+  z-index: 55550;
+  color: black !important;
+}
+
+.snackbarLoginRegister {
+  background-color: #6666ff !important;
+  z-index: 20;
 }

@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 
-
-function ContactBox ({setCurrentChat, isSmall, searchedDN}) {
-    var chats = global.currentUser.chats
-    var contactsHTML = [];
-      // update the time on contactBox
+function ContactBox({ setCurrentChat, isSmall, searchedDN }) {
+  var chats = global.currentUser.chats;
+  var contactsHTML = [];
+  // update the time on contactBox
 
   const [time, setTime] = useState(Date.now());
   useEffect(() => {
@@ -15,10 +14,9 @@ function ContactBox ({setCurrentChat, isSmall, searchedDN}) {
   }, []);
 
   const calcContactsHTML = function (contactsHTML, chats) {
-
     // sorts according to last message send time
-    chats.sort((a,b) =>  {
-      if (a.lastMessage === null && b.lastMessage===null) {
+    chats.sort((a, b) => {
+      if (a.lastMessage === null && b.lastMessage === null) {
         return 0;
       }
       if (b.lastMessage === null) {
@@ -33,32 +31,34 @@ function ContactBox ({setCurrentChat, isSmall, searchedDN}) {
       if (a.lastMessage.dateTime < b.lastMessage.dateTime) {
         return 1;
       }
-       return 0;
-    })
+      return 0;
+    });
     for (var index in chats) {
-      var chat = chats[index]
-      if (chat.user.displayName.toLowerCase().includes(searchedDN.toLowerCase())) {
-        contactsHTML.push(chat.contactHTML({setCurrentChat}));
+      var chat = chats[index];
+      if (
+        chat.user.displayName
+          .toLowerCase()
+          .includes(searchedDN.toLowerCase()) ||
+        chat.user.userName.toLowerCase().includes(searchedDN.toLowerCase())
+      ) {
+        contactsHTML.push(chat.contactHTML({ setCurrentChat }));
       }
     }
-  }
-    calcContactsHTML(contactsHTML,chats)
+  };
+  calcContactsHTML(contactsHTML, chats);
 
-    if (isSmall != true) {
-      return (
-        <div className="col-sm-4 contacts">
-                  <div className="contact-table-scroll">
-                    <table className="table table-hover">
-                      <tbody>
-                      {contactsHTML}
-                      </tbody>
-                    </table>
-                    </div>
-                  </div>
+  if (isSmall != true) {
+    return (
+      <div className="col-sm-4 contacts">
+        <div className="contact-table-scroll">
+          <table className="table table-hover">
+            <tbody>{contactsHTML}</tbody>
+          </table>
+        </div>
+      </div>
     );
-    } else {
-      return (<></>)
-    }
-
+  } else {
+    return <></>;
+  }
 }
 export default ContactBox;

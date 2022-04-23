@@ -1,27 +1,28 @@
-function AboveChatRow({currentChat}) {
+function AboveChatRow({ currentChat }) {
   var contactName = null;
   var contactPic = null;
   if (currentChat != null) {
     contactName = currentChat.user.displayName;
     contactPic = currentChat.user.picture;
-    return ( 
+    return (
       <div className="col-sm-8">
-              {/*The contact's profile picture*/}
-              <img
-                src={contactPic}
-                alt=""
-                className="profile-image rounded-circle"
-                id = "currentChatPFP"
-              />
-              <span className="ml-2" id = "currentChatContactName">{contactName}</span>
-            </div>
-  )
+        {/*The contact's profile picture*/}
+        <img
+          src={contactPic}
+          alt=""
+          className="profile-image rounded-circle"
+          id="currentChatPFP"
+        />
+        <span className="ml-2" id="currentChatContactName">
+          {contactName}
+        </span>
+      </div>
+    );
   } else {
     <div className="col-sm-8">
-    {/*The contact's profile picture*/}
-    <span className="ml-2"></span>
-  </div>
+      {/*The contact's profile picture*/}
+      <span className="ml-2"></span>
+    </div>;
   }
-    
 }
 export default AboveChatRow;

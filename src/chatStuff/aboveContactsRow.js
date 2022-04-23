@@ -1,7 +1,7 @@
 import AddContactButton from "./addContactButton";
 import DisplayNameInputBox from "./displayNameInputBox";
 
-function AboveContactsRow({ setCurrentChat, isSmall, setSearchedDN}) {
+function AboveContactsRow({ setCurrentChat, isSmall, setSearchedDN }) {
   if (isSmall != true) {
     return (
       <div className="col-sm-4  border-secondary">
@@ -10,13 +10,12 @@ function AboveContactsRow({ setCurrentChat, isSmall, setSearchedDN}) {
           alt=""
           className="userPic profile-image rounded-circle"
         />
-        <DisplayNameInputBox setSearchedDN={setSearchedDN}/>
+        <DisplayNameInputBox setSearchedDN={setSearchedDN} />
         <AddContactButton setCurrentChat={setCurrentChat} />
       </div>
-    )
+    );
   } else {
-    return <></>
+    return <></>;
   }
-
 }
 export default AboveContactsRow;
