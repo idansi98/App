@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import chatHandler from "../chatStuff/chatFunctions";
 import snackbarHelper from "../classes/snackbarHelper";
+import sound from "../Media/sound.mp3";
+import suspiciousPic from "../Media/suspicious.png";
+import earthVideo from "../Media/earth.mp4";
+
 
 function SignUpRegisterBox({ credentials }) {
   const navigate = useNavigate();
@@ -42,25 +46,15 @@ function SignUpRegisterBox({ credentials }) {
 
     chatHandler.sendTextMessage(currentUser, ido, "hi");
     chatHandler.sendTextMessage(ido, currentUser, "how are you?");
-    chatHandler.sendImageMessage(currentUser, ido, "suspicious.png");
-    chatHandler.sendTextMessage(
-      ido,
-      currentUser,
-      "Stop sending me propoganda please :C"
-    );
-    chatHandler.sendImageMessage(currentUser, ido, "suspicious.png");
+    chatHandler.sendImageMessage(currentUser, ido, suspiciousPic);
+    chatHandler.sendTextMessage(ido, currentUser, "Stop sending me propoganda please :C");
+    chatHandler.sendImageMessage(currentUser, ido, suspiciousPic);
     chatHandler.sendTextMessage(ido, currentUser, "Hmmm");
-
-    chatHandler.sendTextMessage(
-      idan,
-      currentUser,
-      "Did you watch the last batman movie?"
-    );
+    chatHandler.sendTextMessage(idan, currentUser, "Did you watch the last batman movie?");
     chatHandler.sendTextMessage(currentUser, idan, "I sure didn't!");
-    chatHandler.sendAudioMessage(idan, currentUser, "sound.mp3");
+    chatHandler.sendAudioMessage(idan, currentUser, sound);
     chatHandler.sendTextMessage(currentUser, idan, "Nice trt");
     chatHandler.sendTextMessage(currentUser, idan, "Nice try*");
-
     chatHandler.sendTextMessage(currentUser, alice, "Hi...");
     chatHandler.sendTextMessage(currentUser, alice, "Whats up alice?");
     chatHandler.sendTextMessage(
@@ -70,7 +64,7 @@ function SignUpRegisterBox({ credentials }) {
     );
     chatHandler.sendTextMessage(currentUser, alice, "ALICE ANSWER ME");
     chatHandler.sendTextMessage(currentUser, alice, "THATS IT");
-    chatHandler.sendVideoMessage(currentUser, alice, "earth.mp4");
+    chatHandler.sendVideoMessage(currentUser, alice, earthVideo);
     chatHandler.sendTextMessage(
       alice,
       currentUser,
@@ -82,19 +76,19 @@ function SignUpRegisterBox({ credentials }) {
       currentUser,
       "YO I AM BOB HELLO LONG MESSSAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
     );
-    chatHandler.sendImageMessage(currentUser, bob, "suspicious.png");
+    chatHandler.sendImageMessage(currentUser, bob, suspiciousPic);
     chatHandler.sendTextMessage(
       bob,
       currentUser,
       "YO I AM BOB HELLO LONG MESSSAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
     );
-    chatHandler.sendAudioMessage(bob, currentUser, "sound.mp3");
+    chatHandler.sendAudioMessage(bob, currentUser, sound);
     chatHandler.sendTextMessage(
       bob,
       currentUser,
       "YO I AM BOB HELLO LONG MESSSAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
     );
-    chatHandler.sendVideoMessage(currentUser, bob, "earth.mp4");
+    chatHandler.sendVideoMessage(currentUser, bob, earthVideo);
     chatHandler.sendTextMessage(
       bob,
       currentUser,

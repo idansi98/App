@@ -1,5 +1,6 @@
 import SignUpForm from "./SignUpForm";
 import { useEffect } from "react";
+import logo from "../Media/logo.png";
 import SmallBlueBackground from "./smallBlueBackground";
 import Snackbar from "./snackbar";
 import snackbarHelper from "../classes/snackbarHelper";
@@ -11,7 +12,7 @@ function SignUpPage() {
   }, []);
   return (
     <>
-      <img src="logo.png" id="logoPic" />
+      <img src={logo} id="logoPic" />
       <SignUpForm />
       <Snackbar />
     </>
