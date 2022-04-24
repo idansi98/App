@@ -1,8 +1,8 @@
 To run the app, you should type "npm start" at the terminal.
-This command uns the app in the development mode.
+This command runs the app in the development mode.
 Open http://localhost:3000 to view it in your browser(this url will be auto' open after typing "npm start").
 The page will reload when you make changes.
-You may also see any lint errors in the console.
+You may also see any errors in the console.
 
 After the app is on, you are at the login page.
 If you are already registered - you can log-in and you will be redirected to your chat page without refreshing.
