@@ -9,7 +9,7 @@ If you are already registered - you can log-in and you will be redirected to you
 If you have not registered yet, you should go to the registering page, and fill in all the required forms validately so you can be logged-in.
 After you are at the chat page, you have multiple options:
 You can send a Text-message, you can also send a Voice-message and Image or Video message either.
-You can also add new chat to your chats list, and another additional feature our App supports in is searching a user by his display name at his contacts list.
+You can also add new chat to your chats list, and another additional feature our App supports in is searching a user by his display name at the contacts list.
 
 We used these packages in our project:
 1)Jquery.
