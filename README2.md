@@ -1,20 +1,29 @@
-npm start - run the app  
-Open http://localhost:port to start the app (default is 3000)  
-
-After the app is on, you are at the login page.  
-If you are already registered - you can log-in and you will be redirected to your chat page without refreshing.  
-If you have not registered yet, you should go to the registering page, and fill in all the required form. For now This will also give the new user a few open chats.  
+# Marak Teimani
 
 
-After you are at the chat page, you have multiple options:
-You can send a text-message, you can also send a voice-message and either an image or video message .
-You can also add new chat to your chats list, and another additional feature our App supports in is searching a user by his display name at the contacts list.
+## How to run  
+Type `npm start` in CLI to run.
+Open [http://localhost:port](http://localhost:3000) to start the app (default port is 3000)  
 
+
+## How to use  
+After you opened the app you will be at the login screen. You can switch back and fourth between the login and register screens at any time. Currently, registering will create a few demo chats for the user.   
+
+After a successful login / signup you are treated to the chat page. Current functionalities include:
+- Creating a new chat
+- Sending a new text message
+- Sending a new media message (audio/video/image)
+- Searching a chat out of existing chats  
+
+Currently this app supports a wide range of window sizes, for example if the window is horizontally small - the contacts tab will disappear so the user can focus on the current chat without too many menus taking screen real estate.
+
+
+## Dependencies  
 We used these packages in our project:  
-1)Jquery.  
-2)React. 
-2)React-bootstrap.  
-3)React-dom.  
-4)React-router-dom.  
-6)React-scripts.   
-7)Web-vitals (project started with it automatically)  
+1.  Jquery.  
+2.  React. 
+3.  React-bootstrap.  
+4.  React-dom.  
+5.  React-router-dom.  
+6.  React-scripts.   
+7.  Web-vitals (project started with it automatically)  
