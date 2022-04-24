@@ -1,9 +1,7 @@
 function showMessage(message) {
   var snackbar = document.getElementById("snackbar");
   if (snackbar !== null) {
-    console.log("SNACKBAR ISNT NULL");
     if (global.snackBarTimeout !== null) {
-      console.log("TIMEOUT ISNT NULL");
       clearTimeout(global.snackBarTimeout);
     } else {
       snackbar.className = "show " + snackbar.className;
