@@ -16,5 +16,5 @@ We used these packages in our project:
 2)React-bootstrap.  
 3)React-dom.  
 4)React-router-dom.  
-6)React-scripts. 
+6)React-scripts.   
 7)Web-vitals (project started with it automatically)  
