@@ -10,8 +10,6 @@ import snackbarHelper from "../classes/snackbarHelper";
 
 //This component returns the whole chatpage it's sub components.
 function ChatPage() {
-  
-
   const [tooSmall, setTooSmall] = useState(false);
   const [currentChat, setCurrentChat] = useState(null);
   const [searchedDN, setSearchedDN] = useState("");
@@ -24,7 +22,7 @@ function ChatPage() {
     }
     snackbarHelper.setClass("snackbarChat");
     document.title = "Chats";
-    //In this function we customize our chatpage depending on how wide our window is. 
+    //In this function we customize our chatpage depending on how wide our window is.
     function checkForTooSmall() {
       if (window.innerWidth > 800) {
         if (tooSmall === true) {

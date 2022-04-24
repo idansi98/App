@@ -5,7 +5,7 @@ import chatHandler from "./chatFunctions";
 function AttachVideo({ setMessageJustSent }) {
   var file = null;
   const reader = new FileReader();
-   //We use the useRef hook here to access the audiobox without rerender the app.
+  //We use the useRef hook here to access the audiobox without rerender the app.
   const givenVideoBox = useRef(null);
 
   const attachVideo = function () {

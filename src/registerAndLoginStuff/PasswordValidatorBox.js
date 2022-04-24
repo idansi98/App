@@ -14,7 +14,6 @@ function PasswordValidatorBox({ setCredentials }) {
     }));
   };
 
-
   return (
     <div className="mt-1 mb-1 row fixeddiv formRowFixed">
       <label className="constantFontSize lengthierLables col-sm-2 col-form-label fixedlabel">

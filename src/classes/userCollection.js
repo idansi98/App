@@ -5,7 +5,7 @@ import AudioMessage from "./audioMessage";
 import ImageMessage from "./imageMessage";
 import VideoMessage from "./videoMessage";
 
-//This class is a built to deal with all the users in general.
+//This class is a built to deal with a group of users (For example can have a serperate group for each country)
 class UserCollection {
   constructor() {
     this.users = [];
@@ -25,7 +25,7 @@ class UserCollection {
     }
     return null;
   }
-  
+
   //Sends a new message between the sender to the reciever.
   sendMessage(sender, reciever, message) {
     var chatOfSender = sender.searchChat(reciever);

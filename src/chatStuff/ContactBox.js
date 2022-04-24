@@ -42,7 +42,7 @@ function ContactBox({ setCurrentChat, isSmall, searchedDN }) {
           .includes(searchedDN.toLowerCase()) ||
         chat.user.userName.toLowerCase().includes(searchedDN.toLowerCase())
       ) {
-        //We use the contactHTML method from the chat class, to add the current chat to the array. 
+        //We use the contactHTML method from the chat class, to add the current chat to the array.
         contactsHTML.push(chat.contactHTML({ setCurrentChat }));
       }
     }

@@ -3,7 +3,7 @@ const leftStyle =
 const rightStyle =
   "greenMessage messageRestrictWidth bg-success p-2 mt-2 mr-5 shadow-sm text-white float-right rounded rightMessage";
 
-  //This function returns the correct formatted time string using the time get methods. 
+//This function returns the correct formatted time string using the time get methods.
 function formatAMPM(backThen) {
   var rightNow = new Date();
   var dateRN = rightNow.getDate();

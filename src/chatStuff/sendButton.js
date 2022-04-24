@@ -3,7 +3,13 @@ import messageStyler from "../classes/messageStyler";
 
 //This component defines the functionallity and design of the send button.
 function SendButton({
-  isSmall, inputText, setMessageJustSent, setInputText, setRecorder, recorder}) {
+  isSmall,
+  inputText,
+  setMessageJustSent,
+  setInputText,
+  setRecorder,
+  recorder,
+}) {
   var inputBox = document.getElementById("inputMessageBox");
 
   const sendAudioMessage = function () {

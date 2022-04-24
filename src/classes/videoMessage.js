@@ -1,7 +1,7 @@
 import messageStyler from "./messageStyler";
 import MessageTime from "../chatStuff/messageTime";
 
-//This class deals with the Video message object and it's stuff.
+//This class deals with the Video message object and its stuff.
 class VideoMessage {
   constructor(filePath, sender) {
     this.filePath = filePath;

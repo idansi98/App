@@ -47,10 +47,18 @@ function SignUpRegisterBox({ credentials }) {
     chatHandler.sendTextMessage(currentUser, ido, "hi");
     chatHandler.sendTextMessage(ido, currentUser, "how are you?");
     chatHandler.sendImageMessage(currentUser, ido, suspiciousPic);
-    chatHandler.sendTextMessage(ido, currentUser, "Stop sending me propoganda please :C");
+    chatHandler.sendTextMessage(
+      ido,
+      currentUser,
+      "Stop sending me propoganda please :C"
+    );
     chatHandler.sendImageMessage(currentUser, ido, suspiciousPic);
     chatHandler.sendTextMessage(ido, currentUser, "Hmmm");
-    chatHandler.sendTextMessage(idan, currentUser, "Did you watch the last batman movie?");
+    chatHandler.sendTextMessage(
+      idan,
+      currentUser,
+      "Did you watch the last batman movie?"
+    );
     chatHandler.sendTextMessage(currentUser, idan, "I sure didn't!");
     chatHandler.sendAudioMessage(idan, currentUser, sound);
     chatHandler.sendTextMessage(currentUser, idan, "Nice trt");

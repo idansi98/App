@@ -1,4 +1,3 @@
-
 //This function sets the message to show on the snackbar.
 function showMessage(message) {
   var snackbar = document.getElementById("snackbar");

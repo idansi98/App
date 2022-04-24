@@ -8,7 +8,6 @@ import suspiciousPic from "../src/Media/suspicious.png";
 import defaultPFP from "../src/Media/defaultPFP.png";
 import chatHandler from "./chatStuff/chatFunctions";
 
-
 init();
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -21,7 +20,7 @@ function fillMessages() {
   chatHandler.addUser("2", "Leo", defaultPFP, "3");
   chatHandler.addUser("3", "James", defaultPFP, "4");
   chatHandler.addUser("4", "Hemi.Hemi", defaultPFP, "5");
-  chatHandler.addUser("Alice", "Alis",alicePic, "Alice");
+  chatHandler.addUser("Alice", "Alis", alicePic, "Alice");
   var idan = chatHandler.findUser("Idan");
   var ido = chatHandler.findUser("Ido");
   var alice = chatHandler.findUser("Alice");

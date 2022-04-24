@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 
 //This component returns the MainChatBox, depending on the arguments.
 function MainChatBox({ isSmall, currentChat, setCurrentChat, searchedDN }) {
-
   //Contains the ID of the last message sent by the current user (not recieved).
   const [messageJustSent, setMessageJustSent] = useState(-1);
 

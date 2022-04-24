@@ -6,12 +6,11 @@ import snackbarHelper from "../classes/snackbarHelper";
 
 //This component returns the LoginRegisterBox.
 function LoginRegisterBox({ credentials }) {
-
   /* **For testing purposes**
     const userList = users.map((user, key) => {
         return <div key={key}> {user.username}:{user.password}  </div>;
     });*/
-    
+
   //We use the useNavigate hook to go to other html file.
   const navigate = useNavigate();
 

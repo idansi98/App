@@ -1,7 +1,7 @@
 import MessageTime from "../chatStuff/messageTime";
 import messageStyler from "./messageStyler";
 
-//This class deals with the Text message object and it's stuff.
+//This class deals with the Text message object and its stuff.
 class TextMessage {
   constructor(text, sender) {
     this.text = text;

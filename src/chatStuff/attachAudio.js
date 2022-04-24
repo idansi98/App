@@ -36,7 +36,9 @@ function AttachAudio({ setMessageJustSent, setRecorder }) {
       mediaRecorder.start();
     };
 
-    navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(handleSuccess);
+    navigator.mediaDevices
+      .getUserMedia({ audio: true, video: false })
+      .then(handleSuccess);
   };
   return (
     <a className="dropdown-item down noBiggerHover" href="#">

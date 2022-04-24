@@ -49,5 +49,15 @@ function login(userName, password) {
   return global.userDB.login(userName, password);
 }
 export default {
-  initDB, addUser, findUser, sendTextMessage, sendImageMessage, sendVideoMessage,
-  sendAudioMessage, makeBlankChat, printAllUsers, getChatBetween, login};
+  initDB,
+  addUser,
+  findUser,
+  sendTextMessage,
+  sendImageMessage,
+  sendVideoMessage,
+  sendAudioMessage,
+  makeBlankChat,
+  printAllUsers,
+  getChatBetween,
+  login,
+};

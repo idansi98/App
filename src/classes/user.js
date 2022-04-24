@@ -1,5 +1,4 @@
-
-//This class deals with the User and it's stuff.
+//This class deals with the User and its stuff.
 class User {
   constructor(userName, displayName, picture, password) {
     this.userName = userName;
