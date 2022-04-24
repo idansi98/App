@@ -5,7 +5,7 @@ import PasswordBox from "./PasswordBox";
 import PasswordValidatorBox from "./PasswordValidatorBox";
 import SignUpRegisterBox from "./SignupRegisterBox";
 import PhotoUploaderBox from "./PhotoUploaderBox";
-import defaulyPFP from "../Media/defaultPFP.png";
+import defaultPFP from "../Media/defaultPFP.png";
 import { useState } from "react";
 
 function SignUpForm() {
@@ -15,7 +15,7 @@ function SignUpForm() {
     displayName: "",
     password: "",
     passwordValidator: "",
-    photo: defaulyPFP,
+    photo: defaultPFP,
   });
 
   return (
