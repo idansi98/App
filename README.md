@@ -1,9 +1,10 @@
 # Marak Teimani
+This is a chatting app co-developed by [Ido Tziony](https://github.com/ghsumhubh) and [Idan Simai](https://github.com/idansi98) as part of the course "89211-Algorithmic Programming II" @ Bar-Illan Univeristy.
 
 
 ## How to run  
 Type `npm start` in CLI to run.
-Open [http://localhost:port](http://localhost:3000) to start the app (default port is 3000)  
+Open [http://localhost:port](http://localhost:3000) to start the app [^1].
 
 
 ## How to use  
@@ -27,3 +28,6 @@ We used these packages in our project:
 5.  React-router-dom.  
 6.  React-scripts.   
 7.  Web-vitals (project started with it automatically)  
+
+
+[^1]: The default port is 3000, but the command should print the used port to the CLI.
