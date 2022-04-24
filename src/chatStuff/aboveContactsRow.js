@@ -1,6 +1,7 @@
 import AddContactButton from "./addContactButton";
 import DisplayNameInputBox from "./displayNameInputBox";
 
+//This component returns the the above row of the contact list screen.
 function AboveContactsRow({ setCurrentChat, isSmall, setSearchedDN }) {
   if (isSmall != true) {
     return (

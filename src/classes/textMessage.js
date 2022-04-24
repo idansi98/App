@@ -1,6 +1,7 @@
 import MessageTime from "../chatStuff/messageTime";
 import messageStyler from "./messageStyler";
 
+//This class deals with the Text message object and it's stuff.
 class TextMessage {
   constructor(text, sender) {
     this.text = text;
@@ -23,7 +24,8 @@ class TextMessage {
       </tr>
     );
   }
-  //TODO: make it so text isnt longer than 3-4 words
+
+  //TODO: make it so text isn't longer than 3-4 words
   get shortForm() {
     var maxTextLength = 20;
     if (this.text.length > maxTextLength) {

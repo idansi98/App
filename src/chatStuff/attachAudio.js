@@ -1,9 +1,13 @@
 import { useRef } from "react";
 import chatHandler from "./chatFunctions";
+
+//This component defines the functionallity and design of the Attachment audion button recorder.
 function AttachAudio({ setMessageJustSent, setRecorder }) {
+  //We use the useRef hook here to access the audiobox without rerender the app.
   const givenAudioBox = useRef(null);
 
   const attachAudio = function () {
+    //We use the MediaRecoreder and Blob classes to deal with the reading the aduio using stream.
     const handleSuccess = function (stream) {
       const downloadLink = [];
       const options = { mimeType: "audio/webm" };
@@ -32,9 +36,7 @@ function AttachAudio({ setMessageJustSent, setRecorder }) {
       mediaRecorder.start();
     };
 
-    navigator.mediaDevices
-      .getUserMedia({ audio: true, video: false })
-      .then(handleSuccess);
+    navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(handleSuccess);
   };
   return (
     <a className="dropdown-item down noBiggerHover" href="#">

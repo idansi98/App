@@ -1,4 +1,6 @@
 import messageStyler from "../classes/messageStyler";
+
+//This component returns the Message's time.
 function MessageTime({ dateTime }) {
   var time = new Date(dateTime);
   var correctFormat = messageStyler.formatAMPM(time);

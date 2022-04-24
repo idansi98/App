@@ -4,14 +4,18 @@ import { useNavigate } from "react-router-dom";
 import chatHandler from "../chatStuff/chatFunctions";
 import snackbarHelper from "../classes/snackbarHelper";
 
+//This component returns the LoginRegisterBox.
 function LoginRegisterBox({ credentials }) {
-  /*
+
+  /* **For testing purposes**
     const userList = users.map((user, key) => {
         return <div key={key}> {user.username}:{user.password}  </div>;
     });*/
+    
+  //We use the useNavigate hook to go to other html file.
   const navigate = useNavigate();
 
-  // updates global.currentUser
+  //Updates global.currentUser.
   const tryLogin = function () {
     var user = chatHandler.login(credentials.userName, credentials.password);
     if (user === null) {

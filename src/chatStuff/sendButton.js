@@ -1,14 +1,9 @@
 import chatHandler from "./chatFunctions";
 import messageStyler from "../classes/messageStyler";
 
+//This component defines the functionallity and design of the send button.
 function SendButton({
-  isSmall,
-  inputText,
-  setMessageJustSent,
-  setInputText,
-  setRecorder,
-  recorder,
-}) {
+  isSmall, inputText, setMessageJustSent, setInputText, setRecorder, recorder}) {
   var inputBox = document.getElementById("inputMessageBox");
 
   const sendAudioMessage = function () {
@@ -16,7 +11,7 @@ function SendButton({
   };
 
   const buttonPressed = function () {
-    // if not recording
+    //If not recording.
     if (inputText === "") {
       return;
     }
@@ -31,7 +26,7 @@ function SendButton({
     setInputText("");
   };
 
-  // if not recording
+  //If not recording.
   if (recorder === null) {
     return (
       <button
@@ -53,7 +48,7 @@ function SendButton({
       </button>
     );
   } else {
-    // if recording
+    //If recording.
     return (
       <button
         id="Send"

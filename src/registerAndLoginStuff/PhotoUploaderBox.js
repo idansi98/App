@@ -1,6 +1,8 @@
 import { useRef } from "react";
 
+//This component returns the photoBox.
 function PhotoBox({ setCredentials, credentials }) {
+  //We use stream to read the file.
   const givenPhotoBox = useRef(null);
   var file = null;
   const reader = new FileReader();
@@ -23,8 +25,8 @@ function PhotoBox({ setCredentials, credentials }) {
       console.log(reader.error);
     };
   };
-  /*
 
+  /*
 <div className="file btn btn-lg btn-light Check dropDownButton">
         accept = "image/*" 
         className = "Type dropDownButton" 
@@ -40,10 +42,6 @@ function PhotoBox({ setCredentials, credentials }) {
             <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
           </svg>
           </div>
-
-
-
-
 */
 
   return (

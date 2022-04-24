@@ -1,5 +1,6 @@
 import { useRef } from "react";
 
+//This component returns the UserNameBox.
 function UserNameBox({ setCredentials }) {
   const givenUserNameBox = useRef(null);
 

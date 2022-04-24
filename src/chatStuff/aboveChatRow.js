@@ -1,3 +1,4 @@
+//This component returns the the above row of the chat screen(not the contacts list).
 function AboveChatRow({ currentChat }) {
   var contactName = null;
   var contactPic = null;

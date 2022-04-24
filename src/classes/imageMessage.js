@@ -1,6 +1,7 @@
 import messageStyler from "./messageStyler";
 import MessageTime from "../chatStuff/messageTime";
 
+//This class deals with the Image message and it's stuff.
 class ImageMessage {
   constructor(filePath, sender) {
     this.filePath = filePath;

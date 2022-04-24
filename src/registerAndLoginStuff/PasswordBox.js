@@ -1,5 +1,6 @@
 import { useRef } from "react";
 
+//This component returns the Passwordbox.
 function PasswordBox({ setCredentials }) {
   const givenPasswordBox = useRef(null);
 

@@ -1,5 +1,6 @@
-//import chatHandler from "./chatFunctions";
 import { useRef } from "react";
+
+//This component returns the DisplayNameInputBox.
 function DisplayNameInputBox({ setSearchedDN }) {
   const displayText = useRef(null);
   const textUpdated = function () {

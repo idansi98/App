@@ -1,8 +1,11 @@
 import { useRef } from "react";
 import chatHandler from "./chatFunctions";
+
+//This component defines the functionallity and design of the Attachment image.
 function AttachImage({ setMessageJustSent }) {
   var file = null;
   const reader = new FileReader();
+  //We use the useRef hook here to access the audiobox without rerender the app.
   const givenImageBox = useRef(null);
 
   const attachImage = function () {
@@ -19,7 +22,7 @@ function AttachImage({ setMessageJustSent }) {
       setMessageJustSent(lastMessageID);
       global.lastMessageID = lastMessageID;
 
-      // to close menu - a workaround
+      //To close menu - a workaround.
       document.getElementById("dropdownAttach").click();
     };
     reader.onerror = function () {

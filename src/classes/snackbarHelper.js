@@ -1,3 +1,5 @@
+
+//This function sets the message to show on the snackbar.
 function showMessage(message) {
   var snackbar = document.getElementById("snackbar");
   if (snackbar !== null) {
@@ -6,9 +8,9 @@ function showMessage(message) {
     } else {
       snackbar.className = "show " + snackbar.className;
     }
-    // Add the "show" class to DIV
+    //Add the "show" class to the DIV.
     snackbar.textContent = message;
-    // After 3 seconds, remove the show class from DIV
+    //After 3 seconds, remove the show class from the DIV.
     global.snackBarTimeout = setTimeout(function () {
       snackbar.className = snackbar.className.replace("show ", "");
       global.snackBarTimeout = null;
@@ -16,6 +18,7 @@ function showMessage(message) {
   }
 }
 
+//This function is classname setter to the snackbar.
 function setClass(className) {
   var snackbar = document.getElementById("snackbar");
   if (snackbar !== null) {

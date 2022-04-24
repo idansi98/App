@@ -1,3 +1,5 @@
+
+//This class deals with the User and it's stuff.
 class User {
   constructor(userName, displayName, picture, password) {
     this.userName = userName;

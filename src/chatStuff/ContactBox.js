@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 
+//This component returns the Contactbox.
 function ContactBox({ setCurrentChat, isSmall, searchedDN }) {
   var chats = global.currentUser.chats;
   var contactsHTML = [];
-  // update the time on contactBox
+  //We update the time on contactBox using the useState hook.
 
   const [time, setTime] = useState(Date.now());
   useEffect(() => {
@@ -14,7 +15,7 @@ function ContactBox({ setCurrentChat, isSmall, searchedDN }) {
   }, []);
 
   const calcContactsHTML = function (contactsHTML, chats) {
-    // sorts according to last message send time
+    //We sort the chats by the last message's send time.
     chats.sort((a, b) => {
       if (a.lastMessage === null && b.lastMessage === null) {
         return 0;
@@ -41,12 +42,14 @@ function ContactBox({ setCurrentChat, isSmall, searchedDN }) {
           .includes(searchedDN.toLowerCase()) ||
         chat.user.userName.toLowerCase().includes(searchedDN.toLowerCase())
       ) {
+        //We use the contactHTML method from the chat class, to add the current chat to the array. 
         contactsHTML.push(chat.contactHTML({ setCurrentChat }));
       }
     }
   };
   calcContactsHTML(contactsHTML, chats);
 
+  //Here also when take under account our window width.
   if (isSmall != true) {
     return (
       <div className="col-sm-4 contacts">

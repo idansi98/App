@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 
+//This component returns the chatbox and all the messages in it.
 function ChatBox({ currentChat }) {
+  //We use the useEffect hook here so after the updated html is set, we scroll the page down. 
   useEffect(() => {
     var elem = document.getElementById("chatBox");
     elem.scrollTop = elem.scrollHeight;

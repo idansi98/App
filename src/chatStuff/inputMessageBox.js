@@ -1,6 +1,8 @@
 import { useRef } from "react";
 
+//This component returns the InputMessageBox.
 function InputMessageBox({ setInputText, messageJustSent }) {
+  //We use the useRef hook here to get the givenText.
   const givenText = useRef(null);
 
   var sendButton = document.getElementById("Send");

@@ -1,6 +1,7 @@
 import messageStyler from "./messageStyler";
 import MessageTime from "../chatStuff/messageTime";
 
+//This class deals with Audio messages and their stuff.
 class AudioMessage {
   constructor(filePath, sender) {
     this.filePath = filePath;

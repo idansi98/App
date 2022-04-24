@@ -1,5 +1,7 @@
 import chatHandler from "../chatStuff/chatFunctions";
 import { useNavigate } from "react-router-dom";
+
+//This class deals with the Chat object and it's stuff.
 class Chat {
   constructor(user) {
     this.user = user;
@@ -15,9 +17,11 @@ class Chat {
     return null;
   }
 
-  //The ID of each element is it's position in the array.
+  //This function returns the  full contact's html.
   contactHTML({ setCurrentChat }) {
     var userNameForClick = this.user.userName;
+
+    //If not empty.
     if (this.lastMessage !== null) {
       var dateThen = this.lastMessage.dateTime;
       var dateNow = new Date().getTime();
@@ -80,10 +84,7 @@ class Chat {
       }
 
       return (
-        <tr
-          key={this.user.userName}
-          data-username={userNameForClick}
-          onClick={function () {
+        <tr  key={this.user.userName} data-username={userNameForClick} onClick={function () {
             var user = chatHandler.findUser(userNameForClick);
             var chat = global.currentUser.searchChat(user);
             global.currentChat = chat;
@@ -108,10 +109,9 @@ class Chat {
         </tr>
       );
     } else {
+      //If empty.
       return (
-        <tr
-          key={this.user.userName}
-          onClick={function () {
+        <tr  key={this.user.userName} onClick={function () {
             var user = chatHandler.findUser(userNameForClick);
             var chat = global.currentUser.searchChat(user);
             global.currentChat = chat;

@@ -3,7 +3,9 @@ import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import snackbar from "../classes/snackbarHelper";
 
+//This component defines the functionallity and design of the Add contact button.
 function AddContactButton({ setCurrentChat }) {
+  //We use the useState hook here, so the screen will be updated due to chat's addition.
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);

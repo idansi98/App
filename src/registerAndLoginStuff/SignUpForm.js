@@ -8,8 +8,9 @@ import PhotoUploaderBox from "./PhotoUploaderBox";
 import defaultPFP from "../Media/defaultPFP.png";
 import { useState } from "react";
 
+//This component returns the whole SignUpForm.
 function SignUpForm() {
-  // useState hook
+  //We use the useState hook to set the credentials.
   const [credentials, setCredentials] = useState({
     userName: "",
     displayName: "",

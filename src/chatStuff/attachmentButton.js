@@ -2,6 +2,7 @@ import AttachAudio from "./attachAudio";
 import AttachImage from "./attachImage";
 import AttachVideo from "./attachVideo";
 
+//This component returns the attachment menu using it's sub components.
 function AttachmentButton({ isSmall, setMessageJustSent, setRecorder }) {
   return (
     <>

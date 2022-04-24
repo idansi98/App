@@ -13,10 +13,7 @@ function addUser(userName, displayName, image, password) {
 function findUser(userName) {
   return global.userDB.findUserByUserName(userName);
 }
-/*
-function findUserDisp(displayName) {
-    return global.userDB.findUserByDisplayName(displayName);
-} */
+
 function sendTextMessage(sender, reciever, text) {
   global.userDB.sendTextMessage(sender, reciever, text);
 }
@@ -52,15 +49,5 @@ function login(userName, password) {
   return global.userDB.login(userName, password);
 }
 export default {
-  initDB,
-  addUser,
-  findUser,
-  sendTextMessage,
-  sendImageMessage,
-  sendVideoMessage,
-  sendAudioMessage,
-  makeBlankChat,
-  printAllUsers,
-  getChatBetween,
-  login,
-};
+  initDB, addUser, findUser, sendTextMessage, sendImageMessage, sendVideoMessage,
+  sendAudioMessage, makeBlankChat, printAllUsers, getChatBetween, login};

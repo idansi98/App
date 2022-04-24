@@ -7,10 +7,10 @@ import sound from "../Media/sound.mp3";
 import suspiciousPic from "../Media/suspicious.png";
 import earthVideo from "../Media/earth.mp4";
 
-
+//This component returns the SignUpRegisterBox.
 function SignUpRegisterBox({ credentials }) {
   const navigate = useNavigate();
-
+  //We validate if all the data entered by the user is valid.
   function validate() {
     if (
       isSamePassword(credentials.password, credentials.passwordValidator) &&

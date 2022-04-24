@@ -3,9 +3,14 @@ import ChatBox from "./ChatBox";
 import BottomRow from "./bottomRow";
 import React from "react";
 import { useState, useEffect } from "react";
+
+//This component returns the MainChatBox, depending on the arguments.
 function MainChatBox({ isSmall, currentChat, setCurrentChat, searchedDN }) {
-  // contains the ID of the last message sent by the current user (not recieved)
+
+  //Contains the ID of the last message sent by the current user (not recieved).
   const [messageJustSent, setMessageJustSent] = useState(-1);
+
+  //Here it also depends on the Window's width.
   if (isSmall === false) {
     return (
       <div className="row">

@@ -1,5 +1,6 @@
 import { useRef } from "react";
 
+//This component returns the PasswordValidatorBox.
 function PasswordValidatorBox({ setCredentials }) {
   const givenPasswordValidatorBox = useRef(null);
 
@@ -12,7 +13,7 @@ function PasswordValidatorBox({ setCredentials }) {
       photo: prev.photo,
     }));
   };
-  //          <input ref={givenPasswordValidatorBox} onKeyUp={updatePassWordValidator}
+
 
   return (
     <div className="mt-1 mb-1 row fixeddiv formRowFixed">

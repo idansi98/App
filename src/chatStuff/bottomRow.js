@@ -3,12 +3,10 @@ import InputMessageBox from "./inputMessageBox";
 import SendButton from "./sendButton";
 import { useState } from "react";
 
+//This component returns the the bottom row of the chat in general(the contacts list and the chat screen).
 function BottomRow({
-  isSmall,
-  setMessageJustSent,
-  messageJustSent,
-  currentChat,
-}) {
+  isSmall, setMessageJustSent, messageJustSent, currentChat,}) {
+    //We use two times the usestate hook here.
   const [inputText, setInputText] = useState("");
   const [recorder, setRecorder] = useState(null);
 

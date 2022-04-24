@@ -4,8 +4,9 @@ import PasswordBox from "./PasswordBox";
 import LoginRegisterBox from "./LoginRegisterBox";
 import { useState } from "react";
 
+//This component returns the Login form.
 function LoginForm() {
-  // useState hook
+  //We use the useState hook to set the credentials.
   const [credentials, setCredentials] = useState({
     userName: "",
     displayName: "",

@@ -8,13 +8,15 @@ import BlueBackground from "../registerAndLoginStuff/BlueBackGround";
 import Snackbar from "../registerAndLoginStuff/snackbar";
 import snackbarHelper from "../classes/snackbarHelper";
 
+//This component returns the whole chatpage it's sub components.
 function ChatPage() {
-  // update when resizing
+  
 
   const [tooSmall, setTooSmall] = useState(false);
   const [currentChat, setCurrentChat] = useState(null);
   const [searchedDN, setSearchedDN] = useState("");
 
+  //We use the useNavigate here, because if you entered the chat page without loging before, you should be directed back to Login page.
   const navigate = useNavigate();
   useEffect(() => {
     if (global.currentUser == null) {
@@ -22,6 +24,7 @@ function ChatPage() {
     }
     snackbarHelper.setClass("snackbarChat");
     document.title = "Chats";
+    //In this function we customize our chatpage depending on how wide our window is. 
     function checkForTooSmall() {
       if (window.innerWidth > 800) {
         if (tooSmall === true) {
@@ -35,7 +38,8 @@ function ChatPage() {
     }
     window.addEventListener("resize", checkForTooSmall);
   });
-  // just dummy return
+
+  //Just dummy return.
   if (global.currentUser == null) {
     return <div> </div>;
   }
