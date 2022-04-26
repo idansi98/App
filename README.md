@@ -8,7 +8,7 @@ Open [http://localhost:port](http://localhost:3000) to start the app [^1].
 
 
 ## How to use  
-After you opened the app you will be at the login screen. You can switch back and fourth between the login and register screens at any time. Currently, registering will create a few demo chats for the user.   
+After you opened the app you will be at the login screen. You can switch back and fourth between the login and register screens at any time. 
 
 After a successful login / signup you are treated to the chat page. Current functionalities include:
 - Creating a new chat
@@ -17,6 +17,18 @@ After a successful login / signup you are treated to the chat page. Current func
 - Searching a chat out of existing chats  
 
 Currently this app supports a wide range of window sizes, for example if the window is horizontally small - the contacts tab will disappear so the user can focus on the current chat without too many menus taking screen real estate.
+
+There exist a guest user for demo purposes that comes with some prebuilt chats:  
+username: "Guest", password: "12345"    
+
+Some more usernames that exist:
+- 1
+- 2
+- 3
+- 4
+- Idan
+- Ido
+- Alice
 
 
 ## Dependencies  

@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import chatHandler from "../chatStuff/chatFunctions";
 import snackbarHelper from "../classes/snackbarHelper";
-import sound from "../Media/sound.mp3";
-import suspiciousPic from "../Media/suspicious.png";
-import earthVideo from "../Media/earth.mp4";
 
 //This component returns the SignUpRegisterBox.
 function SignUpRegisterBox({ credentials }) {
@@ -27,104 +24,13 @@ function SignUpRegisterBox({ credentials }) {
         credentials.password
       );
       global.currentUser = chatHandler.findUser(credentials.userName);
-      tempAddExampleChats();
       navigate("/chats");
     } else {
       //
     }
   }
 
-  function tempAddExampleChats() {
-    var currentUser = global.currentUser;
-    var idan = chatHandler.findUser("Idan");
-    var ido = chatHandler.findUser("Ido");
-    var alice = chatHandler.findUser("Alice");
-    var bob = chatHandler.findUser("1");
-    var leo = chatHandler.findUser("2");
-    var james = chatHandler.findUser("3");
-    var hemi = chatHandler.findUser("4");
-
-    chatHandler.sendTextMessage(currentUser, ido, "hi");
-    chatHandler.sendTextMessage(ido, currentUser, "how are you?");
-    chatHandler.sendImageMessage(currentUser, ido, suspiciousPic);
-    chatHandler.sendTextMessage(
-      ido,
-      currentUser,
-      "Stop sending me propoganda please :C"
-    );
-    chatHandler.sendImageMessage(currentUser, ido, suspiciousPic);
-    chatHandler.sendTextMessage(ido, currentUser, "Hmmm");
-    chatHandler.sendTextMessage(
-      idan,
-      currentUser,
-      "Did you watch the last batman movie?"
-    );
-    chatHandler.sendTextMessage(currentUser, idan, "I sure didn't!");
-    chatHandler.sendAudioMessage(idan, currentUser, sound);
-    chatHandler.sendTextMessage(currentUser, idan, "Nice trt");
-    chatHandler.sendTextMessage(currentUser, idan, "Nice try*");
-    chatHandler.sendTextMessage(currentUser, alice, "Hi...");
-    chatHandler.sendTextMessage(currentUser, alice, "Whats up alice?");
-    chatHandler.sendTextMessage(
-      currentUser,
-      alice,
-      "ALICE IS EVERYTHING OKAY?"
-    );
-    chatHandler.sendTextMessage(currentUser, alice, "ALICE ANSWER ME");
-    chatHandler.sendTextMessage(currentUser, alice, "THATS IT");
-    chatHandler.sendVideoMessage(currentUser, alice, earthVideo);
-    chatHandler.sendTextMessage(
-      alice,
-      currentUser,
-      "Please delete my number..."
-    );
-
-    chatHandler.sendTextMessage(
-      bob,
-      currentUser,
-      "YO I AM BOB HELLO LONG MESSSAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
-    );
-    chatHandler.sendImageMessage(currentUser, bob, suspiciousPic);
-    chatHandler.sendTextMessage(
-      bob,
-      currentUser,
-      "YO I AM BOB HELLO LONG MESSSAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
-    );
-    chatHandler.sendAudioMessage(bob, currentUser, sound);
-    chatHandler.sendTextMessage(
-      bob,
-      currentUser,
-      "YO I AM BOB HELLO LONG MESSSAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
-    );
-    chatHandler.sendVideoMessage(currentUser, bob, earthVideo);
-    chatHandler.sendTextMessage(
-      bob,
-      currentUser,
-      "YO I AM BOB HELLO LONG MESSSAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
-    );
-
-    chatHandler.sendTextMessage(leo, currentUser, "Good video!");
-    chatHandler.sendTextMessage(currentUser, leo, "?");
-
-    chatHandler.sendTextMessage(james, currentUser, "I am James!");
-    chatHandler.sendTextMessage(currentUser, james, "I am James!");
-    chatHandler.sendTextMessage(james, currentUser, "I am James!");
-    chatHandler.sendTextMessage(currentUser, james, "I am James!");
-    chatHandler.sendTextMessage(james, currentUser, "I am James!");
-    chatHandler.sendTextMessage(currentUser, james, "I am James!");
-    chatHandler.sendTextMessage(james, currentUser, "I am James!");
-    chatHandler.sendTextMessage(currentUser, james, "I am James!");
-    chatHandler.sendTextMessage(james, currentUser, "I am James!");
-    chatHandler.sendTextMessage(currentUser, james, "I am James!");
-    chatHandler.sendTextMessage(james, currentUser, "I am James!");
-    chatHandler.sendTextMessage(currentUser, james, "I am James!");
-
-    chatHandler.sendTextMessage(
-      hemi,
-      currentUser,
-      "I am going to make the next homework more interesting!"
-    );
-  }
+  
 
   //userName:"",displayName:"", password:"", passwordValidator:""});
 
