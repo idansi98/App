@@ -1,6 +1,6 @@
 import "./App.css";
 import LoginPage from "./registerAndLoginStuff/LoginPage";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Redirect} from "react-router-dom";
 import SignUpPage from "./registerAndLoginStuff/SignUpPage";
 import ChatPage from "./chatStuff/ChatPage";
 
@@ -12,6 +12,8 @@ function App() {
         <Route path="/signup" element={<SignUpPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/" element={<LoginPage />}></Route>
+        <Route exact path="/index.html" element={<LoginPage />}></Route>
+
       </Routes>
     </BrowserRouter>
   );
