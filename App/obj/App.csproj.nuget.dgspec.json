@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\WebApplication1.csproj": {}
+    "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\App\\App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\WebApplication1.csproj": {
+    "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\App\\App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\WebApplication1.csproj",
-        "projectName": "WebApplication1",
-        "projectPath": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\App\\App.csproj",
+        "projectName": "App",
+        "projectPath": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\App\\App.csproj",
         "packagesPath": "C:\\Users\\idans\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\obj\\",
+        "outputPath": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\App\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\idans\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,26 +39,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[6.0.4, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.4, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[6.0.3, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.3.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

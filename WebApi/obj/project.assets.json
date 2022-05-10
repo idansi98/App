@@ -208,19 +208,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ido\\.nuget\\packages\\": {}
+    "C:\\Users\\idans\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApi\\WebApi.csproj",
-      "packagesPath": "C:\\Users\\Ido\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApi\\obj\\",
+      "projectPath": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApi\\WebApi.csproj",
+      "packagesPath": "C:\\Users\\idans\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Ido\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\idans\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -269,7 +269,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

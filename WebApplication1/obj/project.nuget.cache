@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "x6xvQPOu8CJuaSbC6mwuyT3LYI7iOWVgW4rZ2Dfa47hBZXkMpVY1r3e/I7JUIbg92aN1qs8guhw4yQ8ndtj7cg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\WebApplication1.csproj",
@@ -182,5 +183,11 @@
     "C:\\Users\\Ido\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Ido\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
+=======
+  "dgSpecHash": "cktH3o7n+SYvfS8iyQR+HWs/SXAgg+u8bWLP82Wk4Uomcp7mGEmgms7c+SJz6adKctKW5QucAXNVacD61c1udw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\WebApplication1.csproj",
+  "expectedPackageFiles": [],
+>>>>>>> c67385e8ba05296d1d31b0a3f58c9077e41c38bc
   "logs": []
 }
