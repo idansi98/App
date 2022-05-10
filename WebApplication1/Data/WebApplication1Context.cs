@@ -16,5 +16,11 @@ namespace WebApplication1.Data
         }
 
         public DbSet<WebApplication1.Models.Rating> Rating { get; set; }
+
+        public DbSet<WebApplication1.Models.TextMessage> TextMessage { get; set; }
+
+        public DbSet<WebApplication1.Models.Contact> Contact { get; set; }
+
+        public DbSet<WebApplication1.Models.User> User { get; set; }
     }
 }
