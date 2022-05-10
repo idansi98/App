@@ -59,6 +59,7 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
+                rating.DateTime = DateTime.Now.ToString();
                 _context.Add(rating);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
