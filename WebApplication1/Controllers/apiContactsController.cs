@@ -8,9 +8,9 @@ namespace WebApplication1.Controllers
     [Route("api/contacts")]
     public class apiContactsController : Controller
     {
-        private readonly ChatService _service;
+        private readonly IChatService _service;
 
-        public apiContactsController(ChatService service)
+        public apiContactsController(IChatService service)
         {
             _service = service; 
         }
@@ -19,6 +19,13 @@ namespace WebApplication1.Controllers
         public JsonResult Index()
         {
             return Json(_service.GetAllUsers());
+        }
+
+
+        [HttpGet ("{id}")]
+        public JsonResult SpecificUser(string id)
+        {
+            return Json(_service.GetUser(id));
         }
 
 

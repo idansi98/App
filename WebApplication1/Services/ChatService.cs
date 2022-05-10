@@ -10,7 +10,7 @@ using WebApplication1.Data;
 using WebApplication1.Models;
 namespace WebApplication1.Services
 {
-    public class ChatService
+    public class ChatService : IChatService
     {
         private static List<User> users;
 

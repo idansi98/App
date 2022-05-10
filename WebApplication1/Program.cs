@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<WebApplication1Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("WebApplication1Context") ?? throw new InvalidOperationException("Connection string 'WebApplication1Context' not found.")));
 
-builder.Services.AddSingleton<ChatService>();
+builder.Services.AddSingleton<IChatService,ChatService>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

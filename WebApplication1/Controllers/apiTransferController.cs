@@ -8,8 +8,8 @@ namespace WebApplication1.Controllers
     [Route("api/transfer")]
     public class apiTransferController : Controller
     {
-        private readonly ChatService _service;
-        public apiTransferController(ChatService service)
+        private readonly IChatService _service;
+        public apiTransferController(IChatService service)
         {
             _service = service;
         }

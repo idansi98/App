@@ -8,9 +8,9 @@ namespace WebApplication1.Controllers
     [Route("api/invitations")]
     public class apiInvitationsController : Controller
     {
-        private readonly ChatService _service;
+        private readonly IChatService _service;
 
-        public apiInvitationsController(ChatService service)
+        public apiInvitationsController(IChatService service)
         {
             _service = service;
         }
