@@ -31,8 +31,8 @@ namespace WebApplication1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<DateTime>("DateTime")
-                        .HasColumnType("DateTime");
+                    b.Property<int>("DateTime")
+                        .HasColumnType("int");
 
                     b.Property<string>("ReviewText")
                         .IsRequired()

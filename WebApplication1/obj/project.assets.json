@@ -9652,19 +9652,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\idans\\.nuget\\packages\\": {}
+    "C:\\Users\\Ido\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\idans\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\obj\\",
+      "projectPath": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\Ido\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\idans\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ido\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9727,8 +9727,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

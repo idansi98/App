@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Rating";
+    Layout = "_Layout";
+}
+@model List<Rating>
+<ul>
+@foreach (Rating rating in Model) {
+    <li>ID = @rating.ID, NAME = @rating.ReviewerName, REVIEW = @rating.ReviewText, SCORE = @rating.Score </li>
+}
+</ul>
