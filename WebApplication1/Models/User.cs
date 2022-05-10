@@ -2,12 +2,22 @@
 {
     public class User
     {
-        public string UserName { get; set; }
-        public string Password { get; set; }
+        public string ID { get; set; }
+        public string? Password { get; set; }
         public string DisplayName { get; set; }
-        public string Picture { get; set; }
-        public List<Chat> Chats { get; set; }
+        public List<Contact>? Contacts { get; set; }
 
+        public static implicit operator List<object>(User v)
+        {
+            throw new NotImplementedException();
+        }
 
+        public User(string iD, string displayName, string password)
+        {
+            ID = iD;
+            DisplayName = displayName;
+            Password = password;
+            Contacts = new List<Contact>();
+        }
     }
 }
