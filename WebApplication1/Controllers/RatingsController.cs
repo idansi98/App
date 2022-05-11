@@ -26,6 +26,22 @@ namespace WebApplication1.Controllers
             return View(await _context.Rating.ToListAsync());
         }
 
+        public async Task<IActionResult> Search()
+        {
+            return View(await _context.Rating.ToListAsync());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Search(string query)
+        {
+            var q = from rating in _context.Rating
+                    where rating.ReviewerName == query
+                    select rating;
+            return View(await q.ToListAsync());
+        }
+
+       
+
         // GET: Ratings/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -99,6 +115,7 @@ namespace WebApplication1.Controllers
             {
                 try
                 {
+                    rating.DateTime = DateTime.Now.ToString();
                     _context.Update(rating);
                     await _context.SaveChangesAsync();
                 }

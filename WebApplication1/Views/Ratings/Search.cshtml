@@ -4,22 +4,16 @@
     ViewData["Title"] = "Index";
 }
 
-@{
-    int sum = 0;
-    int average = 0;
-    int count = 0;
-    foreach (var item in Model)
-    {
-        sum += item.Score;
-        count++;
-    }
-    average = sum / count;
-}
-<h1>Indexfdgfdg</h1>
-<div><p> Average Grade: @average </p><</div>
+<h1>Index</h1>
+
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<form asp-action = "Search">
+    <input name = "query" id = "search"/>
+    <input type = "submit" value = "Search"/>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -62,3 +56,7 @@
 }
     </tbody>
 </table>
+
+@section Scripts {
+<script src="~/js/search.js"></script>
+}
