@@ -11,6 +11,6 @@ namespace WebApplication1.Models
         [Range(1, 5)]
         public int Score { get; set; }
         public string ReviewText { get; set; }
-        public string DateTime { get; set; }
+        public string? DateTime { get; set; }
     }
 }
