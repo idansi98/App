@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "30aYFkjAMZT38L66mAZfpVqfv34s1rB1ueMDKCfrDm8=",
+  "Hash": "RyEduVX9Bv9YT7f21y2c1YqFuySXM8vhvbpvEKfsMi4=",
   "Source": "WebApplication1",
   "BasePath": "_content/WebApplication1",
   "Mode": "Default",
@@ -1139,12 +1139,12 @@
       "OriginalItemSpec": "wwwroot\\static\\css\\main.16f847f3.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.17c81db3.js",
+      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.2b409778.js",
       "SourceId": "WebApplication1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\",
       "BasePath": "_content/WebApplication1",
-      "RelativePath": "static/js/main.17c81db3.js",
+      "RelativePath": "static/js/main.2b409778.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1153,15 +1153,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\static\\js\\main.17c81db3.js"
+      "OriginalItemSpec": "wwwroot\\static\\js\\main.2b409778.js"
     },
     {
-      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.17c81db3.js.LICENSE.txt",
+      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.2b409778.js.LICENSE.txt",
       "SourceId": "WebApplication1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\",
       "BasePath": "_content/WebApplication1",
-      "RelativePath": "static/js/main.17c81db3.js.LICENSE.txt",
+      "RelativePath": "static/js/main.2b409778.js.LICENSE.txt",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1170,15 +1170,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\static\\js\\main.17c81db3.js.LICENSE.txt"
+      "OriginalItemSpec": "wwwroot\\static\\js\\main.2b409778.js.LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.17c81db3.js.map",
+      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.2b409778.js.map",
       "SourceId": "WebApplication1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\",
       "BasePath": "_content/WebApplication1",
-      "RelativePath": "static/js/main.17c81db3.js.map",
+      "RelativePath": "static/js/main.2b409778.js.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1187,7 +1187,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\static\\js\\main.17c81db3.js.map"
+      "OriginalItemSpec": "wwwroot\\static\\js\\main.2b409778.js.map"
     },
     {
       "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\media\\alice.c73eb5653706a8571c59.webp",

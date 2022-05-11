@@ -8,7 +8,8 @@ namespace WebApplication1.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            // makes swappingg new build from react way faster
+            return File("~/index.html", "text/html");
         }
     }
 }

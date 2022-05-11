@@ -29,8 +29,8 @@ function formatAMPM(backThen) {
   }
 }
 
-function getMessageStyleByUser(user) {
-  if (user === global.currentUser) {
+function getMessageStyleByUser(userSent) {
+  if (userSent === "true") {
     return leftStyle;
   } else {
     return rightStyle;

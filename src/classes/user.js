@@ -10,9 +10,9 @@ class User {
   addChat(chat) {
     this.chats.push(chat);
   }
-  searchChat(user) {
+  searchChat(id) {
     for (var index in this.chats) {
-      if (this.chats[index].user === user) {
+      if (this.chats[index].id === id) {
         return this.chats[index];
       }
     }

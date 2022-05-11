@@ -6,7 +6,7 @@ namespace WebApplication1.Controllers
     {
         public IActionResult Index()
         {
-            return View("~/Views/Home/index.cshtml");
+            return File("~/index.html", "text/html");
         }
     }
 }

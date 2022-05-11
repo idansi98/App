@@ -8,22 +8,16 @@ function ContactBox({ setCurrentChat, isSmall, searchedDN }) {
   const [time, setTime] = useState(Date.now());
   const [contacts, setContacts] = useState("");
   useEffect(async () => {
-    if(global.token != null) {
-      const res = await fetch('https//localhost:7100/api/Contacts');
-      const data = await res.json();
-      setContacts(data);
-      console.log(contacts);
-    }
-
     const interval = setInterval(() => setTime(Date.now()), 1000);
     return () => {
       clearInterval(interval);
     };
   }, []);
-/*
+
   const calcContactsHTML = function (contactsHTML) {
     //We sort the chats by the last message's send time.
-    contacts.sort((a, b) => {
+    var chats = global.currentUser.chats
+    chats.sort((a, b) => {
       if (a.lastMessage === null && b.lastMessage === null) {
         return 0;
       }
@@ -44,10 +38,10 @@ function ContactBox({ setCurrentChat, isSmall, searchedDN }) {
     for (var index in chats) {
       var chat = chats[index];
       if (
-        chat.user.displayName
+        chat.id
           .toLowerCase()
           .includes(searchedDN.toLowerCase()) ||
-        chat.user.userName.toLowerCase().includes(searchedDN.toLowerCase())
+        chat.displayName.toLowerCase().includes(searchedDN.toLowerCase())
       ) {
         //We use the contactHTML method from the chat class, to add the current chat to the array.
         contactsHTML.push(chat.contactHTML({ setCurrentChat }));
@@ -55,7 +49,7 @@ function ContactBox({ setCurrentChat, isSmall, searchedDN }) {
     }
   };
   calcContactsHTML(contactsHTML);
-*/
+
   //Here also when take under account our window width.
   if (isSmall != true) {
     return (

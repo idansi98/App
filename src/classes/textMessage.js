@@ -3,16 +3,16 @@ import messageStyler from "./messageStyler";
 
 //This class deals with the Text message object and its stuff.
 class TextMessage {
-  constructor(text, sender) {
+  constructor(id, text, userSent, dateTime) {
     this.text = text;
-    this.sender = sender;
-    this.dateTime = new Date().getTime();
-    global.lastMessageID += 1;
+    this.userSent = userSent;
+    this.dateTime = Date.parse(dateTime)
+    //new Date().getTime();
     this.ID = global.lastMessageID;
   }
 
   get html() {
-    var style = messageStyler.getMessageStyleByUser(this.sender);
+    var style = messageStyler.getMessageStyleByUser(this.userSent);
     return (
       <tr id={this.ID} key={this.ID} className="noBorder">
         <td>

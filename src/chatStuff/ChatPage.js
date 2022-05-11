@@ -42,21 +42,6 @@ function ChatPage() {
     window.addEventListener("resize", checkForTooSmall);
   });
 
-  //Just for testing purposes
-  if (global.currentUser == null) {
-    $.ajax ({
-      url: "api/contacts",
-      type: 'GET',
-      data: {},
-      success: function (data) {console.log(data);},
-      error: function() {}
-    });
-
-    
-
-    return <div> </div>;
-  }
-
   return (
     <div className="back-container">
       <div className="container-fluid front-container no-padding ">

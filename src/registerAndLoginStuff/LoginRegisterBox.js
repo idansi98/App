@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import snackbarHelper from "../classes/snackbarHelper";
 import $ from 'jquery';
+import CurrentUserHandler from "../classes/currentUserHandler";
 
 //This component returns the LoginRegisterBox.
 function LoginRegisterBox({ credentials }) {
@@ -14,13 +15,15 @@ function LoginRegisterBox({ credentials }) {
   //We use the useNavigate hook to go to other html file.
   const navigate = useNavigate();
 
-  const tryLogin = function () {
+   const tryLogin = async function () {
     $.ajax({
       url: 'https://localhost:7100/api/login/?username=' + credentials.userName + "&password=" + credentials.password,
       type: 'POST',
       contentType: "application/json",
-      success: function (data) {
+      success: async function (data) {
         global.token = data 
+        await CurrentUserHandler.init()
+        // maybe wait for it somehow?
         navigate("/chats");
       },
       error: function() {snackbarHelper.showMessage("Incorrect username or password");},

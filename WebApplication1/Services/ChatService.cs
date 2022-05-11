@@ -24,7 +24,7 @@ namespace WebApplication1.Services
             users.Add(Idan);
             users.Add(Hemi);
             Ido.Contacts.Add(new Contact { ID = "1", DisplayName = "Yosi", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
-            Ido.Contacts.Add(new Contact { ID = "1", DisplayName = "Hemi", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
+            Ido.Contacts.Add(new Contact { ID = "2", DisplayName = "Hemi", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
             Idan.Contacts.Add(new Contact { ID = "1", DisplayName = "Yosi2", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
             Hemi.Contacts.Add(new Contact { ID = "1", DisplayName = "Yosi3", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
             Ido.Contacts.First().Messages.Add(new TextMessage { Text = "Hello I am not scamming", ID = 1, Time = DateTime.Now, UserSent = false });

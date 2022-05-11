@@ -1,11 +1,15 @@
 import chatHandler from "../chatStuff/chatFunctions";
 import { useNavigate } from "react-router-dom";
+import defaultPFP from "../Media/defaultPFP.png";
 
 //This class deals with the Chat object and its stuff.
 class Chat {
-  constructor(user) {
-    this.user = user;
+  constructor(id, displayName, server, picture) {
+    this.id = id + ":" + server
+    this.displayName = displayName
+    this.server = server
     this.messages = [];
+    this.picture = picture
   }
   addMessage(message) {
     this.messages.push(message);
@@ -19,7 +23,7 @@ class Chat {
 
   //This function returns the  full contact's html.
   contactHTML({ setCurrentChat }) {
-    var userNameForClick = this.user.userName;
+    var userNameForClick = this.id;
 
     //If not empty.
     if (this.lastMessage !== null) {
@@ -85,22 +89,20 @@ class Chat {
 
       return (
         <tr
-          key={this.user.userName}
+          key={this.id}
           data-username={userNameForClick}
           onClick={function () {
-            var user = chatHandler.findUser(userNameForClick);
-            var chat = global.currentUser.searchChat(user);
-            global.currentChat = chat;
-            setCurrentChat(chat);
+            global.currentChat = global.currentUser.searchChat(userNameForClick);
+            setCurrentChat(global.currentChat);
           }}
         >
           <td>
             <img
-              src={this.user.picture}
+              src={defaultPFP}
               alt=""
               className="profile-image rounded-circle"
             />
-            {" " + this.user.displayName}
+            {" " + this.displayName}
             <br />
             {arrow}
             <small>{" " + this.lastMessage.shortForm}</small>
@@ -115,21 +117,19 @@ class Chat {
       //If empty.
       return (
         <tr
-          key={this.user.userName}
+          key={this.id}
           onClick={function () {
-            var user = chatHandler.findUser(userNameForClick);
-            var chat = global.currentUser.searchChat(user);
-            global.currentChat = chat;
-            setCurrentChat(chat);
+            global.currentChat = global.currentUser.searchChat(userNameForClick);
+            setCurrentChat(global.currentChat);
           }}
         >
           <td>
             <img
-              src={this.user.picture}
+              src={defaultPFP}
               alt=""
               className="profile-image rounded-circle"
             />
-            {this.user.displayName} <br /> <br /> <br />
+            {this.displayName} <br /> <br /> <br />
           </td>
         </tr>
       );

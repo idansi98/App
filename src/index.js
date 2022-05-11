@@ -146,8 +146,8 @@ function init() {
   global.currentUser = null;
   global.currentChat = null;
   global.lastMessageID = -1;
-  chatHandler.initDB();
-  fillMessages();
+  //chatHandler.initDB();
+  //fillMessages();
 }
 
 

@@ -3,8 +3,8 @@ function AboveChatRow({ currentChat }) {
   var contactName = null;
   var contactPic = null;
   if (currentChat != null) {
-    contactName = currentChat.user.displayName;
-    contactPic = currentChat.user.picture;
+    contactName = currentChat.displayName;
+    contactPic = currentChat.picture;
     return (
       <div className="col-sm-8">
         {/*The contact's profile picture*/}
