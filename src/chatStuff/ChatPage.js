@@ -7,19 +7,24 @@ import MainChatBox from "./mainChatBox";
 import BlueBackground from "../registerAndLoginStuff/BlueBackGround";
 import Snackbar from "../registerAndLoginStuff/snackbar";
 import snackbarHelper from "../classes/snackbarHelper";
+import $ from 'jquery';
 
 //This component returns the whole chatpage it's sub components.
 function ChatPage() {
   const [tooSmall, setTooSmall] = useState(false);
   const [currentChat, setCurrentChat] = useState(null);
   const [searchedDN, setSearchedDN] = useState("");
-
+  const [contacts, setContacts] = useState("");
   //We use the useNavigate here, because if you entered the chat page without loging before, you should be directed back to Login page.
   const navigate = useNavigate();
   useEffect(() => {
-    if (global.currentUser == null) {
+    if (global.token == null) {
       navigate("/login");
     }
+
+
+
+
     snackbarHelper.setClass("snackbarChat");
     document.title = "Chats";
     //In this function we customize our chatpage depending on how wide our window is.
@@ -37,8 +42,18 @@ function ChatPage() {
     window.addEventListener("resize", checkForTooSmall);
   });
 
-  //Just dummy return.
+  //Just for testing purposes
   if (global.currentUser == null) {
+    $.ajax ({
+      url: "api/contacts",
+      type: 'GET',
+      data: {},
+      success: function (data) {console.log(data);},
+      error: function() {}
+    });
+
+    
+
     return <div> </div>;
   }
 

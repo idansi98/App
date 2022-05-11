@@ -1,8 +1,8 @@
 import "./Button.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import chatHandler from "../chatStuff/chatFunctions";
 import snackbarHelper from "../classes/snackbarHelper";
+import $ from 'jquery';
 
 //This component returns the LoginRegisterBox.
 function LoginRegisterBox({ credentials }) {
@@ -14,16 +14,21 @@ function LoginRegisterBox({ credentials }) {
   //We use the useNavigate hook to go to other html file.
   const navigate = useNavigate();
 
-  //Updates global.currentUser.
   const tryLogin = function () {
-    var user = chatHandler.login(credentials.userName, credentials.password);
-    if (user === null) {
-      snackbarHelper.showMessage("Incorrect username or password");
-    } else {
-      global.currentUser = user;
-      navigate("/chats");
-    }
-  };
+    $.ajax({
+      url: 'https://localhost:7100/api/login/?username=' + credentials.userName + "&password=" + credentials.password,
+      type: 'POST',
+      contentType: "application/json",
+      success: function (data) {
+        global.token = data 
+        navigate("/chats");
+      },
+      error: function() {snackbarHelper.showMessage("Incorrect username or password");},
+    });
+  }
+
+  //Updates global.currentUser.
+
   return (
     <div className="row fixeddivBigger pt-2">
       <button

@@ -2,21 +2,28 @@ import { useState, useEffect } from "react";
 
 //This component returns the Contactbox.
 function ContactBox({ setCurrentChat, isSmall, searchedDN }) {
-  var chats = global.currentUser.chats;
   var contactsHTML = [];
   //We update the time on contactBox using the useState hook.
 
   const [time, setTime] = useState(Date.now());
-  useEffect(() => {
+  const [contacts, setContacts] = useState("");
+  useEffect(async () => {
+    if(global.token != null) {
+      const res = await fetch('https//localhost:7100/api/Contacts');
+      const data = await res.json();
+      setContacts(data);
+      console.log(contacts);
+    }
+
     const interval = setInterval(() => setTime(Date.now()), 1000);
     return () => {
       clearInterval(interval);
     };
   }, []);
-
-  const calcContactsHTML = function (contactsHTML, chats) {
+/*
+  const calcContactsHTML = function (contactsHTML) {
     //We sort the chats by the last message's send time.
-    chats.sort((a, b) => {
+    contacts.sort((a, b) => {
       if (a.lastMessage === null && b.lastMessage === null) {
         return 0;
       }
@@ -47,8 +54,8 @@ function ContactBox({ setCurrentChat, isSmall, searchedDN }) {
       }
     }
   };
-  calcContactsHTML(contactsHTML, chats);
-
+  calcContactsHTML(contactsHTML);
+*/
   //Here also when take under account our window width.
   if (isSmall != true) {
     return (

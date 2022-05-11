@@ -9,7 +9,7 @@
 
         public string getLastMessageText()
         {
-            if (Messages == null)
+            if (Messages == null || Messages.Count == 0)
             {
                 return string.Empty;
             }
@@ -18,7 +18,7 @@
 
         public DateTime getLastMessageDate()
         {
-            if (Messages == null)
+            if (Messages == null || Messages.Count == 0)
             {
                 return DateTime.MinValue;
             }
