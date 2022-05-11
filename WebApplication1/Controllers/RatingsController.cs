@@ -40,7 +40,14 @@ namespace WebApplication1.Controllers
             return View(await q.ToListAsync());
         }
 
-       
+        [HttpPost]
+        public async Task<IActionResult> Search2(string query)
+        {
+            var q = _context.Rating.Where(rating => rating.ReviewerName == query);
+            return PartialView(await q.ToListAsync());
+        }
+
+
 
         // GET: Ratings/Details/5
         public async Task<IActionResult> Details(int? id)

@@ -6,17 +6,18 @@
 
 @{
     int sum = 0;
-    int average = 0;
+    double average = 0;
     int count = 0;
     foreach (var item in Model)
     {
         sum += item.Score;
         count++;
     }
-    average = sum / count;
+    average = (double)sum / (double)count;
 }
-<h1>Indexfdgfdg</h1>
-<div><p> Average Grade: @average </p><</div>
+<h1>Rankings </h1>
+<div><p> Average Grade: @average </p></div>
+
 <p>
     <a asp-action="Create">Create New</a>
 </p>
