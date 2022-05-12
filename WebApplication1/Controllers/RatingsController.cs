@@ -31,17 +31,23 @@ namespace WebApplication1.Controllers
             return View(await _context.Rating.ToListAsync());
         }
 
-       /* [HttpPost]
-        public async Task<IActionResult> Search(string query)
+        [HttpPost]
+        public async Task<IActionResult> Index(string query)
         {
             var q = from rating in _context.Rating
                     where rating.ReviewerName.Contains(query)
                     select rating;
             return View(await q.ToListAsync());
-        }*/
+        }
         
         public async Task<IActionResult> Search2(string query)
         {
+            if(query == null)
+            {
+                var a = from rating in _context.Rating
+                        select rating;
+                return PartialView(await a.ToListAsync());
+            }
             var q = _context.Rating.Where(rating => rating.ReviewerName.Contains(query));
             return PartialView(await q.ToListAsync());
         }

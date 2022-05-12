@@ -15,12 +15,18 @@
     }
     average = (double)sum / (double)count;
 }
-<h1>Rankings </h1>
+<h1>Ratings </h1>
 <div><p> Average Grade: @average </p></div>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<form asp-action = "Index">
+    <input name = "query" id = "search"/>
+    <input type = "submit" value = "Search"/>
+</form>
+
 <table class="table">
     <thead>
         <tr>
@@ -63,3 +69,7 @@
 }
     </tbody>
 </table>
+
+@section Scripts {
+<script src="~/js/search.js"></script>
+}
