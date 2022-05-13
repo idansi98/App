@@ -42,6 +42,10 @@ function ChatPage() {
     window.addEventListener("resize", checkForTooSmall);
   });
 
+  if (global.currentUser == null) {
+    return (<div> </div>);
+  }
+
   return (
     <div className="back-container">
       <div className="container-fluid front-container no-padding ">

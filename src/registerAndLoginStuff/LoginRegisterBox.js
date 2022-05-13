@@ -16,17 +16,33 @@ function LoginRegisterBox({ credentials }) {
   const navigate = useNavigate();
 
    const tryLogin = async function () {
-    $.ajax({
-      url: 'https://localhost:7100/api/login/?username=' + credentials.userName + "&password=" + credentials.password,
-      type: 'POST',
-      contentType: "application/json",
-      success: async function (data) {
-        global.token = data 
+    const headers = new Headers();
+    headers.append('content-type', 'application/json');
+    
+    const body = `{"username":"${credentials.userName}","password":"${credentials.password}"}`;
+    
+    const init = {
+      method: 'POST',
+      headers,
+      body
+    };
+    
+    fetch('https://localhost:7100/api/login', init)
+    .then( async (response) => { //important to put the async here!!!
+      if (response.ok) {
+        global.token = response.ok;
         await CurrentUserHandler.init()
-        // maybe wait for it somehow?
         navigate("/chats");
-      },
-      error: function() {snackbarHelper.showMessage("Incorrect username or password");},
+      } else {
+        snackbarHelper.showMessage("Incorrect username or password");
+
+      }
+    }) 
+    .then((text) => {
+      // text is the response body
+    })
+    .catch((e) => {
+      snackbarHelper.showMessage("Incorrect username or password");
     });
   }
 

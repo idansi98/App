@@ -44,52 +44,149 @@ namespace WebApplication1.Services
 
         public List<Contact> GetAllContacts(string ID)
         {
-            return GetUser(ID).Contacts;
-        }
-
-        public List<Contact> GetAllContacts(User user)
-        {
+            var user = GetUser(ID);
+            if (user == null || user.Contacts == null)
+            {
+                return null;
+            }
             return user.Contacts;
         }
 
-        public List<TextMessage> GetAllMessages(Contact contact)
+
+
+        public List<TextMessage> GetAllMessages(string username, string contactname)
         {
+            var user = GetUser(username);
+            if (user == null)
+                return null;
+            var contact = user.Contacts.Find(x => x.ID == contactname);
+            if (contact == null)
+                return null;
             return contact.Messages;
         }
 
-        public TextMessage getLastMessage(Contact contact)
+        public TextMessage getLastMessage(string username, string contactname)
         {
-            return contact.Messages.Last();
+            var messages = GetAllMessages(username, contactname);
+            if (messages == null)
+                return null;
+            return messages.Last();
         }
 
 
-        public void AddUser(string ID, string displayName, string password)
+        public bool AddUser(string ID, string displayName, string password)
         {
-            users.Add(new User(ID, displayName, password));
+            if(!AddUser(new User(ID, displayName, password))) // if failed
+            {
+                return false;
+            }
+            return true;
         }
-        public void AddUser(User user)
+        public bool AddUser(User user)
         {
+            var found = GetUser(user.ID);
+            if(found != null) // return false if another used exists
+            {
+                return false; 
+            }
             users.Add(user);
+            return true;
         }
 
-        public void AddContactToUser(User user, Contact contact)
+        public bool AddContactToUser(string username, Contact contact)
         {
+            var user = GetUser(username);
+            if (user == null || user.Contacts == null)
+                return false;
             user.Contacts.Add(contact);
+            return true;
         }
 
-        public void AddMessageToContact(Contact contract, TextMessage textMessage)
+        public bool AddMessageToContact(string username, string contactname, TextMessage textMessage)
         {
-            contract.Messages.Add(textMessage);
+            var contact = GetContact(username, contactname);
+            if (contact == null)
+                return false;
+            contact.Messages.Add(textMessage);
+            return true;
         }
 
-        public void AddMessageToContact(Contact contract, string messageText, bool userSent)
+        public Contact GetContact(User user, string contactID)
         {
-            int id = contract.Messages.Max(x => x.ID) +1;
-            contract.Messages.Add(new TextMessage {ID = id, Text = messageText, Time = DateTime.Now, UserSent = userSent});
+            var contact = user.Contacts.Find(x => x.ID == contactID);
+            return contact;
         }
 
+        public Contact GetContact(string username, string contactID)
+        {
+            var user = GetUser(username);
+            if(user == null)
+            {
+                return null;
+            }
+            var contact = user.Contacts.Find(x => x.ID == contactID);
+            return contact;
+        }
 
+        public bool UpdateContact(string userName, UpdatedContact updatedContact, string id)
+        {
+            var user = GetUser(userName);
+            if (user == null || user.Contacts == null)
+                return false;
+            var contact = GetContact(user, id);
+            if (contact == null)
+                return false;
+            contact.DisplayName = updatedContact.name;
+            contact.ServerAdress = updatedContact.server;
+            return true;
+        }
 
+        public bool DeleteContact(string username, string contactID)
+        {
+            var user = GetUser(username);
+            if (user == null || user.Contacts == null)
+                return false;
+            var contact = GetContact(user, contactID);
+            if (contact == null)
+                return false;
+            user.Contacts.Remove(contact);
+            return true;
+        }
+
+        public TextMessage GetSpecificMessage(string username, string contactID, int messageID)
+        {
+            var messages = GetAllMessages(username, contactID);
+            if (messages == null)
+            {
+                return null;
+            }
+            return messages.Find(x=> x.ID == messageID);
+        }
+
+        public bool UpdateMessage(string username,string contactID, int messageID, MessageToAdd textMessage)
+        {
+            var originalMessage = GetSpecificMessage(username, contactID, messageID);
+            if (originalMessage == null)
+            {
+                return false;
+            }
+            originalMessage.Text = textMessage.content;
+            return true;
+        }
+
+        public bool DeleteMessage(string username, string contactID, int messageID)
+        {
+            var messageToRemove = GetSpecificMessage(username, contactID, messageID);
+            if (messageToRemove == null)
+            {
+                return false;
+            }
+            var contact = GetContact(username, contactID);
+            contact.Messages.Remove(messageToRemove);
+            return true;
+        }
 
     }
+
+  
 }

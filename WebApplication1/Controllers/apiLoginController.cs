@@ -3,6 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using WebApplication1.Models;
 using WebApplication1.Services;
 
 namespace WebApplication1.Controllers
@@ -21,12 +22,12 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(string username, string password)
+        public IActionResult Post(LoginCredentials loginCredentials)
         {
-            var user = _service.GetUser(username);
+            var user = _service.GetUser(loginCredentials.username);
             if (user != null)
             {
-                if(user.Password == password)
+                if(user.Password == loginCredentials.password)
                 {
                     /*
                     var claims = new[]
@@ -46,13 +47,13 @@ namespace WebApplication1.Controllers
                         expires: DateTime.UtcNow.AddMinutes(20),
                         signingCredentials: mac);
                     */
-                    HttpContext.Session.SetString("username", username);
+                    HttpContext.Session.SetString("username", loginCredentials.username);
                     //return Ok(new JwtSecurityTokenHandler().WriteToken(token));
                     return Ok("Logged in");
                 }
             }
             // wrong password
-            return NotFound("Wrong password");
+            return NotFound("Wrong username or password");
         }
 
         /*
