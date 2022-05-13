@@ -4,23 +4,27 @@
     ViewData["Title"] = "Index";
 }
 
+<link href="~/css/Index.css" rel="stylesheet" type="text/css" />
+
 @{
     int sum = 0;
-    double average = 0;
+    float average = 0;
     int count = 0;
     foreach (var item in Model)
     {
         sum += item.Score;
         count++;
     }
-    average = (double)sum / (double)count;
+    average = (float)sum / (float)count;
 }
-<h1>Ratings </h1>
-<div><p> Average Grade: @average </p></div>
+<h1>Ratings <img src="images/logo_.png" alt="Logo Photo" id = "logo" /> </h1>
+  
+<div id = "average"><p> Average Rate: @average</p></div>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Wanna leave your rate for our Marak Teimani? Just Click here!</a>
 </p>
+
 
 <form asp-action = "Index">
     <input name = "query" id = "search"/>

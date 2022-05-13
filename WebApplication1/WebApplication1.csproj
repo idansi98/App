@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\css\Index.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\WebApplication\.editorconfig" Link=".editorconfig" />
+    <None Include="wwwroot\css\Index.css" />
   </ItemGroup>
 
   <ItemGroup>
