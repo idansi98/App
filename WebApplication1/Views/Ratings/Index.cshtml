@@ -17,20 +17,18 @@
     }
     average = (float)sum / (float)count;
 }
-<h1>Ratings <img src="images/logo_.png" alt="Logo Photo" id = "logo" /> </h1>
+<div id = "rate">Ratings <img src="images/logo_.png" alt="Logo Photo" id = "logo" /> </div>
   
 <div id = "average"><p> Average Rate: @average</p></div>
 
-<p>
-    <a asp-action="Create">Wanna leave your rate for our Marak Teimani? Just Click here!</a>
-</p>
-
-
 <form asp-action = "Index">
-    <input name = "query" id = "search"/>
-    <input type = "submit" value = "Search"/>
+    <input name = "query" id = "search" placeholder="ReviewerName:" />
+    <input type = "submit" id = "searchbutton" value = "Search"/>
 </form>
 
+<p id = "newrate">
+    <a asp-action="Create">Wanna leave your rate for our Marak Teimani? Just Click here!</a>
+</p>
 <table class="table">
     <thead>
         <tr>

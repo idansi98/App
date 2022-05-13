@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nI4aGpYIpnqIZw2BZPOcHnELjS1zXeouRxxnTazaPBc=",
+  "Hash": "mrvNLIE3PG2Aiwm1z0o2dg1kzxhAmfKKaQpf1DguxmE=",
   "Source": "WebApplication1",
   "BasePath": "_content/WebApplication1",
   "Mode": "Default",
@@ -134,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logo_.png"
+    },
+    {
+      "Identity": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\wwwroot\\images\\logo2.png",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "images/logo2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo2.png"
     },
     {
       "Identity": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\wwwroot\\index.html",
