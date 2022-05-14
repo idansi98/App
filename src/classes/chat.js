@@ -5,7 +5,7 @@ import defaultPFP from "../Media/defaultPFP.png";
 //This class deals with the Chat object and its stuff.
 class Chat {
   constructor(id, displayName, server, picture) {
-    this.id = id + ":" + server
+    this.id = id;
     this.displayName = displayName
     this.server = server
     this.messages = [];

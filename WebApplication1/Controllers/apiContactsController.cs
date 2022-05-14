@@ -174,7 +174,7 @@ namespace WebApplication1.Controllers
             }
             message.ID = nextID;
             message.Text = messageToAdd.content;
-            message.UserSent = false;
+            message.UserSent = true;
             message.Time = DateTime.Now;
             var result = _service.AddMessageToContact(username, id, message);
             if (!result)

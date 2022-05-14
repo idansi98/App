@@ -56,12 +56,7 @@ namespace WebApplication1.Controllers
             return NotFound("Wrong username or password");
         }
 
-        /*
-            [HttpGet]
-            public void Logout()
-            {
-                HttpContext.Session.Clear();
-            }*/
+   
 
 
 

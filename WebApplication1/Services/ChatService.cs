@@ -20,9 +20,11 @@ namespace WebApplication1.Services
             User Ido = new User("1", "Ido", "2");
             User Idan = new User("2", "Idan", "3");
             User Hemi = new User("3", "Hemi", "4");
+            User Tester = new User("5", "Tester!", "6");
             users.Add(Ido);
             users.Add(Idan);
             users.Add(Hemi);
+            users.Add(Tester);
             Ido.Contacts.Add(new Contact { ID = "1", DisplayName = "Yosi", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
             Ido.Contacts.Add(new Contact { ID = "2", DisplayName = "Hemi", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
             Idan.Contacts.Add(new Contact { ID = "1", DisplayName = "Yosi2", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
@@ -68,7 +70,7 @@ namespace WebApplication1.Services
         public TextMessage getLastMessage(string username, string contactname)
         {
             var messages = GetAllMessages(username, contactname);
-            if (messages == null)
+            if (messages == null || messages.Count == 0)
                 return null;
             return messages.Last();
         }
@@ -93,14 +95,43 @@ namespace WebApplication1.Services
             return true;
         }
 
+        public bool AcceptInvitation(Invitation invitation)
+        {
+            var user = GetUser(invitation.to);
+            if (user == null || user.Contacts == null)
+                return false;
+
+            //check there isnt same ID 
+            var getDuplicate = GetAllContacts(user.ID).Find(x => x.ID == invitation.from);
+            if (getDuplicate != null)
+                return false;
+            // if new
+            var contact = new Contact();
+            contact.ID = invitation.from;
+            contact.DisplayName = invitation.from;
+            contact.ServerAdress = invitation.server;
+            contact.Messages = new List<TextMessage>();
+            user.Contacts.Add(contact);
+            return true;
+        }
+
         public bool AddContactToUser(string username, Contact contact)
         {
             var user = GetUser(username);
             if (user == null || user.Contacts == null)
                 return false;
+
+            //check there isnt same ID 
+            var getDuplicate = GetAllContacts(username).Find(x => x.ID == contact.ID);
+            if (getDuplicate != null)
+            {
+                return false;
+            }
+            // if new
             user.Contacts.Add(contact);
             return true;
         }
+
 
         public bool AddMessageToContact(string username, string contactname, TextMessage textMessage)
         {
@@ -108,6 +139,34 @@ namespace WebApplication1.Services
             if (contact == null)
                 return false;
             contact.Messages.Add(textMessage);
+            return true;
+        }
+
+        public bool AddMessageToContact(MessageRequest messageRequest)
+        {
+            var user = GetUser(messageRequest.to);
+            if (user == null)
+                return false;
+            var contact = GetContact(user.ID, messageRequest.from);
+            if (contact == null)
+                return false;
+            TextMessage textMessage = new TextMessage();
+            textMessage.Text = messageRequest.content;
+            textMessage.UserSent = false;
+            var lastMessage = getLastMessage(user.ID, contact.ID);
+            if (lastMessage == null)
+            {
+                textMessage.ID = 0;
+            } else
+            {
+                textMessage.ID = lastMessage.ID + 1;
+            }
+            textMessage.Time = DateTime.Now;
+            var result = AddMessageToContact(user.ID, contact.ID, textMessage);
+            if (!result)
+            {
+                return false;
+            }
             return true;
         }
 

@@ -24,7 +24,7 @@ function DisplayNameBox({ setCredentials }) {
       </label>
       <input
         ref={givenDisplayNameBox}
-        onKeyUp={updateDisplayName}
+        onChange={updateDisplayName}
         type="text"
         className="form-control shorterForm"
         id="Displayname"

@@ -7,11 +7,6 @@
         public string DisplayName { get; set; }
         public List<Contact>? Contacts { get; set; }
 
-        public static implicit operator List<object>(User v)
-        {
-            throw new NotImplementedException();
-        }
-
         public User(string iD, string displayName, string password)
         {
             ID = iD;

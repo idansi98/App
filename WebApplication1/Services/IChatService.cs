@@ -11,8 +11,10 @@ namespace WebApplication1.Services
         public TextMessage getLastMessage(string username, string contactname);
         public bool AddUser(string ID, string displayName, string password);
         public bool AddUser(User user);
+        public bool AcceptInvitation(Invitation invitation);
         public bool AddContactToUser(string username, Contact contact);
         public bool AddMessageToContact(string username, string contactname, TextMessage textMessage);
+        public bool AddMessageToContact(MessageRequest messageRequest);
         public Contact GetContact(User user, string contactID);
         public Contact GetContact(string username, string contactID);
         public bool UpdateContact(string userName, UpdatedContact updatedContact, string id);

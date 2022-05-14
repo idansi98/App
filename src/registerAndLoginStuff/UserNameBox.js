@@ -23,7 +23,7 @@ function UserNameBox({ setCredentials }) {
       </label>
       <input
         ref={givenUserNameBox}
-        onKeyUp={updateUser}
+        onChange={updateUser}
         type="text"
         className="form-control shorterForm"
         id="Username"

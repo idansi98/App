@@ -1,5 +1,7 @@
 import chatHandler from "./chatFunctions";
 import messageStyler from "../classes/messageStyler";
+import TextMessage from "../classes/textMessage";
+import currentUserHandler from "../classes/currentUserHandler";
 
 //This component defines the functionallity and design of the send button.
 function SendButton({
@@ -16,18 +18,67 @@ function SendButton({
     recorder.stop();
   };
 
-  const buttonPressed = function () {
+  const buttonPressed = async function () {
     //If not recording.
     if (inputText === "") {
       return;
     }
 
-    var reciever = global.currentChat.user;
-    var sender = global.currentUser;
-    chatHandler.sendTextMessage(sender, reciever, inputText);
-    var lastMessageID = sender.searchChat(reciever).lastMessage.ID;
-    setMessageJustSent(lastMessageID);
-    global.lastMessageID = lastMessageID;
+    var recieverID = global.currentChat.id;
+    var recieverServer = global.currentChat.server;
+
+    // post message to our user
+
+    const headers = new Headers();
+    headers.append('content-type', 'application/json');
+    
+    var body = `{"content":"${inputText}"}`;
+    
+    const init = {
+      method: 'POST',
+      headers,
+      body
+    };
+    var currentServer = 'https://localhost:7100/'
+    var fetchString  = currentServer+ "api/contacts/" + recieverID + "/messages"
+    fetch(fetchString, init)
+    .then((response) => {
+      //todo
+    })
+    .then((text) => {
+      // text is the response body
+    })
+    .catch((e) => {
+      // error in e.message
+    });
+
+
+
+
+    // post message to the reciever    
+    body = `{"from":"${global.currentUser.userName}","to":"${recieverID}","content":"${inputText}"}`;
+    
+    const init2 = {
+      method: 'POST',
+      headers,
+      body
+    };
+    
+    var fetchString2 = recieverServer + "/api/transfer" 
+    fetch(fetchString2, init2)
+    .then((response) => {
+      //todo
+    })
+    .then((text) => {
+      // text is the response body
+    })
+    .catch((e) => {
+      // error in e.message
+    });
+    // end
+    await currentUserHandler.init();
+    global.currentChat = global.currentUser.searchChat(recieverID);
+    setMessageJustSent(new Date().toString());
     inputBox.value = "";
     setInputText("");
   };

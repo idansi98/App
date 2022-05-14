@@ -30,7 +30,6 @@ function LoginRegisterBox({ credentials }) {
     fetch('https://localhost:7100/api/login', init)
     .then( async (response) => { //important to put the async here!!!
       if (response.ok) {
-        global.token = response.ok;
         await CurrentUserHandler.init()
         navigate("/chats");
       } else {

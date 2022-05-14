@@ -9,6 +9,7 @@ C:\Users\Ido\Documents\GitHub\App\WebApplication1\bin\Debug\net6.0\WebApplicatio
 C:\Users\Ido\Documents\GitHub\App\WebApplication1\bin\Debug\net6.0\Humanizer.dll
 C:\Users\Ido\Documents\GitHub\App\WebApplication1\bin\Debug\net6.0\MessagePack.dll
 C:\Users\Ido\Documents\GitHub\App\WebApplication1\bin\Debug\net6.0\MessagePack.Annotations.dll
+C:\Users\Ido\Documents\GitHub\App\WebApplication1\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Ido\Documents\GitHub\App\WebApplication1\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\Ido\Documents\GitHub\App\WebApplication1\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Ido\Documents\GitHub\App\WebApplication1\bin\Debug\net6.0\Microsoft.Build.Locator.dll
@@ -266,4 +267,3 @@ C:\Users\Ido\Documents\GitHub\App\WebApplication1\obj\Debug\net6.0\refint\WebApp
 C:\Users\Ido\Documents\GitHub\App\WebApplication1\obj\Debug\net6.0\WebApplication1.pdb
 C:\Users\Ido\Documents\GitHub\App\WebApplication1\obj\Debug\net6.0\WebApplication1.genruntimeconfig.cache
 C:\Users\Ido\Documents\GitHub\App\WebApplication1\obj\Debug\net6.0\ref\WebApplication1.dll
-C:\Users\Ido\Documents\GitHub\App\WebApplication1\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

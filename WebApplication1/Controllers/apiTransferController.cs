@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApplication1.Models;
 using WebApplication1.Services;
 
 namespace WebApplication1.Controllers
@@ -14,10 +15,19 @@ namespace WebApplication1.Controllers
             _service = service;
         }
 
-        [HttpGet]
-        public JsonResult Index()
+        [HttpPost]
+        public IActionResult Post(MessageRequest messageRequest)
         {
-            return Json(_service.GetAllUsers());
+            var user = _service.GetUser(messageRequest.to);
+            if (user == null)
+                return NotFound();
+            var result = _service.AddMessageToContact(messageRequest);
+            if (!result)
+            {
+                return NotFound();
+            }
+            return Created("", "");
+
         }
 
 

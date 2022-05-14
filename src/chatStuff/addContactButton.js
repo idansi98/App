@@ -2,6 +2,8 @@ import chatHandler from "./chatFunctions";
 import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import snackbar from "../classes/snackbarHelper";
+import Chat from "../classes/chat";
+import defaultPFP from "../media/defaultPFP.png"
 
 //This component defines the functionallity and design of the Add contact button.
 function AddContactButton({ setCurrentChat }) {
@@ -10,27 +12,88 @@ function AddContactButton({ setCurrentChat }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const addNewChat = function () {
-    var userToStartChatWith = document.getElementById("usernameSearch").value;
-    if (userToStartChatWith === global.currentUser.userName) {
+    var usernameToAdd = document.getElementById("usernameToAdd").value;
+    var nicknameToAdd = document.getElementById("nicknameToAdd").value;
+    var serverToAdd = document.getElementById("serverToAdd").value;
+    // in case it ends with /
+    if (serverToAdd.slice(-1) == "/") { 
+      serverToAdd = serverToAdd.slice(0,-1);
+    }
+    if (usernameToAdd === global.currentUser.userName) {
       snackbar.showMessage("You can't start messaging yourself!");
       return;
     }
-    var foundUser = chatHandler.findUser(userToStartChatWith);
-    if (foundUser == null) {
-      snackbar.showMessage("User not found");
-      return;
-    } else if (global.currentUser.searchChat(foundUser) != null) {
-      snackbar.showMessage("User already added");
-      return;
-    } else {
-      chatHandler.makeBlankChat(global.currentUser, foundUser);
-      var currentChat = global.currentUser.searchChat(
-        chatHandler.findUser(userToStartChatWith)
-      );
-      global.currentChat = currentChat;
-      setCurrentChat(currentChat);
-    }
-    handleClose();
+    console.log("Global:")
+    console.log(global.currentUser)
+    console.log("New to add:")
+    console.log(usernameToAdd)
+
+    // add locally
+    const headers = new Headers();
+    headers.append('content-type', 'application/json');
+
+    const body = `{"id":"${usernameToAdd}","name":"${nicknameToAdd}","server":"${serverToAdd}"}`;
+
+    const init = {
+      method: 'POST',
+      headers,
+      body
+    };
+
+     fetch('https://localhost:7100/api/contacts', init)
+    .then((response) => {
+      if (response.ok === false) {
+        snackbar.showMessage("The user could not be added");
+      } else {
+          // add to 2nd server
+          //TODO: make sure server adress is known
+
+
+          var serverAdress = "localhost:7100"
+          const body = `{"from":"${global.currentUser.userName}","to":"${usernameToAdd}","server":"${serverAdress}"}`;
+
+          const init2 = {
+            method: 'POST',
+            headers,
+            body
+          };
+
+          fetch('https://localhost:7100/api/invitations', init2)
+          .then((response) => {
+            if (response.ok  === false) {
+              snackbar.showMessage("The user could not be added");
+              // delete the user we created on our side:
+              const init3 = {
+                method: 'DELETE'
+              };
+              var fetchString = "https://localhost:7100/api/contacts/" + usernameToAdd;
+              fetch(fetchString, init3)
+              .then((response) => {
+                // empty for rn
+              })
+              .then((text) => {
+              })
+              .catch((e) => {
+              });
+            } else {
+                  // here the user is updated on both server, now we just need to update current chat
+                  var chat = new Chat(usernameToAdd,nicknameToAdd,serverToAdd, defaultPFP);
+                  global.currentUser.addChat(chat)
+                  global.currentChat = chat;
+                  setCurrentChat(chat);
+                  handleClose();
+            }
+          })
+          .then((text) => {
+          })
+          .catch((e) => {
+          });
+      }
+    })
+    .then((text) => {
+    })
+    .catch((e) => {
+    });
   };
 
   return (
@@ -59,13 +122,29 @@ function AddContactButton({ setCurrentChat }) {
         </Modal.Header>
         <Modal.Body id="findContactBody">
           <input
-            id="usernameSearch"
+            id="nicknameToAdd"
             type="text"
             className="form-control"
-            placeholder="Username"
-            aria-label="Username"
+            placeholder="Nickname"
+            aria-label="Nickname"
             aria-describedby="basic-addon1"
           />
+          <input
+          id="usernameToAdd"
+          type="text"
+          className="form-control"
+          placeholder="Username"
+          aria-label="Username"
+          aria-describedby="basic-addon2"
+        />
+        <input
+        id="serverToAdd"
+        type="text"
+        className="form-control"
+        placeholder="Server Adress"
+        aria-label="Server Adress"
+        aria-describedby="basic-addon3"
+      />
         </Modal.Body>
         <Modal.Footer id="findContactFooter">
           <Button

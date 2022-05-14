@@ -21,7 +21,7 @@ function PasswordValidatorBox({ setCredentials }) {
       </label>
       <input
         ref={givenPasswordValidatorBox}
-        onKeyUp={updatePassWordValidator}
+        onChange={updatePassWordValidator}
         type="password"
         className="form-control shorterForm"
         id="passwordAgain"

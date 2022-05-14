@@ -189,6 +189,26 @@ p {
   bottom: 5px;
 }
 
+
+
+#LogoutButton {
+  left: 20px;
+  top: 8px;
+  position: relative !important;
+  display: inline;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 0px !important;
+  padding: 10px;
+  border-color: transparent;
+  background-color: transparent !important;
+}
+
+#LogoutButtonSVG {
+  position: relative;
+  bottom: 5px;
+}
+
 .messageRestrictWidth {
   max-width: 80% !important;
 }

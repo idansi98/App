@@ -21,7 +21,7 @@ function PasswordBox({ setCredentials }) {
       </label>
       <input
         ref={givenPasswordBox}
-        onKeyUp={updatePassword}
+        onChange={updatePassword}
         type="password"
         className="form-control shorterForm"
         id="Password"

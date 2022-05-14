@@ -2,8 +2,6 @@
 {
     public class Contact
     {
-        // need to make a serperate key for internal useage since ID can be shared between servers
-        public int key { get; set; }
         public string ID { get; set; }
         public string DisplayName { get; set; }
         public string ServerAdress { get; set; }
