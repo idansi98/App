@@ -80,6 +80,8 @@ import $ from 'jquery';
         />
       </div>
       <Snackbar />
+      {/* SignalR*/}
+      <script src ="~lib/microsoft-signalr/signalr.js"> </script>
     </div>
   );
 }

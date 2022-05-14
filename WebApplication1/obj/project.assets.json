@@ -9700,9 +9700,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\WebApplication1.csproj",
-      "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\ChatWebsite.csproj",
+      "projectName": "ChatWebsite",
+      "projectPath": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\ChatWebsite.csproj",
       "packagesPath": "C:\\Users\\Ido\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",

@@ -19,6 +19,10 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public IActionResult ShowSelf()
         {
+            string ip = Request.Host.Host;
+            string port = Request.Host.Port.Value.ToString();
+            string url = "http://" + ip + "/" + port;
+
             string result = "";
             var username = HttpContext.Session.GetString("username");
             if (username == null)
@@ -30,7 +34,8 @@ namespace WebApplication1.Controllers
             {
                 result += "{";
                 result += "\"id\":\"" + user.ID + "\",";
-                result += "\"name\":\"" + user.DisplayName + "\"";
+                result += "\"name\":\"" + user.DisplayName + "\",";
+                result += "\"server\":\"" + url + "\"";
                 result += "}";
             }
             return Ok(result);

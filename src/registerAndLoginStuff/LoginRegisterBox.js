@@ -31,6 +31,8 @@ function LoginRegisterBox({ credentials }) {
     .then( async (response) => { //important to put the async here!!!
       if (response.ok) {
         await CurrentUserHandler.init()
+        global.currentAdress = response.body;
+        console.log(response);
         navigate("/chats");
       } else {
         snackbarHelper.showMessage("Incorrect username or password");
