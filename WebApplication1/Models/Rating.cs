@@ -8,7 +8,7 @@ namespace WebApplication1.Models
     {
         public int ID { get; set; }
         public string ReviewerName { get; set; }
-        [Range(1, 5)]
+        [Range(0, 5)]
         public int Score { get; set; }
         public string ReviewText { get; set; }
         public string? DateTime { get; set; }

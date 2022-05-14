@@ -24,3 +24,6 @@
 #searchbutton {
     height: 5vh !important
 }
+.checked {
+    color: orange;
+}
