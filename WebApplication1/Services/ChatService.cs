@@ -21,10 +21,16 @@ namespace WebApplication1.Services
             User Idan = new User("2", "Idan", "3");
             User Hemi = new User("3", "Hemi", "4");
             User Tester = new User("5", "Tester!", "6");
+            User Tester2 = new User("6", "Tester!", "6");
+            User Tester3 = new User("7", "Tester!", "6");
+            User Tester4 = new User("8", "Tester!", "6");
             users.Add(Ido);
             users.Add(Idan);
             users.Add(Hemi);
             users.Add(Tester);
+            users.Add(Tester2);
+            users.Add(Tester3);
+            users.Add(Tester4);
             Ido.Contacts.Add(new Contact { ID = "1", DisplayName = "Yosi", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
             Ido.Contacts.Add(new Contact { ID = "2", DisplayName = "Hemi", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
             Idan.Contacts.Add(new Contact { ID = "1", DisplayName = "Yosi2", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
@@ -245,7 +251,8 @@ namespace WebApplication1.Services
             return true;
         }
 
+
     }
 
-  
+
 }

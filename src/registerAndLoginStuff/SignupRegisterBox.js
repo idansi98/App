@@ -14,17 +14,38 @@ function SignUpRegisterBox({ credentials }) {
       isPasswordValidLength(credentials.password) &&
       isUserNameValid(credentials.userName) &&
       isDisplayNameValid(credentials.displayName) &&
-      isPasswordValid(credentials.password) &&
-      !doesUserExist(credentials.userName)
+      isPasswordValid(credentials.password) 
     ) {
-      chatHandler.addUser(
-        credentials.userName,
-        credentials.displayName,
-        credentials.photo,
-        credentials.password
-      );
-      global.currentUser = chatHandler.findUser(credentials.userName);
-      navigate("/chats");
+
+      const headers = new Headers();
+      headers.append('content-type', 'application/json');
+
+      const body = `{"ID":"${credentials.userName}","Password":"${credentials.password}","DisplayName":"${credentials.displayName}"}`;
+
+      const init = {
+        method: 'POST',
+        headers,
+        body
+      };
+      var servAddr = "https://localhost:7100" + "/api/register" 
+      fetch(servAddr, init)
+      .then((response) => {
+        if(response.ok === false) {
+          snackbarHelper.showMessage(
+            "Could not register the specified user."
+          );
+        } else {
+          navigate("/login");
+        }
+      })
+      .then((text) => {
+        // text is the response body
+      })
+      .catch((e) => {
+        snackbarHelper.showMessage(
+          "Could not register the specified user."
+        );
+      });
     } else {
       //
     }

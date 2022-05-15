@@ -14,32 +14,6 @@ builder.Services.AddSingleton<IChatService,ChatService>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-/*builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
-{
-    options.RequireHttpsMetadata = false;
-    options.SaveToken = true;
-    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
-    {
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidAudience = builder.Configuration["JWTParams:Audiance"],
-        ValidIssuer = builder.Configuration["JWTParams:Issuer"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWTParams:SecretKey"]))
-    };
-});*/
-
-/*builder.Services.AddCors(options =>
-{
-    options.AddPolicy("Allow All",
-        builder =>
-        {
-            builder
-            .AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader();
-        });
-});*/
-
 
 builder.Services.AddSession(options =>
 {

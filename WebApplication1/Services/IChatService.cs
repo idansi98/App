@@ -23,5 +23,6 @@ namespace WebApplication1.Services
 
         public bool UpdateMessage(string username, string contactID, int messageID, MessageToAdd textMessage);
         public bool DeleteMessage(string username, string contactID, int messageID);
+
     }
 }

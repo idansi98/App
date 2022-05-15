@@ -14,7 +14,8 @@ function AddContactButton({ setCurrentChat }) {
   const addNewChat = function () {
     var usernameToAdd = document.getElementById("usernameToAdd").value;
     var nicknameToAdd = document.getElementById("nicknameToAdd").value;
-    var serverToAdd = document.getElementById("serverToAdd").value;
+    var serverToAdd = "//" + document.getElementById("serverToAdd").value;
+    var currentServerAdress = "https://localhost:7100"
     // in case it ends with /
     if (serverToAdd.slice(-1) == "/") { 
       serverToAdd = serverToAdd.slice(0,-1);
@@ -23,10 +24,7 @@ function AddContactButton({ setCurrentChat }) {
       snackbar.showMessage("You can't start messaging yourself!");
       return;
     }
-    console.log("Global:")
-    console.log(global.currentUser)
-    console.log("New to add:")
-    console.log(usernameToAdd)
+
 
     // add locally
     const headers = new Headers();
@@ -39,8 +37,8 @@ function AddContactButton({ setCurrentChat }) {
       headers,
       body
     };
-
-     fetch('https://localhost:7100/api/contacts', init)
+    var fetchStr = currentServerAdress + "/api/contacts"
+     fetch(fetchStr, init)
     .then((response) => {
       if (response.ok === false) {
         snackbar.showMessage("The user could not be added");
@@ -49,8 +47,8 @@ function AddContactButton({ setCurrentChat }) {
           //TODO: make sure server adress is known
 
 
-          var serverAdress = "localhost:7100"
-          const body = `{"from":"${global.currentUser.userName}","to":"${usernameToAdd}","server":"${serverAdress}"}`;
+
+          const body = `{"from":"${global.currentUser.userName}","to":"${usernameToAdd}","server":"${currentServerAdress}"}`;
 
           const init2 = {
             method: 'POST',
@@ -58,7 +56,8 @@ function AddContactButton({ setCurrentChat }) {
             body
           };
 
-          fetch('https://localhost:7100/api/invitations', init2)
+          var fetchString2 = serverToAdd + "/api/invitations"
+          fetch(fetchString2, init2)
           .then((response) => {
             if (response.ok  === false) {
               snackbar.showMessage("The user could not be added");
@@ -66,7 +65,7 @@ function AddContactButton({ setCurrentChat }) {
               const init3 = {
                 method: 'DELETE'
               };
-              var fetchString = "https://localhost:7100/api/contacts/" + usernameToAdd;
+              var fetchString = currentServerAdress+ "/api/contacts/" + usernameToAdd;
               fetch(fetchString, init3)
               .then((response) => {
                 // empty for rn
@@ -87,6 +86,20 @@ function AddContactButton({ setCurrentChat }) {
           .then((text) => {
           })
           .catch((e) => {
+            snackbar.showMessage("The user could not be added");
+            // delete the user we created on our side:
+            const init3 = {
+              method: 'DELETE'
+            };
+            var fetchString = currentServerAdress+ "/api/contacts/" + usernameToAdd;
+            fetch(fetchString, init3)
+            .then((response) => {
+              // empty for rn
+            })
+            .then((text) => {
+            })
+            .catch((e) => {
+            });
           });
       }
     })
