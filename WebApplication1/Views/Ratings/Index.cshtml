@@ -20,7 +20,7 @@
 <div id = "rate">Ratings <img src="images/logo_.png" alt="Logo Photo" id = "logo" /> </div>
   
 <div id = "average"><p> Average Rate: @{
-                    if(average > 0 && average < 0.5) {
+                    if(average >= 0 && average < 0.5) {
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
@@ -106,7 +106,7 @@
 </form>
 
 <p id = "newrate">
-    <a asp-action="Create">Wanna leave your rate for our Marak Teimani? Just Click here!</a>
+    <a asp-action="Create">Wanna leave your rate for our Marak Teimani? Just Click Here!</a>
 </p>
 <table class="table">
     <thead>
