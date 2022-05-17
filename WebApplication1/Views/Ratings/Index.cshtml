@@ -12,7 +12,9 @@
     int count = 0;
     foreach (var item in Model)
     {
-        sum += item.Score;
+        int number;
+        int.TryParse(item.Score, out number);
+        sum += number;
         count++;
     }
     average = (float)sum / (float)count;
@@ -134,42 +136,35 @@
             </td>
             <td>
                @{
-                    if(item.Score == 0) {
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    }
-                     if(item.Score == 1) {
+                     if(item.Score == "1") {
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
                     }
-                     if(item.Score == 2) {
+                     if(item.Score == "2") {
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
                     }
-                     if(item.Score == 3) {
+                     if(item.Score == "3") {
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
                     }
-                    if(item.Score == 4) {
+                    if(item.Score == "4") {
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star"></span>
                     }
-                     if(item.Score == 5) {
+                     if(item.Score == "5") {
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>

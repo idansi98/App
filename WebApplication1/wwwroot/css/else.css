@@ -12,8 +12,9 @@
 
 .rate {
     float: left;
-    height: 46px;
+    height: 86px;
     padding: 0 10px;
+    
 }
 
     .rate:not(:checked) > input {
@@ -27,7 +28,7 @@
         overflow: hidden;
         white-space: nowrap;
         cursor: pointer;
-        font-size: 30px;
+        font-size: 50px;
         color: #ccc;
     }
 
@@ -51,3 +52,11 @@
     .rate > label:hover ~ input:checked ~ label {
         color: #c59b08;
     }
+    #reviewetext {
+    margin-top: 3vh !important;
+    margin-bottom: 2vh !important;
+}
+#reviewername {
+    margin-top: 10vh !important;
+    margin-bottom: 3vh !important;
+}
