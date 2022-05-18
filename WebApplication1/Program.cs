@@ -1,3 +1,4 @@
+using ChatWebsite.Hubs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +21,8 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromDays(5);
 });
 
+builder.Services.AddSignalR();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,7 +33,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-//app.UseCors("Allow All");
+app.UseCors("Allow All");
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
@@ -45,6 +48,9 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}/{messages?}/{id2?}");
 
-
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapHub<Myhub>("/Myhub");
+});
 
 app.Run();

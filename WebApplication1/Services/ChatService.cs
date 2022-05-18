@@ -103,6 +103,7 @@ namespace WebApplication1.Services
 
         public bool AcceptInvitation(Invitation invitation)
         {
+            //get the username we want to accept the invitation.
             var user = GetUser(invitation.to);
             if (user == null || user.Contacts == null)
                 return false;

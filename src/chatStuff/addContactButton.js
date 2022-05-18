@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import snackbar from "../classes/snackbarHelper";
 import Chat from "../classes/chat";
-import defaultPFP from "../media/defaultPFP.png"
+import defaultPFP from "../Media/defaultPFP.png"
 
 //This component defines the functionallity and design of the Add contact button.
 function AddContactButton({ setCurrentChat }) {

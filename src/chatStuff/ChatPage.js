@@ -9,6 +9,13 @@ import Snackbar from "../registerAndLoginStuff/snackbar";
 import snackbarHelper from "../classes/snackbarHelper";
 import currentUserHandler from "../classes/currentUserHandler";
 import $ from 'jquery';
+import {
+  JsonHubProtocol,
+  HubConnectionState,
+  HubConnectionBuilder,
+  LogLevel
+} from '@microsoft/signalr';
+
 
 //This component returns the whole chatpage it's sub components.
  function ChatPage() {
@@ -52,6 +59,16 @@ import $ from 'jquery';
       }
     }
     window.addEventListener("resize", checkForTooSmall);
+    
+    var connection = new HubConnectionBuilder().withUrl("/Myhub").build();
+    connection.start();
+    connection.invoke("Hello");
+    connection.on("ForceUlpdate", function() {
+      currentUserHandler.init();
+    })
+
+
+
   });
 
   console.log(global.currentUser);
@@ -81,7 +98,7 @@ import $ from 'jquery';
       </div>
       <Snackbar />
       {/* SignalR*/}
-      <script src ="~lib/microsoft-signalr/signalr.js"> </script>
+      {/*<script src ="~/lib/microsoft-signalr/signalr.js"> </script>*/}
     </div>
   );
 }
