@@ -39,15 +39,6 @@ import defaultPFP from "../Media/defaultPFP.png";
 
 
 
-    async function sendPOST(url, data) {
-        fetch(url, {
-            method: "POST",
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(data)
-        }).then (result => {
-            return JSON.parse(result)
-        })
-    }
 
     async function sendGET(url) {
         let response = await fetch(url);
@@ -59,4 +50,4 @@ import defaultPFP from "../Media/defaultPFP.png";
           return null;
         }
     }
-export default {init, sendPOST, sendGET}
+export default {init, sendGET}
