@@ -48,9 +48,9 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}/{messages?}/{id2?}");
 
-app.UseEndpoints(endpoints =>
+/*app.UseEndpoints(endpoints =>
 {
     endpoints.MapHub<Myhub>("/Myhub");
-});
-
+});*/
+app.MapHub<Myhub>("/Myhub");
 app.Run();
