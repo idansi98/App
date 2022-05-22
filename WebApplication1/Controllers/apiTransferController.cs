@@ -39,6 +39,10 @@ namespace WebApplication1.Controllers
         {
             await _hub.Clients.Client(connectionID).SendAsync("ForceUpdate");
         }
+        public async Task Hello()
+        {
+            return;
+        }
 
 
     }
