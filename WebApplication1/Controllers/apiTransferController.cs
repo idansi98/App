@@ -1,5 +1,6 @@
 ﻿using ChatWebsite.Hubs;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using WebApplication1.Models;
 using WebApplication1.Services;
 
@@ -11,15 +12,15 @@ namespace WebApplication1.Controllers
     public class apiTransferController : Controller
     {
         private readonly IChatService _service;
-        private readonly Myhub _hub;
-        public apiTransferController(IChatService service)
+        private readonly IHubContext<Myhub> _hub;
+        public apiTransferController(IChatService service, IHubContext<Myhub> myHub)
         {
             _service = service;
-            _hub = new Myhub();
+            _hub = myHub;
         }
 
         [HttpPost]
-        public IActionResult Post(MessageRequest messageRequest)
+        public async Task<IActionResult> Post(MessageRequest messageRequest)
         {
             var user = _service.GetUser(messageRequest.to);
             if (user == null)
@@ -30,9 +31,13 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
             //HttpContext.Connection.
-            _hub.ForceUpdateAll();
+            await _hub.Clients.All.SendAsync("ForceUpdate");
             return Created("", "");
 
+        }
+        public async Task ForceUpdate(string connectionID)
+        {
+            await _hub.Clients.Client(connectionID).SendAsync("ForceUpdate");
         }
 
 
