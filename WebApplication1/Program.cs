@@ -23,6 +23,13 @@ builder.Services.AddSession(options =>
 
 builder.Services.AddSignalR();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Allow All", builder =>
+    {
+        builder.AllowAnyOrigin().AllowAnyMethod().WithOrigins("http://localhost:7100").AllowAnyHeader().AllowCredentials();
+    });
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

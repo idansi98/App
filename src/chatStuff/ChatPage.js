@@ -61,16 +61,15 @@ import {
     window.addEventListener("resize", checkForTooSmall);
     
     var connection = new HubConnectionBuilder().withUrl("/Myhub").build();
+    console.log("hey");
     connection.start();
     connection.invoke("Hello");
     connection.on("ForceUlpdate", function() {
       currentUserHandler.init();
     })
-
-
-
   });
 
+  
   console.log(global.currentUser);
   if (global.currentUser == null) {
     return (<div> </div>);
