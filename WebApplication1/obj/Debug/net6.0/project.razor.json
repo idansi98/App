@@ -16323,6 +16323,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\Views\\Ratings\\Search2.cshtml",
+      "TargetPath": "Views\\Ratings\\Search2.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\Views\\Ratings\\Edit.cshtml",
       "TargetPath": "Views\\Ratings\\Edit.cshtml",
       "FileKind": "mvc"

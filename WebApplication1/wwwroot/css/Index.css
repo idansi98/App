@@ -1,0 +1,29 @@
+﻿#logo {
+    position: relative !important;
+    margin-top: -12vh !important;
+    margin-left: 70vw !important;
+}
+#average {
+    margin-left: 20vw !important;
+    font-size: 7vh !important;
+}
+#rate {
+    font-size: 10vh !important;
+}
+#newrate {
+    margin-top :2vh !important;
+    FONT-WEIGHT: 800 !important;
+    margin-left: 20vw !important;
+    font-size: 3vh !important;
+}
+#search {
+    margin-left: 20vw !important;
+    width:25vw !important;
+    height: 5vh !important
+}
+#searchbutton {
+    height: 5vh !important
+}
+.checked {
+    color: orange;
+}

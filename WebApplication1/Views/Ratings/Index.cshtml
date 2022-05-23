@@ -4,10 +4,111 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<link href="~/css/Index.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+@{
+    int sum = 0;
+    float average = 0;
+    int count = 0;
+    foreach (var item in Model)
+    {
+        int number;
+        int.TryParse(item.Score, out number);
+        sum += number;
+        count++;
+    }
+    average = (float)sum / (float)count;
+}
+<div id = "rate">Ratings <img src="images/logo_.png" alt="Logo Photo" id = "logo" /> </div>
+  
+<div id = "average"><p> Average Rate: @{
+                    if(average >= 0 && average < 0.5) {
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    }
+                     if(average >= 0.5 && average < 1) {
+                    <span class="fa fa-star-half checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    }
+                     if(average >= 1 && average < 1.5) {
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    }
+                     if(average >= 1.5 && average < 2) {
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star-half checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    }
+                      if(average >= 2 && average < 2.5) {
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    }
+                      if(average >= 2.5 && average < 3) {
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star-half checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    }
+                     if(average >= 3 && average < 3.5) {
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    }
+                     if(average >= 3.5 && average < 4) {
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star-half checked"></span>
+                    <span class="fa fa-star"></span>
+                    }
+                     if(average >= 4 && average < 4.5) {
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    }
+                     if(average >= 4.5 && average < 5) {
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star-half checked"></span>
+                    }
+                    if(average == 5) {
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    }
+                    }
+                    @average</p></div>
 
-<p>
-    <a asp-action="Create">Create New</a>
+<form asp-action = "Index">
+    <input name = "query" id = "search" placeholder="ReviewerName:" />
+    <input type = "submit" id = "searchbutton" value = "Search"/>
+</form>
+
+<p id = "newrate">
+    <a asp-action="Create">Wanna leave your rate for our Marak Teimani? Just Click Here!</a>
 </p>
 <table class="table">
     <thead>
@@ -34,7 +135,43 @@
                 @Html.DisplayFor(modelItem => item.ReviewerName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Score)
+               @{
+                     if(item.Score == "1") {
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    }
+                     if(item.Score == "2") {
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    }
+                     if(item.Score == "3") {
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    }
+                    if(item.Score == "4") {
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    }
+                     if(item.Score == "5") {
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    }
+                    }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ReviewText)
@@ -43,11 +180,15 @@
                 @Html.DisplayFor(modelItem => item.DateTime)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.ID"><button type="button" class="btn btn-secondary">Edit</button></a>
+                <a asp-action="Details" asp-route-id="@item.ID"><button type="button" class="btn btn-info">Details</button></a>
+                <a asp-action="Delete" asp-route-id="@item.ID"><button type="button" class="btn btn-danger">Delete</button> </a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+@section Scripts {
+<script src="~/js/search.js"></script>
+}

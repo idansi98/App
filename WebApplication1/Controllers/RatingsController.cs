@@ -26,6 +26,40 @@ namespace WebApplication1.Controllers
             return View(await _context.Rating.ToListAsync());
         }
 
+        public async Task<IActionResult> Search()
+        {
+            return View(await _context.Rating.ToListAsync());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Index(string query)
+        {
+            var q = from rating in _context.Rating
+                    where rating.ReviewerName.Contains(query)
+                    select rating;
+            return View(await q.ToListAsync());
+        }
+
+        public async Task<IActionResult> Search2(string query)
+        {
+            if (query == null)
+            {
+                var a = from rating in _context.Rating
+                        select rating;
+                return PartialView(await a.ToListAsync());
+            }
+            var q = _context.Rating.Where(rating => rating.ReviewerName.Contains(query));
+            return PartialView(await q.ToListAsync());
+        }
+
+        public async Task<IActionResult> Search3(string query)
+        {
+            var q = _context.Rating.Where(rating => rating.ReviewerName.Contains(query));
+            return Json(await q.ToListAsync());
+        }
+
+
+
         // GET: Ratings/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -59,6 +93,7 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
+                rating.DateTime = DateTime.Now.ToString();
                 _context.Add(rating);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -98,6 +133,7 @@ namespace WebApplication1.Controllers
             {
                 try
                 {
+                    rating.DateTime = DateTime.Now.ToString();
                     _context.Update(rating);
                     await _context.SaveChangesAsync();
                 }
