@@ -25,7 +25,8 @@ function SendButton({
     }
 
     var recieverID = global.currentChat.id;
-    var recieverServer = "//" + global.currentChat.server;
+    var recieverServer = global.currentChat.server;
+    console.log(recieverServer);
 
     // post message to our user
 
@@ -63,11 +64,9 @@ function SendButton({
       headers,
       body
     };
-    console.log("1")
     var fetchString2 = recieverServer + "/api/transfer" 
     fetch(fetchString2, init2)
     .then((response) => {
-      console.log("2")
 
       //todo
     })
@@ -78,7 +77,6 @@ function SendButton({
       // error in e.message
     });
     // end
-    console.log("3")
 
     await currentUserHandler.init();
     global.currentChat = global.currentUser.searchChat(recieverID);

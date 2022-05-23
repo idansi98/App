@@ -9,7 +9,13 @@ import defaultPFP from "../src/Media/defaultPFP.png";
 import chatHandler from "./chatStuff/chatFunctions";
 import sound from "../src/Media/sound.mp3";
 import earthVideo from "../src/Media/earth.mp4";
-
+import currentUserHandler from "./classes/currentUserHandler"
+import {
+  JsonHubProtocol,
+  HubConnectionState,
+  HubConnectionBuilder,
+  LogLevel
+} from '@microsoft/signalr';
 init();
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -140,12 +146,28 @@ function tempAddExampleChats(currentUser) {
   );
 }
 
+async function startConnection() {
+  var connection = new HubConnectionBuilder().withUrl("/Myhub").build();
+  await connection.start();
+  global.currentConnection = connection;
+  connection.on("ForceUpdate", function() {
+    currentUserHandler.init();
+  })
+  connection.on("NewChat", function() {
+    currentUserHandler.getNewContacts();
+  })
+  connection.on("NewMessage", function() {
+    currentUserHandler.getNewMessages();
+  })
+}
 //We intillize the data base and adding the users.
 function init() {
+  startConnection();
   global.snackBarTimeout = null;
   global.currentUser = null;
   global.currentChat = null;
   global.lastMessageID = -1;
+
   //chatHandler.initDB();
   //fillMessages();
 }

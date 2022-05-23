@@ -5,27 +5,56 @@ import defaultPFP from "../Media/defaultPFP.png";
 
     
     async function init() {
-        // setup user
-      var user = await this.sendGET("api/self")
-      if (user === null) {
-        return
-      }
-      console.log(user);
-      var currentUser = new User(user.id ,user.name, defaultPFP,"0")
-      global.currentUser = currentUser
+      await getSelf();
 
-      // set up his contacts
-      var contacts = await this.sendGET("api/contacts")
+      if (global.currentUser == null) {
+        return;
+      }
+      await getNewContacts();
+      getNewMessages();
+    }
+
+
+
+
+    async function getSelf() {
+
+        // setup user
+        var user = await sendGET("api/self")
+        if (user === null) {
+          return false;
+        }
+        global.currentUser = new User(user.id ,user.name, defaultPFP,"0")
+        return true;
+    }
+
+
+    async function getNewContacts() {
+      // save the old chat if exists
+      var oldCurrentChatID = null;
+      if (global.currentChat !== null) {
+        oldCurrentChatID = global.currentChat.id;
+      }
+      // get all contacts from scratch
+      global.currentUser.chats = [];
+      var contacts = await sendGET("api/contacts")
       contacts.forEach(contact => {
           var chat = new Chat(contact.id,contact.name,contact.server, defaultPFP);
-          currentUser.addChat(chat)
+          global.currentUser.addChat(chat)
       });
+      // restore old current chat
+      if (oldCurrentChatID !== null) {
+        global.currentChat = global.currentUser.searchChat(oldCurrentChatID);
+      }
+      await getNewMessages();
+    }
 
-      // set up the messages from contact
-      for (const chat of currentUser.chats) {
 
-        
-        var messages = await this.sendGET("api/contacts/" + chat.id + "/messages")
+    async function getNewMessages() {
+      // get all messages from scratch
+      for (const chat of global.currentUser.chats) {
+        chat.messages = [] 
+        var messages = await sendGET("api/contacts/" + chat.id + "/messages")
         messages.forEach(message => {
 
             var textMessage = new TextMessage(message.id, message.content, message.sent, message.created)
@@ -41,6 +70,7 @@ import defaultPFP from "../Media/defaultPFP.png";
 
 
     async function sendGET(url) {
+
         let response = await fetch(url);
 
         if (response.ok) { // if HTTP-status is 200-299
@@ -50,4 +80,4 @@ import defaultPFP from "../Media/defaultPFP.png";
           return null;
         }
     }
-export default {init, sendGET}
+export default {init, sendGET, getNewMessages, getNewContacts}

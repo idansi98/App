@@ -9,12 +9,7 @@ import Snackbar from "../registerAndLoginStuff/snackbar";
 import snackbarHelper from "../classes/snackbarHelper";
 import currentUserHandler from "../classes/currentUserHandler";
 import $ from 'jquery';
-import {
-  JsonHubProtocol,
-  HubConnectionState,
-  HubConnectionBuilder,
-  LogLevel
-} from '@microsoft/signalr';
+
 
 
 //This component returns the whole chatpage it's sub components.
@@ -41,8 +36,8 @@ import {
     }
   }
 
+
   useEffect( () => {
-    
     getNewUser();
     snackbarHelper.setClass("snackbarChat");
     document.title = "Chats";
@@ -60,17 +55,10 @@ import {
     }
     window.addEventListener("resize", checkForTooSmall);
     
-    var connection = new HubConnectionBuilder().withUrl("/Myhub").build();
-    console.log("hey");
-    connection.start();
-    connection.invoke("Hello");
-    connection.on("ForceUlpdate", function() {
-      currentUserHandler.init();
-    })
+
   });
 
   
-  console.log(global.currentUser);
   if (global.currentUser == null) {
     return (<div> </div>);
   }
