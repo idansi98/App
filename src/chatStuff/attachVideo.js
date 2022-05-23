@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import chatHandler from "./chatFunctions";
 
 //This component defines the functionallity and design of the Attachment video.
 function AttachVideo({ setMessageJustSent }) {
@@ -15,7 +14,7 @@ function AttachVideo({ setMessageJustSent }) {
     }
     reader.onload = function () {
       var reciever = global.currentChat.user;
-      chatHandler.sendVideoMessage(global.currentUser, reciever, reader.result);
+      //chatHandler.sendVideoMessage(global.currentUser, reciever, reader.result);
       givenVideoBox.current.value = "";
       var lastMessageID =
         global.currentUser.searchChat(reciever).lastMessage.ID;
@@ -25,7 +24,7 @@ function AttachVideo({ setMessageJustSent }) {
       document.getElementById("dropdownAttach").click();
     };
     reader.onerror = function () {
-      console.log(reader.error);
+      //console.log(reader.error);
     };
   };
   return (

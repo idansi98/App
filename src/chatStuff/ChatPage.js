@@ -17,6 +17,7 @@ import {
 } from '@microsoft/signalr';
 
 
+
 //This component returns the whole chatpage it's sub components.
  function ChatPage() {
   const [justLoggedIn, setJustLoggedIn] = useState(false);
@@ -26,6 +27,29 @@ import {
   const [contacts, setContacts] = useState("");
   //We use the useNavigate here, because if you entered the chat page without loging before, you should be directed back to Login page.
   const navigate = useNavigate();
+
+  async function tryConnection() {
+    if (global.currentConnection === null) {
+      var connection = new HubConnectionBuilder().withUrl("/Myhub").build();
+      global.currentConnection = connection;
+      await connection.start();
+      connection.on("ForceUpdate", async function() {
+          currentUserHandler.init();
+        })
+      connection.on("NewChat", async function() {
+          await currentUserHandler.init();
+          setCurrentChat(global.currentChat);
+          //currentUserHandler.getNewContacts(setCurrentChat);
+        })
+      connection.on("NewMessage", async function() {
+          await currentUserHandler.init();
+          setCurrentChat(global.currentChat);
+          //currentUserHandler.getNewMessages();
+        })
+    }
+  }
+  tryConnection();
+
 
 
   // init if not already init  
@@ -41,8 +65,8 @@ import {
     }
   }
 
+
   useEffect( () => {
-    
     getNewUser();
     snackbarHelper.setClass("snackbarChat");
     document.title = "Chats";
@@ -60,17 +84,10 @@ import {
     }
     window.addEventListener("resize", checkForTooSmall);
     
-    var connection = new HubConnectionBuilder().withUrl("/Myhub").build();
-    console.log("hey");
-    connection.start();
-    connection.invoke("Hello");
-    connection.on("ForceUlpdate", function() {
-      currentUserHandler.init();
-    })
+
   });
 
   
-  console.log(global.currentUser);
   if (global.currentUser == null) {
     return (<div> </div>);
   }

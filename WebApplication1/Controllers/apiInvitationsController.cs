@@ -29,7 +29,7 @@ namespace WebApplication1.Controllers
             {
                 return NotFound();
             }
-            await _hub.Clients.All.SendAsync("ForceUpdate");
+            await _hub.Clients.All.SendAsync("NewChat");
             return Created("","");
         }
         public async Task ForceUpdate(string connectionID)

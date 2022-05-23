@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import chatHandler from "./chatFunctions";
 
 //This component defines the functionallity and design of the Attachment image.
 function AttachImage({ setMessageJustSent }) {
@@ -15,7 +14,7 @@ function AttachImage({ setMessageJustSent }) {
     }
     reader.onload = function () {
       var reciever = global.currentChat.user;
-      chatHandler.sendImageMessage(global.currentUser, reciever, reader.result);
+      //chatHandler.sendImageMessage(global.currentUser, reciever, reader.result);
       givenImageBox.current.value = "";
       var lastMessageID =
         global.currentUser.searchChat(reciever).lastMessage.ID;
@@ -26,7 +25,7 @@ function AttachImage({ setMessageJustSent }) {
       document.getElementById("dropdownAttach").click();
     };
     reader.onerror = function () {
-      console.log(reader.error);
+      //console.log(reader.error);
     };
   };
   return (

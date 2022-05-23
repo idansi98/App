@@ -1,4 +1,3 @@
-import chatHandler from "./chatFunctions";
 import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import snackbar from "../classes/snackbarHelper";
