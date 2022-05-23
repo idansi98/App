@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import chatHandler from "./chatFunctions";
 
 //This component defines the functionallity and design of the Attachment audion button recorder.
 function AttachAudio({ setMessageJustSent, setRecorder }) {
@@ -24,7 +23,7 @@ function AttachAudio({ setMessageJustSent, setRecorder }) {
         downloadLink.download = "acetest.wav";
         var blob = URL.createObjectURL(new Blob(recordedChunks));
         var reciever = global.currentChat.user;
-        chatHandler.sendAudioMessage(global.currentUser, reciever, blob);
+        //chatHandler.sendAudioMessage(global.currentUser, reciever, blob);
         givenAudioBox.current.value = "";
         var lastMessageID =
           global.currentUser.searchChat(reciever).lastMessage.ID;

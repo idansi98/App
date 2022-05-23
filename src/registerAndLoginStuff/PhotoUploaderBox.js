@@ -22,7 +22,7 @@ function PhotoBox({ setCredentials, credentials }) {
       }));
     };
     reader.onerror = function () {
-      console.log(reader.error);
+      //console.log(reader.error);
     };
   };
 

@@ -1,4 +1,3 @@
-import chatHandler from "../chatStuff/chatFunctions";
 import { useNavigate } from "react-router-dom";
 import defaultPFP from "../Media/defaultPFP.png";
 

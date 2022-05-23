@@ -17,6 +17,7 @@ namespace WebApplication1.Services
         public ChatService()
         {
             users = new List<User>();
+            
             User Ido = new User("1", "Ido", "2");
             User Idan = new User("2", "Idan", "3");
             User Hemi = new User("3", "Hemi", "4");
@@ -39,6 +40,7 @@ namespace WebApplication1.Services
             Ido.Contacts.First().Messages.Add(new TextMessage { Text = "Go away", ID = 2, Time = DateTime.Now, UserSent = true });
             Idan.Contacts.First().Messages.Add(new TextMessage { Text = "Hello I am not scamming", ID = 1, Time = DateTime.Now, UserSent = false });
             Idan.Contacts.First().Messages.Add(new TextMessage { Text = "Hello I am not scamming", ID = 1, Time = DateTime.Now, UserSent = false });
+            
 
         }
         public List<User> GetAllUsers()

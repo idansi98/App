@@ -32,7 +32,6 @@ function LoginRegisterBox({ credentials }) {
       if (response.ok) {
         await CurrentUserHandler.init()
         global.currentAdress = response.body;
-        console.log(response);
         navigate("/chats");
       } else {
         snackbarHelper.showMessage("Incorrect username or password");

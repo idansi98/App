@@ -1,4 +1,3 @@
-import chatHandler from "./chatFunctions";
 import messageStyler from "../classes/messageStyler";
 import TextMessage from "../classes/textMessage";
 import currentUserHandler from "../classes/currentUserHandler";
@@ -26,7 +25,6 @@ function SendButton({
 
     var recieverID = global.currentChat.id;
     var recieverServer = global.currentChat.server;
-    console.log(recieverServer);
 
     // post message to our user
 

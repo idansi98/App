@@ -1,7 +1,6 @@
 import "./Button.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import chatHandler from "../chatStuff/chatFunctions";
 import snackbarHelper from "../classes/snackbarHelper";
 
 //This component returns the SignUpRegisterBox.
@@ -73,27 +72,8 @@ function SignUpRegisterBox({ credentials }) {
   );
 }
 
-function doesUserExist(userName) {
-  var trollName = userName + "_" + randomLetters();
-  if (chatHandler.findUser(userName) === null) {
-    return false;
-  }
-  snackbarHelper.showMessage(
-    "Username already exists, please try " + trollName + " instead."
-  );
-  return true;
-}
 
-function randomLetters() {
-  var result = "";
-  var characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  var charactersLength = characters.length;
-  for (var i = 0; i < 20; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
-}
+
 
 //Function to check whether a Username's length is valid or not.
 function isUserNameValid(userName) {

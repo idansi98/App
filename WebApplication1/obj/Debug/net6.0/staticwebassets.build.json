@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "h3W/Gkky4B6cFdjWzF1C7foX/lJeP3eP6oBFy+Zg69w=",
+  "Hash": "4XIBZ3F+ogHEoOokz//9ebz4UCnP9aEyu1Ydyk5UIN8=",
   "Source": "ChatWebsite",
   "BasePath": "_content/ChatWebsite",
   "Mode": "Default",
@@ -1173,12 +1173,12 @@
       "OriginalItemSpec": "wwwroot\\static\\css\\main.a6a48920.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.b83c6380.js",
+      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.17ffc60d.js",
       "SourceId": "ChatWebsite",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\",
       "BasePath": "_content/ChatWebsite",
-      "RelativePath": "static/js/main.b83c6380.js",
+      "RelativePath": "static/js/main.17ffc60d.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1187,15 +1187,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\static\\js\\main.b83c6380.js"
+      "OriginalItemSpec": "wwwroot\\static\\js\\main.17ffc60d.js"
     },
     {
-      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.b83c6380.js.LICENSE.txt",
+      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.17ffc60d.js.LICENSE.txt",
       "SourceId": "ChatWebsite",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\",
       "BasePath": "_content/ChatWebsite",
-      "RelativePath": "static/js/main.b83c6380.js.LICENSE.txt",
+      "RelativePath": "static/js/main.17ffc60d.js.LICENSE.txt",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1204,15 +1204,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\static\\js\\main.b83c6380.js.LICENSE.txt"
+      "OriginalItemSpec": "wwwroot\\static\\js\\main.17ffc60d.js.LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.b83c6380.js.map",
+      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.17ffc60d.js.map",
       "SourceId": "ChatWebsite",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\",
       "BasePath": "_content/ChatWebsite",
-      "RelativePath": "static/js/main.b83c6380.js.map",
+      "RelativePath": "static/js/main.17ffc60d.js.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1221,41 +1221,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\static\\js\\main.b83c6380.js.map"
-    },
-    {
-      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\media\\alice.c73eb5653706a8571c59.webp",
-      "SourceId": "ChatWebsite",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\",
-      "BasePath": "_content/ChatWebsite",
-      "RelativePath": "static/media/alice.c73eb5653706a8571c59.webp",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\static\\media\\alice.c73eb5653706a8571c59.webp"
-    },
-    {
-      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\media\\bob.5340ce3afcb796b1cdd3.webp",
-      "SourceId": "ChatWebsite",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\",
-      "BasePath": "_content/ChatWebsite",
-      "RelativePath": "static/media/bob.5340ce3afcb796b1cdd3.webp",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\static\\media\\bob.5340ce3afcb796b1cdd3.webp"
+      "OriginalItemSpec": "wwwroot\\static\\js\\main.17ffc60d.js.map"
     },
     {
       "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\media\\defaultPFP.3bbfa889bac56ae923d9.png",
@@ -1275,23 +1241,6 @@
       "OriginalItemSpec": "wwwroot\\static\\media\\defaultPFP.3bbfa889bac56ae923d9.png"
     },
     {
-      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\media\\earth.5f55925d87b05fff5ee1.mp4",
-      "SourceId": "ChatWebsite",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\",
-      "BasePath": "_content/ChatWebsite",
-      "RelativePath": "static/media/earth.5f55925d87b05fff5ee1.mp4",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\static\\media\\earth.5f55925d87b05fff5ee1.mp4"
-    },
-    {
       "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\media\\logo.ce176c7143c3a64e203d.png",
       "SourceId": "ChatWebsite",
       "SourceType": "Discovered",
@@ -1307,40 +1256,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\static\\media\\logo.ce176c7143c3a64e203d.png"
-    },
-    {
-      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\media\\sound.5443f8893a7e88e5562a.mp3",
-      "SourceId": "ChatWebsite",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\",
-      "BasePath": "_content/ChatWebsite",
-      "RelativePath": "static/media/sound.5443f8893a7e88e5562a.mp3",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\static\\media\\sound.5443f8893a7e88e5562a.mp3"
-    },
-    {
-      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\media\\suspicious.27e625cf2af1ba2b3606.png",
-      "SourceId": "ChatWebsite",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\",
-      "BasePath": "_content/ChatWebsite",
-      "RelativePath": "static/media/suspicious.27e625cf2af1ba2b3606.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\static\\media\\suspicious.27e625cf2af1ba2b3606.png"
     }
   ]
 }
