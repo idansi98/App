@@ -10,8 +10,10 @@ import defaultPFP from "../Media/defaultPFP.png";
       if (global.currentUser == null) {
         return;
       }
+
       await getNewContacts();
-      getNewMessages();
+
+      await getNewMessages();
     }
 
 
@@ -30,14 +32,17 @@ import defaultPFP from "../Media/defaultPFP.png";
 
 
     async function getNewContacts() {
+
       // save the old chat if exists
       var oldCurrentChatID = null;
       if (global.currentChat !== null) {
         oldCurrentChatID = global.currentChat.id;
       }
+
       // get all contacts from scratch
       global.currentUser.chats = [];
       var contacts = await sendGET("api/contacts")
+
       contacts.forEach(contact => {
           var chat = new Chat(contact.id,contact.name,contact.server, defaultPFP);
           global.currentUser.addChat(chat)
@@ -45,8 +50,12 @@ import defaultPFP from "../Media/defaultPFP.png";
       // restore old current chat
       if (oldCurrentChatID !== null) {
         global.currentChat = global.currentUser.searchChat(oldCurrentChatID);
+
       }
+
+
       await getNewMessages();
+
     }
 
 

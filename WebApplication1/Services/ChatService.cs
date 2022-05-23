@@ -31,10 +31,10 @@ namespace WebApplication1.Services
             users.Add(Tester2);
             users.Add(Tester3);
             users.Add(Tester4);
-            Ido.Contacts.Add(new Contact { ID = "1", DisplayName = "Yosi", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
-            Ido.Contacts.Add(new Contact { ID = "2", DisplayName = "Hemi", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
-            Idan.Contacts.Add(new Contact { ID = "1", DisplayName = "Yosi2", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
-            Hemi.Contacts.Add(new Contact { ID = "1", DisplayName = "Yosi3", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
+            Ido.Contacts.Add(new Contact { ID = "55", DisplayName = "DEMO CHAT", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
+            Ido.Contacts.Add(new Contact { ID = "66", DisplayName = "DEMO CHAT 2", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
+            Idan.Contacts.Add(new Contact { ID = "77", DisplayName = "DEMO CHAT", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
+            Hemi.Contacts.Add(new Contact { ID = "88", DisplayName = "DEMO CHAT", ServerAdress = "scam.com", Messages = new List<TextMessage> { } });
             Ido.Contacts.First().Messages.Add(new TextMessage { Text = "Hello I am not scamming", ID = 1, Time = DateTime.Now, UserSent = false });
             Ido.Contacts.First().Messages.Add(new TextMessage { Text = "Go away", ID = 2, Time = DateTime.Now, UserSent = true });
             Idan.Contacts.First().Messages.Add(new TextMessage { Text = "Hello I am not scamming", ID = 1, Time = DateTime.Now, UserSent = false });

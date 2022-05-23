@@ -31,7 +31,7 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
             //HttpContext.Connection.
-            await _hub.Clients.All.SendAsync("ForceUpdate");
+            await _hub.Clients.All.SendAsync("NewMessage");
             return Created("", "");
 
         }

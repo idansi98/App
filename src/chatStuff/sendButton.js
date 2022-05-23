@@ -77,10 +77,6 @@ function SendButton({
       // error in e.message
     });
     // end
-
-    await currentUserHandler.init();
-    global.currentChat = global.currentUser.searchChat(recieverID);
-    setMessageJustSent(new Date().toString());
     inputBox.value = "";
     setInputText("");
   };

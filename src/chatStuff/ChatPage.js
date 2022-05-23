@@ -9,6 +9,12 @@ import Snackbar from "../registerAndLoginStuff/snackbar";
 import snackbarHelper from "../classes/snackbarHelper";
 import currentUserHandler from "../classes/currentUserHandler";
 import $ from 'jquery';
+import {
+  JsonHubProtocol,
+  HubConnectionState,
+  HubConnectionBuilder,
+  LogLevel
+} from '@microsoft/signalr';
 
 
 
@@ -21,6 +27,29 @@ import $ from 'jquery';
   const [contacts, setContacts] = useState("");
   //We use the useNavigate here, because if you entered the chat page without loging before, you should be directed back to Login page.
   const navigate = useNavigate();
+
+  async function tryConnection() {
+    if (global.currentConnection === null) {
+      var connection = new HubConnectionBuilder().withUrl("/Myhub").build();
+      global.currentConnection = connection;
+      await connection.start();
+      connection.on("ForceUpdate", async function() {
+          currentUserHandler.init();
+        })
+      connection.on("NewChat", async function() {
+          await currentUserHandler.init();
+          setCurrentChat(global.currentChat);
+          //currentUserHandler.getNewContacts(setCurrentChat);
+        })
+      connection.on("NewMessage", async function() {
+          await currentUserHandler.init();
+          setCurrentChat(global.currentChat);
+          //currentUserHandler.getNewMessages();
+        })
+    }
+  }
+  tryConnection();
+
 
 
   // init if not already init  
