@@ -27,7 +27,7 @@ function LoginRegisterBox({ credentials }) {
       body
     };
     
-    fetch('https://localhost:7100/api/login', init)
+    fetch('https://localhost:25565/api/login', init)
     .then( async (response) => { //important to put the async here!!!
       if (response.ok) {
         await CurrentUserHandler.init()

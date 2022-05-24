@@ -23,29 +23,59 @@ import {
   const [justLoggedIn, setJustLoggedIn] = useState(false);
   const [tooSmall, setTooSmall] = useState(false);
   const [currentChat, setCurrentChat] = useState(null);
+  const [lastMessageSent, setLastMessageSent] = useState(null);
   const [searchedDN, setSearchedDN] = useState("");
   const [contacts, setContacts] = useState("");
+  var currentlyProcessing = 0;
   //We use the useNavigate here, because if you entered the chat page without loging before, you should be directed back to Login page.
   const navigate = useNavigate();
+
+
+  async function forceUpdate() {
+    if (currentlyProcessing ===0) {
+      currentlyProcessing += 1;
+      await currentUserHandler.init();
+      // to update react
+      setLastMessageSent(Date.now()); 
+      currentlyProcessing -=1;
+    } else {
+      window.setTimeout(forceUpdate, 40);
+    }
+  }
+
+  async function newChat() {
+    if (currentlyProcessing ===0) {
+      currentlyProcessing += 1;
+      await currentUserHandler.getNewContacts();
+      await currentUserHandler.getNewMessages();
+      setCurrentChat(global.currentChat);
+      currentlyProcessing -=1;
+    } else {
+      window.setTimeout(newChat, 40);
+    }
+  }
+
+  async function newMessage() {
+    if (currentlyProcessing ===0) {
+      currentlyProcessing += 1;
+      await currentUserHandler.getNewMessages();
+      // only setting current chat so react reloads the page
+      setLastMessageSent(Date.now()); 
+      currentlyProcessing -=1;
+    } else {
+      window.setTimeout(newMessage, 40);
+    }
+  }
 
   async function tryConnection() {
     if (global.currentConnection === null) {
       var connection = new HubConnectionBuilder().withUrl("/Myhub").build();
       global.currentConnection = connection;
       await connection.start();
-      connection.on("ForceUpdate", async function() {
-          currentUserHandler.init();
-        })
-      connection.on("NewChat", async function() {
-          await currentUserHandler.init();
-          setCurrentChat(global.currentChat);
-          //currentUserHandler.getNewContacts(setCurrentChat);
-        })
-      connection.on("NewMessage", async function() {
-          await currentUserHandler.init();
-          setCurrentChat(global.currentChat);
-          //currentUserHandler.getNewMessages();
-        })
+      connection.on("ForceUpdate", forceUpdate);
+      connection.on("NewChat", newChat);
+      connection.on("NewMessage", newMessage);
+      
     }
   }
   tryConnection();
@@ -110,6 +140,7 @@ import {
           currentChat={currentChat}
           setCurrentChat={setCurrentChat}
           searchedDN={searchedDN}
+          lastMessageSent = {lastMessageSent}
         />
       </div>
       <Snackbar />

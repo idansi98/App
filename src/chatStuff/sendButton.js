@@ -24,7 +24,8 @@ function SendButton({
     }
 
     var recieverID = global.currentChat.id;
-    var recieverServer = global.currentChat.server;
+    var recieverServer = "//" +  global.currentChat.server;
+
 
     // post message to our user
 
@@ -38,7 +39,7 @@ function SendButton({
       headers,
       body
     };
-    var currentServer = 'https://localhost:7100/'
+    var currentServer = 'https://localhost:25565/'
     var fetchString  = currentServer+ "api/contacts/" + recieverID + "/messages"
     fetch(fetchString, init)
     .then((response) => {

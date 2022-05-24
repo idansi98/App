@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using ChatWebsite.Hubs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using WebApplication1.Models;
 using WebApplication1.Services;
 
@@ -11,10 +13,14 @@ namespace WebApplication1.Controllers
     public class apiContactsController : Controller
     {
         private readonly IChatService _service;
+        private readonly IHubContext<Myhub> _hub;
 
-        public apiContactsController(IChatService service)
+
+        public apiContactsController(IChatService service, IHubContext<Myhub> myHub)
         {
             _service = service;
+            _hub = myHub;
+
         }
 
 
@@ -51,7 +57,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(ContactToAdd contactToAdd)
+        public async Task<IActionResult> Post(ContactToAdd contactToAdd)
         {
             var username = HttpContext.Session.GetString("username");
             Contact newContact = new Contact();
@@ -64,7 +70,9 @@ namespace WebApplication1.Controllers
             {
                 return NotFound();
             }
+            await _hub.Clients.All.SendAsync("NewChat");
             return Created("",""); // temp?
+
         }
 
 
@@ -85,13 +93,13 @@ namespace WebApplication1.Controllers
                 result += "\"last\":\"" + contact.getLastMessageText() + "\",";
                 result += "\"lastdate\":\"" + contact.getLastMessageDate().ToString("yyyy-MM-ddTHH:mm:ss.fffffff") + "\"";
                 result += "}";
-
+                return Ok(result);
             }
-            return Ok(result);
+            return BadRequest();
         }
 
         [HttpPut("{id}")]
-        public IActionResult Post(string id, UpdatedContact updatedContact)
+        public async Task<IActionResult> Post(string id, UpdatedContact updatedContact)
         {
             var username = HttpContext.Session.GetString("username");
             bool result = _service.UpdateContact(username, updatedContact, id);
@@ -99,12 +107,13 @@ namespace WebApplication1.Controllers
             {
                 return NotFound();
             }
+            await _hub.Clients.All.SendAsync("NewChat");
             return NoContent();
 
         }
         
         [HttpDelete("{id}")]
-        public IActionResult Delete(string id)
+        public async Task<IActionResult> Delete(string id)
         {
             var username = HttpContext.Session.GetString("username");
             bool result = _service.DeleteContact(username, id);
@@ -112,6 +121,7 @@ namespace WebApplication1.Controllers
             {
                 return NotFound();
             }
+            await _hub.Clients.All.SendAsync("NewChat");
             return NoContent();
         }
 
@@ -155,7 +165,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost("{id}/{messages}")]
-        public IActionResult Post(string id, string messages, MessageToAdd messageToAdd)
+        public async Task<IActionResult> Post(string id, string messages, MessageToAdd messageToAdd)
         {
             var username = HttpContext.Session.GetString("username");
             if (messages == null || messages != "messages")
@@ -181,6 +191,7 @@ namespace WebApplication1.Controllers
             {
                 return NotFound();
             }
+            await _hub.Clients.All.SendAsync("NewMessage");
             return Created("", "");
 
         }
@@ -190,7 +201,7 @@ namespace WebApplication1.Controllers
 
         // api/contacts/:id/messages/:id2
         [HttpGet("{id}/{messages}/{id2}")]
-        public IActionResult GetContactMessage(string id, string messages, int id2)
+        public async Task<IActionResult> GetContactMessage(string id, string messages, int id2)
         {
             if (messages == null || messages != "messages")
             {
@@ -210,12 +221,11 @@ namespace WebApplication1.Controllers
             result += "\"created\":\"" + specificMessage.Time.ToString("yyyy-MM-ddTHH:mm:ss.fffffff") + "\",";
             result += "\"sent\":\"" + specificMessage.UserSent.ToString().ToLower() + "\"";
             result += "}";
-
             return Ok(result);
         }
 
         [HttpPut("{id}/{messages}/{id2}")]
-        public IActionResult UpdateMessage(string id, string messages, int id2, MessageToAdd messageToAdd)
+        public async Task<IActionResult> UpdateMessage(string id, string messages, int id2, MessageToAdd messageToAdd)
         {
             if (messages == null || messages != "messages")
             {
@@ -227,11 +237,12 @@ namespace WebApplication1.Controllers
             {
                 return NotFound();
             }
+            await _hub.Clients.All.SendAsync("NewMessage");
             return NoContent();
         }
 
         [HttpDelete("{id}/{messages}/{id2}")]
-        public IActionResult DeleteMessage(string id, string messages, int id2)
+        public async Task<IActionResult> DeleteMessage(string id, string messages, int id2)
         {
             if (messages == null || messages != "messages")
             {
@@ -243,6 +254,7 @@ namespace WebApplication1.Controllers
             {
                 return NotFound();
             }
+            await _hub.Clients.All.SendAsync("NewMessage");
             return NoContent();
         }
     }

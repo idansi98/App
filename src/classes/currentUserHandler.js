@@ -6,13 +6,7 @@ import defaultPFP from "../Media/defaultPFP.png";
     
     async function init() {
       await getSelf();
-
-      if (global.currentUser == null) {
-        return;
-      }
-
       await getNewContacts();
-
       await getNewMessages();
     }
 
@@ -32,7 +26,9 @@ import defaultPFP from "../Media/defaultPFP.png";
 
 
     async function getNewContacts() {
-
+      if (global.currentUser === null) {
+        return;
+      }
       // save the old chat if exists
       var oldCurrentChatID = null;
       if (global.currentChat !== null) {
@@ -50,16 +46,14 @@ import defaultPFP from "../Media/defaultPFP.png";
       // restore old current chat
       if (oldCurrentChatID !== null) {
         global.currentChat = global.currentUser.searchChat(oldCurrentChatID);
-
       }
-
-
-      await getNewMessages();
-
     }
 
 
     async function getNewMessages() {
+      if (global.currentUser === null) {
+        return;
+      }
       // get all messages from scratch
       for (const chat of global.currentUser.chats) {
         chat.messages = [] 
