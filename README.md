@@ -54,7 +54,7 @@ username: 5, password: 6
 1. Whenever a user tries to add a contact, if the request cannot be satisfied by either the local server or the contact's server, the contact should not be added to either one. 
 2. Any change to a contact and or a message should be reflected in real time - including the editing.  
 3. The demo chats are not meant for actual messaging, but only for design showcase, chatting with them might lead to an undefined behavior.  
-4. The messages and contacts are saved in a static list, while the rantings are stored in a database, so expect the first to be reset accordingly with every new run.  
+4. The messages and contacts are saved in a static list, while the rantings are stored in a database, so expect the former to be reset accordingly with every new run.  
 
 
 ## Dependencies  
