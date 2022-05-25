@@ -39,14 +39,5 @@ namespace WebApplication1.Controllers
             // wrong password
             return NotFound("Wrong username or password");
         }
-
-   
-
-
-
-
-
-
-
     }
 }
