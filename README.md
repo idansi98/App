@@ -67,7 +67,6 @@ username: 5, password: 6
 7.  Web-vitals  
 8.  Microsoft SignalR  
 ### Server Side
-We used these packages as part of our server side:   
 1. Microsoft ASP.NET MVC  
 2. Entity Framework  
 3. Microsoft SignnalR  
