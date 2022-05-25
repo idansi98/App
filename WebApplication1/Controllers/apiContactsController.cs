@@ -44,7 +44,7 @@ namespace WebApplication1.Controllers
                     result += "{";
                     result += "\"id\":\"" + contact.ID + "\",";
                     result += "\"name\":\"" + contact.DisplayName + "\",";
-                    result += "\"server\":\"" + contact.ServerAdress + "\",";
+                    result += "\"server\":\"" + contact.ServerAddress + "\",";
                     result += "\"last\":\"" + contact.getLastMessageText() + "\",";
                     result += "\"lastdate\":\"" + contact.getLastMessageDate().ToString("yyyy-MM-ddTHH:mm:ss.fffffff") + "\"";
                     result += "}";
@@ -63,7 +63,7 @@ namespace WebApplication1.Controllers
             Contact newContact = new Contact();
             newContact.DisplayName = contactToAdd.name;
             newContact.ID = contactToAdd.id;
-            newContact.ServerAdress = contactToAdd.server;
+            newContact.ServerAddress = contactToAdd.server;
             newContact.Messages = new List<TextMessage>();
             var result = _service.AddContactToUser(username, newContact);
             if (!result)
@@ -89,7 +89,7 @@ namespace WebApplication1.Controllers
                 result += "{";
                 result += "\"id\":\"" + contact.ID + "\",";
                 result += "\"name\":\"" + contact.DisplayName + "\",";
-                result += "\"server\":\"" + contact.ServerAdress + "\",";
+                result += "\"server\":\"" + contact.ServerAddress + "\",";
                 result += "\"last\":\"" + contact.getLastMessageText() + "\",";
                 result += "\"lastdate\":\"" + contact.getLastMessageDate().ToString("yyyy-MM-ddTHH:mm:ss.fffffff") + "\"";
                 result += "}";

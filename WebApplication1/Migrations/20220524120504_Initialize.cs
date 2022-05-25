@@ -44,7 +44,7 @@ namespace ChatWebsite.Migrations
                 {
                     ID = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     DisplayName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ServerAdress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ServerAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserID = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>

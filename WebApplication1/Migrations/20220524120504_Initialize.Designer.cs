@@ -33,7 +33,7 @@ namespace ChatWebsite.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ServerAdress")
+                    b.Property<string>("ServerAddress")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
