@@ -10,22 +10,34 @@ function AddContactButton({ setCurrentChat }) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const addNewChat = function () {
-    var usernameToAdd = document.getElementById("usernameToAdd").value;
-    var nicknameToAdd = document.getElementById("nicknameToAdd").value;
-    var serverToAdd = "//" + document.getElementById("serverToAdd").value;
-    var currentServerAdress = "https://localhost:7100"
-    // in case it ends with /
-    if (serverToAdd.slice(-1) == "/") { 
-      serverToAdd = serverToAdd.slice(0,-1);
-    }
-    if (usernameToAdd === global.currentUser.userName) {
-      snackbar.showMessage("You can't start messaging yourself!");
-      return;
-    }
 
+  const addRemotely = async function(usernameToAdd, nicknameToAdd ,serverToAdd ,currentServerAdress) {
 
-    // add locally
+    const body = `{"from":"${global.currentUser.userName}","to":"${usernameToAdd}","server":"${currentServerAdress}"}`;
+    const headers = new Headers();
+    headers.append('content-type', 'application/json');
+    const init2 = {
+      method: 'POST',
+      headers,
+      body
+    };
+
+    var fetchString2 = "//" + serverToAdd + "/api/invitations"
+    fetch(fetchString2, init2)
+    .then(async (response) => {
+      if (response.ok  === false) {
+        snackbar.showMessage("The user could not be added");
+      } else {
+            addLocally(usernameToAdd, nicknameToAdd ,serverToAdd ,currentServerAdress);
+      }
+    })
+    .then((text) => {
+    })
+    .catch((e) => {
+      snackbar.showMessage("The user could not be added");
+    });
+  }
+  const addLocally = async function(usernameToAdd, nicknameToAdd ,serverToAdd ,currentServerAdress) {
     const headers = new Headers();
     headers.append('content-type', 'application/json');
 
@@ -36,77 +48,51 @@ function AddContactButton({ setCurrentChat }) {
       headers,
       body
     };
-    var fetchStr = currentServerAdress + "/api/contacts"
+    var fetchStr = "//" + currentServerAdress + "/api/contacts"
      fetch(fetchStr, init)
-    .then((response) => {
+    .then(async (response) => {
       if (response.ok === false) {
         snackbar.showMessage("The user could not be added");
       } else {
-          // add to 2nd server
-          //TODO: make sure server adress is known
-
-
-
-          const body = `{"from":"${global.currentUser.userName}","to":"${usernameToAdd}","server":"${currentServerAdress}"}`;
-
-          const init2 = {
-            method: 'POST',
-            headers,
-            body
-          };
-
-          var fetchString2 = serverToAdd + "/api/invitations"
-          fetch(fetchString2, init2)
-          .then((response) => {
-            if (response.ok  === false) {
-              snackbar.showMessage("The user could not be added");
-              // delete the user we created on our side:
-              const init3 = {
-                method: 'DELETE'
-              };
-              var fetchString = currentServerAdress+ "/api/contacts/" + usernameToAdd;
-              fetch(fetchString, init3)
-              .then((response) => {
-                // empty for rn
-              })
-              .then((text) => {
-              })
-              .catch((e) => {
-              });
-            } else {
-                  // here the user is updated on both server, now we just need to update current chat
-                  var chat = new Chat(usernameToAdd,nicknameToAdd,serverToAdd, defaultPFP);
-                  global.currentUser.addChat(chat)
-                  global.currentChat = chat;
-                  setCurrentChat(chat);
-                  handleClose();
-            }
-          })
-          .then((text) => {
-          })
-          .catch((e) => {
-            snackbar.showMessage("The user could not be added");
-            // delete the user we created on our side:
-            const init3 = {
-              method: 'DELETE'
-            };
-            var fetchString = currentServerAdress+ "/api/contacts/" + usernameToAdd;
-            fetch(fetchString, init3)
-            .then((response) => {
-              // empty for rn
-            })
-            .then((text) => {
-            })
-            .catch((e) => {
-            });
-          });
+        handleClose();
+        snackbar.showMessage("User added successfully");
       }
     })
     .then((text) => {
     })
     .catch((e) => {
+      snackbar.showMessage("The user could not be added");
     });
   };
+  
+ 
+  const checkAvailable = async function(usernameToAdd) {
+    var fetchStr = "//localhost:25565/api/contacts/" + usernameToAdd;
+    let response = await fetch(fetchStr);
+    if (response.ok) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  const addNewChat = async function () {
+    var usernameToAdd = document.getElementById("usernameToAdd").value;
+    var nicknameToAdd = document.getElementById("nicknameToAdd").value;
+    var serverToAdd =  document.getElementById("serverToAdd").value;
+    var currentServerAdress = "localhost:25565"
+    if (usernameToAdd === global.currentUser.userName) {
+      snackbar.showMessage("You can't start messaging yourself!");
+      return;
+    }
+    var result  = await checkAvailable(usernameToAdd);
+    if (result === false) {
+      return;
+    }
+    // here if local server is able to add user
+
+    await addRemotely(usernameToAdd, nicknameToAdd, serverToAdd, currentServerAdress);
+  }
 
   return (
     <>

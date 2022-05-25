@@ -9,11 +9,11 @@ using WebApplication1.Data;
 
 #nullable disable
 
-namespace WebApplication1.Migrations
+namespace ChatWebsite.Migrations
 {
     [DbContext(typeof(WebApplication1Context))]
-    [Migration("20220510171127_Test2")]
-    partial class Test2
+    [Migration("20220524120504_Initialize")]
+    partial class Initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -55,8 +55,8 @@ namespace WebApplication1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<int>("DateTime")
-                        .HasColumnType("int");
+                    b.Property<string>("DateTime")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReviewText")
                         .IsRequired()
@@ -66,8 +66,8 @@ namespace WebApplication1.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Score")
-                        .HasColumnType("int");
+                    b.Property<string>("Score")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 

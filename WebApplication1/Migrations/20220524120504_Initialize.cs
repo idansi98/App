@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace WebApplication1.Migrations
+namespace ChatWebsite.Migrations
 {
-    public partial class Test2 : Migration
+    public partial class Initialize : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,9 +16,9 @@ namespace WebApplication1.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ReviewerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Score = table.Column<int>(type: "int", nullable: false),
+                    Score = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ReviewText = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DateTime = table.Column<int>(type: "int", nullable: false)
+                    DateTime = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
