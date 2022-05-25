@@ -14,7 +14,7 @@ This is a chatting site co-developed by [Ido Tziony](https://github.com/ghsumhub
 
 
 ## How to Use  
-We offer various screens which can be navigated using site buttons or directly access with these addresses:  
+We offer various screens which can be navigated using site buttons or can directly be accessed with these addresses:  
 - `https://localhost:25565/login`  
 - `https://localhost:25565/signup`   
 - `https://localhost:25565/chats`    
@@ -23,7 +23,7 @@ We offer various screens which can be navigated using site buttons or directly a
 The user can expect the normal behavior expected from a chatting website, with the exclusion of media support.
 
 
-There exist a guest user for demo purposes that comes with some prebuilt chats:  
+There exists a guest user for demo purposes that comes with some prebuilt chats:  
 username: "1", password: "2"    
 Note that it has demo chats from FAKE servers, so sending messages there isn't really productive.
 
@@ -33,14 +33,15 @@ username: 5, password: 6
 
 
 ### Notes for Usage
-1. In the contact creation screen, the expected server format is "ADDRESS_WITHOUT_HTTP:PORT", i.g., "localhost:7100".  
+1. In the contact creation screen, the expected server format is "ADDRESS_WITHOUT_HTTP:PORT", e.g., "localhost:7100".  
 2. It is advised to open `https://localhost:25565/api/logout` in order to log out of the current user, since the default session duration is quite long.  
-3. Since all tabs opened will be considered the same session, in order to run 2 users simultaneously, one can enter the site using a normal browser tab, and enter the site again with a different user, using an incognito tab.  
+3. Since all the opened tabs will be considered the same session, in order to run 2 users simultaneously, one can enter the site using a normal browser tab, and enter the site again with a different user, using an incognito tab.  
 4. It is advised to not use the attachment button since, as of right now it is not functional.  
 
 ### Available API Routes
 - https://localhost:25565/api/logout - GET  (Only in order to hasten the process - for now - even though POST would be more appropriate here)  
 - https://localhost:25565/api/self - GET  
+- https://localhost:25565/api/signup - POST
 - https://localhost:25565/api/contacts - GET/POST  
 - https://localhost:25565/api/contacts/CONTACT_ID - GET/PUT/DELETE  
 - https://localhost:25565/api/contacts/CONTACT_ID/messages - GET/POST  
@@ -52,8 +53,8 @@ username: 5, password: 6
 ### Expected Behavior
 1. Whenever a user tries to add a contact, if the request cannot be satisfied by either the local server or the contact's server, the contact should not be added to either one. 
 2. Any change to a contact and or a message should be reflected in real time - including the editing.  
-3. The demo chats are not ment for actual messaging, but only for design showcase, chatting with them is undefined behavior.  
-4. The messages and contacts are saved in a static list, while the rantings are stored in a database, so expect the former to reset accordingly with every new run.  
+3. The demo chats are not meant for actual messaging, but only for design showcase, chatting with them might lead to an undefined behavior.  
+4. The messages and contacts are saved in a static list, while the rantings are stored in a database, so expect the first to be reset accordingly with every new run.  
 
 
 ## Dependencies  
@@ -69,7 +70,7 @@ username: 5, password: 6
 ### Server Side
 1. Microsoft ASP.NET MVC  
 2. Entity Framework  
-3. Microsoft SignnalR  
+3. Microsoft SignalR  
 
 
 
