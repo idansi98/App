@@ -11,9 +11,9 @@ function AddContactButton({ setCurrentChat }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const addRemotely = async function(usernameToAdd, nicknameToAdd ,serverToAdd ,currentServerAdress) {
+  const addRemotely = async function(usernameToAdd, nicknameToAdd ,serverToAdd ,currentServerAddress) {
 
-    const body = `{"from":"${global.currentUser.userName}","to":"${usernameToAdd}","server":"${currentServerAdress}"}`;
+    const body = `{"from":"${global.currentUser.userName}","to":"${usernameToAdd}","server":"${currentServerAddress}"}`;
     const headers = new Headers();
     headers.append('content-type', 'application/json');
     const init2 = {
@@ -28,7 +28,7 @@ function AddContactButton({ setCurrentChat }) {
       if (response.ok  === false) {
         snackbar.showMessage("The user could not be added");
       } else {
-            addLocally(usernameToAdd, nicknameToAdd ,serverToAdd ,currentServerAdress);
+            addLocally(usernameToAdd, nicknameToAdd ,serverToAdd ,currentServerAddress);
       }
     })
     .then((text) => {
@@ -37,7 +37,7 @@ function AddContactButton({ setCurrentChat }) {
       snackbar.showMessage("The user could not be added");
     });
   }
-  const addLocally = async function(usernameToAdd, nicknameToAdd ,serverToAdd ,currentServerAdress) {
+  const addLocally = async function(usernameToAdd, nicknameToAdd ,serverToAdd ,currentServerAddress) {
     const headers = new Headers();
     headers.append('content-type', 'application/json');
 
@@ -48,7 +48,7 @@ function AddContactButton({ setCurrentChat }) {
       headers,
       body
     };
-    var fetchStr = "//" + currentServerAdress + "/api/contacts"
+    var fetchStr = "//" + currentServerAddress + "/api/contacts"
      fetch(fetchStr, init)
     .then(async (response) => {
       if (response.ok === false) {
@@ -80,7 +80,7 @@ function AddContactButton({ setCurrentChat }) {
     var usernameToAdd = document.getElementById("usernameToAdd").value;
     var nicknameToAdd = document.getElementById("nicknameToAdd").value;
     var serverToAdd =  document.getElementById("serverToAdd").value;
-    var currentServerAdress = "localhost:25565"
+    var currentServerAddress = "localhost:25565"
     if (usernameToAdd === global.currentUser.userName) {
       snackbar.showMessage("You can't start messaging yourself!");
       return;
@@ -91,7 +91,7 @@ function AddContactButton({ setCurrentChat }) {
     }
     // here if local server is able to add user
 
-    await addRemotely(usernameToAdd, nicknameToAdd, serverToAdd, currentServerAdress);
+    await addRemotely(usernameToAdd, nicknameToAdd, serverToAdd, currentServerAddress);
   }
 
   return (
@@ -139,8 +139,8 @@ function AddContactButton({ setCurrentChat }) {
         id="serverToAdd"
         type="text"
         className="form-control"
-        placeholder="Server Adress"
-        aria-label="Server Adress"
+        placeholder="Server Address"
+        aria-label="Server Address"
         aria-describedby="basic-addon3"
       />
         </Modal.Body>

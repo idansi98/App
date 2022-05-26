@@ -4,7 +4,7 @@
     {
         public string ID { get; set; }
         public string DisplayName { get; set; }
-        public string ServerAdress { get; set; }
+        public string ServerAddress { get; set; }
         public List<TextMessage>? Messages { get; set; }
 
         public string getLastMessageText()
