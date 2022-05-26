@@ -1,10 +1,6 @@
 {
   "Version": 1,
-<<<<<<< HEAD
-  "Hash": "e03MInZTFsUpCzEqo0hlb8xx3Cpc82/ziV9ehjU/Zlk=",
-=======
-  "Hash": "BeW/tOzVwqupjWcFYO473aM4xB445IRroSLzMVNsB5s=",
->>>>>>> 2e784378549fe2f36a2f1d74dd0452adb6b43cc4
+  "Hash": "VVHgnZ2oDs7U0bGfPMIUK843ZDNK/3YFy4M4CkYept0=",
   "Source": "ChatWebsite",
   "BasePath": "_content/ChatWebsite",
   "Mode": "Default",
@@ -1279,11 +1275,7 @@
       "OriginalItemSpec": "wwwroot\\static\\css\\main.a6a48920.css.map"
     },
     {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.874cded1.js",
-=======
-      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.2ec28dfa.js",
->>>>>>> 2e784378549fe2f36a2f1d74dd0452adb6b43cc4
+      "Identity": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.2ec28dfa.js",
       "SourceId": "ChatWebsite",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\wwwroot\\",
@@ -1300,11 +1292,7 @@
       "OriginalItemSpec": "wwwroot\\static\\js\\main.2ec28dfa.js"
     },
     {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.874cded1.js.LICENSE.txt",
-=======
-      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.2ec28dfa.js.LICENSE.txt",
->>>>>>> 2e784378549fe2f36a2f1d74dd0452adb6b43cc4
+      "Identity": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.2ec28dfa.js.LICENSE.txt",
       "SourceId": "ChatWebsite",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\wwwroot\\",
@@ -1321,11 +1309,7 @@
       "OriginalItemSpec": "wwwroot\\static\\js\\main.2ec28dfa.js.LICENSE.txt"
     },
     {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.874cded1.js.map",
-=======
-      "Identity": "C:\\Users\\Ido\\Documents\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.2ec28dfa.js.map",
->>>>>>> 2e784378549fe2f36a2f1d74dd0452adb6b43cc4
+      "Identity": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\wwwroot\\static\\js\\main.2ec28dfa.js.map",
       "SourceId": "ChatWebsite",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\idans\\OneDrive\\מסמכים\\GitHub\\App\\WebApplication1\\wwwroot\\",
