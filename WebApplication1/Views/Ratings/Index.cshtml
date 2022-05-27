@@ -109,16 +109,16 @@
                     @average</p></div>
 
 <form asp-action = "Index">
-    <input name = "query" id = "search" placeholder="ReviewerName:" />
+    <input name = "query" id = "search" placeholder="Reviewer Name" />
     <input type = "submit" id = "searchbutton" value = "Search"/>
 </form>
 
 <p id = "newrate">
     <a asp-action="Create">Wanna leave your rate for our Marak Teimani? Just Click Here!</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
+<table class="table table-hover border-0">
+    <thead class="border-0">
+        <tr class="border-0">
             <th>
                 @Html.DisplayNameFor(model => model.ReviewerName)
             </th>

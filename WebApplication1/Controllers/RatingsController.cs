@@ -8,54 +8,46 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
 using WebApplication1.Models;
+using WebApplication1.Services;
 
 namespace WebApplication1.Controllers
 {
     public class RatingsController : Controller
     {
+        private readonly IRatingsService _ratingsService;
         private readonly WebApplication1Context _context;
 
-        public RatingsController(WebApplication1Context context)
+        public RatingsController(IRatingsService ratingsService)
         {
-            _context = context;
+            _ratingsService = ratingsService;
         }
 
         // GET: Ratings
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Rating.ToListAsync());
+            return View(await _ratingsService.GetRatingList());
         }
 
         public async Task<IActionResult> Search()
         {
-            return View(await _context.Rating.ToListAsync());
+            return View(await _ratingsService.GetRatingList());
         }
 
         [HttpPost]
         public async Task<IActionResult> Index(string query)
         {
-            var q = from rating in _context.Rating
-                    where rating.ReviewerName.Contains(query)
-                    select rating;
-            return View(await q.ToListAsync());
+            return View(await _ratingsService.GetRatingListWith(query));
         }
 
         public async Task<IActionResult> Search2(string query)
         {
-            if (query == null)
-            {
-                var a = from rating in _context.Rating
-                        select rating;
-                return PartialView(await a.ToListAsync());
-            }
-            var q = _context.Rating.Where(rating => rating.ReviewerName.Contains(query));
-            return PartialView(await q.ToListAsync());
+            return PartialView(await _ratingsService.GetRatingListWith2(query));
+
         }
 
         public async Task<IActionResult> Search3(string query)
         {
-            var q = _context.Rating.Where(rating => rating.ReviewerName.Contains(query));
-            return Json(await q.ToListAsync());
+            return Json(await _ratingsService.GetRatingListWith3(query));
         }
 
 
@@ -63,18 +55,11 @@ namespace WebApplication1.Controllers
         // GET: Ratings/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var rating = await _context.Rating
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var rating = await _ratingsService.FindRating(id);
             if (rating == null)
             {
                 return NotFound();
             }
-
             return View(rating);
         }
 
@@ -94,8 +79,7 @@ namespace WebApplication1.Controllers
             if (ModelState.IsValid)
             {
                 rating.DateTime = DateTime.Now.ToString();
-                _context.Add(rating);
-                await _context.SaveChangesAsync();
+                var result = await _ratingsService.CreateRating(rating);
                 return RedirectToAction(nameof(Index));
             }
             return View(rating);
@@ -109,7 +93,7 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
 
-            var rating = await _context.Rating.FindAsync(id);
+            var rating = await _ratingsService.FindRating(id);
             if (rating == null)
             {
                 return NotFound();
@@ -131,22 +115,10 @@ namespace WebApplication1.Controllers
 
             if (ModelState.IsValid)
             {
-                try
+                var result = await _ratingsService.EditRating(rating);
+                if (result == false)
                 {
-                    rating.DateTime = DateTime.Now.ToString();
-                    _context.Update(rating);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!RatingExists(rating.ID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    return NotFound();
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -161,8 +133,7 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
 
-            var rating = await _context.Rating
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var rating = await _ratingsService.FindRating(id);
             if (rating == null)
             {
                 return NotFound();
@@ -176,15 +147,15 @@ namespace WebApplication1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var rating = await _context.Rating.FindAsync(id);
-            _context.Rating.Remove(rating);
-            await _context.SaveChangesAsync();
+            var result = await _ratingsService.DeleteRating(id);
             return RedirectToAction(nameof(Index));
         }
 
+        /*
         private bool RatingExists(int id)
         {
             return _context.Rating.Any(e => e.ID == id);
         }
+        */
     }
 }
