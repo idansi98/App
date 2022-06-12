@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using ChatWebsite.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -15,19 +16,19 @@ namespace WebApplication1.Services
 {
     public class RatingsService: IRatingsService
     {
-        private readonly WebApplication1Context _context;
-        public RatingsService(WebApplication1Context context)
+        private readonly WebApp1Context _context;
+        public RatingsService(WebApp1Context context)
         {
             _context = context;
         }
         public async Task<List<Rating>> GetRatingList()
         {
-            return await _context.Rating.ToListAsync();
+            return await _context.Ratings.ToListAsync();
         }
 
         public async Task<List<Rating>> GetRatingListWith(string query)
         {
-            var q = from rating in _context.Rating
+            var q = from rating in _context.Ratings
                     where rating.ReviewerName.Contains(query)
                     select rating;
             return await q.ToListAsync();
@@ -37,16 +38,16 @@ namespace WebApplication1.Services
         {
             if (query == null)
             {
-                var a = from rating in _context.Rating
+                var a = from rating in _context.Ratings
                         select rating;
                 return await a.ToListAsync();
             }
-            var q = _context.Rating.Where(rating => rating.ReviewerName.Contains(query));
+            var q = _context.Ratings.Where(rating => rating.ReviewerName.Contains(query));
             return await q.ToListAsync();
         }
         public async Task<List<Rating>> GetRatingListWith3(string query)
         {
-            var q = _context.Rating.Where(rating => rating.ReviewerName.Contains(query));
+            var q = _context.Ratings.Where(rating => rating.ReviewerName.Contains(query));
             return await q.ToListAsync();
         }
 
@@ -57,7 +58,7 @@ namespace WebApplication1.Services
                 return null;
             }
 
-            var rating = await _context.Rating
+            var rating = await _context.Ratings
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (rating == null)
             {
@@ -99,15 +100,15 @@ namespace WebApplication1.Services
 
         public async Task<bool> DeleteRating(int id)
         {
-            var rating = await _context.Rating.FindAsync(id);
-            _context.Rating.Remove(rating);
+            var rating = await _context.Ratings.FindAsync(id);
+            _context.Ratings.Remove(rating);
             await _context.SaveChangesAsync();
             return true;
         }
 
         private bool RatingExists(int id)
         {
-            return _context.Rating.Any(e => e.ID == id);
+            return _context.Ratings.Any(e => e.ID == id);
         }
 
 

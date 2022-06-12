@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ChatWebsite.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,12 +13,13 @@ namespace WebApplication1.Services
 {
     public class ChatService : IChatService
     {
-        private static List<User> users;
+        //private static List<User> users;
+        private readonly WebApp1Context _context;
 
-        public ChatService()
+        public ChatService(WebApp1Context context)
         {
-            users = new List<User>();
-            
+            //users = new List<User>();
+            _context = context;
             User Ido = new User("1", "Ido", "2");
             User Idan = new User("2", "Idan", "3");
             User Hemi = new User("3", "Hemi", "4");
@@ -25,31 +27,45 @@ namespace WebApplication1.Services
             User Tester2 = new User("6", "Tester!", "6");
             User Tester3 = new User("7", "Tester!", "6");
             User Tester4 = new User("8", "Tester!", "6");
-            users.Add(Ido);
-            users.Add(Idan);
-            users.Add(Hemi);
-            users.Add(Tester);
-            users.Add(Tester2);
-            users.Add(Tester3);
-            users.Add(Tester4);
-            Ido.Contacts.Add(new Contact { ID = "55", DisplayName = "DEMO CHAT", ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
-            Ido.Contacts.Add(new Contact { ID = "66", DisplayName = "DEMO CHAT 2", ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
-            Idan.Contacts.Add(new Contact { ID = "77", DisplayName = "DEMO CHAT", ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
-            Hemi.Contacts.Add(new Contact { ID = "88", DisplayName = "DEMO CHAT", ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
-            Ido.Contacts.First().Messages.Add(new TextMessage { Text = "Hello I am not scamming", ID = 1, Time = DateTime.Now, UserSent = false });
-            Ido.Contacts.First().Messages.Add(new TextMessage { Text = "Go away", ID = 2, Time = DateTime.Now, UserSent = true });
-            Idan.Contacts.First().Messages.Add(new TextMessage { Text = "Hello I am not scamming", ID = 1, Time = DateTime.Now, UserSent = false });
-            Idan.Contacts.First().Messages.Add(new TextMessage { Text = "Hello I am not scamming", ID = 1, Time = DateTime.Now, UserSent = false });
-            
-
+            _context.Users.Add(Ido);
+            _context.Users.Add(Idan);
+            _context.Users.Add(Hemi);
+            _context.Users.Add(Tester);
+            _context.Users.Add(Tester2);
+            _context.Users.Add(Tester3);
+            _context.Users.Add(Tester4);
+            Ido.Contacts.Add(new Contact { ID = "55", DisplayName = "DEMO CHAT", UserId = Ido.ID,ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
+            Ido.Contacts.Add(new Contact { ID = "66", DisplayName = "DEMO CHAT 2", UserId = Ido.ID, ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
+            Idan.Contacts.Add(new Contact { ID = "77", DisplayName = "DEMO CHAT", UserId = Idan.ID, ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
+            Hemi.Contacts.Add(new Contact { ID = "88", DisplayName = "DEMO CHAT", UserId = Hemi.ID, ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
+            Ido.Contacts.First().Messages.Add(new TextMessage { Text = "Hello I am not scamming", ID = 1, Time = DateTime.Now, UserSent = false,
+            UserId = Ido.ID, ContactId = Ido.Contacts.First().ID});
+            Ido.Contacts.First().Messages.Add(new TextMessage { Text = "Go away", ID = 2, Time = DateTime.Now, UserSent = true,
+            UserId = Ido.ID, ContactId = Ido.Contacts.First().ID});
+            Idan.Contacts.First().Messages.Add(new TextMessage { Text = "Hello I am not scamming", ID = 1, Time = DateTime.Now, UserSent = false,
+            UserId = Idan.ID, ContactId = Idan.Contacts.First().ID});
+            Idan.Contacts.First().Messages.Add(new TextMessage { Text = "Hello I am not scamming", ID = 1, Time = DateTime.Now, UserSent = false,
+            UserId = Idan.ID, ContactId = Idan.Contacts.First().ID});
+            _context = context;
         }
         public List<User> GetAllUsers()
         {
-            return users;
+            return _context.Users.ToList();
         }
-        public User GetUser(string ID)
+        public User GetUser(string id)
         {
-            return users.Find(x => x.ID == ID);
+            if (id == null)
+            {
+                return null;
+            }
+
+            var user =  _context.Users.FirstOrDefault(m => m.ID == id);
+            if (user == null)
+            {
+                return null;
+            }
+
+            return user;
         }
 
         public List<Contact> GetAllContacts(string ID)
@@ -99,7 +115,7 @@ namespace WebApplication1.Services
             {
                 return false; 
             }
-            users.Add(user);
+            _context.Users.Add(user);
             return true;
         }
 

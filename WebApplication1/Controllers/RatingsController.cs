@@ -15,7 +15,7 @@ namespace WebApplication1.Controllers
     public class RatingsController : Controller
     {
         private readonly IRatingsService _ratingsService;
-        private readonly WebApplication1Context _context;
+      
 
         public RatingsController(IRatingsService ratingsService)
         {

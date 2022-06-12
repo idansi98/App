@@ -1,3 +1,4 @@
+using ChatWebsite.Data;
 using ChatWebsite.Hubs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -8,12 +9,15 @@ using WebApplication1.Data;
 using WebApplication1.Services;
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<WebApplication1Context>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("WebApplication1Context") ?? throw new InvalidOperationException("Connection string 'WebApplication1Context' not found.")));
+//.Services.AddDbContext<WebApplication1Context>(options =>
+//  options.UseSqlServer(builder.Configuration.GetConnectionString("WebApplication1Context") ?? throw new InvalidOperationException("Connection string 'WebApplication1Context' not found.")));
 // Add services to the container.
-builder.Services.AddSingleton<IChatService,ChatService>();
+builder.Services.AddTransient<WebApp1Context>();
+builder.Services.AddTransient<IChatService, ChatService>();
+builder.Services.AddTransient<IRatingsService, RatingsService>();
+//builder.Services.AddSingleton<IChatService,ChatService>();
 //builder.Services.AddSingleton<IRatingsService, RatingsService>();
-builder.Services.AddScoped<IRatingsService, RatingsService>();
+//builder.Services.AddScoped<IRatingsService, RatingsService>();
 builder.Services.AddControllersWithViews();
 
 
