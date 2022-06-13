@@ -4,25 +4,25 @@ namespace WebApplication1.Services
 {
     public interface IChatService
     {
-        public List<User> GetAllUsers();
-        public User GetUser(string ID);
-        public List<Contact> GetAllContacts(string ID);
-        public List<TextMessage> GetAllMessages(string username, string contactname);
-        public TextMessage getLastMessage(string username, string contactname);
-        public bool AddUser(string ID, string displayName, string password);
-        public bool AddUser(User user);
-        public bool AcceptInvitation(Invitation invitation);
-        public bool AddContactToUser(string username, Contact contact);
-        public bool AddMessageToContact(string username, string contactname, TextMessage textMessage);
-        public bool AddMessageToContact(MessageRequest messageRequest);
-        public Contact GetContact(User user, string contactID);
-        public Contact GetContact(string username, string contactID);
-        public bool UpdateContact(string userName, UpdatedContact updatedContact, string id);
-        public bool DeleteContact(string username, string contactID);
-        public TextMessage GetSpecificMessage(string username, string contactID, int messageID);
+        public  Task<List<User>> GetAllUsers();
+        public  Task<User> GetUser(string ID);
+        public Task<List<Contact>> GetAllContacts(string ID);
+        public Task<List<TextMessage>> GetAllMessages(string username, string contactname);
+        public Task<TextMessage> getLastMessage(string username, string contactname);
+        public Task<bool> AddUser(string ID, string displayName, string password);
+        public Task<bool> AddUser(User user);
+        public Task<bool> AcceptInvitation(Invitation invitation);
+        public Task<bool> AddContactToUser(string username, Contact contact);
+        public Task<bool> AddMessageToContact(string username, string contactname, TextMessage textMessage);
+        public Task<bool> AddMessageToContactAsync(MessageRequest messageRequest);
+        public Task<Contact> GetContact(User user, string contactID);
+        public Task<Contact> GetContact(string username, string contactID);
+        public Task<bool> UpdateContact(string userName, UpdatedContact updatedContact, string id);
+        public Task<bool> DeleteContact(string username, string contactID);
+        public Task<TextMessage> GetSpecificMessage(string username, string contactID, int messageID);
 
-        public bool UpdateMessage(string username, string contactID, int messageID, MessageToAdd textMessage);
-        public bool DeleteMessage(string username, string contactID, int messageID);
+        public Task<bool> UpdateMessage(string username, string contactID, int messageID, MessageToAdd textMessage);
+        public Task<bool> DeleteMessage(string username, string contactID, int messageID);
 
     }
 }

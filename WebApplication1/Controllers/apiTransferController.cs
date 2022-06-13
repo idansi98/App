@@ -25,7 +25,7 @@ namespace WebApplication1.Controllers
             var user = _service.GetUser(messageRequest.to);
             if (user == null)
                 return NotFound();
-            var result = _service.AddMessageToContact(messageRequest);
+            var result = await _service.AddMessageToContactAsync(messageRequest);
             if (!result)
             {
                 return NotFound();

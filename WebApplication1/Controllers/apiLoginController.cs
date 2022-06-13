@@ -22,9 +22,9 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(LoginCredentials loginCredentials)
+        public async Task<IActionResult> Post(LoginCredentials loginCredentials)
         {
-            var user = _service.GetUser(loginCredentials.username);
+            var user = await _service.GetUser(loginCredentials.username);
             if (user != null)
             {
                 if(user.Password == loginCredentials.password)

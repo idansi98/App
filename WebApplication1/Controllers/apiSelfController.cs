@@ -17,7 +17,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
-        public IActionResult ShowSelf()
+        public async Task<IActionResult> ShowSelf()
         {
             string ip = Request.Host.Host;
             string port = Request.Host.Port.Value.ToString();
@@ -29,7 +29,7 @@ namespace WebApplication1.Controllers
             {
                 return NotFound();
             }
-            var user = _service.GetUser(username);
+            var user = await _service.GetUser(username);
             if (user != null)
             {
                 result += "{";

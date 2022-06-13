@@ -26,12 +26,12 @@ namespace WebApplication1.Controllers
 
         // api/contacts
         [HttpGet]
-        public IActionResult ShowContacts()
+        public async Task<IActionResult> ShowContacts()
         {
             string result = "";
             bool firstTime = true;
             var username = HttpContext.Session.GetString("username");
-            var contacts = _service.GetAllContacts(username);
+            var contacts = await _service.GetAllContacts(username);
             if (contacts != null)
             {
                 result = "[";
@@ -65,7 +65,7 @@ namespace WebApplication1.Controllers
             newContact.ID = contactToAdd.id;
             newContact.ServerAddress = contactToAdd.server;
             newContact.Messages = new List<TextMessage>();
-            var result = _service.AddContactToUser(username, newContact);
+            var result = await _service.AddContactToUser(username, newContact);
             if (!result)
             {
                 return NotFound();
@@ -79,11 +79,11 @@ namespace WebApplication1.Controllers
 
         // api/contacts/:id
         [HttpGet ("{id}")]
-        public IActionResult SpecificContact(string id)
+        public async Task<IActionResult> SpecificContact(string id)
         {
             string result = "";
             var username = HttpContext.Session.GetString("username");
-            var contact = _service.GetContact(username, id);
+            var contact = await _service.GetContact(username, id);
             if (contact != null)
             {
                 result += "{";
@@ -102,7 +102,7 @@ namespace WebApplication1.Controllers
         public async Task<IActionResult> Post(string id, UpdatedContact updatedContact)
         {
             var username = HttpContext.Session.GetString("username");
-            bool result = _service.UpdateContact(username, updatedContact, id);
+            bool result = await _service.UpdateContact(username, updatedContact, id);
             if (!result)
             {
                 return NotFound();
@@ -116,7 +116,7 @@ namespace WebApplication1.Controllers
         public async Task<IActionResult> Delete(string id)
         {
             var username = HttpContext.Session.GetString("username");
-            bool result = _service.DeleteContact(username, id);
+            bool result = await _service.DeleteContact(username, id);
             if (!result)
             {
                 return NotFound();
@@ -129,7 +129,7 @@ namespace WebApplication1.Controllers
 
         // api/contacts/:id/messages
         [HttpGet("{id}/{messages}")]
-        public IActionResult GetContactMessages(string id, string messages)
+        public async Task<IActionResult> GetContactMessages(string id, string messages)
         {
             var username = HttpContext.Session.GetString("username");
             if (messages == null || messages != "messages")
@@ -137,7 +137,7 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
             string result = "";
-            var allMessages = _service.GetAllMessages(username, id);
+            var allMessages = await _service.GetAllMessages(username, id);
             if (allMessages == null)
             {
                 return NotFound();
@@ -173,7 +173,7 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
             TextMessage message = new TextMessage();
-            var lastMessage = _service.getLastMessage(username, id);
+            var lastMessage = await _service.getLastMessage(username, id);
             int nextID;
             if(lastMessage == null)
             {
@@ -186,7 +186,7 @@ namespace WebApplication1.Controllers
             message.Text = messageToAdd.content;
             message.UserSent = true;
             message.Time = DateTime.Now;
-            var result = _service.AddMessageToContact(username, id, message);
+            var result = await _service.AddMessageToContact(username, id, message);
             if (!result)
             {
                 return NotFound();
@@ -210,7 +210,7 @@ namespace WebApplication1.Controllers
             string result = "";
             var username = HttpContext.Session.GetString("username");
 
-            var specificMessage = _service.GetSpecificMessage(username, id, id2);
+            var specificMessage = await _service.GetSpecificMessage(username, id, id2);
             if (specificMessage == null)
             {
                 return NotFound();
@@ -232,7 +232,7 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
             var username = HttpContext.Session.GetString("username");
-            var result = _service.UpdateMessage(username,id,id2,messageToAdd);
+            var result = await _service.UpdateMessage(username,id,id2,messageToAdd);
             if (!result)
             {
                 return NotFound();
@@ -249,7 +249,7 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
             var username = HttpContext.Session.GetString("username");
-            var result = _service.DeleteMessage(username, id, id2);
+            var result = await _service.DeleteMessage(username, id, id2);
             if (!result)
             {
                 return NotFound();

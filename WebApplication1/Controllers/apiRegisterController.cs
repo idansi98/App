@@ -23,9 +23,9 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(UserToCreate userToCreate)
+        public async Task<IActionResult> Post(UserToCreate userToCreate)
         {
-            var result = _service.AddUser(userToCreate.ID, userToCreate.DisplayName, userToCreate.Password);
+            var result = await _service.AddUser(userToCreate.ID, userToCreate.DisplayName, userToCreate.Password);
             if (!result)
             {
                 return NotFound();

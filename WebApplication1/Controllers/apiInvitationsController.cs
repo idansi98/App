@@ -24,7 +24,7 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(Invitation invitation)
         {
-            var result = _service.AcceptInvitation(invitation);
+            var result = await _service.AcceptInvitation(invitation);
             if (!result)
             {
                 return NotFound();
