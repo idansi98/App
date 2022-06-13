@@ -46,20 +46,24 @@ namespace WebApplication1.Services
             UserId = Idan.ID, ContactId = Idan.Contacts.First().ID});
             Idan.Contacts.First().Messages.Add(new TextMessage { Text = "Hello I am not scamming", ID = 1, Time = DateTime.Now, UserSent = false,
             UserId = Idan.ID, ContactId = Idan.Contacts.First().ID});
+            _context.SaveChangesAsync();
+            _context.Update(Idan);
+            _context.Update(Ido);
+            _context.Update(Hemi);
             _context = context;
         }
-        public List<User> GetAllUsers()
+        public async Task<List<User>> GetAllUsers()
         {
-            return _context.Users.ToList();
+            return await _context.Users.ToListAsync();
         }
-        public User GetUser(string id)
+        public async Task<User> GetUser(string id)
         {
             if (id == null)
             {
                 return null;
             }
 
-            var user =  _context.Users.FirstOrDefault(m => m.ID == id);
+            var user = await _context.Users.Include(us => us.Contacts).FirstOrDefaultAsync(us => us.ID.Equals(id));
             if (user == null)
             {
                 return null;
@@ -68,9 +72,9 @@ namespace WebApplication1.Services
             return user;
         }
 
-        public List<Contact> GetAllContacts(string ID)
+        public async Task<List<Contact>> GetAllContacts(string ID)
         {
-            var user = GetUser(ID);
+            var user = await GetUser(ID);
             if (user == null || user.Contacts == null)
             {
                 return null;
@@ -80,9 +84,9 @@ namespace WebApplication1.Services
 
 
 
-        public List<TextMessage> GetAllMessages(string username, string contactname)
+        public async Task<List<TextMessage>> GetAllMessages(string username, string contactname)
         {
-            var user = GetUser(username);
+            var user = await GetUser(username);
             if (user == null)
                 return null;
             var contact = user.Contacts.Find(x => x.ID == contactname);
@@ -91,43 +95,45 @@ namespace WebApplication1.Services
             return contact.Messages;
         }
 
-        public TextMessage getLastMessage(string username, string contactname)
+        public async Task<TextMessage> getLastMessage(string username, string contactname)
         {
-            var messages = GetAllMessages(username, contactname);
+            var messages = await GetAllMessages(username, contactname);
             if (messages == null || messages.Count == 0)
                 return null;
             return messages.Last();
         }
 
 
-        public bool AddUser(string ID, string displayName, string password)
+        public async Task<bool> AddUser(string ID, string displayName, string password)
         {
-            if(!AddUser(new User(ID, displayName, password))) // if failed
+            if(! await AddUser(new User(ID, displayName, password))) // if failed
             {
                 return false;
             }
             return true;
         }
-        public bool AddUser(User user)
+        public async Task<bool> AddUser(User user)
         {
-            var found = GetUser(user.ID);
+            var found = await GetUser(user.ID);
             if(found != null) // return false if another used exists
             {
                 return false; 
             }
-            _context.Users.Add(user);
+            _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
             return true;
         }
 
-        public bool AcceptInvitation(Invitation invitation)
+        public async Task<bool> AcceptInvitation(Invitation invitation)
         {
             //get the username we want to accept the invitation.
-            var user = GetUser(invitation.to);
+            var user = await GetUser(invitation.to);
             if (user == null || user.Contacts == null)
                 return false;
 
             //check there isnt same ID 
-            var getDuplicate = GetAllContacts(user.ID).Find(x => x.ID == invitation.from);
+            var contactsList = await GetAllContacts(user.ID);
+            var getDuplicate = contactsList.Find(x => x.ID == invitation.from);
             if (getDuplicate != null)
                 return false;
             // if new
@@ -137,30 +143,36 @@ namespace WebApplication1.Services
             contact.ServerAddress = invitation.server;
             contact.Messages = new List<TextMessage>();
             user.Contacts.Add(contact);
+            await _context.SaveChangesAsync();
+            _context.Update(user);
             return true;
         }
 
-        public bool AddContactToUser(string username, Contact contact)
+        public async Task<bool> AddContactToUser(string username, Contact contact)
         {
-            var user = GetUser(username);
+            var user = await GetUser(username);
             if (user == null || user.Contacts == null)
                 return false;
 
             //check there isnt same ID 
-            var getDuplicate = GetAllContacts(username).Find(x => x.ID == contact.ID);
+            var contactsList = await GetAllContacts(username);
+            var getDuplicate = contactsList.Find(x => x.ID == contact.ID);
             if (getDuplicate != null)
             {
                 return false;
             }
             // if new
             user.Contacts.Add(contact);
+            _context.Update(user);
+            _context.Contacts.AddAsync(contact);
+            await _context.SaveChangesAsync();
             return true;
         }
 
 
-        public bool AddMessageToContact(string username, string contactname, TextMessage textMessage)
+        public async Task<bool> AddMessageToContact(string username, string contactname, TextMessage textMessage)
         {
-            var contact = GetContact(username, contactname);
+            var contact =   GetContact(username, contactname);
             if (contact == null)
                 return false;
             contact.Messages.Add(textMessage);
@@ -195,15 +207,15 @@ namespace WebApplication1.Services
             return true;
         }
 
-        public Contact GetContact(User user, string contactID)
+        public async Task<Contact> GetContact(User user, string contactID)
         {
             var contact = user.Contacts.Find(x => x.ID == contactID);
             return contact;
         }
 
-        public Contact GetContact(string username, string contactID)
+        public async Task<Contact> GetContact(string username, string contactID)
         {
-            var user = GetUser(username);
+            var user =  await GetUser(username);
             if(user == null)
             {
                 return null;
