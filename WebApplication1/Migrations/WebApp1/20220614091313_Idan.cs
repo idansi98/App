@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ChatWebsite.Migrations
+namespace ChatWebsite.Migrations.WebApp1
 {
-    public partial class Init : Migration
+    public partial class Idan : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -55,9 +55,7 @@ namespace ChatWebsite.Migrations
                 name: "Contacts",
                 columns: table => new
                 {
-                    Hemi = table.Column<string>(type: "varchar(255)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    UserId = table.Column<string>(type: "varchar(255)", nullable: false)
+                    ID = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     UserId = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -68,11 +66,7 @@ namespace ChatWebsite.Migrations
                 },
                 constraints: table =>
                 {
-<<<<<<< Updated upstream:WebApplication1/Migrations/20220614091313_Idan.cs
                     table.PrimaryKey("PK_Contacts", x => new { x.ID, x.UserId });
-=======
-                    table.PrimaryKey("PK_Contacts", x => new { x.Hemi, x.UserId });
->>>>>>> Stashed changes:WebApplication1/Migrations/20220614171847_Init.cs
                     table.ForeignKey(
                         name: "FK_Contacts_Users_UserId",
                         column: x => x.UserId,
@@ -89,16 +83,11 @@ namespace ChatWebsite.Migrations
                     ID = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-<<<<<<< Updated upstream:WebApplication1/Migrations/20220614091313_Idan.cs
                     ContactId = table.Column<string>(type: "varchar(255)", nullable: false)
-=======
-                    ConId = table.Column<string>(type: "varchar(255)", nullable: false)
->>>>>>> Stashed changes:WebApplication1/Migrations/20220614171847_Init.cs
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Text = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     UserSent = table.Column<bool>(type: "tinyint(1)", nullable: false),
-<<<<<<< Updated upstream:WebApplication1/Migrations/20220614091313_Idan.cs
                     Time = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
@@ -110,22 +99,6 @@ namespace ChatWebsite.Migrations
                         principalTable: "Contacts",
                         principalColumn:  "ID",
                         onDelete: ReferentialAction.Cascade);
-=======
-                    Time = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    ContactHemi = table.Column<string>(type: "varchar(255)", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    ContactUserId = table.Column<string>(type: "varchar(255)", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Messages", x => new { x.ID, x.UserId, x.ConId });
-                    table.ForeignKey(
-                        name: "FK_Messages_Contacts_ContactHemi_ContactUserId",
-                        columns: x => new { x.ContactHemi, x.ContactUserId },
-                        principalTable: "Contacts",
-                        principalColumns: new[] { "Hemi", "UserId" });
->>>>>>> Stashed changes:WebApplication1/Migrations/20220614171847_Init.cs
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -135,15 +108,9 @@ namespace ChatWebsite.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-<<<<<<< Updated upstream:WebApplication1/Migrations/20220614091313_Idan.cs
                 name: "IX_Messages_ContactId",
                 table: "Messages",
                 column:  "ContactId");
-=======
-                name: "IX_Messages_ContactHemi_ContactUserId",
-                table: "Messages",
-                columns: new[] { "ContactHemi", "ContactUserId" });
->>>>>>> Stashed changes:WebApplication1/Migrations/20220614171847_Init.cs
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

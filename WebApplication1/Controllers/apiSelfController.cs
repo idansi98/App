@@ -33,7 +33,7 @@ namespace WebApplication1.Controllers
             if (user != null)
             {
                 result += "{";
-                result += "\"id\":\"" + user.Id + "\",";
+                result += "\"id\":\"" + user.ID + "\",";
                 result += "\"name\":\"" + user.DisplayName + "\",";
                 result += "\"server\":\"" + url + "\"";
                 result += "}";

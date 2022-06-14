@@ -8,7 +8,7 @@ namespace WebApplication1.Services
         public  Task<User> GetUser(string ID);
         public Task<List<Contact>> GetAllContacts(string ID);
         public Task<List<TextMessage>> GetAllMessages(string username, string contactname);
-        public Task<TextMessage> GetLastMessage(string username, string contactname);
+        public Task<TextMessage> getLastMessage(string username, string contactname);
         public Task<bool> AddUser(string ID, string displayName, string password);
         public Task<bool> AddUser(User user);
         public Task<bool> AcceptInvitation(Invitation invitation);

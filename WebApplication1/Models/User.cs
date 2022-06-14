@@ -5,22 +5,21 @@ namespace WebApplication1.Models
     public class User
     {
         [Key]
-        [Required]
-        public string Id { get; set; }
+        public string ID { get; set; }
         public string? Password { get; set; }
         public string DisplayName { get; set; }
-        //public List<Contact>? Contacts { get; set; }
+        public List<Contact>? Contacts { get; set; }
 
-        public User(string Id, string displayName, string password)
+        public User(string iD, string displayName, string password)
         {
-            this.Id = Id;
+            ID = iD;
             DisplayName = displayName;
             Password = password;
-            //Contacts = new List<Contact>();
+            Contacts = new List<Contact>();
         }
         public string getId()
         {
-            return Id;
+            return ID;
         }
     }
 }
