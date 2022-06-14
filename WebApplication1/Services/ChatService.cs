@@ -16,7 +16,7 @@ namespace WebApplication1.Services
         private readonly WebApp1Context _context;
 
         public ChatService(WebApp1Context context)
-        { 
+        {
             _context = context;
             User Ido = new User("1", "Ido", "2");
             User Idan = new User("2", "Idan", "3");
@@ -25,7 +25,7 @@ namespace WebApplication1.Services
             User Tester2 = new User("6", "Tester!", "6");
             User Tester3 = new User("7", "Tester!", "6");
             User Tester4 = new User("8", "Tester!", "6");
-            User Tester5 = new User("9", "Idadnasd", "15");  
+            User Tester5 = new User("9", "Idadnasd", "15");
             _context.Users.AddAsync(Ido);
             _context.Users.AddAsync(Idan);
             _context.Users.AddAsync(Hemi);
@@ -49,7 +49,7 @@ namespace WebApplication1.Services
             var cont4 = new Contact { Id = "88", DisplayName = "DEMO CHAT", UserId = Hemi.Id, ServerAddress = "scam.com" };
             _context.Contacts.AddAsync(cont1);
             _context.Contacts.AddAsync(cont2);
-            _context.Contacts.AddAsync(cont3);   
+            _context.Contacts.AddAsync(cont3);
             _context.Contacts.AddAsync(cont4);
             //_context.Update(cont1);
             //_context.Update(cont2);
@@ -57,25 +57,21 @@ namespace WebApplication1.Services
             //_context.Update(cont4);
             _context.SaveChangesAsync();
             var message1 = new TextMessage
-            { Text = "Hello I am not scamming", Id = 1,Time = DateTime.Now, UserSent = false,UserId = Ido.Id, ContactId = cont1.Id };
+            { Text = "Hello I am not scamming", Id = 1, Time = DateTime.Now, UserSent = false, UserId = Ido.Id, ContactId = cont1.Id };
             var message2 = new TextMessage
             { Text = "Go away", Id = 2, Time = DateTime.Now, UserSent = true, UserId = Ido.Id, ContactId = cont1.Id };
             var message3 = new TextMessage
             { Text = "Go away", Id = 3, Time = DateTime.Now, UserSent = true, UserId = Ido.Id, ContactId = cont1.Id };
             var message4 = new TextMessage
-            { Text = "Hello I am not scamming", Id = 1, Time = DateTime.Now, UserSent = false, UserId = Idan.Id, ContactId = cont3.Id};
+            { Text = "Hello I am not scamming", Id = 1, Time = DateTime.Now, UserSent = false, UserId = Idan.Id, ContactId = cont3.Id };
             var message5 = new TextMessage
-            { Text = "Hello I am not scamming", Id = 2, Time = DateTime.Now, UserSent = false, UserId = Idan.Id, ContactId = cont3.Id};
-            _context.Add(message1);
-            _context.Add(message2); 
-            _context.Add(message3); 
-            _context.Add(message4);
-            _context.Add(message5);
-            _context.Update(message1);
-            _context.Update(message2);
-            _context.Update(message3);
-            _context.Update(message4);
-            _context.Update(message5);
+            { Text = "Hello I am not scamming", Id = 2, Time = DateTime.Now, UserSent = false, UserId = Idan.Id, ContactId = cont3.Id };
+            _context.AddAsync(message1);
+            _context.AddAsync(message2);
+            _context.AddAsync(message3);
+            _context.AddAsync(message4);
+            _context.AddAsync(message5);
+            _context.SaveChangesAsync();
         }
         public async Task<List<User>> GetAllUsers()
         {
