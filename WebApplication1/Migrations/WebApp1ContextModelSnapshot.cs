@@ -27,9 +27,6 @@ namespace ChatWebsite.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("varchar(255)");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("varchar(255)");
-
                     b.Property<string>("DisplayName")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -38,13 +35,7 @@ namespace ChatWebsite.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-<<<<<<< Updated upstream:WebApplication1/Migrations/WebApp1/WebApp1ContextModelSnapshot.cs
-                    b.HasKey("ID", "UserId");
-
-                    b.HasIndex("UserId");
-=======
                     b.HasKey("Id", "UserId");
->>>>>>> Stashed changes:WebApplication1/Migrations/WebApp1ContextModelSnapshot.cs
 
                     b.ToTable("Contacts");
                 });
@@ -76,26 +67,13 @@ namespace ChatWebsite.Migrations
 
             modelBuilder.Entity("WebApplication1.Models.TextMessage", b =>
                 {
-<<<<<<< Updated upstream:WebApplication1/Migrations/WebApp1/WebApp1ContextModelSnapshot.cs
-                    b.Property<int>("ID")
-=======
                     b.Property<int>("Id")
->>>>>>> Stashed changes:WebApplication1/Migrations/WebApp1ContextModelSnapshot.cs
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("ContactId")
-<<<<<<< Updated upstream:WebApplication1/Migrations/WebApp1/WebApp1ContextModelSnapshot.cs
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<string>("ContactID")
-=======
->>>>>>> Stashed changes:WebApplication1/Migrations/WebApp1ContextModelSnapshot.cs
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<string>("ContactUserId")
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("Text")
@@ -108,13 +86,7 @@ namespace ChatWebsite.Migrations
                     b.Property<bool>("UserSent")
                         .HasColumnType("tinyint(1)");
 
-<<<<<<< Updated upstream:WebApplication1/Migrations/WebApp1/WebApp1ContextModelSnapshot.cs
-                    b.HasKey("ID", "UserId", "ContactId");
-
-                    b.HasIndex("ContactID", "ContactUserId");
-=======
                     b.HasKey("Id", "UserId", "ContactId");
->>>>>>> Stashed changes:WebApplication1/Migrations/WebApp1ContextModelSnapshot.cs
 
                     b.ToTable("Messages");
                 });
@@ -135,35 +107,6 @@ namespace ChatWebsite.Migrations
 
                     b.ToTable("Users");
                 });
-<<<<<<< Updated upstream:WebApplication1/Migrations/WebApp1/WebApp1ContextModelSnapshot.cs
-
-            modelBuilder.Entity("WebApplication1.Models.Contact", b =>
-                {
-                    b.HasOne("WebApplication1.Models.User", null)
-                        .WithMany("Contacts")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("WebApplication1.Models.TextMessage", b =>
-                {
-                    b.HasOne("WebApplication1.Models.Contact", null)
-                        .WithMany("Messages")
-                        .HasForeignKey("ContactId");
-                });
-
-            modelBuilder.Entity("WebApplication1.Models.Contact", b =>
-                {
-                    b.Navigation("Messages");
-                });
-
-            modelBuilder.Entity("WebApplication1.Models.User", b =>
-                {
-                    b.Navigation("Contacts");
-                });
-=======
->>>>>>> Stashed changes:WebApplication1/Migrations/WebApp1ContextModelSnapshot.cs
 #pragma warning restore 612, 618
         }
     }

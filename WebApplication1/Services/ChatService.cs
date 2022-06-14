@@ -25,21 +25,7 @@ namespace WebApplication1.Services
             User Tester2 = new User("6", "Tester!", "6");
             User Tester3 = new User("7", "Tester!", "6");
             User Tester4 = new User("8", "Tester!", "6");
-            User Tester5 = new User("9", "Idadnasd", "15");
-<<<<<<< Updated upstream
-            _context.Users.Add(Ido);
-            _context.Users.Add(Idan);
-            _context.Users.Add(Hemi);
-            _context.Users.Add(Tester);
-            _context.Users.Add(Tester2);
-            _context.Users.Add(Tester3);
-            _context.Users.Add(Tester4);
-            _context.SaveChangesAsync();
-            Ido.Contacts.Add(new Contact { ID = "556", DisplayName = "DEMO CHAT", UserId = Ido.ID,ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
-            Ido.Contacts.Add(new Contact { ID = "66", DisplayName = "DEMO CHAT 2", UserId = Ido.ID, ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
-            Idan.Contacts.Add(new Contact { ID = "77", DisplayName = "DEMO CHAT", UserId = Idan.ID, ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
-            Hemi.Contacts.Add(new Contact { ID = "88", DisplayName = "DEMO CHAT", UserId = Hemi.ID, ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
-=======
+            User Tester5 = new User("9", "Idadnasd", "15");  
             _context.Users.AddAsync(Ido);
             _context.Users.AddAsync(Idan);
             _context.Users.AddAsync(Hemi);
@@ -48,47 +34,27 @@ namespace WebApplication1.Services
             _context.Users.AddAsync(Tester3);
             _context.Users.AddAsync(Tester4);
             _context.Users.AddAsync(Tester5);
->>>>>>> Stashed changes
-            _context.Update(Ido);
-            _context.Update(Idan);
-            _context.Update(Hemi);
-            _context.Update(Tester);
-            _context.Update(Tester2);
-            _context.Update(Tester3);
-            _context.Update(Tester4);
-            _context.Update(Tester5);
+            //_context.Update(Ido);
+            //_context.Update(Idan);
+            //_context.Update(Hemi);
+            //_context.Update(Tester);
+            //_context.Update(Tester2);
+            //_context.Update(Tester3);
+            //_context.Update(Tester4);
+            //_context.Update(Tester5);
             _context.SaveChangesAsync();
-<<<<<<< Updated upstream
-            Ido.Contacts.First().Messages.Add(new TextMessage { Text = "Hello I am not scamming", ID = 1, Time = DateTime.Now, UserSent = false,
-            UserId = Ido.ID, ContactId = Ido.Contacts.First().ID});
-            Ido.Contacts.First().Messages.Add(new TextMessage { Text = "Go away", ID = 2, Time = DateTime.Now, UserSent = true,
-            UserId = Ido.ID, ContactId = Ido.Contacts.First().ID});
-            Idan.Contacts.First().Messages.Add(new TextMessage { Text = "Hello I am not scamming", ID = 1, Time = DateTime.Now, UserSent = false,
-            UserId = Idan.ID, ContactId = Idan.Contacts.First().ID});
-            Idan.Contacts.First().Messages.Add(new TextMessage { Text = "Hello I am not scamming", ID = 1, Time = DateTime.Now, UserSent = false,
-            UserId = Idan.ID, ContactId = Idan.Contacts.First().ID});
-            _context.Update(Ido.Contacts.First());
-            _context.Update(Idan.Contacts.First());
-            _context.Update(Hemi.Contacts.First());
-            _context.SaveChangesAsync();
-            _context.Update(Idan);
-            _context.Update(Ido);
-            _context.Update(Hemi);
-            _context.SaveChangesAsync();*/
-
-=======
             var cont1 = new Contact { Id = "555", DisplayName = "DEMO CHAT", UserId = Ido.Id, ServerAddress = "scam.com" };
             var cont2 = new Contact { Id = "66", DisplayName = "DEMO CHAT 2", UserId = Ido.Id, ServerAddress = "scam.com" };
             var cont3 = new Contact { Id = "77", DisplayName = "DEMO CHAT", UserId = Idan.Id, ServerAddress = "scam.com" };
             var cont4 = new Contact { Id = "88", DisplayName = "DEMO CHAT", UserId = Hemi.Id, ServerAddress = "scam.com" };
-            //_context.Contacts.AddAsync(cont1);
-            //_context.Contacts.AddAsync(cont2);
-            //_context.Contacts.AddAsync(cont3);   
-            //_context.Contacts.AddAsync(cont4);
-            _context.Update(cont1);
-            _context.Update(cont2);
-            _context.Update(cont3);
-            _context.Update(cont4);
+            _context.Contacts.AddAsync(cont1);
+            _context.Contacts.AddAsync(cont2);
+            _context.Contacts.AddAsync(cont3);   
+            _context.Contacts.AddAsync(cont4);
+            //_context.Update(cont1);
+            //_context.Update(cont2);
+            //_context.Update(cont3);
+            //_context.Update(cont4);
             _context.SaveChangesAsync();
             var message1 = new TextMessage
             { Text = "Hello I am not scamming", Id = 1,Time = DateTime.Now, UserSent = false,UserId = Ido.Id, ContactId = cont1.Id };
@@ -110,8 +76,6 @@ namespace WebApplication1.Services
             _context.Update(message3);
             _context.Update(message4);
             _context.Update(message5);
-            _context.SaveChangesAsync();
->>>>>>> Stashed changes
         }
         public async Task<List<User>> GetAllUsers()
         {
