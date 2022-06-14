@@ -7,7 +7,6 @@ using ChatWebsite.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using WebApplication1.Data;
 using WebApplication1.Models;
 namespace WebApplication1.Services
 {
@@ -17,10 +16,9 @@ namespace WebApplication1.Services
         private readonly WebApp1Context _context;
 
         public ChatService(WebApp1Context context)
-        {
-            //users = new List<User>();
+        { 
             _context = context;
-            /*User Ido = new User("1", "Ido", "2");
+            User Ido = new User("1", "Ido", "2");
             User Idan = new User("2", "Idan", "3");
             User Hemi = new User("3", "Hemi", "4");
             User Tester = new User("5", "Tester!", "6");
@@ -28,6 +26,7 @@ namespace WebApplication1.Services
             User Tester3 = new User("7", "Tester!", "6");
             User Tester4 = new User("8", "Tester!", "6");
             User Tester5 = new User("9", "Idadnasd", "15");
+<<<<<<< Updated upstream
             _context.Users.Add(Ido);
             _context.Users.Add(Idan);
             _context.Users.Add(Hemi);
@@ -40,10 +39,26 @@ namespace WebApplication1.Services
             Ido.Contacts.Add(new Contact { ID = "66", DisplayName = "DEMO CHAT 2", UserId = Ido.ID, ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
             Idan.Contacts.Add(new Contact { ID = "77", DisplayName = "DEMO CHAT", UserId = Idan.ID, ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
             Hemi.Contacts.Add(new Contact { ID = "88", DisplayName = "DEMO CHAT", UserId = Hemi.ID, ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
+=======
+            _context.Users.AddAsync(Ido);
+            _context.Users.AddAsync(Idan);
+            _context.Users.AddAsync(Hemi);
+            _context.Users.AddAsync(Tester);
+            _context.Users.AddAsync(Tester2);
+            _context.Users.AddAsync(Tester3);
+            _context.Users.AddAsync(Tester4);
+            _context.Users.AddAsync(Tester5);
+>>>>>>> Stashed changes
             _context.Update(Ido);
             _context.Update(Idan);
             _context.Update(Hemi);
+            _context.Update(Tester);
+            _context.Update(Tester2);
+            _context.Update(Tester3);
+            _context.Update(Tester4);
+            _context.Update(Tester5);
             _context.SaveChangesAsync();
+<<<<<<< Updated upstream
             Ido.Contacts.First().Messages.Add(new TextMessage { Text = "Hello I am not scamming", ID = 1, Time = DateTime.Now, UserSent = false,
             UserId = Ido.ID, ContactId = Ido.Contacts.First().ID});
             Ido.Contacts.First().Messages.Add(new TextMessage { Text = "Go away", ID = 2, Time = DateTime.Now, UserSent = true,
@@ -61,6 +76,42 @@ namespace WebApplication1.Services
             _context.Update(Hemi);
             _context.SaveChangesAsync();*/
 
+=======
+            var cont1 = new Contact { Id = "555", DisplayName = "DEMO CHAT", UserId = Ido.Id, ServerAddress = "scam.com" };
+            var cont2 = new Contact { Id = "66", DisplayName = "DEMO CHAT 2", UserId = Ido.Id, ServerAddress = "scam.com" };
+            var cont3 = new Contact { Id = "77", DisplayName = "DEMO CHAT", UserId = Idan.Id, ServerAddress = "scam.com" };
+            var cont4 = new Contact { Id = "88", DisplayName = "DEMO CHAT", UserId = Hemi.Id, ServerAddress = "scam.com" };
+            //_context.Contacts.AddAsync(cont1);
+            //_context.Contacts.AddAsync(cont2);
+            //_context.Contacts.AddAsync(cont3);   
+            //_context.Contacts.AddAsync(cont4);
+            _context.Update(cont1);
+            _context.Update(cont2);
+            _context.Update(cont3);
+            _context.Update(cont4);
+            _context.SaveChangesAsync();
+            var message1 = new TextMessage
+            { Text = "Hello I am not scamming", Id = 1,Time = DateTime.Now, UserSent = false,UserId = Ido.Id, ContactId = cont1.Id };
+            var message2 = new TextMessage
+            { Text = "Go away", Id = 2, Time = DateTime.Now, UserSent = true, UserId = Ido.Id, ContactId = cont1.Id };
+            var message3 = new TextMessage
+            { Text = "Go away", Id = 3, Time = DateTime.Now, UserSent = true, UserId = Ido.Id, ContactId = cont1.Id };
+            var message4 = new TextMessage
+            { Text = "Hello I am not scamming", Id = 1, Time = DateTime.Now, UserSent = false, UserId = Idan.Id, ContactId = cont3.Id};
+            var message5 = new TextMessage
+            { Text = "Hello I am not scamming", Id = 2, Time = DateTime.Now, UserSent = false, UserId = Idan.Id, ContactId = cont3.Id};
+            _context.Add(message1);
+            _context.Add(message2); 
+            _context.Add(message3); 
+            _context.Add(message4);
+            _context.Add(message5);
+            _context.Update(message1);
+            _context.Update(message2);
+            _context.Update(message3);
+            _context.Update(message4);
+            _context.Update(message5);
+            _context.SaveChangesAsync();
+>>>>>>> Stashed changes
         }
         public async Task<List<User>> GetAllUsers()
         {
@@ -73,19 +124,21 @@ namespace WebApplication1.Services
                 return null;
             }
 
-            var user = await _context.Users.Include(us => us.Contacts).FirstOrDefaultAsync(us => us.ID.Equals(id));
-
+            var user = await _context.Users.FirstOrDefaultAsync(m => m.Id == id);
             return user;
         }
 
         public async Task<List<Contact>> GetAllContacts(string ID)
         {
             var user = await GetUser(ID);
-            if (user == null || user.Contacts == null)
+            if (user == null)
             {
                 return null;
             }
-            return user.Contacts;
+            var q = from contact in _context.Contacts
+                    where contact.UserId.Equals(ID)
+                    select contact;
+            return await q.ToListAsync();
         }
 
 
@@ -95,13 +148,19 @@ namespace WebApplication1.Services
             var user = await GetUser(username);
             if (user == null)
                 return null;
-            var contact = user.Contacts.Find(x => x.ID == contactname);
+            var contact = await GetContact(username, contactname);
             if (contact == null)
                 return null;
-            return contact.Messages;
+            var m = from message in _context.Messages
+                    where message.UserId.Equals(user.Id)
+                    where message.ContactId.Equals(contact.Id)
+                    select message;
+            return await m.ToListAsync();
+           
+
         }
 
-        public async Task<TextMessage> getLastMessage(string username, string contactname)
+        public async Task<TextMessage> GetLastMessage(string username, string contactname)
         {
             var messages = await GetAllMessages(username, contactname);
             if (messages == null || messages.Count == 0)
@@ -123,7 +182,7 @@ namespace WebApplication1.Services
         //
         public async Task<bool> AddUser(User user)
         {
-            var found = await GetUser(user.ID);
+            var found = await GetUser(user.Id);
             if(found != null) // return false if another used exists
             {
                 return false; 
@@ -138,22 +197,25 @@ namespace WebApplication1.Services
         {
             //get the username we want to accept the invitation.
             var user = await GetUser(invitation.to);
-            if (user == null || user.Contacts == null)
+            if (user == null)
                 return false;
-
+            var list = await GetAllContacts(user.Id);
+            if (!list.Any())
+            {
+                return false;
+            }
             //check there isnt same ID 
-            var contactsList = await GetAllContacts(user.ID);
-            var getDuplicate = contactsList.Find(x => x.ID == invitation.from);
+            var contactsList = await GetAllContacts(user.Id);
+            var getDuplicate = contactsList.Find(x => x.Id == invitation.from);
             if (getDuplicate != null)
                 return false;
             // if new
             var contact = new Contact();
-            contact.ID = invitation.from;
+            contact.Id = invitation.from;
             contact.DisplayName = invitation.from;
             contact.ServerAddress = invitation.server;
-            contact.Messages = new List<TextMessage>();
-            user.Contacts.Add(contact);
-            _context.Update(user);
+            contact.UserId = user.Id;
+            _context.Contacts.Add(contact);
             await _context.SaveChangesAsync();
             return true;
         }
@@ -161,19 +223,21 @@ namespace WebApplication1.Services
         public async Task<bool> AddContactToUser(string username, Contact contact)
         {
             var user = await GetUser(username);
-            if (user == null || user.Contacts == null)
+            if (user == null)
                 return false;
-
+            var list = await GetAllContacts(user.Id);
+            if (!list.Any())
+            {
+                return false;
+            }
             //check there isnt same ID 
-            var contactsList = await GetAllContacts(username);
-            var getDuplicate = contactsList.Find(x => x.ID == contact.ID);
+            var getDuplicate = list.Find(x => x.Id == contact.Id);
             if (getDuplicate != null)
             {
                 return false;
             }
             // if new
-            user.Contacts.Add(contact);
-            _context.Update(user);
+            _context.Contacts.Add(contact);
             await _context.SaveChangesAsync();
             return true;
         }
@@ -181,15 +245,19 @@ namespace WebApplication1.Services
 
         public async Task<bool> AddMessageToContact(string username, string contactname, TextMessage textMessage)
         {
+            var user = await GetUser(username);
+            if (user == null)
+            {
+                return false;
+            }
             var contact =  await GetContact(username, contactname);
             if (contact == null)
-                return false;
-            if (contact.Messages == null)
             {
-                contact.Messages = new List<TextMessage>();
+                return false;
             }
-            contact.Messages.Add(textMessage);
-            _context.Update(contact);
+            textMessage.UserId = user.Id;
+            textMessage.ContactId = contact.Id;
+            _context.Messages.Add(textMessage);
             await _context.SaveChangesAsync();
             return true;
         }
@@ -199,22 +267,24 @@ namespace WebApplication1.Services
             var user = await GetUser(messageRequest.to);
             if (user == null)
                 return false;
-            var contact = await GetContact(user.ID, messageRequest.from);
+            var contact = await GetContact(user.Id, messageRequest.from);
             if (contact == null)
                 return false;
             TextMessage textMessage = new TextMessage();
             textMessage.Text = messageRequest.content;
             textMessage.UserSent = false;
-            var lastMessage = await getLastMessage(user.ID, contact.ID);
+            var lastMessage = await GetLastMessage(user.Id, contact.Id);
             if (lastMessage == null)
             {
-                textMessage.ID = 0;
+                textMessage.Id = 0;
             } else
             {
-                textMessage.ID = lastMessage.ID + 1;
+                textMessage.Id = lastMessage.Id + 1;
             }
             textMessage.Time = DateTime.Now;
-            var result = await AddMessageToContact(user.ID, contact.ID, textMessage);
+            textMessage.UserId = user.Id;
+            textMessage.ContactId = contact.Id;
+            var result = await AddMessageToContact(user.Id, contact.Id, textMessage);
             await _context.SaveChangesAsync();
             if (!result)
             {
@@ -226,8 +296,8 @@ namespace WebApplication1.Services
 
         public async Task<Contact> GetContact(User user, string contactID)
         {
-            var contacsList = await GetAllContacts(user.ID);
-            return contacsList.FirstOrDefault(us => us.ID.Equals(contactID));
+            var contacsList = await GetAllContacts(user.Id);
+            return contacsList.FirstOrDefault(us => us.Id.Equals(contactID));
         }
 
         public async Task<Contact> GetContact(string username, string contactID)
@@ -237,21 +307,25 @@ namespace WebApplication1.Services
             {
                 return null;
             }
-            var contact = user.Contacts.FirstOrDefault(us => us.ID.Equals(contactID));
-            return contact;
+            var contacsList = await GetAllContacts(user.Id);
+            return contacsList.FirstOrDefault(cont => cont.Id.Equals(contactID));
         }
 
         public async Task<bool> UpdateContact(string userName, UpdatedContact updatedContact, string id)
         {
             var user = await GetUser(userName);
-            if (user == null || user.Contacts == null)
+            if (user == null)
+                return false;
+            var list = await GetAllContacts(user.Id);
+            if (list == null)
                 return false;
             var contact = await GetContact(user, id);
             if (contact == null)
                 return false;
             contact.DisplayName = updatedContact.name;
             contact.ServerAddress = updatedContact.server;
-            _context.Update(user);
+            contact.UserId = user.Id;
+            _context.Add(contact);
             await _context.SaveChangesAsync();
             return true;
         }
@@ -259,18 +333,21 @@ namespace WebApplication1.Services
         public async Task<bool> DeleteContact(string username, string contactID)
         {
             var user = await GetUser(username);
-            if (user == null || user.Contacts == null)
+            if (user == null)
+                return false;
+            var list = await GetAllContacts(user.Id);
+            if (list == null)
                 return false;
             var contact = await GetContact(user, contactID);
             if (contact == null)
                 return false;
-            user.Contacts.Remove(contact);
             _context.Remove(contact);
             _context.Update(contact);
             await _context.SaveChangesAsync();
             return true;
         }
 
+      
         public async Task<TextMessage> GetSpecificMessage(string username, string contactID, int messageID)
         {
             var messages = await GetAllMessages(username, contactID);
@@ -278,7 +355,7 @@ namespace WebApplication1.Services
             {
                 return null;
             }
-            return messages.FirstOrDefault(x=> x.ID == messageID);
+            return messages.FirstOrDefault(x=> x.Id == messageID);
         }
 
         public async Task<bool> UpdateMessage(string username,string contactID, int messageID, MessageToAdd textMessage)
@@ -289,7 +366,7 @@ namespace WebApplication1.Services
                 return false;
             }
             originalMessage.Text = textMessage.content;
-            _context.Update(await GetContact(username, contactID));
+            _context.Update(originalMessage);
             await _context.SaveChangesAsync();
             return true;
         }
@@ -301,10 +378,8 @@ namespace WebApplication1.Services
             {
                 return false;
             }
-            var contact = await GetContact(username, contactID);
-            contact.Messages.Remove(messageToRemove);
-            _context.Remove(contact);
-            _context.Update(contact);
+            _context.Messages.Remove(messageToRemove);
+            _context.Update(messageToRemove);
             await _context.SaveChangesAsync();
 
             return true;

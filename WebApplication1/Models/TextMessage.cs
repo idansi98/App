@@ -5,7 +5,8 @@ namespace WebApplication1.Models
     public class TextMessage
     {
         [Key]
-        public int ID { get; set; }
+        [Required]
+        public int Id { get; set; }
         public string Text { get; set; }
         public bool UserSent { get; set; }
         public DateTime Time { get; set; } = DateTime.Now;

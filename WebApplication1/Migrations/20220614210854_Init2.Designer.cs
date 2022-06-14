@@ -3,16 +3,18 @@ using System;
 using ChatWebsite.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace ChatWebsite.Migrations.WebApp1
+namespace ChatWebsite.Migrations
 {
     [DbContext(typeof(WebApp1Context))]
-    partial class WebApp1ContextModelSnapshot : ModelSnapshot
+    [Migration("20220614210854_Init2")]
+    partial class Init2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,7 +23,7 @@ namespace ChatWebsite.Migrations.WebApp1
 
             modelBuilder.Entity("WebApplication1.Models.Contact", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("Id")
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("UserId")
@@ -35,9 +37,7 @@ namespace ChatWebsite.Migrations.WebApp1
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("ID", "UserId");
-
-                    b.HasIndex("UserId");
+                    b.HasKey("Id", "UserId");
 
                     b.ToTable("Contacts");
                 });
@@ -69,19 +69,13 @@ namespace ChatWebsite.Migrations.WebApp1
 
             modelBuilder.Entity("WebApplication1.Models.TextMessage", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("ContactId")
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<string>("ContactID")
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<string>("ContactUserId")
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("Text")
@@ -94,16 +88,14 @@ namespace ChatWebsite.Migrations.WebApp1
                     b.Property<bool>("UserSent")
                         .HasColumnType("tinyint(1)");
 
-                    b.HasKey("ID", "UserId", "ContactId");
-
-                    b.HasIndex("ContactID", "ContactUserId");
+                    b.HasKey("Id", "UserId", "ContactId");
 
                     b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.User", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("Id")
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("DisplayName")
@@ -113,35 +105,9 @@ namespace ChatWebsite.Migrations.WebApp1
                     b.Property<string>("Password")
                         .HasColumnType("longtext");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("WebApplication1.Models.Contact", b =>
-                {
-                    b.HasOne("WebApplication1.Models.User", null)
-                        .WithMany("Contacts")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("WebApplication1.Models.TextMessage", b =>
-                {
-                    b.HasOne("WebApplication1.Models.Contact", null)
-                        .WithMany("Messages")
-                        .HasForeignKey("ContactId");
-                });
-
-            modelBuilder.Entity("WebApplication1.Models.Contact", b =>
-                {
-                    b.Navigation("Messages");
-                });
-
-            modelBuilder.Entity("WebApplication1.Models.User", b =>
-                {
-                    b.Navigation("Contacts");
                 });
 #pragma warning restore 612, 618
         }

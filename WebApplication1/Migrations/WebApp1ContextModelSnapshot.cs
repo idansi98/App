@@ -3,18 +3,16 @@ using System;
 using ChatWebsite.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace ChatWebsite.Migrations.WebApp1
+namespace ChatWebsite.Migrations
 {
     [DbContext(typeof(WebApp1Context))]
-    [Migration("20220614091313_Idan")]
-    partial class Idan
+    partial class WebApp1ContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,7 +21,10 @@ namespace ChatWebsite.Migrations.WebApp1
 
             modelBuilder.Entity("WebApplication1.Models.Contact", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("UserId")
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("UserId")
@@ -37,9 +38,13 @@ namespace ChatWebsite.Migrations.WebApp1
                         .IsRequired()
                         .HasColumnType("longtext");
 
+<<<<<<< Updated upstream:WebApplication1/Migrations/WebApp1/WebApp1ContextModelSnapshot.cs
                     b.HasKey("ID", "UserId");
 
                     b.HasIndex("UserId");
+=======
+                    b.HasKey("Id", "UserId");
+>>>>>>> Stashed changes:WebApplication1/Migrations/WebApp1ContextModelSnapshot.cs
 
                     b.ToTable("Contacts");
                 });
@@ -71,16 +76,23 @@ namespace ChatWebsite.Migrations.WebApp1
 
             modelBuilder.Entity("WebApplication1.Models.TextMessage", b =>
                 {
+<<<<<<< Updated upstream:WebApplication1/Migrations/WebApp1/WebApp1ContextModelSnapshot.cs
                     b.Property<int>("ID")
+=======
+                    b.Property<int>("Id")
+>>>>>>> Stashed changes:WebApplication1/Migrations/WebApp1ContextModelSnapshot.cs
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("ContactId")
+<<<<<<< Updated upstream:WebApplication1/Migrations/WebApp1/WebApp1ContextModelSnapshot.cs
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("ContactID")
+=======
+>>>>>>> Stashed changes:WebApplication1/Migrations/WebApp1ContextModelSnapshot.cs
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("ContactUserId")
@@ -96,16 +108,20 @@ namespace ChatWebsite.Migrations.WebApp1
                     b.Property<bool>("UserSent")
                         .HasColumnType("tinyint(1)");
 
+<<<<<<< Updated upstream:WebApplication1/Migrations/WebApp1/WebApp1ContextModelSnapshot.cs
                     b.HasKey("ID", "UserId", "ContactId");
 
                     b.HasIndex("ContactID", "ContactUserId");
+=======
+                    b.HasKey("Id", "UserId", "ContactId");
+>>>>>>> Stashed changes:WebApplication1/Migrations/WebApp1ContextModelSnapshot.cs
 
                     b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.User", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("Id")
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("DisplayName")
@@ -115,10 +131,11 @@ namespace ChatWebsite.Migrations.WebApp1
                     b.Property<string>("Password")
                         .HasColumnType("longtext");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Users");
                 });
+<<<<<<< Updated upstream:WebApplication1/Migrations/WebApp1/WebApp1ContextModelSnapshot.cs
 
             modelBuilder.Entity("WebApplication1.Models.Contact", b =>
                 {
@@ -133,7 +150,7 @@ namespace ChatWebsite.Migrations.WebApp1
                 {
                     b.HasOne("WebApplication1.Models.Contact", null)
                         .WithMany("Messages")
-                        .HasForeignKey("ContactID", "ContactUserId");
+                        .HasForeignKey("ContactId");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.Contact", b =>
@@ -145,6 +162,8 @@ namespace ChatWebsite.Migrations.WebApp1
                 {
                     b.Navigation("Contacts");
                 });
+=======
+>>>>>>> Stashed changes:WebApplication1/Migrations/WebApp1ContextModelSnapshot.cs
 #pragma warning restore 612, 618
         }
     }

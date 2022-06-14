@@ -15,17 +15,19 @@ namespace ChatWebsite.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>().HasKey(user => user.ID);
-            modelBuilder.Entity<User>().HasMany(user => user.Contacts);
-            modelBuilder.Entity<Contact>().Property(contact => contact.ID).IsRequired();
+            modelBuilder.Entity<User>().Property(user => user.Id).IsRequired();
+            modelBuilder.Entity<User>().HasKey(user => user.Id);
+            //modelBuilder.Entity<User>().HasMany(user => user.Contacts);
+            modelBuilder.Entity<Contact>().Property(contact => contact.Id).IsRequired();
             modelBuilder.Entity<Contact>().HasKey(contact => new
             {
-                contact.ID, contact.UserId
+                contact.Id, contact.UserId
             });
-            modelBuilder.Entity<Contact>().HasMany(contact => contact.Messages);
+            //modelBuilder.Entity<Contact>().HasMany(contact => contact.Messages);
+            modelBuilder.Entity<User>().Property(message => message.Id).IsRequired();
             modelBuilder.Entity<TextMessage>().HasKey(text => new
             {
-                text.ID,
+                text.Id,
                 text.UserId,
                 text.ContactId
             });

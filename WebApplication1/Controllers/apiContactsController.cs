@@ -42,11 +42,12 @@ namespace WebApplication1.Controllers
                         result += ",";
                     }
                     result += "{";
-                    result += "\"id\":\"" + contact.ID + "\",";
+                    result += "\"id\":\"" + contact.Id + "\",";
                     result += "\"name\":\"" + contact.DisplayName + "\",";
                     result += "\"server\":\"" + contact.ServerAddress + "\",";
-                    result += "\"last\":\"" + contact.getLastMessageText() + "\",";
-                    result += "\"lastdate\":\"" + contact.getLastMessageDate().ToString("yyyy-MM-ddTHH:mm:ss.fffffff") + "\"";
+                    var message = await _service.GetLastMessage(username, contact.Id);
+                    result += "\"last\":\"" + message.Text + "\",";
+                    result += "\"lastdate\":\"" + message.Time.ToString("yyyy-MM-ddTHH:mm:ss.fffffff") + "\"";
                     result += "}";
                     firstTime = false;
 
@@ -62,9 +63,8 @@ namespace WebApplication1.Controllers
             var username = HttpContext.Session.GetString("username");
             Contact newContact = new Contact();
             newContact.DisplayName = contactToAdd.name;
-            newContact.ID = contactToAdd.id;
+            newContact.Id = contactToAdd.id;
             newContact.ServerAddress = contactToAdd.server;
-            newContact.Messages = new List<TextMessage>();
             var result = await _service.AddContactToUser(username, newContact);
             if (!result)
             {
@@ -87,11 +87,12 @@ namespace WebApplication1.Controllers
             if (contact != null)
             {
                 result += "{";
-                result += "\"id\":\"" + contact.ID + "\",";
+                result += "\"id\":\"" + contact.Id + "\",";
                 result += "\"name\":\"" + contact.DisplayName + "\",";
                 result += "\"server\":\"" + contact.ServerAddress + "\",";
-                result += "\"last\":\"" + contact.getLastMessageText() + "\",";
-                result += "\"lastdate\":\"" + contact.getLastMessageDate().ToString("yyyy-MM-ddTHH:mm:ss.fffffff") + "\"";
+                var message = await _service.GetLastMessage(username, id);
+                result += "\"last\":\"" + message.Text + "\",";
+                result += "\"lastdate\":\"" + message.Time.ToString("yyyy-MM-ddTHH:mm:ss.fffffff") + "\"";
                 result += "}";
                 return Ok(result);
             }
@@ -152,7 +153,7 @@ namespace WebApplication1.Controllers
                     result += ",";
                 }
                 result += "{";
-                result += "\"id\":\"" + message.ID + "\",";
+                result += "\"id\":\"" + message.Id + "\",";
                 result += "\"content\":\"" + message.Text + "\",";
                 result += "\"created\":\"" + message.Time.ToString("yyyy-MM-ddTHH:mm:ss.fffffff") + "\",";
                 result += "\"sent\":\"" + message.UserSent.ToString().ToLower() + "\"";
@@ -173,16 +174,16 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
             TextMessage message = new TextMessage();
-            var lastMessage = await _service.getLastMessage(username, id);
+            var lastMessage = await _service.GetLastMessage(username, id);
             int nextID;
             if(lastMessage == null)
             {
                 nextID = 0;
             } else
             {
-                nextID = lastMessage.ID + 1;
+                nextID = lastMessage.Id + 1;
             }
-            message.ID = nextID;
+            message.Id = nextID;
             message.Text = messageToAdd.content;
             message.UserSent = true;
             message.Time = DateTime.Now;
@@ -216,7 +217,7 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
             result += "{";
-            result += "\"id\":\"" + specificMessage.ID + "\",";
+            result += "\"id\":\"" + specificMessage.Id + "\",";
             result += "\"content\":\"" + specificMessage.Text + "\",";
             result += "\"created\":\"" + specificMessage.Time.ToString("yyyy-MM-ddTHH:mm:ss.fffffff") + "\",";
             result += "\"sent\":\"" + specificMessage.UserSent.ToString().ToLower() + "\"";

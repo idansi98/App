@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using WebApplication1.Data;
 using WebApplication1.Services;
 var builder = WebApplication.CreateBuilder(args);
 
