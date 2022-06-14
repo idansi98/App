@@ -36,7 +36,7 @@ namespace WebApplication1.Services
             _context.Users.Add(Tester3);
             _context.Users.Add(Tester4);
             _context.SaveChangesAsync();
-            Ido.Contacts.Add(new Contact { ID = "555", DisplayName = "DEMO CHAT", UserId = Ido.ID,ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
+            Ido.Contacts.Add(new Contact { ID = "556", DisplayName = "DEMO CHAT", UserId = Ido.ID,ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
             Ido.Contacts.Add(new Contact { ID = "66", DisplayName = "DEMO CHAT 2", UserId = Ido.ID, ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
             Idan.Contacts.Add(new Contact { ID = "77", DisplayName = "DEMO CHAT", UserId = Idan.ID, ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
             Hemi.Contacts.Add(new Contact { ID = "88", DisplayName = "DEMO CHAT", UserId = Hemi.ID, ServerAddress = "scam.com", Messages = new List<TextMessage> { } });
@@ -52,13 +52,15 @@ namespace WebApplication1.Services
             UserId = Idan.ID, ContactId = Idan.Contacts.First().ID});
             Idan.Contacts.First().Messages.Add(new TextMessage { Text = "Hello I am not scamming", ID = 1, Time = DateTime.Now, UserSent = false,
             UserId = Idan.ID, ContactId = Idan.Contacts.First().ID});
-            _context.Update(Ido);
-            _context.Update(Idan);
-            _context.Update(Hemi);
+            _context.Update(Ido.Contacts.First());
+            _context.Update(Idan.Contacts.First());
+            _context.Update(Hemi.Contacts.First());
             _context.SaveChangesAsync();
             _context.Update(Idan);
             _context.Update(Ido);
-            _context.Update(Hemi);*/
+            _context.Update(Hemi);
+            _context.SaveChangesAsync();*/
+
         }
         public async Task<List<User>> GetAllUsers()
         {

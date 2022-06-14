@@ -24,6 +24,9 @@ namespace ChatWebsite.Migrations.WebApp1
                     b.Property<string>("ID")
                         .HasColumnType("varchar(255)");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
+
                     b.Property<string>("DisplayName")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -32,12 +35,9 @@ namespace ChatWebsite.Migrations.WebApp1
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("UserID")
-                        .HasColumnType("varchar(255)");
+                    b.HasKey("ID", "UserId");
 
-                    b.HasKey("ID");
-
-                    b.HasIndex("UserID");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Contacts");
                 });
@@ -70,10 +70,18 @@ namespace ChatWebsite.Migrations.WebApp1
             modelBuilder.Entity("WebApplication1.Models.TextMessage", b =>
                 {
                     b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("ContactId")
+                        .HasColumnType("varchar(255)");
+
                     b.Property<string>("ContactID")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("ContactUserId")
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("Text")
@@ -86,9 +94,9 @@ namespace ChatWebsite.Migrations.WebApp1
                     b.Property<bool>("UserSent")
                         .HasColumnType("tinyint(1)");
 
-                    b.HasKey("ID");
+                    b.HasKey("ID", "UserId", "ContactId");
 
-                    b.HasIndex("ContactID");
+                    b.HasIndex("ContactID", "ContactUserId");
 
                     b.ToTable("Messages");
                 });
@@ -114,14 +122,16 @@ namespace ChatWebsite.Migrations.WebApp1
                 {
                     b.HasOne("WebApplication1.Models.User", null)
                         .WithMany("Contacts")
-                        .HasForeignKey("UserID");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("WebApplication1.Models.TextMessage", b =>
                 {
                     b.HasOne("WebApplication1.Models.Contact", null)
                         .WithMany("Messages")
-                        .HasForeignKey("ContactID");
+                        .HasForeignKey("ContactId");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.Contact", b =>

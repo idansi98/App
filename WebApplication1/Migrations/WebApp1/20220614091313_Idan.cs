@@ -57,21 +57,22 @@ namespace ChatWebsite.Migrations.WebApp1
                 {
                     ID = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    UserId = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     DisplayName = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ServerAddress = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    UserID = table.Column<string>(type: "varchar(255)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Contacts", x => x.ID);
+                    table.PrimaryKey("PK_Contacts", x => new { x.ID, x.UserId });
                     table.ForeignKey(
-                        name: "FK_Contacts_Users_UserID",
-                        column: x => x.UserID,
+                        name: "FK_Contacts_Users_UserId",
+                        column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "ID");
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -79,35 +80,37 @@ namespace ChatWebsite.Migrations.WebApp1
                 name: "Messages",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    ID = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ContactId = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     Text = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     UserSent = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    Time = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    ContactID = table.Column<string>(type: "varchar(255)", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    Time = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Messages", x => x.ID);
+                    table.PrimaryKey("PK_Messages", x => new { x.ID, x.UserId, x.ContactId });
                     table.ForeignKey(
-                        name: "FK_Messages_Contacts_ContactID",
-                        column: x => x.ContactID,
+                        name: "FK_Messages_Contacts_ContactId",
+                        column: x =>  x.ContactId ,
                         principalTable: "Contacts",
-                        principalColumn: "ID");
+                        principalColumn:  "ID",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Contacts_UserID",
+                name: "IX_Contacts_UserId",
                 table: "Contacts",
-                column: "UserID");
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Messages_ContactID",
+                name: "IX_Messages_ContactId",
                 table: "Messages",
-                column: "ContactID");
+                column:  "ContactId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
