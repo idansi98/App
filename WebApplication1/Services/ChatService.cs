@@ -179,7 +179,7 @@ namespace WebApplication1.Services
             contact.DisplayName = invitation.from;
             contact.ServerAddress = invitation.server;
             contact.UserId = user.Id;
-            _context.Contacts.Add(contact);
+            await _context.Contacts.AddAsync(contact);
             await _context.SaveChangesAsync();
             return true;
         }
@@ -201,7 +201,7 @@ namespace WebApplication1.Services
                 return false;
             }
             // if new
-            _context.Contacts.Add(contact);
+            await _context.Contacts.AddAsync(contact);
             await _context.SaveChangesAsync();
             return true;
         }
@@ -221,7 +221,7 @@ namespace WebApplication1.Services
             }
             textMessage.UserId = user.Id;
             textMessage.ContactId = contact.Id;
-            _context.Messages.Add(textMessage);
+            await _context.Messages.AddAsync(textMessage);
             await _context.SaveChangesAsync();
             return true;
         }
@@ -289,7 +289,7 @@ namespace WebApplication1.Services
             contact.DisplayName = updatedContact.name;
             contact.ServerAddress = updatedContact.server;
             contact.UserId = user.Id;
-            _context.Add(contact);
+            await _context.AddAsync(contact);
             await _context.SaveChangesAsync();
             return true;
         }
