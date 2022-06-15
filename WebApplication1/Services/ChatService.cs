@@ -18,7 +18,6 @@ namespace WebApplication1.Services
         public ChatService(WebApp1Context context)
         {
             _context = context;
-            Begin();
         }
 
         public async Task<bool> Begin() {
