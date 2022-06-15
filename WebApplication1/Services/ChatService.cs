@@ -18,6 +18,10 @@ namespace WebApplication1.Services
         public ChatService(WebApp1Context context)
         {
             _context = context;
+            Begin();
+        }
+
+        public async Task<bool> Begin() {
             User Ido = new User("1", "Ido", "2");
             User Idan = new User("2", "Idan", "3");
             User Hemi = new User("3", "Hemi", "4");
@@ -26,14 +30,14 @@ namespace WebApplication1.Services
             User Tester3 = new User("7", "Tester!", "6");
             User Tester4 = new User("8", "Tester!", "6");
             User Tester5 = new User("9", "Idadnasd", "15");
-            _context.Users.AddAsync(Ido);
-            _context.Users.AddAsync(Idan);
-            _context.Users.AddAsync(Hemi);
-            _context.Users.AddAsync(Tester);
-            _context.Users.AddAsync(Tester2);
-            _context.Users.AddAsync(Tester3);
-            _context.Users.AddAsync(Tester4);
-            _context.Users.AddAsync(Tester5);
+            await _context.Users.AddAsync(Ido);
+            await _context.Users.AddAsync(Idan);
+            await _context.Users.AddAsync(Hemi);
+            await _context.Users.AddAsync(Tester);
+            await _context.Users.AddAsync(Tester2);
+            await _context.Users.AddAsync(Tester3);
+            await _context.Users.AddAsync(Tester4);
+            await _context.Users.AddAsync(Tester5);
             //_context.Update(Ido);
             //_context.Update(Idan);
             //_context.Update(Hemi);
@@ -42,20 +46,20 @@ namespace WebApplication1.Services
             //_context.Update(Tester3);
             //_context.Update(Tester4);
             //_context.Update(Tester5);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
             var cont1 = new Contact { Id = "555", DisplayName = "DEMO CHAT", UserId = Ido.Id, ServerAddress = "scam.com" };
             var cont2 = new Contact { Id = "66", DisplayName = "DEMO CHAT 2", UserId = Ido.Id, ServerAddress = "scam.com" };
             var cont3 = new Contact { Id = "77", DisplayName = "DEMO CHAT", UserId = Idan.Id, ServerAddress = "scam.com" };
             var cont4 = new Contact { Id = "88", DisplayName = "DEMO CHAT", UserId = Hemi.Id, ServerAddress = "scam.com" };
-            _context.Contacts.AddAsync(cont1);
-            _context.Contacts.AddAsync(cont2);
-            _context.Contacts.AddAsync(cont3);
-            _context.Contacts.AddAsync(cont4);
+            await _context.Contacts.AddAsync(cont1);
+            await _context.Contacts.AddAsync(cont2);
+            await _context.Contacts.AddAsync(cont3);
+            await _context.Contacts.AddAsync(cont4);
             //_context.Update(cont1);
             //_context.Update(cont2);
             //_context.Update(cont3);
             //_context.Update(cont4);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
             var message1 = new TextMessage
             { Text = "Hello I am not scamming", Id = 1, Time = DateTime.Now, UserSent = false, UserId = Ido.Id, ContactId = cont1.Id };
             var message2 = new TextMessage
@@ -66,12 +70,13 @@ namespace WebApplication1.Services
             { Text = "Hello I am not scamming", Id = 1, Time = DateTime.Now, UserSent = false, UserId = Idan.Id, ContactId = cont3.Id };
             var message5 = new TextMessage
             { Text = "Hello I am not scamming", Id = 2, Time = DateTime.Now, UserSent = false, UserId = Idan.Id, ContactId = cont3.Id };
-            _context.AddAsync(message1);
-            _context.AddAsync(message2);
-            _context.AddAsync(message3);
-            _context.AddAsync(message4);
-            _context.AddAsync(message5);
-            _context.SaveChangesAsync();
+            await _context.AddAsync(message1);
+            await _context.AddAsync(message2);
+            await _context.AddAsync(message3);
+            await _context.AddAsync(message4);
+            await _context.AddAsync(message5);
+            await _context.SaveChangesAsync();
+            return true;
         }
         public async Task<List<User>> GetAllUsers()
         {
