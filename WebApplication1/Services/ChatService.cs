@@ -201,6 +201,7 @@ namespace WebApplication1.Services
                 return false;
             }
             // if new
+            contact.UserId = user.Id;
             await _context.Contacts.AddAsync(contact);
             await _context.SaveChangesAsync();
             return true;
@@ -290,6 +291,7 @@ namespace WebApplication1.Services
             contact.ServerAddress = updatedContact.server;
             contact.UserId = user.Id;
             await _context.AddAsync(contact);
+            await _context.Update(contact);
             await _context.SaveChangesAsync();
             return true;
         }
@@ -306,7 +308,6 @@ namespace WebApplication1.Services
             if (contact == null)
                 return false;
             _context.Remove(contact);
-            _context.Update(contact);
             await _context.SaveChangesAsync();
             return true;
         }
@@ -343,7 +344,6 @@ namespace WebApplication1.Services
                 return false;
             }
             _context.Messages.Remove(messageToRemove);
-            _context.Update(messageToRemove);
             await _context.SaveChangesAsync();
 
             return true;

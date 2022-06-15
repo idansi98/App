@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Entity.Framework;
 using WebApplication1.Models;
 
 namespace ChatWebsite.Data
