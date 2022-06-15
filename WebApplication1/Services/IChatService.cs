@@ -24,5 +24,6 @@ namespace WebApplication1.Services
 
         public Task<bool> UpdateMessage(string username, string contactID, int messageID, MessageToAdd textMessage);
         public Task<bool> DeleteMessage(string username, string contactID, int messageID);
+        public Task<bool> Begin();
     }
 }

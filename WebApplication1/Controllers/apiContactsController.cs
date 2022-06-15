@@ -46,8 +46,16 @@ namespace WebApplication1.Controllers
                     result += "\"name\":\"" + contact.DisplayName + "\",";
                     result += "\"server\":\"" + contact.ServerAddress + "\",";
                     var message = await _service.GetLastMessage(username, contact.Id);
-                    result += "\"last\":\"" + message.Text + "\",";
-                    result += "\"lastdate\":\"" + message.Time.ToString("yyyy-MM-ddTHH:mm:ss.fffffff") + "\"";
+                    if (message != null)
+                    {
+                        result += "\"last\":\"" + message.Text + "\",";
+                        result += "\"lastdate\":\"" + message.Time.ToString("yyyy-MM-ddTHH:mm:ss.fffffff") + "\"";
+                    } else
+                    {
+                        result += "\"last\":\"" + "" + "\",";
+                        result += "\"lastdate\":\"" + "" + "\"";
+                    }
+
                     result += "}";
                     firstTime = false;
 
