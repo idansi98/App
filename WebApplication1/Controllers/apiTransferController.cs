@@ -22,7 +22,7 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(MessageRequest messageRequest)
         {
-            var user = _service.GetUser(messageRequest.to);
+            var user = await _service.GetUser(messageRequest.to);
             if (user == null)
                 return NotFound();
             var result = await _service.AddMessageToContactAsync(messageRequest);

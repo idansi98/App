@@ -21,8 +21,8 @@ namespace WebApplication1.Services
         public Task<bool> UpdateContact(string userName, UpdatedContact updatedContact, string id);
         public Task<bool> DeleteContact(string username, string contactID);
         public Task<TextMessage> GetSpecificMessage(string username, string contactID, int messageID);
-
         public Task<bool> UpdateMessage(string username, string contactID, int messageID, MessageToAdd textMessage);
         public Task<bool> DeleteMessage(string username, string contactID, int messageID);
+        public Task<bool> Begin();
     }
 }

@@ -21,7 +21,7 @@ namespace WebApplication1.Services
         }
 
         public async Task<bool> Begin() {
-            User Ido = new User("1", "Ido", "2");
+            /*User Ido = new User("1", "Ido", "2");
             User Idan = new User("2", "Idan", "3");
             User Hemi = new User("3", "Hemi", "4");
             User Tester = new User("5", "Tester!", "6");
@@ -37,19 +37,19 @@ namespace WebApplication1.Services
             await _context.Users.AddAsync(Tester3);
             await _context.Users.AddAsync(Tester4);
             await _context.Users.AddAsync(Tester5);
-            //_context.Update(Ido);
-            //_context.Update(Idan);
-            //_context.Update(Hemi);
-            //_context.Update(Tester);
-            //_context.Update(Tester2);
-            //_context.Update(Tester3);
-            //_context.Update(Tester4);
-            //_context.Update(Tester5);
-            await _context.SaveChangesAsync();
-            var cont1 = new Contact { Id = "555", DisplayName = "DEMO CHAT", UserId = Ido.Id, ServerAddress = "scam.com" };
-            var cont2 = new Contact { Id = "66", DisplayName = "DEMO CHAT 2", UserId = Ido.Id, ServerAddress = "scam.com" };
-            var cont3 = new Contact { Id = "77", DisplayName = "DEMO CHAT", UserId = Idan.Id, ServerAddress = "scam.com" };
-            var cont4 = new Contact { Id = "88", DisplayName = "DEMO CHAT", UserId = Hemi.Id, ServerAddress = "scam.com" };
+            _context.Update(Ido);
+            _context.Update(Idan);
+            _context.Update(Hemi);
+            _context.Update(Tester);
+            _context.Update(Tester2);
+            _context.Update(Tester3);
+            _context.Update(Tester4);
+            _context.Update(Tester5);
+            await _context.SaveChangesAsync();*/
+            var cont1 = new Contact { Id = "555", DisplayName = "DEMO CHAT", UserId = "1", ServerAddress = "scam.com" };
+            var cont2 = new Contact { Id = "66", DisplayName = "DEMO CHAT 2", UserId = "1", ServerAddress = "scam.com" };
+            var cont3 = new Contact { Id = "77", DisplayName = "DEMO CHAT", UserId = "2", ServerAddress = "scam.com" };
+            var cont4 = new Contact { Id = "88", DisplayName = "DEMO CHAT", UserId = "3", ServerAddress = "scam.com" };
             await _context.Contacts.AddAsync(cont1);
             await _context.Contacts.AddAsync(cont2);
             await _context.Contacts.AddAsync(cont3);
@@ -60,15 +60,15 @@ namespace WebApplication1.Services
             //_context.Update(cont4);
             await _context.SaveChangesAsync();
             var message1 = new TextMessage
-            { Text = "Hello I am not scamming", Id = 1, Time = DateTime.Now, UserSent = false, UserId = Ido.Id, ContactId = cont1.Id };
+            { Text = "Hello I am not scamming", Id = 1, Time = DateTime.Now, UserSent = false, UserId = "1", ContactId = cont1.Id };
             var message2 = new TextMessage
-            { Text = "Go away", Id = 2, Time = DateTime.Now, UserSent = true, UserId = Ido.Id, ContactId = cont1.Id };
+            { Text = "Go away", Id = 2, Time = DateTime.Now, UserSent = true, UserId = "1", ContactId = cont1.Id };
             var message3 = new TextMessage
-            { Text = "Go away", Id = 3, Time = DateTime.Now, UserSent = true, UserId = Ido.Id, ContactId = cont1.Id };
+            { Text = "Go away", Id = 3, Time = DateTime.Now, UserSent = true, UserId = "1", ContactId = cont1.Id };
             var message4 = new TextMessage
-            { Text = "Hello I am not scamming", Id = 1, Time = DateTime.Now, UserSent = false, UserId = Idan.Id, ContactId = cont3.Id };
+            { Text = "Hello I am not scamming", Id = 1, Time = DateTime.Now, UserSent = false, UserId = "2", ContactId = cont3.Id };
             var message5 = new TextMessage
-            { Text = "Hello I am not scamming", Id = 2, Time = DateTime.Now, UserSent = false, UserId = Idan.Id, ContactId = cont3.Id };
+            { Text = "Hello I am not scamming", Id = 2, Time = DateTime.Now, UserSent = false, UserId = "2", ContactId = cont3.Id };
             await _context.AddAsync(message1);
             await _context.AddAsync(message2);
             await _context.AddAsync(message3);
@@ -135,13 +135,7 @@ namespace WebApplication1.Services
         //
         public async Task<bool> AddUser(string ID, string displayName, string password)
         {
-            if(! await AddUser(new User(ID, displayName, password))) // if failed
-            {
-                return false;
-            }
-            await _context.Users.AddAsync(new User(ID, displayName, password));
-            await _context.SaveChangesAsync();
-            return true;
+           return await AddUser(new User(ID, displayName, password));
         }
         //
         public async Task<bool> AddUser(User user)
@@ -201,6 +195,7 @@ namespace WebApplication1.Services
                 return false;
             }
             // if new
+            contact.UserId = user.Id;
             await _context.Contacts.AddAsync(contact);
             await _context.SaveChangesAsync();
             return true;
@@ -290,6 +285,7 @@ namespace WebApplication1.Services
             contact.ServerAddress = updatedContact.server;
             contact.UserId = user.Id;
             await _context.AddAsync(contact);
+            _context.Update(contact);
             await _context.SaveChangesAsync();
             return true;
         }
@@ -306,7 +302,6 @@ namespace WebApplication1.Services
             if (contact == null)
                 return false;
             _context.Remove(contact);
-            _context.Update(contact);
             await _context.SaveChangesAsync();
             return true;
         }
@@ -343,7 +338,6 @@ namespace WebApplication1.Services
                 return false;
             }
             _context.Messages.Remove(messageToRemove);
-            _context.Update(messageToRemove);
             await _context.SaveChangesAsync();
 
             return true;
