@@ -26,7 +26,7 @@ function SignUpRegisterBox({ credentials }) {
         headers,
         body
       };
-      var servAddr = "https://localhost:25565" + "/api/register" 
+      var servAddr = "http://localhost:25565" + "/api/register" 
       fetch(servAddr, init)
       .then((response) => {
         if(response.ok === false) {

@@ -19,7 +19,6 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public async Task<IActionResult> ShowSelf()
         {
-            await _service.Begin();
             string ip = Request.Host.Host;
             string port = Request.Host.Port.Value.ToString();
             string url = "http://" + ip + "/" + port;

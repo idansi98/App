@@ -21,8 +21,8 @@ function AddContactButton({ setCurrentChat }) {
       headers,
       body
     };
-
-    var fetchString2 = "//" + serverToAdd + "/api/invitations"
+    //"http://" +
+    var fetchString2 =  "//" + serverToAdd + "/api/invitations"
     fetch(fetchString2, init2)
     .then(async (response) => {
       if (response.ok  === false) {
@@ -48,7 +48,7 @@ function AddContactButton({ setCurrentChat }) {
       headers,
       body
     };
-    var fetchStr = "//" + currentServerAddress + "/api/contacts"
+    var fetchStr = "http://" + currentServerAddress + "/api/contacts"
      fetch(fetchStr, init)
     .then(async (response) => {
       if (response.ok === false) {
@@ -67,7 +67,7 @@ function AddContactButton({ setCurrentChat }) {
   
  
   const checkAvailable = async function(usernameToAdd) {
-    var fetchStr = "//localhost:25565/api/contacts/" + usernameToAdd;
+    var fetchStr = "http://localhost:25565/api/contacts/" + usernameToAdd;
     let response = await fetch(fetchStr);
     if (response.ok) {
       return false;
