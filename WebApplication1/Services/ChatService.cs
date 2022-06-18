@@ -180,10 +180,6 @@ namespace WebApplication1.Services
             if (user == null)
                 return false;
             var list = await GetAllContacts(user.Id);
-            if (!list.Any())
-            {
-                return false;
-            }
             //check there isnt same ID 
             var getDuplicate = list.Find(x => x.Id == contact.Id);
             if (getDuplicate != null)
