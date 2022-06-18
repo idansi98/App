@@ -49,7 +49,11 @@ namespace WebApplication1.Services
         {
 
             var id = userToFirebaseID[username];
-
+            // ic no firebase registered
+            if (id == null)
+            {
+                return;
+            }
             var fbMessage = new Message()
             {
                 Notification = new Notification
