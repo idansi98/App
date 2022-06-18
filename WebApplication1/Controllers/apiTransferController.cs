@@ -13,10 +13,12 @@ namespace WebApplication1.Controllers
     {
         private readonly IChatService _service;
         private readonly IHubContext<Myhub> _hub;
-        public apiTransferController(IChatService service, IHubContext<Myhub> myHub)
+        private readonly IFirebaseService _firebaseService;
+        public apiTransferController(IChatService service, IHubContext<Myhub> myHub, IFirebaseService firebaseService)
         {
             _service = service;
             _hub = myHub;
+            _firebaseService = firebaseService;
         }
 
         [HttpPost]
@@ -30,7 +32,7 @@ namespace WebApplication1.Controllers
             {
                 return NotFound();
             }
-            //HttpContext.Connection.
+            await _firebaseService.SendFirebaseMessage(user.Id, messageRequest.from, messageRequest.content);
             await _hub.Clients.All.SendAsync("NewMessage");
             return Created("", "");
 

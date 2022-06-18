@@ -6,6 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WebApplication1.Services;
+using FirebaseAdmin;
+using FirebaseAdmin.Messaging;
+using Google.Apis.Auth.OAuth2;
 var builder = WebApplication.CreateBuilder(args);
 
 //.Services.AddDbContext<WebApplication1Context>(options =>
@@ -14,6 +17,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddTransient<WebApp1Context>();
 builder.Services.AddTransient<IChatService, ChatService>();
 builder.Services.AddTransient<IRatingsService, RatingsService>();
+builder.Services.AddTransient<IFirebaseService, FirebaseService>();
 //builder.Services.AddSingleton<IChatService,ChatService>();
 //builder.Services.AddSingleton<IRatingsService, RatingsService>();
 //builder.Services.AddScoped<IRatingsService, RatingsService>();
@@ -43,6 +47,9 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+
+
 
 app.UseCors("Allow All");
 //app.UseHttpsRedirection();

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "marak-teimani",
+  "private_key_id": "ddca1d6e9ee3c72c61862cc9f56eafa02bb06043",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQClqRPTCtZv9P+l\nbPJf4I/LVzYia/lrtzz8HJlwd9i013YP8uG9YlO9glWmXBSOxujNYaiQiCmUduo9\ne2f+WkdiJYSWw2+5kaBKrGGJ+v//kIzpeM0AoSyy6IQd48ehYJRWg4koLDUYlrc4\neRPJo+QWxlE+OJ7npoj6mxnU+gHcCm8xVRno3VADycbcVhKOoVXUerYNeTt4vWWD\nTo/27IP3VibpmBr2Aai4wdWO6moaxxdHDzK/w2LAUhhjtSmJOjFz5QTnFNmxllDV\n+7Ixnz2zHamCUsiV7VXL6PWKcf/Mc5y5Xoh5lYvc7RPbyJiWhHrPAJRgrjjUOfdS\n2WU4RCqNAgMBAAECggEABt3ZxQMrfUuF9zjrWP8JZs/QHiAkoArh279hutA06tYN\nfj6+jaeQOgg3faROc9aZ2r2EC62hL5a4QeEmH9xlHhPZCZjDPkljgATiLCJ7zv+S\nX7ESqkaEAEx0AXsqEK3cqDNekYw3jTPeF1ipcc+5yhnhTzdwmsCD6ANa0EGmpxS0\nixRJ8PlSg3hyqOjSzT9eIBa8EyMPbZ0aMEy+JC1ndwllZnoBXtp2pFb8I6FIPDEP\nBWN3VzsrZATKKiPzY16jq2ReJoNZNNzmLN0LuEFGv9md+uUYaeFDBpClpw1fDGEf\ni4zQfH3WkaYlsD8D0I2GPF22aJiyuajactPfTi8KUQKBgQDZmflCrQqqz40yH8wp\nCveot/Xy9KdcJa9e5nhX539bc2udeA5KL6TKIEuy6wqjY1re3l3aqYS+aw54ki7b\nlVFFygPDOkhZTWb6Sz/kBJ5tNTUkqaBda1aczrZ7VOyeEzUdzvDadlVFgQASGcSA\nb4cqqZJFa1bEvd0IEizIQ8EBhQKBgQDC5LKV8s9ZICraEAk1guSWZ2eUaeZQ6b1s\nTj99SUjo9Ov01zsj9DnEFfnJ/2M0gd4KePM+GwC3KcGCnGj+Vnss99vtk/eMSus/\nMWviCCf4Y90hzNzkK+Q+NkoocCKoMNEvjNzIs1pfkbdCRkLaCt/WEe2lfNjcPBkq\npzkcXGDPaQKBgQCkUUpR2Dvy6pIz5KEV6StFY809LxRmWCrK3fzIXI7mrwz3t14L\nFVk6LRMcw7Kf2PoYzBBRe6s647rkv3bU6DecHMWkmhFiJjn6DfLsK7S6wPAlhFYN\n1W1tMgfIsEORxu1YWhm0zqDrwFMeWAjz98Q5Kh3DgB/gp4MOgjMA83D+xQKBgGrp\n6s43lWffLaLSiTrBw4R+1WOldKOOlkuD4XBpc4XYVljKebcPk2DubUlSwKldVOGJ\n2GaJiarxTSbJhw9/gbL5hbyfH33m24afJf+pWcP5hKW2LLc/HMbEIYpteZWqshbT\nv4qaWUl0NoQ05xeWP5S/4Q6Xnp+ymFu9wKa+Rp2BAoGABaF4pUC625Ott6YA92Zs\n4oJu87mUAOPsVCUOFPZonHFUrQxOd+lxtb/pkW9IEv2In5Qf5eqvuH9dL7wMiNbC\nlp6dRvBXLiRaJZ2eeKbXs96L4sF7K6K9CXw7JDzDgAhv/6mCH70sHwp3RFh8O/3z\nMtfmWJwIsLnwhn8WX0Na2oQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-qs6nu@marak-teimani.iam.gserviceaccount.com",
+  "client_id": "112667088691674893911",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-qs6nu%40marak-teimani.iam.gserviceaccount.com"
+}
