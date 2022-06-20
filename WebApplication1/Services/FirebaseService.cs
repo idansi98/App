@@ -48,23 +48,26 @@ namespace WebApplication1.Services
         public async Task SendFirebaseMessage(string username, string title, string message)
         {
 
-            var id = userToFirebaseID[username];
-            // ic no firebase registered
-            if (id == null)
+            if (userToFirebaseID.TryGetValue(username, out var id))
+            {
+                var fbMessage = new Message()
+                {
+                    Notification = new Notification
+                    {
+                        Title = title,
+                        Body = message
+                    },
+                    Token = id
+                };
+                var messaging = FirebaseMessaging.DefaultInstance;
+                var result = await messaging.SendAsync(fbMessage);
+            }
+            else
             {
                 return;
             }
-            var fbMessage = new Message()
-            {
-                Notification = new Notification
-                {
-                    Title = title,
-                    Body = message
-                },
-                Token = id
-            };
-            var messaging = FirebaseMessaging.DefaultInstance;
-            var result = await messaging.SendAsync(fbMessage);
+
+            
 
         }
         public async Task<bool> hasFirebaseID(string username)
