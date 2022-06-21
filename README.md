@@ -17,11 +17,11 @@ We offer various screens which can be navigated using site buttons or can direct
 - `http://localhost:25565/chats`    
 - `http://localhost:25565/Ratings`    
 
-To show the database, open MySQL Client at your machine, enter the password: 12345678, and then write use webappdb.
-To see the full ratings table - select * from ratings.
-To see the full ratings table - select * from users.
-To see the full ratings table - select * from contacts.
-To see the full ratings table - select * from messages
+To show the database, open MySQL Client at your machine, enter the password: 12345678, and then write use webappdb.  
+To see the full ratings table - `select * from ratings`.  
+To see the full users table - `select * from users`.  
+To see the full contacts table - `select * from contacts`.  
+To see the full messages table - `select * from messages`.  
 .
 The user can expect the normal behavior expected from a chatting website, with the exclusion of media support.  
 
