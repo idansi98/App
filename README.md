@@ -10,7 +10,6 @@ This is a chatting site co-developed by [Ido Tziony](https://github.com/ghsumhub
 5. Connect to http://localhost:25565/ via a web browser(If not connected Automatically).  
 
 
-
 ## How to Use  
 We offer various screens which can be navigated using site buttons or can directly be accessed with these addresses:  
 - `http://localhost:25565/login`  
@@ -29,8 +28,6 @@ The user can expect the normal behavior expected from a chatting website, with t
 ### Notes for Usage
 1. In the contact creation screen, the expected server format is "ADDRESS_WITHOUT_HTTP:PORT", e.g., "localhost:25565".  
 2. It is advised to open `http://localhost:25565/api/logout` in order to log out of the current user, since the default session duration is quite long.  
-3. Since all the opened tabs will be considered the same session, in order to run 2 users simultaneously, one can enter the site using a normal browser tab, and enter    the site again with a different user, using an incognito tab.  
-4. It is advised to not use the attachment button since, as of right now it is not functional.  
 
 ### Available API Routes
 - http://localhost:25565/api/logout - GET  (Only in order to hasten the process - for now - even though POST would be more appropriate here)  
