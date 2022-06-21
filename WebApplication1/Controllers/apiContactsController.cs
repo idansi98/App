@@ -2,6 +2,9 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Web.Helpers;
 using WebApplication1.Models;
 using WebApplication1.Services;
 
@@ -32,37 +35,47 @@ namespace WebApplication1.Controllers
             bool firstTime = true;
             var username = HttpContext.Session.GetString("username");
             var contacts = await _service.GetAllContacts(username);
+            List<ContactToSend> contactsToSend = new List<ContactToSend>();
             if (contacts != null)
             {
-                result = "[";
                 foreach (var contact in contacts)
                 {
-                    if (!firstTime)
-                    {
-                        result += ",";
-                    }
-                    result += "{";
-                    result += "\"id\":\"" + contact.Id + "\",";
-                    result += "\"name\":\"" + contact.DisplayName + "\",";
-                    result += "\"server\":\"" + contact.ServerAddress + "\",";
+                    ContactToSend contactToSend = new ContactToSend();
+                    contactToSend.id = contact.Id;
+                    contactToSend.name = contact.DisplayName;
+                    contactToSend.server = contact.ServerAddress;
                     var message = await _service.GetLastMessage(username, contact.Id);
                     if (message != null)
                     {
-                        result += "\"last\":\"" + message.Text + "\",";
-                        result += "\"lastdate\":\"" + message.Time.ToString("yyyy-MM-ddTHH:mm:ss.fffffff") + "\"";
+                        contactToSend.last = message.Text;
+                        contactToSend.lastdate = message.Time.ToString("yyyy-MM-ddTHH:mm:ss.fffffff");
                     }
                     else
                     {
-                        result += "\"last\":\"" + "" + "\",";
-                        result += "\"lastdate\":\"" + "" + "\"";
+                        contactToSend.last = "";
+                        contactToSend.lastdate = "";
                     }
-                    result += "}";
-                    firstTime = false;
+                    contactsToSend.Add(contactToSend);
 
                 }
-                result += "]";
+                contactsToSend.Sort(delegate (ContactToSend a, ContactToSend b)
+                {
+                    if (a.lastdate == b.lastdate)
+                    {
+                        return 1;
+                    }
+                    if (a.lastdate == "")
+                    {
+                        return 1;
+                    }
+                    if (b.lastdate == "")
+                    {
+                        return -1;
+                    }
+                    return DateTime.Parse(b.lastdate).Ticks.CompareTo(DateTime.Parse(a.lastdate).Ticks);
+                });
             }
-            return Ok(result);
+            return Ok(Newtonsoft.Json.JsonConvert.SerializeObject(contactsToSend));
         }
 
         [HttpPost]
