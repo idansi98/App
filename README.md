@@ -22,7 +22,6 @@ To see the full ratings table - `select * from ratings`.
 To see the full users table - `select * from users`.  
 To see the full contacts table - `select * from contacts`.  
 To see the full messages table - `select * from messages`.  
-.
 The user can expect the normal behavior expected from a chatting website, with the exclusion of media support.  
 
 ### Notes for Usage
