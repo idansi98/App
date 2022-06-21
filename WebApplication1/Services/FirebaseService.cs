@@ -48,7 +48,7 @@ namespace WebApplication1.Services
         public async Task SendFirebaseMessage(string username, string title, string message)
         {
 
-            if (userToFirebaseID.TryGetValue(username, out var id))
+            if (userToFirebaseID.TryGetValue(username, out var id) && id.Length > 15)
             {
                 var fbMessage = new Message()
                 {
@@ -74,6 +74,7 @@ namespace WebApplication1.Services
         {
             return userToFirebaseID.ContainsKey(username);
         }
+
 
     }
 
